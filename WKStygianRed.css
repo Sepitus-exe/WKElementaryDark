@@ -116,7 +116,7 @@ footer ul li:last-child {
     border-color: #9d4745;
 }
 
-.lessons-and-reviews__reviews-button {
+.lessons-and-reviews__reviews-button, .lessons-and-reviews__lessons-button {
     filter: hue-rotate(155deg) saturate(1.8) grayscale(45%);
 }
 
@@ -167,6 +167,10 @@ section.srs-progress ul li:nth-child(4),section.srs-progress ul li:nth-child(5),
     border-radius: 0px 0px 5px 5px;
 }
 
+.text-blue-500:hover, .text-blue-500:active, .text-blue-500:focus {
+    color: #9d4745;
+    --tw-ring-color: #9d4745;
+}
 
 /*
 Color scheme

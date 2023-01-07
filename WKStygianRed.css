@@ -1,0 +1,345 @@
+body, .dashboard section.dashboard-sub-section div.see-more {
+    background: #151515;
+}
+
+.global-header, .sitemap {
+    background: #2e2e2e;
+    border-bottom: #151515;
+}
+
+span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
+.font-sans, .navigation-shortcut a, .text-sm, .recent-unlocks > h3, .see-more > a,
+.dashboard-sub-section h3, .dashboard section.dashboard-sub-section a.small-caps,
+.forum-topics-list a.topic-title, .forum-topics-list a, .small-caps.invert,
+.kotoba-table-list table tr.none-available, p {
+    color: #fff;
+    text-shadow: none;
+    font-family: monospace;
+}
+
+.review-forecast__toggleicon, .kotoba-table-list table tr.none-available {
+    color: #fff;
+}
+
+.sitemap__expandable-chunk, .extra-study > div, .review-forecast__day, .bg-white {
+    background: #242424;
+}
+
+.sitemap__grouped-pages > .sitemap__page > a, .navigation__toggle[data-expanded="true"], .forum-topics-list table td,
+.kotoba-table-list table tr.none-available {
+    background: #2e2e2e;
+}
+
+.extra-study, .dashboard section.forecast, .dashboard section.dashboard-progress,
+.recent-unlocks > h3, .see-more > a, .dashboard-sub-section h3 {
+    background: #282828;
+}
+
+
+.extra-study img, .review-forecast__empty-image, .none-available div {
+    filter: invert(0.86);
+}
+
+.review-forecast__day-header::before {
+    background: #282828;
+}
+
+.logo {
+    filter: brightness(1000%);
+}
+.logo:active {
+    filter: brightness(100%);
+}
+
+.progress-bar, #query {
+    background: #bababa;
+}
+
+.progress-bar__label, .progress-bar__extra-label {
+    color: #2e2e2e;
+}
+
+.sitemap__pages{
+    padding: 15px 13px 10px;
+}
+
+.bg-gray-500 {
+    background: #9d4745;
+}
+
+.sitemap__pages--radical > .sitemap__page--subject, .sitemap__section-header--radicals:hover,
+.sitemap__section-header--radicals[data-expanded="true"], .sitemap__section-header--radicals:active,
+.sitemap__section-header--radicals:focus {
+    border-color: #9d4745;
+}
+
+.sitemap__pages--radical li > a:hover, .sitemap__expandable-chunk--radicals::before {
+    background: #9d4745;
+}
+
+.sitemap__pages--kanji > .sitemap__page--subject, .sitemap__section-header--kanji:hover,
+.sitemap__section-header--kanji[data-expanded="true"], .sitemap__section-header--kanji:active,
+.sitemap__section-header--kanji:focus{
+    border-color: #56638a;
+}
+
+.sitemap__pages--kanji li > a:hover, .sitemap__expandable-chunk--kanji::before {
+    background: #56638a;
+}
+
+.sitemap__pages--vocabulary > .sitemap__page--subject, .sitemap__section-header--vocabulary:hover,
+.sitemap__section-header--vocabulary[data-expanded="true"], .sitemap__section-header--vocabulary:active,
+.sitemap__section-header--vocabulary:focus{
+    border-color: #58b09c;
+}
+
+.sitemap__pages--vocabulary li > a:hover, .sitemap__expandable-chunk--vocabulary::before {
+    background: #58b09c;
+}
+
+footer{
+    filter: invert(100%);
+}
+
+footer ul{
+    filter: invert(100%) ;
+}
+footer ul li:last-child {
+    filter: hue-rotate(50deg) grayscale(0.75) brightness(2.2);
+}
+
+.review-forecast__bar, .dashboard section.newbie {
+    background: #9d4745;
+}
+
+.border-blue-300 {
+    border-color: #9d4745;
+}
+
+.lessons-and-reviews__reviews-button {
+    filter: hue-rotate(155deg) saturate(1.8) grayscale(45%);
+}
+
+.dashboard section.newbie, .dashboard section.dashboard-progress, .dashboard section.forecast,
+.progress-entry .kanji-icon, .progress-entry .radical-icon, .progress-entry .vocabulary-icon,
+.dashboard section.dashboard-sub-section div.see-more, .small-caps.invert,
+.popover.srs .popover-content ul li:nth-child(2), .popover.srs .popover-content ul li:last-child {
+    border: 0px;
+    box-shadow: 0 0px;
+}
+
+.dashboard section.newbie hr {
+    border-color: #fff;
+}
+
+section.srs-progress ul li:first-child, section.srs-progress ul li:nth-child(2), section.srs-progress ul li:nth-child(3),
+section.srs-progress ul li:nth-child(4),section.srs-progress ul li:nth-child(5), .progress-entry .kanji-icon,
+.progress-entry .radical-icon, .progress-entry .vocabulary-icon, .forum-topics-list a.small-caps{
+    background-image: none;
+}
+
+.radical-icon--locked, .kanji-icon--locked {
+    background-image: linear-gradient(180deg, #ccc 0%, #BFBFBF 100%) !important;
+}
+
+.kotoba-table-list tr[class|="radical"], .kotoba-table-list tr[class|="kanji"], .kotoba-table-list tr[class|="vocabulary"] {
+    background-image: none;
+}
+
+.kotoba-table-list tr[class|="radical"]:nth-child(odd), .kotoba-table-list tr[class|="kanji"]:nth-child(odd), .kotoba-table-list tr[class|="vocabulary"]:nth-child(odd){
+    filter: saturate(1.3);
+}
+
+.kotoba-table-list tr[class|="radical"]{
+    background: #9d4745;
+}
+
+.small-caps.invert {
+    background: #282828;
+    filter: invert(0);
+}
+
+.heading-symbol {
+    filter: brightness(0.86);
+}
+
+.small-caps {
+    border-radius: 0px 0px 5px 5px;
+}
+
+
+/*
+Color scheme
+radical -> #9d4745
+kanji   -> #56638a
+vocab   -> #58b09c
+extra   -> #d7af70
+*/
+
+
+.progress-entry .radical-icon, section.srs-progress ul li:first-child, .navigation-shortcut a span,
+.popover.srs .popover-content ul li:first-child {
+    background: #9d4745;
+}
+
+.progress-entry .kanji-icon, section.srs-progress ul li:nth-child(2),
+.popover.srs .popover-content ul li:nth-child(2) {
+    background: #56638a;
+}
+
+.progress-entry .vocabulary-icon, section.srs-progress ul li:nth-child(3),
+.popover.srs .popover-content ul li:last-child {
+    background: #58b09c;
+}
+
+section.srs-progress ul li:nth-child(4), .bg-green {
+    background: #d7af70;
+}
+
+
+/* Review screen */
+#reviews-summary header nav #back-dashboard {
+    filter: hue-rotate(40deg) saturate(0.9) grayscale(60%);
+}
+
+#reviews-summary header nav #start-session a.disabled {
+    background: #434343;
+}
+
+#reviews-summary header nav #start-session a {
+    background: #9d4745;
+}
+
+#reviews-summary #incorrect .apprentice > ul > li.radicals,
+#reviews-summary #incorrect h2, #reviews-summary #correct .apprentice > ul > li.radicals {
+    background: #9d4745;
+}
+
+#reviews-summary #correct h2 {
+    background: #58b09c;
+}
+
+#reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect,
+#reviews-summary #incorrect .apprentice h3 span, #reviews-summary #correct,
+#reviews-summary #correct .apprentice h3 span, #reviews-summary #incorrect .apprentice h3 strong,
+#reviews-summary #correct .apprentice h3 strong{
+    background: #282828;
+}    
+#reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect,
+#reviews-summary #incorrect .apprentice h3 span, #reviews-summary #incorrect .apprentice > ul > li.radicals,
+#reviews-summary #correct, #reviews-summary #correct .apprentice h3 span,  #reviews-summary #correct .apprentice > ul > li.radicals,
+#reviews-summary footer #last-session-date, #reviews-summary footer #copyright {
+    box-shadow: none;
+    color: #fff;
+    font-family: monospace;
+    text-shadow: none;
+}
+
+#reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
+    background: #bababa;
+    color: #151515;
+}
+#reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
+    border-color: transparent transparent transparent #bababa;
+}
+
+#reviews-summary footer #last-session-date, #reviews-summary footer #copyright{
+    filter: invert(1);
+    font-size: 16px;
+}
+
+/*In review*/
+#loading, #additional-content-load {
+    filter: grayscale(90%) invert(1) hue-rotate(180deg);
+}
+
+#progress-bar, #question #question-type.meaning, .user-synonyms ul li.user-synonyms-add-btn::before {
+    background: #282828;
+}
+
+#question #question-type.meaning {
+    border-color: #282828;
+}
+
+#question #character.radical, .highlight-radical {
+    background: #9d4745;
+}
+
+#question #character.kanji, .highlight-kanji {
+    background: #56638a;
+}
+
+#question #character.vocabulary, .highlight-vocabulary {
+    background: #58b09c;
+}
+
+#answer-form input[type="text"] {
+    box-shadow: none;
+    color: #fff;
+    font-family: monospace;
+    text-shadow: none;
+    height: 72px;
+    background: #434343;
+}
+
+#answer-form button {
+    background: #434343;
+}
+
+#additional-content ul li span, #information{
+    background: #282828;
+    box-shadow: none;
+    color: #fff;
+}
+
+#additional-content ul li.active i, #additional-content ul li:not(#option-audio) span:hover::before,
+#kana-chart.legacy ul li:not(.empty):hover {
+    background: #2c2c2c;
+    box-shadow: none;
+    color: #fff;
+}
+
+#information {
+    margin: 0px 10px 10px 10px;
+}
+
+#additional-content ul li.active::before {
+    border-color: transparent transparent #282828;
+}
+
+#kana-chart.legacy ul li span{
+    filter: invert(1);
+}
+
+#additional-content ul li span:hover {
+    color: #151515;
+}
+
+.menu-bar, .note-meaning, #item-info #item-info-col1 section {
+    font-family: monospace;
+    font-size: 16px;
+}
+
+#answer-form fieldset.correct button,
+#answer-form fieldset.correct input[type="text"], #answer-form fieldset.correct input[type="text"]:disabled {
+    background: #58b09c !important;
+}
+
+#answer-form fieldset.incorrect button,
+#answer-form fieldset.incorrect input[type="text"], #answer-form fieldset.incorrect input[type="text"]:disabled {
+    background: #9d4745 !important;
+}
+
+#reviews #additional-content ul li#option-audio.new-audio .audio-btn {
+    height: 32px !important;
+}
+
+.srs .srs-up {
+    background: #282828;
+    color: #58b09c;
+}
+
+.srs .srs-down {
+    background: #282828;
+    color: #9d4745;
+}

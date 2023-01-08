@@ -393,6 +393,7 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     filter: hue-rotate(160deg);
 }
 .screen-overlay-with-box .btn-set li.dominant a,
-.screen-overlay-with-box .icon-close {
+.screen-overlay-with-box .icon-close,
+.screen-overlay-with-box .btn-set li a {
     filter: hue-rotate(160deg) grayscale(0.4);
 }

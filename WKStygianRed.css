@@ -116,8 +116,12 @@ footer ul li:last-child {
     border-color: #9d4745;
 }
 
-.lessons-and-reviews__reviews-button, .lessons-and-reviews__lessons-button {
-    filter: hue-rotate(155deg) saturate(1.8) grayscale(45%);
+.lessons-and-reviews__reviews-button {
+    filter: hue-rotate(155deg) saturate(1.6) grayscale(50%);
+}
+
+.lessons-and-reviews__lessons-button {
+    filter: hue-rotate(46deg) saturate(0.25) brightness(1.5);
 }
 
 .dashboard section.newbie, .dashboard section.dashboard-progress, .dashboard section.forecast,
@@ -152,6 +156,14 @@ section.srs-progress ul li:nth-child(4),section.srs-progress ul li:nth-child(5),
 
 .kotoba-table-list tr[class|="radical"]{
     background: #9d4745;
+}
+
+.kotoba-table-list tr[class|="kanji"] {
+    background: #56638a;
+}
+
+.kotoba-table-list tr[class|="vocabulary"] {
+    background: #58b09c;
 }
 
 .small-caps.invert {
@@ -202,37 +214,58 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 
 
 /* Review screen */
-#reviews-summary header nav #back-dashboard {
+#reviews-summary header nav #back-dashboard,
+#lessons-summary header nav #back-dashboard{
     filter: hue-rotate(40deg) saturate(0.9) grayscale(60%);
 }
 
-#reviews-summary header nav #start-session a.disabled {
+#reviews-summary header nav #start-session a.disabled,
+#lessons-summary header nav #start-session a.disabled{
     background: #434343;
 }
 
-#reviews-summary header nav #start-session a {
+#reviews-summary header nav #start-session a,
+#lessons-summary header nav #start-session a{
     background: #9d4745;
+}
+
+#reviews-summary header nav #start-session a:hover,
+#lessons-summary header nav #start-session a:hover{
+    background: #9d4745;
+    filter: saturate(0.8);
 }
 
 #reviews-summary #incorrect .apprentice > ul > li.radicals,
-#reviews-summary #incorrect h2, #reviews-summary #correct .apprentice > ul > li.radicals {
+#reviews-summary #incorrect h2, #reviews-summary #correct .apprentice > ul > li.radicals,
+#reviews-summary #correct .guru > ul > li.radicals,
+#lessons-summary #radicals h2{
     background: #9d4745;
 }
 
-#reviews-summary #correct h2 {
+#lessons-summary #kanji h2 {
+    background: #56638a;
+}
+
+#reviews-summary #correct h2,
+#lessons-summary #vocabulary h2{
     background: #58b09c;
 }
 
 #reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect,
 #reviews-summary #incorrect .apprentice h3 span, #reviews-summary #correct,
 #reviews-summary #correct .apprentice h3 span, #reviews-summary #incorrect .apprentice h3 strong,
-#reviews-summary #correct .apprentice h3 strong{
+#reviews-summary #correct .guru h3 strong, #reviews-summary #incorrect .guru h3 strong,
+#reviews-summary #correct .apprentice h3 strong,
+#reviews-summary #correct .guru h3 span,
+#reviews-summary #incorrect .guru h3 span{
     background: #282828;
 }    
 #reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect,
 #reviews-summary #incorrect .apprentice h3 span, #reviews-summary #incorrect .apprentice > ul > li.radicals,
 #reviews-summary #correct, #reviews-summary #correct .apprentice h3 span,  #reviews-summary #correct .apprentice > ul > li.radicals,
-#reviews-summary footer #last-session-date, #reviews-summary footer #copyright {
+#reviews-summary footer #last-session-date, #reviews-summary footer #copyright, #reviews-summary #correct .guru > ul > li,
+#reviews-summary #incorrect .guru > ul > li, #lessons-summary #radicals, #lessons-summary #kanji, #lessons-summary #vocabulary,
+#lessons-summary footer #last-session-date {
     box-shadow: none;
     color: #fff;
     font-family: monospace;
@@ -247,7 +280,8 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     border-color: transparent transparent transparent #bababa;
 }
 
-#reviews-summary footer #last-session-date, #reviews-summary footer #copyright{
+#reviews-summary footer #last-session-date, #reviews-summary footer #copyright,
+#lessons-summary footer #copyright, #lessons-summary footer #last-session-date{
     filter: invert(1);
     font-size: 16px;
 }

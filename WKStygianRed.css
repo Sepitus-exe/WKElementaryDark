@@ -381,3 +381,17 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     background: #282828;
     color: #9d4745;
 }
+
+/* overlay message */
+
+.screen-overlay--background {
+    background: #9d4745;
+}
+
+.screen-overlay-with-box img,
+.screen-overlay-with-box .btn-set li.dominant a{
+    filter: hue-rotate(160deg);
+}
+.screen-overlay-with-box .btn-set li.dominant a {
+    filter: hue-rotate(160deg) grayscale(0.4);
+}

@@ -116,12 +116,30 @@ footer ul li:last-child {
     border-color: #9d4745;
 }
 
-.lessons-and-reviews__reviews-button {
-    filter: hue-rotate(155deg) saturate(1.6) grayscale(50%);
+.lessons-and-reviews__reviews-button,
+.lessons-and-reviews__lessons-button {
+    background-color: #9d4745;
 }
 
-.lessons-and-reviews__lessons-button {
-    filter: hue-rotate(46deg) saturate(0.25) brightness(1.5);
+.lessons-and-reviews__reviews-button span,
+.lessons-and-reviews__lessons-button span,
+.lessons-and-reviews__lessons-button:hover,
+.lessons-and-reviews__lessons-button:active,
+.lessons-and-reviews__lessons-button:focus,
+.lessons-and-reviews__reviews-button:hover,
+.lessons-and-reviews__reviews-button:active,
+.lessons-and-reviews__reviews-button:focus  {
+    color: #9d4745;
+}
+
+.lessons-and-reviews__reviews-button--0,
+.lessons-and-reviews__lessons-button--0{
+    background-color: #434343;
+}
+
+.lessons-and-reviews__reviews-button--0 span,
+.lessons-and-reviews__lessons-button--0 span {
+    color: #434343;
 }
 
 .dashboard section.newbie, .dashboard section.dashboard-progress, .dashboard section.forecast,
@@ -179,7 +197,7 @@ section.srs-progress ul li:nth-child(4),section.srs-progress ul li:nth-child(5),
     border-radius: 0px 0px 5px 5px;
 }
 
-.text-blue-500:hover, .text-blue-500:active, .text-blue-500:focus {
+.text-blue-500:hover, .text-blue-500:active, .text-blue-500:focus, .forum-topics-list a:hover {
     color: #9d4745;
     --tw-ring-color: #9d4745;
 }
@@ -265,7 +283,7 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 #reviews-summary #correct, #reviews-summary #correct .apprentice h3 span,  #reviews-summary #correct .apprentice > ul > li.radicals,
 #reviews-summary footer #last-session-date, #reviews-summary footer #copyright, #reviews-summary #correct .guru > ul > li,
 #reviews-summary #incorrect .guru > ul > li, #lessons-summary #radicals, #lessons-summary #kanji, #lessons-summary #vocabulary,
-#lessons-summary footer #last-session-date {
+#lessons-summary footer #last-session-date, #lessons-summary #kanji > div > ul > li.kanji {
     box-shadow: none;
     color: #fff;
     font-family: monospace;
@@ -286,12 +304,14 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     font-size: 16px;
 }
 
-/*In review*/
-#loading, #additional-content-load {
+/*In reviews/lessons */
+#loading, #additional-content-load, #loading-screen {
     filter: grayscale(90%) invert(1) hue-rotate(180deg);
 }
 
-#progress-bar, #question #question-type.meaning, .user-synonyms ul li.user-synonyms-add-btn::before {
+#progress-bar, #question #question-type.meaning, .user-synonyms ul li.user-synonyms-add-btn::before,
+#lesson #supplement-nav, .bg-gray-400, #lessons-summary #radical > div, #lessons-summary #kanji > div,
+#lessons-summary #vocabulary > div{
     background: #282828;
 }
 
@@ -299,18 +319,64 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     border-color: #282828;
 }
 
-#question #character.radical, .highlight-radical {
+#question #character.radical, .highlight-radical, .radical,
+header #main-info.radical,
+#lesson #supplement-info .radical,
+#lessons-summary #kanji > div > ul > li.radical {
     background: #9d4745;
 }
 
-#question #character.kanji, .highlight-kanji {
+#lessons #stats ul li span.radical {
+    color: #9d4745;
+}
+
+#question #character.kanji, .highlight-kanji, .kanji,
+header #main-info.kanji,
+#lesson #supplement-info .kanji,
+#lessons-summary #kanji > div > ul > li.kanji {
     background: #56638a;
 }
 
-#question #character.vocabulary, .highlight-vocabulary {
+#lessons #stats ul li span.kanji {
+    color: #56638a;
+}
+
+#question #character.vocabulary, .highlight-vocabulary, .vocabulary,
+header #main-info.vocabulary,
+#lesson #supplement-info .vocabulary, 
+#lessons-summary #kanji > div > ul > li.vocabulary {
     background: #58b09c;
 }
 
+#lessons #stats ul li span.vocabulary {
+    color: #58b09c;
+}
+
+header #main-info.radical #character, header #main-info.radical #meaning, #lesson #supplement-info .radical,
+header #main-info.kanji #character, header #main-info.kanji #meaning, #lesson #supplement-info .kanji,
+header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, #lesson #supplement-info .vocabulary,
+#lesson #supplement-nav, #lesson #supplement-info,#lesson #supplement-info #supplement-kan-breakdown ul li div,
+#lesson #supplement-info h2, #lesson #supplement-info #supplement-kan-related-vocabulary ul li div, .text-gray-900,
+#quiz #question-type.reading {
+    text-shadow: none;
+    font-family: monospace;
+    box-shadow: none;
+    color: #fff;
+}
+
+#quiz #question-type.meaning {
+    text-shadow: none;
+    font-family: monospace;
+    box-shadow: none;
+}
+
+#lesson #supplement-nav ul li.active::before {
+    border-color: transparent transparent #2e2e2e transparent;
+}
+
+#lesson #supplement-info, #quiz #question-type.reading {
+    background: #2e2e2e;
+}
 #answer-form input[type="text"] {
     box-shadow: none;
     color: #fff;
@@ -320,8 +386,9 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     background: #434343;
 }
 
-#answer-form button {
+#answer-form button, #lesson #supplement-info blockquote {
     background: #434343;
+    color: #fff;
 }
 
 #additional-content ul li span, #information{
@@ -337,12 +404,22 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     color: #fff;
 }
 
+.highlight-reading, .highlight-reading > span {
+    background: #fff;
+    color: #282828;
+    text-shadow: none;
+}
+
 #information {
     margin: 0px 10px 10px 10px;
 }
 
 #additional-content ul li.active::before {
     border-color: transparent transparent #282828;
+}
+
+#lesson #supplement-nav ul li:hover:not(.active)::before {
+    border-color: transparent transparent #434343;
 }
 
 #kana-chart.legacy ul li span{
@@ -373,13 +450,15 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 }
 
 .srs .srs-up {
-    background: #282828;
+    background: transparent;
     color: #58b09c;
+    text-shadow: 0px 0px 10px #151515;
 }
 
 .srs .srs-down {
-    background: #282828;
+    background: transparent;
     color: #9d4745;
+    text-shadow: 0px 0px 10px #151515;
 }
 
 /* overlay message */

@@ -311,7 +311,7 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 
 #progress-bar, #question #question-type.meaning, .user-synonyms ul li.user-synonyms-add-btn::before,
 #lesson #supplement-nav, .bg-gray-400, #lessons-summary #radical > div, #lessons-summary #kanji > div,
-#lessons-summary #vocabulary > div{
+#lessons-summary #vocabulary > div, .user-synonyms ul li.user-synonyms-add-form form button {
     background: #282828;
 }
 
@@ -322,7 +322,9 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 #question #character.radical, .highlight-radical, .radical,
 header #main-info.radical,
 #lesson #supplement-info .radical,
-#lessons-summary #kanji > div > ul > li.radical {
+#lessons-summary #kanji > div > ul > li.radical,
+#item-info #related-items ul.radical span,
+#reviews-summary #correct .apprentice > ul > li.radical {
     background: #9d4745;
 }
 
@@ -333,7 +335,9 @@ header #main-info.radical,
 #question #character.kanji, .highlight-kanji, .kanji,
 header #main-info.kanji,
 #lesson #supplement-info .kanji,
-#lessons-summary #kanji > div > ul > li.kanji {
+#lessons-summary #kanji > div > ul > li.kanji,
+#item-info #related-items ul.kanji span,
+#reviews-summary #correct .apprentice > ul > li.kanji {
     background: #56638a;
 }
 
@@ -344,7 +348,9 @@ header #main-info.kanji,
 #question #character.vocabulary, .highlight-vocabulary, .vocabulary,
 header #main-info.vocabulary,
 #lesson #supplement-info .vocabulary, 
-#lessons-summary #kanji > div > ul > li.vocabulary {
+#lessons-summary #kanji > div > ul > li.vocabulary,
+#item-info #related-items ul.vocabulary span,
+#reviews-summary #correct .apprentice > ul > li.vocabulary{
     background: #58b09c;
 }
 
@@ -357,14 +363,17 @@ header #main-info.kanji #character, header #main-info.kanji #meaning, #lesson #s
 header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, #lesson #supplement-info .vocabulary,
 #lesson #supplement-nav, #lesson #supplement-info,#lesson #supplement-info #supplement-kan-breakdown ul li div,
 #lesson #supplement-info h2, #lesson #supplement-info #supplement-kan-related-vocabulary ul li div, .text-gray-900,
-#quiz #question-type.reading {
+#quiz #question-type.reading, #question #question-type.reading, #answer-exception span, #item-info #related-items a:visited,
+#item-info #related-items a, .user-synonyms ul li.user-synonyms-add-form form input, 
+#reviews-summary #correct .apprentice > ul > li.kanji, #reviews-summary #correct .apprentice > ul > li.radical,
+#reviews-summary #correct .apprentice > ul > li.vocabulary {
     text-shadow: none;
     font-family: monospace;
     box-shadow: none;
     color: #fff;
 }
 
-#quiz #question-type.meaning {
+#quiz #question-type.meaning, #item-info #related-items ul.radical span {
     text-shadow: none;
     font-family: monospace;
     box-shadow: none;
@@ -374,7 +383,7 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
     border-color: transparent transparent #2e2e2e transparent;
 }
 
-#lesson #supplement-info, #quiz #question-type.reading {
+#lesson #supplement-info, #quiz #question-type.reading, #question #question-type.reading {
     background: #2e2e2e;
 }
 #answer-form input[type="text"] {
@@ -386,9 +395,15 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
     background: #434343;
 }
 
-#answer-form button, #lesson #supplement-info blockquote {
+#answer-form button, #lesson #supplement-info blockquote,#answer-exception span, #item-info #all-info,
+#item-info blockquote, [class^="note-"] form fieldset button[type="submit"], [class^="note-"] form fieldset button,
+.user-synonyms ul li.user-synonyms-add-form form input {
     background: #434343;
     color: #fff;
+}
+
+#answer-exception span::before {
+    border-color: transparent transparent #434343 transparent;
 }
 
 #additional-content ul li span, #information{
@@ -398,7 +413,7 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
 }
 
 #additional-content ul li.active i, #additional-content ul li:not(#option-audio) span:hover::before,
-#kana-chart.legacy ul li:not(.empty):hover {
+#kana-chart.legacy ul li:not(.empty):hover, [class^="note-"] form fieldset {
     background: #2c2c2c;
     box-shadow: none;
     color: #fff;
@@ -475,4 +490,8 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
 .screen-overlay-with-box .icon-close,
 .screen-overlay-with-box .btn-set li a {
     filter: hue-rotate(160deg) grayscale(0.4);
+}
+
+section#related-items > .radical {
+    background: #282828;
 }

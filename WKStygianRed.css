@@ -312,10 +312,19 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     filter: grayscale(90%) invert(1) hue-rotate(180deg);
 }
 
-#progress-bar, #question #question-type.meaning, .user-synonyms ul li.user-synonyms-add-btn::before,
+#progress-bar, .user-synonyms ul li.user-synonyms-add-btn::before,
 #lesson #supplement-nav, .bg-gray-400, #lessons-summary #radical > div, #lessons-summary #kanji > div,
 #lessons-summary #vocabulary > div, .user-synonyms ul li.user-synonyms-add-form form button {
     background: #282828;
+}
+
+#question #question-type.meaning {
+    font-family: monospace;
+    background: #fff;
+}
+
+#question #question-type.meaning h1 {
+    color: #282828;
 }
 
 #question #question-type.meaning {

@@ -336,7 +336,8 @@ header #main-info.radical,
 #lesson #supplement-info .radical,
 #lessons-summary #kanji > div > ul > li.radical,
 #item-info #related-items ul.radical span,
-#reviews-summary #correct .apprentice > ul > li.radical {
+#reviews-summary #correct .apprentice > ul > li.radical,
+#reviews-summary #incorrect .apprentice > ul > li.radical {
     background: #9d4745;
 }
 
@@ -349,7 +350,8 @@ header #main-info.kanji,
 #lesson #supplement-info .kanji,
 #lessons-summary #kanji > div > ul > li.kanji,
 #item-info #related-items ul.kanji span,
-#reviews-summary #correct .apprentice > ul > li.kanji {
+#reviews-summary #correct .apprentice > ul > li.kanji,
+#reviews-summary #incorrect .apprentice > ul > li.kanji {
     background: #56638a;
 }
 
@@ -362,7 +364,8 @@ header #main-info.vocabulary,
 #lesson #supplement-info .vocabulary, 
 #lessons-summary #kanji > div > ul > li.vocabulary,
 #item-info #related-items ul.vocabulary span,
-#reviews-summary #correct .apprentice > ul > li.vocabulary{
+#reviews-summary #correct .apprentice > ul > li.vocabulary,
+#reviews-summary #incorrect .apprentice > ul > li.vocabulary{
     background: #58b09c;
 }
 
@@ -378,7 +381,8 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
 #quiz #question-type.reading, #question #question-type.reading, #answer-exception span, #item-info #related-items a:visited,
 #item-info #related-items a, .user-synonyms ul li.user-synonyms-add-form form input, 
 #reviews-summary #correct .apprentice > ul > li.kanji, #reviews-summary #correct .apprentice > ul > li.radical,
-#reviews-summary #correct .apprentice > ul > li.vocabulary {
+#reviews-summary #correct .apprentice > ul > li.vocabulary, #reviews-summary #incorrect .apprentice > ul > li.radical,
+#reviews-summary #incorrect .apprentice > ul > li.kanji, #reviews-summary #incorrect .apprentice > ul > li.vocabulary{
     text-shadow: none;
     font-family: monospace;
     box-shadow: none;
@@ -490,8 +494,15 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
 
 /* overlay message */
 
-.screen-overlay--background {
+.screen-overlay--background, .dashboard section.system-alert {
     background: #9d4745;
+}
+
+.dashboard section.system-alert {
+    box-shadow: none;
+    border: none;
+    font-family: monospace;
+    color: #fff;
 }
 
 .screen-overlay-with-box img,

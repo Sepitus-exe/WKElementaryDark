@@ -69,7 +69,7 @@ span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
 
 .sitemap__pages--radical > .sitemap__page--subject, .sitemap__section-header--radicals:hover,
 .sitemap__section-header--radicals[data-expanded="true"], .sitemap__section-header--radicals:active,
-.sitemap__section-header--radicals:focus {
+.sitemap__section-header--radicals:focus, .sitemap__section--open .sitemap__section-header--radicals {
     border-color: #9d4745;
 }
 
@@ -79,7 +79,7 @@ span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
 
 .sitemap__pages--kanji > .sitemap__page--subject, .sitemap__section-header--kanji:hover,
 .sitemap__section-header--kanji[data-expanded="true"], .sitemap__section-header--kanji:active,
-.sitemap__section-header--kanji:focus{
+.sitemap__section-header--kanji:focus, .sitemap__section--open .sitemap__section-header--kanji{
     border-color: #56638a;
 }
 
@@ -89,7 +89,7 @@ span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
 
 .sitemap__pages--vocabulary > .sitemap__page--subject, .sitemap__section-header--vocabulary:hover,
 .sitemap__section-header--vocabulary[data-expanded="true"], .sitemap__section-header--vocabulary:active,
-.sitemap__section-header--vocabulary:focus{
+.sitemap__section-header--vocabulary:focus, .sitemap__section--open .sitemap__section-header--vocabulary{
     border-color: #58b09c;
 }
 
@@ -517,4 +517,64 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
 
 section#related-items > .radical {
     background: #282828;
+}
+
+/* Levels page */
+
+.subject-legend,
+.subject-legend__item-badge--recently-unlocked,
+.subject-legend__item-badge--locked,
+.subject-legend__item-badge--all,
+.subject-legend__item-badge--burned,
+.character-grid__header, .page-nav__item-link, .progress-bar__label {
+    color: #fff;
+    text-shadow:none;
+    box-shadow: none;
+    font-family: monospace;
+}
+
+.subject-legend, .character-grid__header, .page-nav__item-link {
+    background: #282828;
+}
+
+.page-nav__item-link {
+    border-color: #282828;
+}
+
+.subject-legend__item-badge--recently-unlocked {
+    background: #9d4745;
+}
+
+.subject-legend__item-badge--all{
+    background-color: #56638a;
+}
+.subject-legend__item-badge--locked {
+    filter: brightness(0.5);
+}
+
+.character-item--kanji {
+    background: #56638a;
+    border-color: #282828;
+}
+
+.character-item--radical {
+    background: #9d4745;
+    border-color: #282828;
+}
+
+.character-item--vocabulary {
+    background-color: #58b09c;
+    border-color: #282828;
+}
+
+.progress-bar__bar {
+    background: #434343;
+}
+
+.progress-bar__label {
+    background-color: #58b09c;
+}
+
+.progress-bar__label::before, .progress-bar__label::after {
+    border-top-color: #58b09c;
 }

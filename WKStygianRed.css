@@ -122,14 +122,17 @@ footer ul li:last-child {
 }
 
 .lessons-and-reviews__reviews-button span,
-.lessons-and-reviews__lessons-button span,
+.lessons-and-reviews__lessons-button span {
+    color: #9d4745;
+}
+
 .lessons-and-reviews__lessons-button:hover,
 .lessons-and-reviews__lessons-button:active,
 .lessons-and-reviews__lessons-button:focus,
 .lessons-and-reviews__reviews-button:hover,
 .lessons-and-reviews__reviews-button:active,
-.lessons-and-reviews__reviews-button:focus  {
-    color: #9d4745;
+.lessons-and-reviews__reviews-button:focus {
+    color: #bbb;
 }
 
 .lessons-and-reviews__reviews-button--0,

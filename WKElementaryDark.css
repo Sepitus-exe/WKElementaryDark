@@ -44,11 +44,8 @@ span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
     background: #282828;
 }
 
-.logo {
-    filter: brightness(1000%);
-}
-.logo:active {
-    filter: brightness(100%);
+.logo, .logo:active, .logo:focus {
+    filter: invert(1) saturate(0) brightness(1.6);
 }
 
 #query {
@@ -393,7 +390,8 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
     color: #fff;
 }
 
-#quiz #question-type.meaning, #item-info #related-items ul.radical span {
+#quiz #question-type.meaning, #item-info #related-items ul.radical span,
+.reading-highlight {
     text-shadow: none;
     font-family: monospace;
     box-shadow: none;
@@ -439,7 +437,8 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
     color: #fff;
 }
 
-.highlight-reading, .highlight-reading > span {
+.highlight-reading, .highlight-reading > span,
+.reading-highlight {
     background: #fff;
     color: #282828;
     text-shadow: none;
@@ -602,10 +601,113 @@ section#related-items > .radical {
     background: #fff;
 }
 
-.character-grid .progress-bar__label {
+.character-grid .progress-bar__label, .subject-progress .progress-bar__label {
     background-color: #535353;
 }
 
 .progress-bar__label::after, .progress-bar__label::before {
     border-top-color: #535353;
+}
+
+/* Individual item page colors */
+
+.page-header__icon--level,
+.page-header__icon--radical,
+.page-header__icon--kanji,
+.page-header__icon--vocabulary,
+.subject-section__title,
+.subject-section__meanings-title,
+.user-synonyms__button,
+.radical-highlight,
+.kanji-highlight,
+.vocabulary-highlight,
+.subject-progress,
+.subject-progress__streak-title,
+.subject-hint__title,
+.subject-section__text,
+.user-note__button,
+.user-note__character-count,
+.user-note,
+#user_reading_note .user-note__input,
+.component-character__meaning,
+.component-character--radical .component-character__characters,
+.subject-readings-with-audio__item,
+.subject-collocations__pattern-collocation--selected {
+    box-shadow: none;
+    color: #fff;
+    font-family: monospace;
+    text-shadow: none;
+}
+
+.user-note__button:hover, .user-note__button:active, .user-note__button:focus {
+    color: #bcbcbc;
+}
+
+.page-header__icon--radical:hover,
+.page-header__icon--kanji:hover,
+.page-header__icon--vocabulary:hover {
+    box-shadow: none;
+}
+
+.user-synonyms__button,
+.user-synonyms__form-input {
+    background: #282828;
+    border: none;
+}
+
+.user-synonyms__button:hover {
+    color: #bcbcbc;
+}
+
+.user-synonyms__form-input:focus{
+    box-shadow: 0px 0px 5px #434343
+}
+
+.page-header__icon--level,
+.subject-progress__streak-value {
+    background: #2e2e2e;
+}
+
+.page-header__icon--radical,
+.radical-highlight,
+.component-character--radical .component-character__characters {
+    background: #9d4745;
+}
+
+.page-header__icon--kanji,
+.kanji-highlight {
+    background: #56638a;
+}
+
+.page-header__icon--vocabulary,
+.vocabulary-highlight {
+    background: #58b09c;
+}
+
+.subject-hint {
+    background: #434343;
+}
+
+.user-note__input, .user-note__footer {
+    background: #2c2c2c;
+    border: none;
+}
+
+#user_reading_note > .user-note__form {
+    background-color: #2c2c2c;
+}
+
+.fa-solid {
+    color: #fff;
+}
+
+.subject-collocations__patterns::after {
+    box-shadow: none;
+    right: -9px;
+    background-color: #fff;
+}
+
+.subject-collocations__pattern-name--selected{
+    background-color: #bcbcbc;
+    color: #282828;
 }

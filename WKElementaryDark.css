@@ -687,6 +687,7 @@ section#related-items > .radical {
 .user-synonyms__form-input {
     background: #282828;
     border: none;
+    color: #fff;
 }
 
 .user-synonyms__button:hover {

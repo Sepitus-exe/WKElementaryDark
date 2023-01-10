@@ -282,20 +282,32 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     background: #58b09c;
 }
 
-#reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect,
-#reviews-summary #incorrect .apprentice h3 span, #reviews-summary #correct,
-#reviews-summary #correct .apprentice h3 span, #reviews-summary #incorrect .apprentice h3 strong,
+#reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect, #reviews-summary #correct,
+#reviews-summary #correct .apprentice h3 span, #reviews-summary #incorrect .apprentice h3 span,
+#reviews-summary #correct .apprentice h3 strong, #reviews-summary #incorrect .apprentice h3 strong,
 #reviews-summary #correct .guru h3 strong, #reviews-summary #incorrect .guru h3 strong,
-#reviews-summary #correct .apprentice h3 strong,
-#reviews-summary #correct .guru h3 span,
-#reviews-summary #incorrect .guru h3 span{
+#reviews-summary #correct .guru h3 span, #reviews-summary #incorrect .guru h3 span,
+#reviews-summary #correct .master h3 strong, #reviews-summary #incorrect .master h3 strong,
+#reviews-summary #correct .master h3 span, #reviews-summary #incorrect .master h3 span,
+#reviews-summary #correct .enlightened h3 strong, #reviews-summary #incorrect .enlightened h3 strong,
+#reviews-summary #correct .enlightened h3 span, #reviews-summary #incorrect .enlightened h3 span,
+#reviews-summary #correct .burned h3 strong, #reviews-summary #incorrect .burned h3 strong,
+#reviews-summary #correct .burned h3 span, #reviews-summary #incorrect .burned h3 span {
     background: #282828;
 }    
-#reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect,
-#reviews-summary #incorrect .apprentice h3 span, #reviews-summary #incorrect .apprentice > ul > li.radicals,
-#reviews-summary #correct, #reviews-summary #correct .apprentice h3 span,  #reviews-summary #correct .apprentice > ul > li.radicals,
-#reviews-summary footer #last-session-date, #reviews-summary footer #copyright, #reviews-summary #correct .guru > ul > li,
-#reviews-summary #incorrect .guru > ul > li, #lessons-summary #radicals, #lessons-summary #kanji, #lessons-summary #vocabulary,
+#reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect, #reviews-summary #correct,
+#reviews-summary #correct .apprentice > ul > li, #reviews-summary #incorrect .apprentice > ul > li,
+#reviews-summary #correct .apprentice h3 span, #reviews-summary #incorrect .apprentice h3 span,
+#reviews-summary #correct .guru > ul > li, #reviews-summary #incorrect .guru > ul > li,
+#reviews-summary #correct .guru h3 span, #reviews-summary #incorrect .guru h3 span,
+#reviews-summary #correct .master > ul > li, #reviews-summary #incorrect .master > ul > li,
+#reviews-summary #correct .master h3 span, #reviews-summary #incorrect .master h3 span,
+#reviews-summary #correct .enlightened> ul > li, #reviews-summary #incorrect .enlightened > ul > li,
+#reviews-summary #correct .enlightened h3 span, #reviews-summary #incorrect .enlightened h3 span,
+#reviews-summary #correct .burned > ul > li, #reviews-summary #incorrect .burned > ul > li,
+#reviews-summary #correct .burned h3 span, #reviews-summary #incorrect .burned h3 span,
+#reviews-summary footer #last-session-date, #reviews-summary footer #copyright,
+#lessons-summary #radicals, #lessons-summary #kanji, #lessons-summary #vocabulary,
 #lessons-summary footer #last-session-date, #lessons-summary #kanji > div > ul > li.kanji {
     box-shadow: none;
     color: #fff;
@@ -346,8 +358,11 @@ header #main-info.radical,
 #lesson #supplement-info .radical,
 #lessons-summary #kanji > div > ul > li.radical,
 #item-info #related-items ul.radical span,
-#reviews-summary #correct .apprentice > ul > li.radical,
-#reviews-summary #incorrect .apprentice > ul > li.radical {
+#reviews-summary #correct .apprentice > ul > li.radical, #reviews-summary #incorrect .apprentice > ul > li.radical,
+#reviews-summary #correct .guru > ul > li.radical, #reviews-summary #incorrect .guru > ul > li.radical,
+#reviews-summary #correct .master > ul > li.radical, #reviews-summary #incorrect .master > ul > li.radical,
+#reviews-summary #correct .enlightened > ul > li.radical, #reviews-summary #incorrect .enlightened > ul > li.radical,
+#reviews-summary #correct .burned > ul > li.radical, #reviews-summary #incorrect .burned > ul > li.radical {
     background: #9d4745;
 }
 
@@ -360,8 +375,11 @@ header #main-info.kanji,
 #lesson #supplement-info .kanji,
 #lessons-summary #kanji > div > ul > li.kanji,
 #item-info #related-items ul.kanji span,
-#reviews-summary #correct .apprentice > ul > li.kanji,
-#reviews-summary #incorrect .apprentice > ul > li.kanji {
+#reviews-summary #correct .apprentice > ul > li.kanji, #reviews-summary #incorrect .apprentice > ul > li.kanji,
+#reviews-summary #correct .guru > ul > li.kanji, #reviews-summary #incorrect .guru > ul > li.kanji,
+#reviews-summary #correct .master > ul > li.kanji, #reviews-summary #incorrect .master > ul > li.kanji,
+#reviews-summary #correct .enlightened > ul > li.kanji, #reviews-summary #incorrect .enlightened > ul > li.kanji,
+#reviews-summary #correct .burned > ul > li.kanji, #reviews-summary #incorrect .burned > ul > li.kanji {
     background: #56638a;
 }
 
@@ -374,8 +392,11 @@ header #main-info.vocabulary,
 #lesson #supplement-info .vocabulary, 
 #lessons-summary #kanji > div > ul > li.vocabulary,
 #item-info #related-items ul.vocabulary span,
-#reviews-summary #correct .apprentice > ul > li.vocabulary,
-#reviews-summary #incorrect .apprentice > ul > li.vocabulary{
+#reviews-summary #correct .apprentice > ul > li.vocabulary, #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
+#reviews-summary #correct .guru > ul > li.vocabulary, #reviews-summary #incorrect .guru > ul > li.vocabulary,
+#reviews-summary #correct .master > ul > li.vocabulary, #reviews-summary #incorrect .master > ul > li.vocabulary,
+#reviews-summary #correct .enlightened > ul > li.vocabulary, #reviews-summary #incorrect .enlightened > ul > li.vocabulary,
+#reviews-summary #correct .burned > ul > li.vocabulary, #reviews-summary #incorrect .burned > ul > li.vocabulary {
     background: #58b09c;
 }
 

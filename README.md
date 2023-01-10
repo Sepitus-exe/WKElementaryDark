@@ -1,4 +1,4 @@
-# WKStygianRed
+# WaniKani Elementary Dark
 A user css theme for the wanikani domain
 
 ![Dash img](https://github.com/Sepitus-exe/WKElementaryDark/blob/main/pics/Dash.png)

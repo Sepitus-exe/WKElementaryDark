@@ -478,6 +478,10 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
     text-shadow: none;
 }
 
+.reading-highlight > span {
+    color: #282828;
+}
+
 #information {
     margin: 0px 10px 10px 10px;
 }

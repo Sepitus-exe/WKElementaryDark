@@ -750,3 +750,22 @@ section#related-items > .radical {
     background-color: #bcbcbc;
     color: #282828;
 }
+
+/* Contact us page */
+
+input[type="text"], textarea, input[type="submit"] {
+    background: #282828;
+    border: none;
+    box-shadow: none;
+}
+
+input[type="text"], textarea, form label, input[type="file"], input[type="submit"] {
+    color: #fff;
+    font-family: monospace;
+    text-shadow: none;
+}
+
+input[type="text"]:focus, input[type="text"]:active,
+textarea:focus, textarea:active {
+    box-shadow: 0px 0px 10px #434343;
+}

@@ -603,9 +603,9 @@ section#related-items > .radical {
 }
 
 .character-grid .progress-bar__label {
-    background-color: #9d4745;
+    background-color: #535353;
 }
 
 .progress-bar__label::after, .progress-bar__label::before {
-    border-top-color: #9d4745;
+    border-top-color: #535353;
 }

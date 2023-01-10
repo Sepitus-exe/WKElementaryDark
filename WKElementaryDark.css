@@ -261,6 +261,11 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     filter: saturate(0.8);
 }
 
+#reviews-summary header nav #start-session a:hover.disabled,
+#lessons-summary header nav #start-session a:hover.disabled {
+    background: #434343;
+}
+
 #reviews-summary #incorrect .apprentice > ul > li.radicals,
 #reviews-summary #incorrect h2, #reviews-summary #correct .apprentice > ul > li.radicals,
 #reviews-summary #correct .guru > ul > li.radicals,

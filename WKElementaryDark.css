@@ -60,6 +60,10 @@ span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
     color: #fff;
 }
 
+.bg-pink-gradient {
+    background-color: #9d4745;
+}
+
 .sitemap__pages{
     padding: 15px 13px 10px;
 }

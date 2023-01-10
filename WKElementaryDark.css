@@ -206,6 +206,10 @@ section.srs-progress ul li:nth-child(4),section.srs-progress ul li:nth-child(5),
     --tw-ring-color: #9d4745;
 }
 
+.navigation-shortcut[data-count="0"] span {
+    background-color: #434343;
+}
+
 /*
 Color scheme
 radical -> #9d4745

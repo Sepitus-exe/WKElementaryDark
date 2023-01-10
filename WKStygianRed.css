@@ -599,13 +599,13 @@ section#related-items > .radical {
 }
 
 .progress-bar__bar {
-    background: #d7af70;
+    background: #fff;
 }
 
 .character-grid .progress-bar__label {
-    background-color: #58b09c;
+    background-color: #9d4745;
 }
 
 .progress-bar__label::after, .progress-bar__label::before {
-    border-top-color: #58b09c;
+    border-top-color: #9d4745;
 }

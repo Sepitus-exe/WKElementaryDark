@@ -530,11 +530,26 @@ section#related-items > .radical {
 .subject-legend__item-badge--locked,
 .subject-legend__item-badge--all,
 .subject-legend__item-badge--burned,
-.character-grid__header, .page-nav__item-link, .progress-bar__label {
+.character-grid__header, .page-nav__item-link, .progress-bar__label,
+.subject-legend__item-badge--radicals,
+.subject-legend__item-badge--kanji,
+.subject-legend__item-badge--vocabulary {
     color: #fff;
     text-shadow:none;
     box-shadow: none;
     font-family: monospace;
+}
+
+.subject-legend__item-badge--radicals {
+    background-color: #9d4745;
+}
+
+.subject-legend__item-badge--kanji {
+    background-color: #56638a;
+}
+
+.subject-legend__item-badge--vocabulary {
+    background-color: #58b09c;
 }
 
 .subject-legend, .character-grid__header, .page-nav__item-link {

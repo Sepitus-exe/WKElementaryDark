@@ -769,3 +769,72 @@ input[type="text"]:focus, input[type="text"]:active,
 textarea:focus, textarea:active {
     box-shadow: 0px 0px 10px #434343;
 }
+
+/* Profile page */
+
+html#public-profile .public-profile-header::before {
+    background-color: transparent;
+}
+
+html#public-profile .public-profile-header div.avatar {
+    border: 15px solid #282828;
+}
+
+html#public-profile .public-profile-header div.user-info {
+    background-color: #282828;
+    background-image: none;
+    box-shadow:none;
+}
+
+html#public-profile .public-profile-header div.user-info::after {
+    border-bottom-color: #282828;
+}
+
+html#public-profile .public-profile-header div.user-info h3.small-caps,
+html#public-profile .public-profile-header div.user-info div[class*="span"] ul li,
+.kanji-icon, .radical-icon, .vocabulary-icon,
+html#public-profile div.wall-of-shame h3 span, .worst-kanji .progress .bar span,
+.worst-radical .progress .bar span, .worst-vocabulary .progress .bar span,
+html#public-profile div.wall-of-shame ul li > span:first-child {
+    color: #fff;
+    font-family: monospace;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+html#public-profile div.wall-of-shame {
+    background: #282828;
+}
+
+html#public-profile div.wall-of-shame h3 span {
+    background: #434343;
+}
+
+.radical-icon {
+    background: #9d4745;
+}
+
+.kanji-icon {
+    background: #56638a;
+}
+
+.vocabulary-icon {
+    background: #58b09c;
+}
+
+html#public-profile div.wall-of-shame .progress,
+.kanji-progress .progress, .vocabulary-progress .progress{
+    background: #434343;
+}
+
+.progress .bar {
+    background: #fff;
+}
+
+.worst-kanji .progress .bar span, .worst-radical .progress .bar span, .worst-vocabulary .progress .bar span {
+    background: #58b09c;
+}
+
+.worst-kanji .progress .bar span:after, .worst-radical .progress .bar span:after, .worst-vocabulary .progress .bar span:after {
+    border-top-color: #58b09c;
+}

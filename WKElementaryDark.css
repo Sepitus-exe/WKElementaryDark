@@ -856,6 +856,11 @@ html#public-profile div.wall-of-shame .progress,
     border-top-color: #434343;
 }
 
-.user-note__form, .autoresize-textarea-container .appearance-none {
+.user-note__form, .autoresize-textarea-container .appearance-none,
+#item-info #related-items ul {
     background: #282828;
+}
+
+#item-info #related-items ul.kanji span, #item-info #related-items ul.radical span, #item-info #related-items ul.vocabulary span {
+    box-shadow: none;
 }

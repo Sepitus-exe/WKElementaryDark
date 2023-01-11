@@ -848,3 +848,7 @@ html#public-profile div.wall-of-shame .progress,
 .worst-kanji .progress .bar span:after, .worst-radical .progress .bar span:after, .worst-vocabulary .progress .bar span:after {
     border-top-color: #434343;
 }
+
+.user-note__form, .autoresize-textarea-container .appearance-none {
+    background: #282828;
+}

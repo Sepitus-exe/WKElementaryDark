@@ -672,7 +672,8 @@ section#related-items > .radical {
 .component-character__meaning,
 .component-character--radical .component-character__characters,
 .subject-readings-with-audio__item,
-.subject-collocations__pattern-collocation--selected {
+.subject-collocations__pattern-collocation--selected,
+.text-black {
     box-shadow: none;
     color: #fff;
     font-family: monospace;
@@ -804,7 +805,7 @@ html#public-profile .public-profile-header div.user-info div[class*="span"] ul l
 .kanji-icon, .radical-icon, .vocabulary-icon,
 html#public-profile div.wall-of-shame h3 span, .worst-kanji .progress .bar span,
 .worst-radical .progress .bar span, .worst-vocabulary .progress .bar span,
-html#public-profile div.wall-of-shame ul li > span:first-child {
+html#public-profile div.wall-of-shame ul li > span:first-child, #quiz .bg-gray-300 {
     color: #fff;
     font-family: monospace;
     text-shadow: none;
@@ -841,8 +842,12 @@ html#public-profile div.wall-of-shame .progress,
     background: #fff;
 }
 
-.worst-kanji .progress .bar span, .worst-radical .progress .bar span, .worst-vocabulary .progress .bar span {
+.worst-kanji .progress .bar span, .worst-radical .progress .bar span, .worst-vocabulary .progress .bar span, #quiz .bg-gray-300:hover {
     background: #434343;
+}
+
+#quiz .bg-gray-300 {
+    background: #2e2e2e;
 }
 
 .worst-kanji .progress .bar span:after, .worst-radical .progress .bar span:after, .worst-vocabulary .progress .bar span:after {

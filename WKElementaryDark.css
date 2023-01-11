@@ -755,7 +755,7 @@ section#related-items > .radical {
     left: calc(100% - 1px);
 }
 
-.subject-collocations__pattern-name--selected{
+.subject-collocations__pattern-name--selected, .bg-gray-300, .bg-gray-300 > span {
     background-color: #bcbcbc;
     color: #282828;
 }

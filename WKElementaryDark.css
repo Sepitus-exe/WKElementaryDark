@@ -474,7 +474,7 @@ header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #char
 }
 
 .highlight-reading, .highlight-reading > span,
-.reading-highlight {
+.reading-highlight, .bg-\[\#f1d6ff\] {
     background: #fff;
     color: #282828;
     text-shadow: none;

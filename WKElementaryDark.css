@@ -417,7 +417,8 @@ header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, 
 #item-info #related-items a, .user-synonyms ul li.user-synonyms-add-form form input, 
 #reviews-summary #correct .apprentice > ul > li.kanji, #reviews-summary #correct .apprentice > ul > li.radical,
 #reviews-summary #correct .apprentice > ul > li.vocabulary, #reviews-summary #incorrect .apprentice > ul > li.radical,
-#reviews-summary #incorrect .apprentice > ul > li.kanji, #reviews-summary #incorrect .apprentice > ul > li.vocabulary{
+#reviews-summary #incorrect .apprentice > ul > li.kanji, #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
+#lesson #supplement-info #supplement-voc-breakdown ul li div {
     text-shadow: none;
     font-family: monospace;
     box-shadow: none;

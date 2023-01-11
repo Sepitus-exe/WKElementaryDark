@@ -864,3 +864,7 @@ html#public-profile div.wall-of-shame .progress,
 #item-info #related-items ul.kanji span, #item-info #related-items ul.radical span, #item-info #related-items ul.vocabulary span {
     box-shadow: none;
 }
+
+#item-info [class*="highlight-"] {
+    text-shadow: none;
+}

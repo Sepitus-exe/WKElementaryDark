@@ -747,6 +747,13 @@ section#related-items > .radical {
     background-color: #fff;
 }
 
+
+.word-types--with-collocations::after {
+    box-shadow: none;
+    background-color: #fff;
+    left: calc(100% - 1px);
+}
+
 .subject-collocations__pattern-name--selected{
     background-color: #bcbcbc;
     color: #282828;

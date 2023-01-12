@@ -804,12 +804,17 @@ html#public-profile .public-profile-header div.user-info::after {
 
 html#public-profile .public-profile-header div.user-info h3.small-caps,
 html#public-profile .public-profile-header div.user-info div[class*="span"] ul li,
-.kanji-icon, .radical-icon, .vocabulary-icon,
 html#public-profile div.wall-of-shame h3 span, .worst-kanji .progress .bar span,
 .worst-radical .progress .bar span, .worst-vocabulary .progress .bar span,
 html#public-profile div.wall-of-shame ul li > span:first-child, #quiz .bg-gray-300 {
     color: #fff;
     font-family: monospace;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+
+.kanji-icon, .radical-icon, .vocabulary-icon {
     text-shadow: none;
     box-shadow: none;
 }

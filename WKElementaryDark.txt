@@ -69,9 +69,6 @@ span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
     background-color: #d7af70;
 }
 
-.sitemap__pages{
-    padding: 15px 13px 10px;
-}
 
 .bg-gray-500 {
     background: #9d4745;

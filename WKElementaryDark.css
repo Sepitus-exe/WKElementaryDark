@@ -987,3 +987,11 @@ input[type="password"], .settings-section .btn,
     color: #fff;
     font-family: monospace;
 }
+
+
+.highlight-radical, .radical-highlight,
+.highlight-kanji, .kanji-highlight,
+.highlight-vocabulary, .vocabulary-highlight {
+    font-weight: bold;
+    text-shadow: 0px 0px 3px #151515;
+}

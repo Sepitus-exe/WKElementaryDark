@@ -21,6 +21,12 @@ span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
     color: #fff;
 }
 
+.kotoba-table-list table tr.none-available div {
+    background: #aaa;
+    border: none;
+    box-shadow: none;
+}
+
 .sitemap__expandable-chunk, .extra-study > div, .review-forecast__day, .bg-white {
     background: #242424;
 }

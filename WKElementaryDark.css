@@ -948,3 +948,23 @@ input[type="password"], .settings-section .btn,
 .settings-section form .control-group textarea {
     border: 1px solid #fff;
 }
+
+/* Subscription page */
+
+.account-billing .bg-gray-100 {
+    background: #282828;
+}
+
+.account-billing .bg-\[\#00aaff\] {
+    background: #9d4745;
+}
+
+.border-blue-300:hover, .border-blue-300:active, .border-blue-300:focus {
+    border-color: #9d4745;
+}
+
+.account-billing h2 {
+    text-shadow: none;
+    color: #fff;
+    font-family: monospace;
+}

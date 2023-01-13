@@ -765,10 +765,14 @@ section#related-items > .radical {
 
 /* Contact us page */
 
-input[type="text"], textarea, input[type="submit"] {
+input[type="text"], form .control-group textarea {
     background: #282828;
     border: none;
     box-shadow: none;
+}
+
+input[type="submit"] {
+    background: #9d4745;
 }
 
 input[type="text"], textarea, form label, input[type="file"], input[type="submit"] {
@@ -872,4 +876,75 @@ html#public-profile div.wall-of-shame .progress,
 
 #item-info [class*="highlight-"] {
     text-shadow: none;
+}
+
+/* Settings page */
+
+.settings-section, .settings-section h2, .settings-section .btn,
+.page-list ul > li > a {
+    box-shadow: none;
+    font-family: monospace;
+    text-shadow: none;
+}
+
+.settings-section, .page-list ul > li > a {
+    background: #282828;
+}
+
+.page-list ul {
+    background: #151515;
+}
+
+.page-list ul > li > a {
+    border: none;;
+}
+
+.settings-section aside, .settings-section .table td,
+#personal-access-tokens-list th, .personal-access-token-permissions__namespace-header,
+.personal-access-token-permission__description {
+    color: #aaa;
+}
+
+.page-list ul > li > a, .settings-section h2 {
+    color: #fff;
+}
+
+.account-settings form.form-auto-submit-on-select-change select,
+input[type="password"], .settings-section .btn,
+.settings-section select {
+    font-family: monospace;
+    background: #434343;
+    color: #fff;
+    border-color: #fff;
+    border-width: 1px;
+}
+
+.settings-section .btn:hover, .settings-section .btn:focus {
+    background: #282828;
+}
+
+.settings-section .btn:active {
+    background: #fff;
+    color: #282828;
+}
+
+.indicator--success {
+    border-color: #58b09c;
+    background-color: #58b09c;
+}
+
+.indicator {
+    border-top: 0.50em solid rgba(255,255,255,0.2);
+    border-right: 0.50em solid rgba(255,255,255,0.2);
+    border-bottom: 0.50em solid rgba(255,255,255,0.2);
+    border-left: 0.50em solid rgba(255,255,255,0.5);
+}
+
+.settings-section input[type="text"] {
+    border: 1px solid #fff;
+    background: #434343;
+}
+
+.settings-section form .control-group textarea {
+    border: 1px solid #fff;
 }

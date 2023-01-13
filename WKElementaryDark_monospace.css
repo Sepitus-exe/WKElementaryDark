@@ -319,7 +319,7 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 #reviews-summary footer #last-session-date, #reviews-summary footer #copyright,
 #lessons-summary #radicals, #lessons-summary #kanji, #lessons-summary #vocabulary,
 #lessons-summary footer #last-session-date, #lessons-summary #kanji > div > ul > li.kanji,
-#lessons-summary #radical > div > ul > li.radical, #lessons-summary #vocabulary > div > ul > li.vocabulary{
+#lessons-summary #radicals > div > ul > li.radicals, #lessons-summary #vocabulary > div > ul > li.vocabulary{
     box-shadow: none;
     color: #fff;
     font-family: monospace;
@@ -346,7 +346,7 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 }
 
 #progress-bar, .user-synonyms ul li.user-synonyms-add-btn::before,
-#lesson #supplement-nav, .bg-gray-400, #lessons-summary #radical > div, #lessons-summary #kanji > div,
+#lesson #supplement-nav, .bg-gray-400, #lessons-summary #radicals > div, #lessons-summary #kanji > div,
 #lessons-summary #vocabulary > div, .user-synonyms ul li.user-synonyms-add-form form button {
     background: #282828;
 }
@@ -373,7 +373,7 @@ ul.multi-character-grid li[class|="vocabulary"] {
 #question #character.radical, .highlight-radical, .radical,
 header #main-info.radical,
 #lesson #supplement-info .radical,
-#lessons-summary #radical > div > ul > li.radical,
+#lessons-summary #radicals > div > ul > li.radicals,
 #item-info #related-items ul.radical span,
 #reviews-summary #correct .apprentice > ul > li.radical, #reviews-summary #incorrect .apprentice > ul > li.radical,
 #reviews-summary #correct .guru > ul > li.radical, #reviews-summary #incorrect .guru > ul > li.radical,

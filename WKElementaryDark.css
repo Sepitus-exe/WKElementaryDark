@@ -364,6 +364,12 @@ section.srs-progress ul li:nth-child(4), .bg-green {
     border-color: #282828;
 }
 
+ul.multi-character-grid li[class|="radical"],
+ul.multi-character-grid li[class|="kanji"],
+ul.multi-character-grid li[class|="vocabulary"] {
+    border-color: #151515;
+}
+
 #question #character.radical, .highlight-radical, .radical,
 header #main-info.radical,
 #lesson #supplement-info .radical,
@@ -373,7 +379,8 @@ header #main-info.radical,
 #reviews-summary #correct .guru > ul > li.radical, #reviews-summary #incorrect .guru > ul > li.radical,
 #reviews-summary #correct .master > ul > li.radical, #reviews-summary #incorrect .master > ul > li.radical,
 #reviews-summary #correct .enlightened > ul > li.radical, #reviews-summary #incorrect .enlightened > ul > li.radical,
-#reviews-summary #correct .burned > ul > li.radical, #reviews-summary #incorrect .burned > ul > li.radical {
+#reviews-summary #correct .burned > ul > li.radical, #reviews-summary #incorrect .burned > ul > li.radical,
+.search-results li[class^="radical-"] a {
     background: #9d4745;
 }
 
@@ -390,7 +397,8 @@ header #main-info.kanji,
 #reviews-summary #correct .guru > ul > li.kanji, #reviews-summary #incorrect .guru > ul > li.kanji,
 #reviews-summary #correct .master > ul > li.kanji, #reviews-summary #incorrect .master > ul > li.kanji,
 #reviews-summary #correct .enlightened > ul > li.kanji, #reviews-summary #incorrect .enlightened > ul > li.kanji,
-#reviews-summary #correct .burned > ul > li.kanji, #reviews-summary #incorrect .burned > ul > li.kanji {
+#reviews-summary #correct .burned > ul > li.kanji, #reviews-summary #incorrect .burned > ul > li.kanji,
+.search-results li[class^="kanji-"] a {
     background: #56638a;
 }
 
@@ -407,7 +415,8 @@ header #main-info.vocabulary,
 #reviews-summary #correct .guru > ul > li.vocabulary, #reviews-summary #incorrect .guru > ul > li.vocabulary,
 #reviews-summary #correct .master > ul > li.vocabulary, #reviews-summary #incorrect .master > ul > li.vocabulary,
 #reviews-summary #correct .enlightened > ul > li.vocabulary, #reviews-summary #incorrect .enlightened > ul > li.vocabulary,
-#reviews-summary #correct .burned > ul > li.vocabulary, #reviews-summary #incorrect .burned > ul > li.vocabulary {
+#reviews-summary #correct .burned > ul > li.vocabulary, #reviews-summary #incorrect .burned > ul > li.vocabulary,
+.search-results li[class^="vocabulary-"] a {
     background: #58b09c;
 }
 
@@ -606,11 +615,11 @@ section#related-items > .radical {
     border-color: #282828;
 }
 
-.subject-legend__item-badge--recently-unlocked, .component-character__badge {
+.subject-legend__item-badge--recently-unlocked, .component-character__badge, .character-item__badge {
     background: #9d4745;
 }
 
-.component-character__badge {
+.component-character__badge, .character-item__badge {
     box-shadow: 0px 0px 5px #434343;;
 }
 

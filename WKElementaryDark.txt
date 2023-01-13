@@ -14,7 +14,6 @@ span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
 .kotoba-table-list table tr.none-available, p {
     color: #fff;
     text-shadow: none;
-    font-family: monospace;
 }
 
 .review-forecast__toggleicon, .kotoba-table-list table tr.none-available {
@@ -322,7 +321,6 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 #lessons-summary #radical > div > ul > li.radical, #lessons-summary #vocabulary > div > ul > li.vocabulary{
     box-shadow: none;
     color: #fff;
-    font-family: monospace;
     text-shadow: none;
 }
 
@@ -352,7 +350,6 @@ section.srs-progress ul li:nth-child(4), .bg-green {
 }
 
 #question #question-type.meaning {
-    font-family: monospace;
     background: #fff;
 }
 
@@ -435,9 +432,8 @@ header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #char
 #reviews-summary #correct .apprentice > ul > li.kanji, #reviews-summary #correct .apprentice > ul > li.radical,
 #reviews-summary #correct .apprentice > ul > li.vocabulary, #reviews-summary #incorrect .apprentice > ul > li.radical,
 #reviews-summary #incorrect .apprentice > ul > li.kanji, #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
-#lesson #supplement-info #supplement-voc-breakdown ul li div {
+#lesson #supplement-info #supplement-voc-breakdown ul li div, #lesson #supplement-info #supplement-rad-related-kanji div {
     text-shadow: none;
-    font-family: monospace;
     box-shadow: none;
     color: #fff;
 }
@@ -445,7 +441,6 @@ header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #char
 #quiz #question-type.meaning, #item-info #related-items ul.radical span,
 .reading-highlight {
     text-shadow: none;
-    font-family: monospace;
     box-shadow: none;
 }
 
@@ -459,7 +454,6 @@ header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #char
 #answer-form input[type="text"] {
     box-shadow: none;
     color: #fff;
-    font-family: monospace;
     text-shadow: none;
     height: 72px;
     background: #434343;
@@ -494,6 +488,7 @@ header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #char
     background: #fff;
     color: #282828;
     text-shadow: none;
+    font-weight: bold;
 }
 
 .reading-highlight > span {
@@ -521,7 +516,6 @@ header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #char
 }
 
 .menu-bar, .note-meaning, #item-info #item-info-col1 section {
-    font-family: monospace;
     font-size: 16px;
 }
 
@@ -560,7 +554,6 @@ header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #char
 .dashboard section.system-alert {
     box-shadow: none;
     border: none;
-    font-family: monospace;
     color: #fff;
 }
 
@@ -592,7 +585,6 @@ section#related-items > .radical {
     color: #fff;
     text-shadow:none;
     box-shadow: none;
-    font-family: monospace;
 }
 
 .subject-legend__item-badge--radicals {
@@ -696,7 +688,6 @@ section#related-items > .radical {
 .text-black {
     box-shadow: none;
     color: #fff;
-    font-family: monospace;
     text-shadow: none;
 }
 
@@ -796,7 +787,6 @@ input[type="submit"] {
 
 input[type="text"], textarea, form label, input[type="file"], input[type="submit"] {
     color: #fff;
-    font-family: monospace;
     text-shadow: none;
 }
 
@@ -831,7 +821,6 @@ html#public-profile div.wall-of-shame h3 span, .worst-kanji .progress .bar span,
 .worst-radical .progress .bar span, .worst-vocabulary .progress .bar span,
 html#public-profile div.wall-of-shame ul li > span:first-child, #quiz .bg-gray-300 {
     color: #fff;
-    font-family: monospace;
     text-shadow: none;
     box-shadow: none;
 }
@@ -902,7 +891,6 @@ html#public-profile div.wall-of-shame .progress,
 .settings-section, .settings-section h2, .settings-section .btn,
 .page-list ul > li > a {
     box-shadow: none;
-    font-family: monospace;
     text-shadow: none;
 }
 
@@ -931,7 +919,6 @@ html#public-profile div.wall-of-shame .progress,
 .account-settings form.form-auto-submit-on-select-change select,
 input[type="password"], .settings-section .btn,
 .settings-section select {
-    font-family: monospace;
     background: #434343;
     color: #fff;
     border-color: #fff;
@@ -985,9 +972,7 @@ input[type="password"], .settings-section .btn,
 .account-billing h2 {
     text-shadow: none;
     color: #fff;
-    font-family: monospace;
 }
-
 
 .highlight-radical, .radical-highlight,
 .highlight-kanji, .kanji-highlight,

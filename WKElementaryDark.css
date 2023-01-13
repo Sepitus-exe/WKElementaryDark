@@ -490,7 +490,7 @@ header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #char
 }
 
 .highlight-reading, .highlight-reading > span,
-.reading-highlight, .bg-\[\#f1d6ff\] {
+.reading-highlight, .bg-\[\#f1d6ff\], .bg-\[\#f8d8ef\] {
     background: #fff;
     color: #282828;
     text-shadow: none;

@@ -36,11 +36,13 @@
   body,
   .dashboard section.dashboard-sub-section div.see-more {
     background-color: var(--ED-gray-1);
+    background-image: none;
   }
 
   .global-header,
   .sitemap {
     background-color: var(--ED-gray-5);
+    background-image: none;
     border-bottom: var(--ED-gray-1);
   }
 
@@ -449,17 +451,14 @@
     text-shadow: none;
   }
 
-  #reviews-summary
-    #review-stats
-    [class*="pure-u-"]:first-child
-    [id*="review-stats-"] {
+  /* prettier-ignore */
+  #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
     background-color: var(--ED-gray-9);
     color: var(--ED-gray-1);
   }
-  #reviews-summary
-    #review-stats
-    [class*="pure-u-"]:first-child
-    [id*="review-stats-"]::after {
+
+  /* prettier-ignore */
+  #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
     border-color: transparent transparent transparent var(--ED-gray-9);
   }
 
@@ -1037,12 +1036,8 @@
   }
 
   html#public-profile .public-profile-header div.user-info h3.small-caps,
-  html#public-profile
-    .public-profile-header
-    div.user-info
-    div[class*="span"]
-    ul
-    li,
+  /* prettier-ignore */
+  html#public-profile .public-profile-header div.user-info div[class*="span"] ul li,
   html#public-profile div.wall-of-shame h3 span,
   .worst-kanji .progress .bar span,
   .worst-radical .progress .bar span,

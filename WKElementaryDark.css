@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name         WaniKani Elementary Dark (RRW mods)
+@name         WaniKani Elementary Dark
 @namespace    github.com/openstyles/stylus
-@version      1.0.2
+@version      1.0.3
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -1247,5 +1247,257 @@ body {
   .vocabulary-highlight {
     font-weight: bold;
     text-shadow: 0px 0px 3px var(--ED-gray-1);
+  }
+
+  /* =============== UserScript Compatibility ===================== */
+
+  /* Ultimate Timeline */
+  #timeline {
+    background-color: var(--ED-gray-3);
+    color: var(--ED-text-color);
+    border-bottom: none;
+    
+    
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 23px;
+  }
+
+  #timeline svg .bkgd {
+    fill: var(--ED-gray-3);
+  }
+
+  #timeline svg text,
+  #timeline svg .markers .cur {
+    fill: var(--ED-text-color);
+  }
+
+  #timeline > .link {
+    color: var(--ED-text-color);
+  }
+
+  #timeline > .link:hover,
+  #timeline > .link:focus,
+  #timeline > .link:active {
+    color: var(--ED-radical-clr);
+  }
+
+  #timeline .bar_style select {
+    background-color: var(--ED-gray-5);
+    color: var(--ED-text-color);
+    border: 1px solid var(--ED-text-color);
+  }
+
+  #timeline svg .highlight path.marker {
+    fill: var(--ED-radical-clr);
+    stroke: var(--ED-radical-clr);
+  }
+
+  #timeline svg .highlight rect.marker {
+    stroke: var(--ED-radical-clr);
+    fill: var(--ED-radical-clr);
+    filter: opacity(0.2);
+  }
+
+  #timeline svg text.redtic {
+    fill: var(--ED-radical-clr);
+  }
+
+  #timeline svg .grid path {
+    stroke: var(--ED-text-color);
+  }
+
+  #timeline svg .grid .redtic {
+    stroke: var(--ED-radical-clr);
+  }
+
+  #timeline svg .resize_grip .light {
+    stroke: var(--ED-gray-8);
+  }
+
+  #timeline svg .rad {
+    fill: var(--ED-radical-clr);
+  }
+
+  #timeline .review_info[data-mode="item_type"] .rad,
+  #timeline .review_info[data-mode="item_type"] .rad > span {
+    background-color:var(--ED-radical-clr);
+    background-image: none;
+  }
+
+  #timeline svg .kan {
+    fill: var(--ED-kanji-clr);
+  }
+
+  #timeline .review_info[data-mode="item_type"] .kan,
+  #timeline .review_info[data-mode="item_type"] .kan > span {
+    background-color:var(--ED-kanji-clr);
+    background-image: none;
+  }
+
+  #timeline svg .voc {
+    fill: var(--ED-vocab-clr);
+  }
+
+  #timeline .review_info[data-mode="item_type"] .voc,
+  #timeline .review_info[data-mode="item_type"] .voc > span {
+    background-color:var(--ED-vocab-clr);
+    background-image: none;
+  }
+
+  #timeline .review_info .summary .indent > .cur,
+  #timeline .review_info .summary .indent > .cur > span {
+    background-color:var(--ED-gray-6);
+    background-image: none;
+    color: var(--ED-text-color);
+  }
+
+  #timeline .review_info .inner {
+    color: var(--ED-text-color);
+    background-color: var(--ED-gray-3);
+    border: 1px solid var(--ED-text-color);
+  }
+
+  #timeline .review_info .summary .tot {
+    color: var(--ED-text-color);
+    background-color: var(--ED-gray-3);
+    background-image: none;
+  }
+
+  #timeline .detail_buttons button {
+    color: var(--ED-text-color);
+    background-color: var(--ED-gray-3);
+    border: 1px solid var(--ED-text-color);
+    border-radius: 5px;
+  }
+
+  #timeline .item_info {
+    border: 1px solid var(--ED-text-color);
+    padding: 10px;
+  }
+
+  #timeline .review_info[data-mode="count"] .item_list > li {
+    background-color: var(--ED-gray-13);
+    background-image: none;
+    color: var(--ED-gray-3);
+  }
+
+  #timeline .review_info[data-mode="srs_stage"] .appr {
+    background-color:var(--ED-radical-clr);
+    background-image: none;
+  }
+
+  #timeline .review_info[data-mode="srs_stage"] .guru {
+    background-color:var(--ED-kanji-clr);
+    background-image: none;
+  }
+
+  #timeline .review_info[data-mode="srs_stage"] .mast {
+    background-color:var(--ED-vocab-clr);
+    background-image: none;
+  }
+
+  #timeline .review_info[data-mode="srs_stage"] .enli {
+    background-color:var(--ED-extra-clr);
+    background-image: none;
+  }
+
+  #timeline .review_info[data-mode="level"] .lvlgrp0 {
+    background-color:var(--ED-radical-clr);
+    filter: grayscale(1);
+    background-image: none;
+    color: var(--ED-text-color);
+  }
+
+  #timeline svg .lvlgrp0 {
+    fill: var(--ED-radical-clr);
+    filter: grayscale(1);
+  }
+
+  #timeline .review_info[data-mode="level"] .lvlgrp1 {
+    background-color:var(--ED-radical-clr);
+    filter: grayscale(0.8);
+    background-image: none;
+    color: var(--ED-text-color);
+  }
+
+  #timeline svg .lvlgrp1 {
+    fill: var(--ED-radical-clr);
+    filter: grayscale(0.8);
+  }
+
+  #timeline .review_info[data-mode="level"] .lvlgrp2 {
+    background-color:var(--ED-radical-clr);
+    filter: grayscale(0.6);
+    background-image: none;
+    color: var(--ED-text-color);
+  }
+
+  #timeline svg .lvlgrp2 {
+    fill: var(--ED-radical-clr);
+    filter: grayscale(0.6);
+  }
+
+  #timeline .review_info[data-mode="level"] .lvlgrp3 {
+    background-color:var(--ED-radical-clr);
+    filter: grayscale(0.4);
+    background-image: none;
+    color: var(--ED-text-color);
+  }
+
+  #timeline svg .lvlgrp3 {
+    fill: var(--ED-radical-clr);
+    filter: grayscale(0.4);
+  }
+
+  #timeline .review_info[data-mode="level"] .lvlgrp4 {
+    background-color:var(--ED-radical-clr);
+    filter: grayscale(0.2);
+    background-image: none;
+    color: var(--ED-text-color);
+  }
+
+  #timeline svg .lvlgrp4 {
+    fill: var(--ED-radical-clr);
+    filter: grayscale(0.2);
+  }
+
+  #timeline .review_info[data-mode="level"] .lvlgrp5 {
+    background-color:var(--ED-radical-clr);
+    background-image: none;
+    color: var(--ED-text-color);
+  }
+
+  #timeline svg .lvlgrp5 {
+    fill: var(--ED-radical-clr);
+  }
+
+  #timeline .item_list svg.radical,
+  #timeline .item_list svg.kanji,
+  #timeline .item_list svg.vocabulary,
+  #timeline .item_info .item svg.radical,
+  #timeline .item_info .item svg.kanji,
+  #timeline .item_info .item svg.vocabulary {
+    background-color: transparent;
+  }
+
+  #timeline svg .count {
+    fill: var(--ED-radical-clr);
+  }
+
+  #timeline svg .appr {
+    fill: var(--ED-radical-clr);
+  }
+
+  #timeline svg .guru {
+    fill: var(--ED-kanji-clr);
+  }
+
+  #timeline svg .mast {
+    fill: var(--ED-vocab-clr);
+  }
+
+  #timeline svg .enli {
+    fill: var(--ED-extra-clr);
   }
 }

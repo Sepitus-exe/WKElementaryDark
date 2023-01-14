@@ -327,18 +327,24 @@ body {
   .navigation-shortcut a span,
   .popover.srs .popover-content ul li:first-child {
     background-color: var(--ED-radical-clr);
+    background-image: none;
+    border: none;
   }
 
   .progress-entry .kanji-icon,
   section.srs-progress ul li:nth-child(2),
   .popover.srs .popover-content ul li:nth-child(2) {
     background-color: var(--ED-kanji-clr);
+    background-image: none;
+    border: none;
   }
 
   .progress-entry .vocabulary-icon,
   section.srs-progress ul li:nth-child(3),
   .popover.srs .popover-content ul li:last-child {
     background-color: var(--ED-vocab-clr);
+    background-image: none;
+    border: none;
   }
 
   section.srs-progress ul li:nth-child(4),

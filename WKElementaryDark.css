@@ -10,7 +10,8 @@
 ==/UserStyle== */
 
 @-moz-document domain("www.wanikani.com") {
-body {
+  body {
+    /* Color Palette */
     --ED-gray-1: #151515; /* darkest */
     --ED-gray-2: #242424;
     --ED-gray-3: #282828;
@@ -23,14 +24,34 @@ body {
     --ED-gray-10: #bbbbbb;
     --ED-gray-11: #bcbcbc;
     --ED-gray-12: #bfbfbf;
-    --ED-gray-13: #cccccc; /* lightest */
+    --ED-gray-13: #cccccc;
+    --ED-gray-14: #fdfdfd; /* lightest */
 
-    --ED-text-color: #ffffff;
+    --ED-red-1: #9d4745;
+    --ED-blue-1: #56638a;
+    --ED-green-1: #58b09c;
+    --ED-yellow-1: #d7af70;
 
-    --ED-radical-clr: #9d4745;
-    --ED-kanji-clr: #56638a;
-    --ED-vocab-clr: #58b09c;
-    --ED-extra-clr: #d7af70;
+    /* Semantic names to use below */
+
+    /*     "surfaces" (overlapping backgrounds */
+    --ED-surface-1: var(--ED-gray-1); /* farthest back */
+    --ED-surface-2: var(--ED-gray-3);
+    --ED-surface-3: var(--ED-gray-5);
+    --ED-surface-4: var(--ED-gray-7); /* closest to user */
+
+    /*     Branding colors */
+    --ED-brand: var(--ED-red-1);
+
+    /*     Text colors */
+    --ED-text-color: var(--ED-gray-14);
+    --ED-text-color2: var(--ED-gray-13); /* de-emphasized */
+
+    /*     Others */
+    --ED-radical-clr: var(--ED-red-1);
+    --ED-kanji-clr: var(--ED-blue-1);
+    --ED-vocab-clr: var(--green-1);
+    --ED-extra-clr: var(--yellow-1);
   }
 
   body,
@@ -1241,5 +1262,44 @@ body {
   .vocabulary-highlight {
     font-weight: bold;
     text-shadow: 0px 0px 3px var(--ED-gray-1);
+  }
+
+  /* Ultimate Timeline userscript */
+  #timeline {
+    border: none;
+    --grid-bg: var(--ED-gray-3);
+    --grid-normal: var(--ED-gray-6);
+    --grid-highlight: var(--ED-brand);
+    --grid-text: var(--ED-text-color);
+  }
+
+  #timeline svg text {
+    /* horizontal gridlines */
+    fill: var(--grid-text);
+  }
+
+  #timeline svg text.redtic,
+  #timeline svg .grid .redtic {
+    /* vertical month lines */
+    stroke: var(--grid-highlight);
+  }
+
+  #timeline svg .bkgd {
+    fill: var(--grid-bg);
+  }
+
+  #timeline svg .grid .minor,
+  #timeline svg .grid .major {
+    opacity: 1;
+    stroke: var(--grid-normal);
+  }
+
+  #timeline > .link,
+  #timeline h4,
+  #timeline .range_form label,
+  #timeline .range_form .range_reviews,
+  #timeline .range_form .range_days,
+  #timeline .bar_style {
+    color: var(--grid-text);
   }
 }

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WaniKani Elementary Dark (RRW mods)
 @namespace    github.com/openstyles/stylus
-@version      1.0.1
+@version      1.0.2
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -10,7 +10,7 @@
 ==/UserStyle== */
 
 @-moz-document domain("www.wanikani.com") {
-  body {
+body {
     --ED-gray-1: #151515; /* darkest */
     --ED-gray-2: #242424;
     --ED-gray-3: #282828;
@@ -297,6 +297,7 @@
 
   .small-caps.invert {
     background-color: var(--ED-gray-3);
+    background-image: none;
     filter: invert(0);
   }
 
@@ -525,6 +526,7 @@
   #reviews-summary #incorrect .burned > ul > li.radical,
   .search-results li[class^="radical-"] a {
     background-color: var(--ED-radical-clr);
+    background-image: none;
   }
 
   #lessons #stats ul li span.radical {
@@ -550,6 +552,7 @@
   #reviews-summary #incorrect .burned > ul > li.kanji,
   .search-results li[class^="kanji-"] a {
     background-color: var(--ED-kanji-clr);
+    background-image: none;
   }
 
   #lessons #stats ul li span.kanji {
@@ -575,6 +578,7 @@
   #reviews-summary #incorrect .burned > ul > li.vocabulary,
   .search-results li[class^="vocabulary-"] a {
     background-color: var(--ED-vocab-clr);
+    background-image: none;
   }
 
   #lessons #stats ul li span.vocabulary {
@@ -633,6 +637,7 @@
   #quiz #question-type.reading,
   #question #question-type.reading {
     background-color: var(--ED-gray-5);
+    background-image: none;
   }
   #answer-form input[type="text"] {
     box-shadow: none;
@@ -684,6 +689,7 @@
     color: var(--ED-gray-3);
     text-shadow: none;
     font-weight: bold;
+    background-image: none;
   }
 
   .reading-highlight > span {
@@ -837,6 +843,7 @@
 
   .character-item--kanji:not(.character-item--locked) {
     background-color: var(--ED-kanji-clr);
+    background-image: none;
   }
 
   .character-item--radical {
@@ -846,6 +853,7 @@
 
   .character-item--radical:not(.character-item--locked) {
     background-color: var(--ED-radical-clr);
+    background-image: none;
   }
 
   .character-item--vocabulary {
@@ -855,10 +863,12 @@
 
   .character-item--vocabulary:not(.character-item--locked) {
     background-color: var(--ED-vocab-clr);
+    background-image: none;
   }
 
   .progress-bar__bar {
     background-color: var(--ED-text-color);
+    background-image: none;
   }
 
   .character-grid .progress-bar__label,
@@ -931,22 +941,26 @@
   .page-header__icon--level,
   .subject-progress__streak-value {
     background-color: var(--ED-gray-5);
+    background-image: none;
   }
 
   .page-header__icon--radical,
   .radical-highlight,
   .component-character--radical .component-character__characters {
     background-color: var(--ED-radical-clr);
+    background-image: none;
   }
 
   .page-header__icon--kanji,
   .kanji-highlight {
     background-color: var(--ED-kanji-clr);
+    background-image: none;
   }
 
   .page-header__icon--vocabulary,
   .vocabulary-highlight {
     background-color: var(--ED-vocab-clr);
+    background-image: none;
   }
 
   .subject-hint {

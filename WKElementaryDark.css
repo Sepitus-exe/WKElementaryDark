@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name         WaniKani Elementary Dark
+@name         WaniKani Elementary Dark (RRW mods)
 @namespace    github.com/openstyles/stylus
-@version      1.0.0
+@version      1.0.1
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -10,984 +10,1222 @@
 ==/UserStyle== */
 
 @-moz-document domain("www.wanikani.com") {
-    body, .dashboard section.dashboard-sub-section div.see-more {
-        background: #151515;
-    }
-
-    .global-header, .sitemap {
-        background: #2e2e2e;
-        border-bottom: #151515;
-    }
-
-    span, a, h1, h3, .extra-study > div p, time, .text-right, .text-left,
-    .font-sans, .navigation-shortcut a, .text-sm, .recent-unlocks > h3, .see-more > a,
-    .dashboard-sub-section h3, .dashboard section.dashboard-sub-section a.small-caps,
-    .forum-topics-list a.topic-title, .forum-topics-list a, .small-caps.invert,
-    .kotoba-table-list table tr.none-available, p {
-        color: #fff;
-        text-shadow: none;
-    }
-
-    .review-forecast__toggleicon, .kotoba-table-list table tr.none-available {
-        color: #fff;
-    }
-
-    .kotoba-table-list table tr.none-available div {
-        background: #aaa;
-        border: none;
-        box-shadow: none;
-    }
-
-    .sitemap__expandable-chunk, .extra-study > div, .review-forecast__day, .bg-white {
-        background: #242424;
-    }
-
-    .sitemap__grouped-pages > .sitemap__page > a, .navigation__toggle[data-expanded="true"], .forum-topics-list table td,
-    .kotoba-table-list table tr.none-available {
-        background: #2e2e2e;
-    }
-
-    .extra-study, .dashboard section.forecast, .dashboard section.dashboard-progress,
-    .recent-unlocks > h3, .see-more > a, .dashboard-sub-section h3 {
-        background: #282828;
-    }
-
-
-    .extra-study img, .review-forecast__empty-image, .none-available div {
-        filter: invert(0.86);
-    }
-
-    .review-forecast__day-header::before {
-        background: #282828;
-    }
-
-    .logo, .logo:active, .logo:focus {
-        filter: invert(1) saturate(0) brightness(1.6);
-    }
-
-    #query {
-        background: #bababa;
-    }
-
-    .progress-bar {
-        background: #434343;
-    }
-
-    .progress-bar__label, .progress-bar__extra-label {
-        color: #fff;
-    }
-
-    .bg-pink-gradient {
-        background-color: #d7af70;
-    }
-
-
-    .bg-gray-500 {
-        background: #9d4745;
-    }
-
-    .sitemap__pages--radical > .sitemap__page--subject, .sitemap__section-header--radicals:hover,
-    .sitemap__section-header--radicals[data-expanded="true"], .sitemap__section-header--radicals:active,
-    .sitemap__section-header--radicals:focus, .sitemap__section--open .sitemap__section-header--radicals {
-        border-color: #9d4745;
-    }
-
-    .sitemap__pages--radical li > a:hover, .sitemap__expandable-chunk--radicals::before {
-        background: #9d4745;
-    }
-
-    .sitemap__pages--kanji > .sitemap__page--subject, .sitemap__section-header--kanji:hover,
-    .sitemap__section-header--kanji[data-expanded="true"], .sitemap__section-header--kanji:active,
-    .sitemap__section-header--kanji:focus, .sitemap__section--open .sitemap__section-header--kanji{
-        border-color: #56638a;
-    }
-
-    .sitemap__pages--kanji li > a:hover, .sitemap__expandable-chunk--kanji::before {
-        background: #56638a;
-    }
-
-    .sitemap__pages--vocabulary > .sitemap__page--subject, .sitemap__section-header--vocabulary:hover,
-    .sitemap__section-header--vocabulary[data-expanded="true"], .sitemap__section-header--vocabulary:active,
-    .sitemap__section-header--vocabulary:focus, .sitemap__section--open .sitemap__section-header--vocabulary{
-        border-color: #58b09c;
-    }
-
-    .sitemap__pages--vocabulary li > a:hover, .sitemap__expandable-chunk--vocabulary::before {
-        background: #58b09c;
-    }
-
-    footer{
-        filter: invert(100%);
-    }
-
-    footer ul{
-        filter: invert(100%) ;
-    }
-    footer ul li:last-child {
-        filter: hue-rotate(50deg) grayscale(0.75) brightness(2.2);
-    }
-
-    .review-forecast__bar, .dashboard section.newbie {
-        background: #9d4745;
-    }
-
-    .border-blue-300 {
-        border-color: #9d4745;
-    }
-
-    .lessons-and-reviews__reviews-button,
-    .lessons-and-reviews__lessons-button {
-        background-color: #9d4745;
-    }
-
-    .lessons-and-reviews__reviews-button span,
-    .lessons-and-reviews__lessons-button span {
-        color: #9d4745;
-    }
-
-    .lessons-and-reviews__lessons-button:hover,
-    .lessons-and-reviews__lessons-button:active,
-    .lessons-and-reviews__lessons-button:focus,
-    .lessons-and-reviews__reviews-button:hover,
-    .lessons-and-reviews__reviews-button:active,
-    .lessons-and-reviews__reviews-button:focus {
-        color: #bbb;
-    }
-
-    .lessons-and-reviews__reviews-button--0,
-    .lessons-and-reviews__lessons-button--0{
-        background-color: #434343;
-    }
-
-    .lessons-and-reviews__reviews-button--0 span,
-    .lessons-and-reviews__lessons-button--0 span {
-        color: #434343;
-    }
-
-    .dashboard section.newbie, .dashboard section.dashboard-progress, .dashboard section.forecast,
-    .progress-entry .kanji-icon, .progress-entry .radical-icon, .progress-entry .vocabulary-icon,
-    .dashboard section.dashboard-sub-section div.see-more, .small-caps.invert,
-    .popover.srs .popover-content ul li:nth-child(2), .popover.srs .popover-content ul li:last-child {
-        border: 0px;
-        box-shadow: 0 0px;
-    }
-
-    .dashboard section.newbie hr {
-        border-color: #fff;
-    }
-
-    section.srs-progress ul li:first-child, section.srs-progress ul li:nth-child(2), section.srs-progress ul li:nth-child(3),
-    section.srs-progress ul li:nth-child(4),section.srs-progress ul li:nth-child(5), .progress-entry .kanji-icon,
-    .progress-entry .radical-icon, .progress-entry .vocabulary-icon, .forum-topics-list a.small-caps{
-        background-image: none;
-    }
-
-    .radical-icon--locked, .kanji-icon--locked {
-        background-image: linear-gradient(180deg, #ccc 0%, #BFBFBF 100%) !important;
-    }
-
-    .kotoba-table-list tr[class|="radical"], .kotoba-table-list tr[class|="kanji"], .kotoba-table-list tr[class|="vocabulary"] {
-        background-image: none;
-    }
-
-    .kotoba-table-list tr[class|="radical"]:nth-child(odd), .kotoba-table-list tr[class|="kanji"]:nth-child(odd), .kotoba-table-list tr[class|="vocabulary"]:nth-child(odd){
-        filter: saturate(1.3);
-    }
-
-    .kotoba-table-list tr[class|="radical"]{
-        background: #9d4745;
-    }
-
-    .kotoba-table-list tr[class|="kanji"] {
-        background: #56638a;
-    }
-
-    .kotoba-table-list tr[class|="vocabulary"] {
-        background: #58b09c;
-    }
-
-    .small-caps.invert {
-        background: #282828;
-        filter: invert(0);
-    }
-
-    .heading-symbol {
-        filter: brightness(0.86);
-    }
-
-    .small-caps {
-        border-radius: 0px 0px 5px 5px;
-    }
-
-    .text-blue-500:hover, .text-blue-500:active, .text-blue-500:focus, .forum-topics-list a:hover {
-        color: #9d4745;
-        --tw-ring-color: #9d4745;
-    }
-
-    .navigation-shortcut[data-count="0"] span, .navigation-shortcut[data-count="0"] .navigation-shortcut__count {
-        background-color: #434343;
-    }
-
-    /*
-    Color scheme
-    radical -> #9d4745
-    kanji   -> #56638a
-    vocab   -> #58b09c
-    extra   -> #d7af70
-    */
-
-
-    .progress-entry .radical-icon, section.srs-progress ul li:first-child, .navigation-shortcut a span,
-    .popover.srs .popover-content ul li:first-child {
-        background: #9d4745;
-    }
-
-    .progress-entry .kanji-icon, section.srs-progress ul li:nth-child(2),
-    .popover.srs .popover-content ul li:nth-child(2) {
-        background: #56638a;
-    }
-
-    .progress-entry .vocabulary-icon, section.srs-progress ul li:nth-child(3),
-    .popover.srs .popover-content ul li:last-child {
-        background: #58b09c;
-    }
-
-    section.srs-progress ul li:nth-child(4), .bg-green {
-        background: #d7af70;
-    }
-
-
-    /* Review screen */
-    #reviews-summary header nav #back-dashboard,
-    #lessons-summary header nav #back-dashboard{
-        filter: hue-rotate(40deg) saturate(0.9) grayscale(60%);
-    }
-
-    #reviews-summary header nav #start-session a.disabled,
-    #lessons-summary header nav #start-session a.disabled{
-        background: #434343;
-    }
-
-    #reviews-summary header nav #start-session a,
-    #lessons-summary header nav #start-session a{
-        background: #9d4745;
-    }
-
-    #reviews-summary header nav #start-session a:hover,
-    #lessons-summary header nav #start-session a:hover{
-        background: #9d4745;
-        filter: saturate(0.8);
-    }
-
-    #reviews-summary header nav #start-session a:hover.disabled,
-    #lessons-summary header nav #start-session a:hover.disabled {
-        background: #434343;
-    }
-
-    #reviews-summary #incorrect .apprentice > ul > li.radicals,
-    #reviews-summary #incorrect h2, #reviews-summary #correct .apprentice > ul > li.radicals,
-    #reviews-summary #correct .guru > ul > li.radicals,
-    #lessons-summary #radicals h2{
-        background: #9d4745;
-    }
-
-    #lessons-summary #kanji h2 {
-        background: #56638a;
-    }
-
-    #reviews-summary #correct h2,
-    #lessons-summary #vocabulary h2{
-        background: #58b09c;
-    }
-
-    #reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect, #reviews-summary #correct,
-    #reviews-summary #correct .apprentice h3 span, #reviews-summary #incorrect .apprentice h3 span,
-    #reviews-summary #correct .apprentice h3 strong, #reviews-summary #incorrect .apprentice h3 strong,
-    #reviews-summary #correct .guru h3 strong, #reviews-summary #incorrect .guru h3 strong,
-    #reviews-summary #correct .guru h3 span, #reviews-summary #incorrect .guru h3 span,
-    #reviews-summary #correct .master h3 strong, #reviews-summary #incorrect .master h3 strong,
-    #reviews-summary #correct .master h3 span, #reviews-summary #incorrect .master h3 span,
-    #reviews-summary #correct .enlightened h3 strong, #reviews-summary #incorrect .enlightened h3 strong,
-    #reviews-summary #correct .enlightened h3 span, #reviews-summary #incorrect .enlightened h3 span,
-    #reviews-summary #correct .burned h3 strong, #reviews-summary #incorrect .burned h3 strong,
-    #reviews-summary #correct .burned h3 span, #reviews-summary #incorrect .burned h3 span {
-        background: #282828;
-    }    
-    #reviews-summary #review-stats [id*="review-stats-"], #reviews-summary #incorrect, #reviews-summary #correct,
-    #reviews-summary #correct .apprentice > ul > li, #reviews-summary #incorrect .apprentice > ul > li,
-    #reviews-summary #correct .apprentice h3 span, #reviews-summary #incorrect .apprentice h3 span,
-    #reviews-summary #correct .guru > ul > li, #reviews-summary #incorrect .guru > ul > li,
-    #reviews-summary #correct .guru h3 span, #reviews-summary #incorrect .guru h3 span,
-    #reviews-summary #correct .master > ul > li, #reviews-summary #incorrect .master > ul > li,
-    #reviews-summary #correct .master h3 span, #reviews-summary #incorrect .master h3 span,
-    #reviews-summary #correct .enlightened> ul > li, #reviews-summary #incorrect .enlightened > ul > li,
-    #reviews-summary #correct .enlightened h3 span, #reviews-summary #incorrect .enlightened h3 span,
-    #reviews-summary #correct .burned > ul > li, #reviews-summary #incorrect .burned > ul > li,
-    #reviews-summary #correct .burned h3 span, #reviews-summary #incorrect .burned h3 span,
-    #reviews-summary footer #last-session-date, #reviews-summary footer #copyright,
-    #lessons-summary #radicals, #lessons-summary #kanji, #lessons-summary #vocabulary,
-    #lessons-summary footer #last-session-date, #lessons-summary #kanji > div > ul > li.kanji,
-    #lessons-summary #radicals > div > ul > li.radicals, #lessons-summary #vocabulary > div > ul > li.vocabulary{
-        box-shadow: none;
-        color: #fff;
-        text-shadow: none;
-    }
-
-    #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
-        background: #bababa;
-        color: #151515;
-    }
-    #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
-        border-color: transparent transparent transparent #bababa;
-    }
-
-    #reviews-summary footer #last-session-date, #reviews-summary footer #copyright,
-    #lessons-summary footer #copyright, #lessons-summary footer #last-session-date{
-        filter: invert(1);
-        font-size: 16px;
-    }
-
-    /*In reviews/lessons */
-    #loading, #additional-content-load, #loading-screen {
-        filter: grayscale(90%) invert(1) hue-rotate(180deg);
-    }
-
-    #progress-bar, .user-synonyms ul li.user-synonyms-add-btn::before,
-    #lesson #supplement-nav, .bg-gray-400, #lessons-summary #radicals > div, #lessons-summary #kanji > div,
-    #lessons-summary #vocabulary > div, .user-synonyms ul li.user-synonyms-add-form form button {
-        background: #282828;
-    }
-
-    #question #question-type.meaning {
-        background: #fff;
-    }
-
-    #question #question-type.meaning h1 {
-        color: #282828;
-    }
-
-    #question #question-type.meaning {
-        border-color: #282828;
-    }
-
-    ul.multi-character-grid li[class|="radical"],
-    ul.multi-character-grid li[class|="kanji"],
-    ul.multi-character-grid li[class|="vocabulary"] {
-        border-color: #151515;
-    }
-
-    #question #character.radical, .highlight-radical, .radical,
-    header #main-info.radical,
-    #lesson #supplement-info .radical,
-    #lessons-summary #radicals > div > ul > li.radicals,
-    #item-info #related-items ul.radical span,
-    #reviews-summary #correct .apprentice > ul > li.radical, #reviews-summary #incorrect .apprentice > ul > li.radical,
-    #reviews-summary #correct .guru > ul > li.radical, #reviews-summary #incorrect .guru > ul > li.radical,
-    #reviews-summary #correct .master > ul > li.radical, #reviews-summary #incorrect .master > ul > li.radical,
-    #reviews-summary #correct .enlightened > ul > li.radical, #reviews-summary #incorrect .enlightened > ul > li.radical,
-    #reviews-summary #correct .burned > ul > li.radical, #reviews-summary #incorrect .burned > ul > li.radical,
-    .search-results li[class^="radical-"] a {
-        background: #9d4745;
-    }
-
-    #lessons #stats ul li span.radical {
-        color: #9d4745;
-    }
-
-    #question #character.kanji, .highlight-kanji, .kanji,
-    header #main-info.kanji,
-    #lesson #supplement-info .kanji,
-    #lessons-summary #kanji > div > ul > li.kanji,
-    #item-info #related-items ul.kanji span,
-    #reviews-summary #correct .apprentice > ul > li.kanji, #reviews-summary #incorrect .apprentice > ul > li.kanji,
-    #reviews-summary #correct .guru > ul > li.kanji, #reviews-summary #incorrect .guru > ul > li.kanji,
-    #reviews-summary #correct .master > ul > li.kanji, #reviews-summary #incorrect .master > ul > li.kanji,
-    #reviews-summary #correct .enlightened > ul > li.kanji, #reviews-summary #incorrect .enlightened > ul > li.kanji,
-    #reviews-summary #correct .burned > ul > li.kanji, #reviews-summary #incorrect .burned > ul > li.kanji,
-    .search-results li[class^="kanji-"] a {
-        background: #56638a;
-    }
-
-    #lessons #stats ul li span.kanji {
-        color: #56638a;
-    }
-
-    #question #character.vocabulary, .highlight-vocabulary, .vocabulary,
-    header #main-info.vocabulary,
-    #lesson #supplement-info .vocabulary, 
-    #lessons-summary #vocabulary > div > ul > li.vocabulary,
-    #item-info #related-items ul.vocabulary span,
-    #reviews-summary #correct .apprentice > ul > li.vocabulary, #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
-    #reviews-summary #correct .guru > ul > li.vocabulary, #reviews-summary #incorrect .guru > ul > li.vocabulary,
-    #reviews-summary #correct .master > ul > li.vocabulary, #reviews-summary #incorrect .master > ul > li.vocabulary,
-    #reviews-summary #correct .enlightened > ul > li.vocabulary, #reviews-summary #incorrect .enlightened > ul > li.vocabulary,
-    #reviews-summary #correct .burned > ul > li.vocabulary, #reviews-summary #incorrect .burned > ul > li.vocabulary,
-    .search-results li[class^="vocabulary-"] a {
-        background: #58b09c;
-    }
-
-    #lessons #stats ul li span.vocabulary {
-        color: #58b09c;
-    }
-
-    header #main-info.radical #character, header #main-info.radical #meaning, #lesson #supplement-info .radical,
-    header #main-info.kanji #character, header #main-info.kanji #meaning, #lesson #supplement-info .kanji,
-    header #main-info.vocabulary #character, header #main-info.vocabulary #meaning, #lesson #supplement-info .vocabulary,
-    header.quiz #main-info.vocabulary #character, header.quiz #main-info.kanji #character, header.quiz #main-info.radical #character,
-    #lesson #supplement-nav, #lesson #supplement-info,#lesson #supplement-info #supplement-kan-breakdown ul li div,
-    #lesson #supplement-info h2, #lesson #supplement-info #supplement-kan-related-vocabulary ul li div, .text-gray-900,
-    #quiz #question-type.reading, #question #question-type.reading, #answer-exception span, #item-info #related-items a:visited,
-    #item-info #related-items a, .user-synonyms ul li.user-synonyms-add-form form input, 
-    #reviews-summary #correct .apprentice > ul > li.kanji, #reviews-summary #correct .apprentice > ul > li.radical,
-    #reviews-summary #correct .apprentice > ul > li.vocabulary, #reviews-summary #incorrect .apprentice > ul > li.radical,
-    #reviews-summary #incorrect .apprentice > ul > li.kanji, #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
-    #lesson #supplement-info #supplement-voc-breakdown ul li div, #lesson #supplement-info #supplement-rad-related-kanji div {
-        text-shadow: none;
-        box-shadow: none;
-        color: #fff;
-    }
-
-    #quiz #question-type.meaning, #item-info #related-items ul.radical span,
-    .reading-highlight {
-        text-shadow: none;
-        box-shadow: none;
-    }
-
-    #lesson #supplement-nav ul li.active::before {
-        border-color: transparent transparent #2e2e2e transparent;
-    }
-
-    #lesson #supplement-info, #quiz #question-type.reading, #question #question-type.reading {
-        background: #2e2e2e;
-    }
-    #answer-form input[type="text"] {
-        box-shadow: none;
-        color: #fff;
-        text-shadow: none;
-        height: 72px;
-        background: #434343;
-    }
-
-    #answer-form button, #lesson #supplement-info blockquote,#answer-exception span, #item-info #all-info,
-    #item-info blockquote, [class^="note-"] form fieldset button[type="submit"], [class^="note-"] form fieldset button,
-    .user-synonyms ul li.user-synonyms-add-form form input {
-        background: #434343;
-        color: #fff;
-    }
-
-    #answer-exception span::before {
-        border-color: transparent transparent #434343 transparent;
-    }
-
-    #additional-content ul li span, #information{
-        background: #282828;
-        box-shadow: none;
-        color: #fff;
-    }
-
-    #additional-content ul li.active i, #additional-content ul li:not(#option-audio) span:hover::before,
-    #kana-chart.legacy ul li:not(.empty):hover, [class^="note-"] form fieldset {
-        background: #2c2c2c;
-        box-shadow: none;
-        color: #fff;
-    }
-
-    .highlight-reading, .highlight-reading > span,
-    .reading-highlight, .bg-\[\#f1d6ff\], .bg-\[\#f8d8ef\],
-    .bg-\[\#d6f1ff\] {
-        background: #fff;
-        color: #282828;
-        text-shadow: none;
-        font-weight: bold;
-    }
-
-    .reading-highlight > span {
-        color: #282828;
-    }
-
-    #information {
-        margin: 0px 10px 10px 10px;
-    }
-
-    #additional-content ul li.active::before {
-        border-color: transparent transparent #282828;
-    }
-
-    #lesson #supplement-nav ul li:hover:not(.active)::before {
-        border-color: transparent transparent #434343;
-    }
-
-    #kana-chart.legacy ul li span{
-        filter: invert(1);
-    }
-
-    #additional-content ul li span:hover {
-        color: #151515;
-    }
-
-    .menu-bar, .note-meaning, #item-info #item-info-col1 section {
-        font-size: 16px;
-    }
-
-    #answer-form fieldset.correct button,
-    #answer-form fieldset.correct input[type="text"], #answer-form fieldset.correct input[type="text"]:disabled {
-        background: #58b09c !important;
-    }
-
-    #answer-form fieldset.incorrect button,
-    #answer-form fieldset.incorrect input[type="text"], #answer-form fieldset.incorrect input[type="text"]:disabled {
-        background: #9d4745 !important;
-    }
-
-    #reviews #additional-content ul li#option-audio.new-audio .audio-btn {
-        height: 32px !important;
-    }
-
-    .srs .srs-up {
-        background: transparent;
-        color: #58b09c;
-        text-shadow: 0px 0px 10px #151515;
-    }
-
-    .srs .srs-down {
-        background: transparent;
-        color: #9d4745;
-        text-shadow: 0px 0px 10px #151515;
-    }
-
-    /* overlay message */
-
-    .screen-overlay--background, .dashboard section.system-alert {
-        background: #9d4745;
-    }
-
-    .dashboard section.system-alert {
-        box-shadow: none;
-        border: none;
-        color: #fff;
-    }
-
-    .screen-overlay-with-box img,
-    .screen-overlay-with-box .btn-set li.dominant a {
-        filter: hue-rotate(160deg);
-    }
-    .screen-overlay-with-box .btn-set li.dominant a,
-    .screen-overlay-with-box .icon-close,
-    .screen-overlay-with-box .btn-set li a {
-        filter: hue-rotate(160deg) grayscale(0.4);
-    }
-
-    section#related-items > .radical {
-        background: #282828;
-    }
-
-    /* Levels page */
-
-    .subject-legend,
-    .subject-legend__item-badge--recently-unlocked,
-    .subject-legend__item-badge--locked,
-    .subject-legend__item-badge--all,
-    .subject-legend__item-badge--burned,
-    .character-grid__header, .page-nav__item-link, .progress-bar__label,
-    .subject-legend__item-badge--radicals,
-    .subject-legend__item-badge--kanji,
-    .subject-legend__item-badge--vocabulary {
-        color: #fff;
-        text-shadow:none;
-        box-shadow: none;
-    }
-
-    .subject-legend__item-badge--radicals {
-        background-color: #9d4745;
-    }
-
-    .subject-legend__item-badge--kanji {
-        background-color: #56638a;
-    }
-
-    .subject-legend__item-badge--vocabulary {
-        background-color: #58b09c;
-    }
-
-    .subject-legend, .character-grid__header, .page-nav__item-link {
-        background: #282828;
-    }
-
-    .page-nav__item-link {
-        border-color: #282828;
-    }
-
-    .subject-legend__item-badge--recently-unlocked, .component-character__badge, .character-item__badge {
-        background: #9d4745;
-    }
-
-    .component-character__badge, .character-item__badge {
-        box-shadow: 0px 0px 5px #434343;;
-    }
-
-    .subject-legend__item-badge--all{
-        background-color: #56638a;
-    }
-    .subject-legend__item-badge--locked, .character-item--locked {
-        filter: brightness(0.5);
-    }
-
-    .character-item--kanji {
-        background-color: #56638a;
-        border-color: #282828;
-    }
-
-    .character-item--kanji:not(.character-item--locked){
-        background: #56638a;
-    }
-
-    .character-item--radical {
-        background-color: #9d4745;
-        border-color: #282828;
-    }
-
-    .character-item--radical:not(.character-item--locked){
-        background: #9d4745;
-    }
-
-    .character-item--vocabulary {
-        background-color: #58b09c;
-        border-color: #282828;
-    }
-
-    .character-item--vocabulary:not(.character-item--locked){
-        background: #58b09c;
-    }
-
-    .progress-bar__bar {
-        background: #fff;
-    }
-
-    .character-grid .progress-bar__label, .subject-progress .progress-bar__label {
-        background-color: #535353;
-    }
-
-    .progress-bar__label::after, .progress-bar__label::before {
-        border-top-color: #535353;
-    }
-
-    /* Individual item page colors */
-
-    .page-header__icon--level,
-    .page-header__icon--radical,
-    .page-header__icon--kanji,
-    .page-header__icon--vocabulary,
-    .subject-section__title,
-    .subject-section__meanings-title,
-    .user-synonyms__button,
-    .radical-highlight,
-    .kanji-highlight,
-    .vocabulary-highlight,
-    .subject-progress,
-    .subject-progress__streak-title,
-    .subject-hint__title,
-    .subject-section__text,
-    .user-note__button,
-    .user-note__character-count,
-    .user-note,
-    #user_reading_note .user-note__input,
-    .component-character__meaning,
-    .component-character--radical .component-character__characters,
-    .subject-readings-with-audio__item,
-    .subject-collocations__pattern-collocation--selected,
-    .text-black {
-        box-shadow: none;
-        color: #fff;
-        text-shadow: none;
-    }
-
-    .user-note__button:hover, .user-note__button:active, .user-note__button:focus {
-        color: #bcbcbc;
-    }
-
-    .page-header__icon--radical:hover,
-    .page-header__icon--kanji:hover,
-    .page-header__icon--vocabulary:hover {
-        box-shadow: none;
-    }
-
-    .user-synonyms__button,
-    .user-synonyms__form-input {
-        background: #282828;
-        border: none;
-        color: #fff;
-    }
-
-    .user-synonyms__button:hover {
-        color: #bcbcbc;
-    }
-
-    .user-synonyms__form-input:focus{
-        box-shadow: 0px 0px 5px #434343
-    }
-
-    .page-header__icon--level,
-    .subject-progress__streak-value {
-        background: #2e2e2e;
-    }
-
-    .page-header__icon--radical,
-    .radical-highlight,
-    .component-character--radical .component-character__characters {
-        background: #9d4745;
-    }
-
-    .page-header__icon--kanji,
-    .kanji-highlight {
-        background: #56638a;
-    }
-
-    .page-header__icon--vocabulary,
-    .vocabulary-highlight {
-        background: #58b09c;
-    }
-
-    .subject-hint {
-        background: #434343;
-    }
-
-    .user-note__input, .user-note__footer {
-        background: #2c2c2c;
-        border: none;
-    }
-
-    #user_reading_note > .user-note__form {
-        background-color: #2c2c2c;
-    }
-
-    .fa-solid {
-        color: #fff;
-    }
-
-    .subject-collocations__patterns::after {
-        box-shadow: none;
-        right: -9px;
-        background-color: #fff;
-    }
-
-
-    .word-types--with-collocations::after {
-        box-shadow: none;
-        background-color: #fff;
-        left: calc(100% - 1px);
-    }
-
-    .subject-collocations__pattern-name--selected, .context__word-types .bg-gray-300,
-    .context__word-types .bg-gray-300 > span {
-        background-color: #bcbcbc;
-        color: #282828;
-    }
-
-    /* Contact us page */
-
-    input[type="text"], form .control-group textarea {
-        background: #282828;
-        border: none;
-        box-shadow: none;
-    }
-
-    input[type="submit"] {
-        background: #9d4745;
-    }
-
-    input[type="text"], textarea, form label, input[type="file"], input[type="submit"] {
-        color: #fff;
-        text-shadow: none;
-    }
-
-    input[type="text"]:focus, input[type="text"]:active,
-    textarea:focus, textarea:active {
-        box-shadow: 0px 0px 10px #434343;
-    }
-
-    /* Profile page */
-
-    html#public-profile .public-profile-header::before {
-        background-color: transparent;
-    }
-
-    html#public-profile .public-profile-header div.avatar {
-        border: 15px solid #282828;
-    }
-
-    html#public-profile .public-profile-header div.user-info {
-        background-color: #282828;
-        background-image: none;
-        box-shadow:none;
-    }
-
-    html#public-profile .public-profile-header div.user-info::after {
-        border-bottom-color: #282828;
-    }
-
-    html#public-profile .public-profile-header div.user-info h3.small-caps,
-    html#public-profile .public-profile-header div.user-info div[class*="span"] ul li,
-    html#public-profile div.wall-of-shame h3 span, .worst-kanji .progress .bar span,
-    .worst-radical .progress .bar span, .worst-vocabulary .progress .bar span,
-    html#public-profile div.wall-of-shame ul li > span:first-child, #quiz .bg-gray-300 {
-        color: #fff;
-        text-shadow: none;
-        box-shadow: none;
-    }
-
-
-    .kanji-icon, .radical-icon, .vocabulary-icon {
-        text-shadow: none;
-        box-shadow: none;
-    }
-
-    html#public-profile div.wall-of-shame {
-        background: #282828;
-    }
-
-    html#public-profile div.wall-of-shame h3 span {
-        background: #434343;
-    }
-
-    .radical-icon {
-        background: #9d4745;
-    }
-
-    .kanji-icon {
-        background: #56638a;
-    }
-
-    .vocabulary-icon {
-        background: #58b09c;
-    }
-
-    html#public-profile div.wall-of-shame .progress,
-    .kanji-progress .progress, .vocabulary-progress .progress{
-        background: #434343;
-    }
-
-    .kanji-progress .progress .bar, .vocabulary-progress .progress .bar,
-    .wall-of-shame .progress .bar {
-        background: #fff;
-    }
-
-    .worst-kanji .progress .bar span, .worst-radical .progress .bar span, .worst-vocabulary .progress .bar span, #quiz .bg-gray-300:hover {
-        background: #434343;
-    }
-
-    #quiz .bg-gray-300 {
-        background: #2e2e2e;
-    }
-
-    .worst-kanji .progress .bar span:after, .worst-radical .progress .bar span:after, .worst-vocabulary .progress .bar span:after {
-        border-top-color: #434343;
-    }
-
-    .user-note__form, .autoresize-textarea-container .appearance-none,
-    #item-info #related-items ul {
-        background: #282828;
-    }
-
-    #item-info #related-items ul.kanji span, #item-info #related-items ul.radical span, #item-info #related-items ul.vocabulary span {
-        box-shadow: none;
-    }
-
-    #item-info [class*="highlight-"] {
-        text-shadow: none;
-    }
-
-    /* Settings page */
-
-    .settings-section, .settings-section h2, .settings-section .btn,
-    .page-list ul > li > a {
-        box-shadow: none;
-        text-shadow: none;
-    }
-
-    .settings-section, .page-list ul > li > a {
-        background: #282828;
-    }
-
-    .page-list ul {
-        background: #151515;
-    }
-
-    .page-list ul > li > a {
-        border: none;;
-    }
-
-    .settings-section aside, .settings-section .table td,
-    #personal-access-tokens-list th, .personal-access-token-permissions__namespace-header,
-    .personal-access-token-permission__description {
-        color: #aaa;
-    }
-
-    .page-list ul > li > a, .settings-section h2 {
-        color: #fff;
-    }
-
-    .account-settings form.form-auto-submit-on-select-change select,
-    input[type="password"], .settings-section .btn,
-    .settings-section select {
-        background: #434343;
-        color: #fff;
-        border-color: #fff;
-        border-width: 1px;
-    }
-
-    .settings-section .btn:hover, .settings-section .btn:focus {
-        background: #282828;
-    }
-
-    .settings-section .btn:active {
-        background: #fff;
-        color: #282828;
-    }
-
-    .indicator--success {
-        border-color: #58b09c;
-        background-color: #58b09c;
-    }
-
-    .indicator {
-        border-top: 0.50em solid rgba(255,255,255,0.2);
-        border-right: 0.50em solid rgba(255,255,255,0.2);
-        border-bottom: 0.50em solid rgba(255,255,255,0.2);
-        border-left: 0.50em solid rgba(255,255,255,0.5);
-    }
-
-    .settings-section input[type="text"] {
-        border: 1px solid #fff;
-        background: #434343;
-    }
-
-    .settings-section form .control-group textarea {
-        border: 1px solid #fff;
-    }
-
-    /* Subscription page */
-
-    .account-billing .bg-gray-100 {
-        background: #282828;
-    }
-
-    .account-billing .bg-\[\#00aaff\] {
-        background: #9d4745;
-    }
-
-    .border-blue-300:hover, .border-blue-300:active, .border-blue-300:focus {
-        border-color: #9d4745;
-    }
-
-    .account-billing h2 {
-        text-shadow: none;
-        color: #fff;
-    }
-
-    .highlight-radical, .radical-highlight,
-    .highlight-kanji, .kanji-highlight,
-    .highlight-vocabulary, .vocabulary-highlight {
-        font-weight: bold;
-        text-shadow: 0px 0px 3px #151515;
-    }
+  body {
+    --ED-gray-1: #151515; /* darkest */
+    --ED-gray-2: #242424;
+    --ED-gray-3: #282828;
+    --ED-gray-4: #2c2c2c;
+    --ED-gray-5: #2e2e2e;
+    --ED-gray-6: #434343;
+    --ED-gray-7: #535353;
+    --ED-gray-8: #aaaaaa;
+    --ED-gray-9: #bababa;
+    --ED-gray-10: #bbbbbb;
+    --ED-gray-11: #bcbcbc;
+    --ED-gray-12: #bfbfbf;
+    --ED-gray-13: #cccccc; /* lightest */
+
+    --ED-text-color: #ffffff;
+
+    --ED-radical-clr: #9d4745;
+    --ED-kanji-clr: #56638a;
+    --ED-vocab-clr: #58b09c;
+    --ED-extra-clr: #d7af70;
+  }
+
+  body,
+  .dashboard section.dashboard-sub-section div.see-more {
+    background-color: var(--ED-gray-1);
+    background-image: none;
+  }
+
+  .global-header,
+  .sitemap {
+    background-color: var(--ED-gray-5);
+    background-image: none;
+    border-bottom: var(--ED-gray-1);
+  }
+
+  span,
+  a,
+  h1,
+  h3,
+  .extra-study > div p,
+  time,
+  .text-right,
+  .text-left,
+  .font-sans,
+  .navigation-shortcut a,
+  .text-sm,
+  .recent-unlocks > h3,
+  .see-more > a,
+  .dashboard-sub-section h3,
+  .dashboard section.dashboard-sub-section a.small-caps,
+  .forum-topics-list a.topic-title,
+  .forum-topics-list a,
+  .small-caps.invert,
+  .kotoba-table-list table tr.none-available,
+  p {
+    color: var(--ED-text-color);
+    text-shadow: none;
+  }
+
+  .review-forecast__toggleicon,
+  .kotoba-table-list table tr.none-available {
+    color: var(--ED-text-color);
+  }
+
+  .kotoba-table-list table tr.none-available div {
+    background-color: var(--ED-gray-8);
+    border: none;
+    box-shadow: none;
+  }
+
+  .sitemap__expandable-chunk,
+  .extra-study > div,
+  .review-forecast__day,
+  .bg-white {
+    background-color: var(--ED-gray-2);
+  }
+
+  .sitemap__grouped-pages > .sitemap__page > a,
+  .navigation__toggle[data-expanded="true"],
+  .forum-topics-list table td,
+  .kotoba-table-list table tr.none-available {
+    background-color: var(--ED-gray-5);
+  }
+
+  .extra-study,
+  .dashboard section.forecast,
+  .dashboard section.dashboard-progress,
+  .recent-unlocks > h3,
+  .see-more > a,
+  .dashboard-sub-section h3 {
+    background-color: var(--ED-gray-3);
+  }
+
+  .extra-study img,
+  .review-forecast__empty-image,
+  .none-available div {
+    filter: invert(0.86);
+  }
+
+  .review-forecast__day-header::before {
+    background-color: var(--ED-gray-3);
+  }
+
+  .logo,
+  .logo:active,
+  .logo:focus {
+    filter: invert(1) saturate(0) brightness(1.6);
+  }
+
+  #query {
+    background-color: var(--ED-gray-9);
+  }
+
+  .progress-bar {
+    background-color: var(--ED-gray-6);
+  }
+
+  .progress-bar__label,
+  .progress-bar__extra-label {
+    color: var(--ED-text-color);
+  }
+
+  .bg-pink-gradient {
+    background-color: var(--ED-extra-clr);
+  }
+
+  .bg-gray-500 {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .sitemap__pages--radical > .sitemap__page--subject,
+  .sitemap__section-header--radicals:hover,
+  .sitemap__section-header--radicals[data-expanded="true"],
+  .sitemap__section-header--radicals:active,
+  .sitemap__section-header--radicals:focus,
+  .sitemap__section--open .sitemap__section-header--radicals {
+    border-color: var(--ED-radical-clr);
+  }
+
+  .sitemap__pages--radical li > a:hover,
+  .sitemap__expandable-chunk--radicals::before {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .sitemap__pages--kanji > .sitemap__page--subject,
+  .sitemap__section-header--kanji:hover,
+  .sitemap__section-header--kanji[data-expanded="true"],
+  .sitemap__section-header--kanji:active,
+  .sitemap__section-header--kanji:focus,
+  .sitemap__section--open .sitemap__section-header--kanji {
+    border-color: var(--ED-kanji-clr);
+  }
+
+  .sitemap__pages--kanji li > a:hover,
+  .sitemap__expandable-chunk--kanji::before {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  .sitemap__pages--vocabulary > .sitemap__page--subject,
+  .sitemap__section-header--vocabulary:hover,
+  .sitemap__section-header--vocabulary[data-expanded="true"],
+  .sitemap__section-header--vocabulary:active,
+  .sitemap__section-header--vocabulary:focus,
+  .sitemap__section--open .sitemap__section-header--vocabulary {
+    border-color: var(--ED-vocab-clr);
+  }
+
+  .sitemap__pages--vocabulary li > a:hover,
+  .sitemap__expandable-chunk--vocabulary::before {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  footer {
+    filter: invert(100%);
+  }
+
+  footer ul {
+    filter: invert(100%);
+  }
+  footer ul li:last-child {
+    filter: hue-rotate(50deg) grayscale(0.75) brightness(2.2);
+  }
+
+  .review-forecast__bar,
+  .dashboard section.newbie {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .border-blue-300 {
+    border-color: var(--ED-radical-clr);
+  }
+
+  .lessons-and-reviews__reviews-button,
+  .lessons-and-reviews__lessons-button {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .lessons-and-reviews__reviews-button span,
+  .lessons-and-reviews__lessons-button span {
+    color: var(--ED-radical-clr);
+  }
+
+  .lessons-and-reviews__lessons-button:hover,
+  .lessons-and-reviews__lessons-button:active,
+  .lessons-and-reviews__lessons-button:focus,
+  .lessons-and-reviews__reviews-button:hover,
+  .lessons-and-reviews__reviews-button:active,
+  .lessons-and-reviews__reviews-button:focus {
+    color: var(--ED-gray-10);
+  }
+
+  .lessons-and-reviews__reviews-button--0,
+  .lessons-and-reviews__lessons-button--0 {
+    background-color: var(--ED-gray-6);
+  }
+
+  .lessons-and-reviews__reviews-button--0 span,
+  .lessons-and-reviews__lessons-button--0 span {
+    color: var(--ED-gray-6);
+  }
+
+  .dashboard section.newbie,
+  .dashboard section.dashboard-progress,
+  .dashboard section.forecast,
+  .progress-entry .kanji-icon,
+  .progress-entry .radical-icon,
+  .progress-entry .vocabulary-icon,
+  .dashboard section.dashboard-sub-section div.see-more,
+  .small-caps.invert,
+  .popover.srs .popover-content ul li:nth-child(2),
+  .popover.srs .popover-content ul li:last-child {
+    border: 0px;
+    box-shadow: 0 0px;
+  }
+
+  .dashboard section.newbie hr {
+    border-color: var(--ED-text-color);
+  }
+
+  section.srs-progress ul li:first-child,
+  section.srs-progress ul li:nth-child(2),
+  section.srs-progress ul li:nth-child(3),
+  section.srs-progress ul li:nth-child(4),
+  section.srs-progress ul li:nth-child(5),
+  .progress-entry .kanji-icon,
+  .progress-entry .radical-icon,
+  .progress-entry .vocabulary-icon,
+  .forum-topics-list a.small-caps {
+    background-image: none;
+  }
+
+  .radical-icon--locked,
+  .kanji-icon--locked {
+    background-image: linear-gradient(
+      180deg,
+      var(--ED-gray-13) 0%,
+      var(--ED-gray-12) 100%
+    ) !important;
+  }
+
+  .kotoba-table-list tr[class|="radical"],
+  .kotoba-table-list tr[class|="kanji"],
+  .kotoba-table-list tr[class|="vocabulary"] {
+    background-image: none;
+  }
+
+  .kotoba-table-list tr[class|="radical"]:nth-child(odd),
+  .kotoba-table-list tr[class|="kanji"]:nth-child(odd),
+  .kotoba-table-list tr[class|="vocabulary"]:nth-child(odd) {
+    filter: saturate(1.3);
+  }
+
+  .kotoba-table-list tr[class|="radical"] {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .kotoba-table-list tr[class|="kanji"] {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  .kotoba-table-list tr[class|="vocabulary"] {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  .small-caps.invert {
+    background-color: var(--ED-gray-3);
+    filter: invert(0);
+  }
+
+  .heading-symbol {
+    filter: brightness(0.86);
+  }
+
+  .small-caps {
+    border-radius: 0px 0px 5px 5px;
+  }
+
+  .text-blue-500:hover,
+  .text-blue-500:active,
+  .text-blue-500:focus,
+  .forum-topics-list a:hover {
+    color: var(--ED-radical-clr);
+    --tw-ring-color: var(--ED-radical-clr);
+  }
+
+  .navigation-shortcut[data-count="0"] span,
+  .navigation-shortcut[data-count="0"] .navigation-shortcut__count {
+    background-color: var(--ED-gray-6);
+  }
+
+  .progress-entry .radical-icon,
+  section.srs-progress ul li:first-child,
+  .navigation-shortcut a span,
+  .popover.srs .popover-content ul li:first-child {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .progress-entry .kanji-icon,
+  section.srs-progress ul li:nth-child(2),
+  .popover.srs .popover-content ul li:nth-child(2) {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  .progress-entry .vocabulary-icon,
+  section.srs-progress ul li:nth-child(3),
+  .popover.srs .popover-content ul li:last-child {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  section.srs-progress ul li:nth-child(4),
+  .bg-green {
+    background-color: var(--ED-extra-clr);
+  }
+
+  /* Review screen */
+  #reviews-summary header nav #back-dashboard,
+  #lessons-summary header nav #back-dashboard {
+    filter: hue-rotate(40deg) saturate(0.9) grayscale(60%);
+  }
+
+  #reviews-summary header nav #start-session a.disabled,
+  #lessons-summary header nav #start-session a.disabled {
+    background-color: var(--ED-gray-6);
+  }
+
+  #reviews-summary header nav #start-session a,
+  #lessons-summary header nav #start-session a {
+    background-color: var(--ED-radical-clr);
+  }
+
+  #reviews-summary header nav #start-session a:hover,
+  #lessons-summary header nav #start-session a:hover {
+    background-color: var(--ED-radical-clr);
+    filter: saturate(0.8);
+  }
+
+  #reviews-summary header nav #start-session a:hover.disabled,
+  #lessons-summary header nav #start-session a:hover.disabled {
+    background-color: var(--ED-gray-6);
+  }
+
+  #reviews-summary #incorrect .apprentice > ul > li.radicals,
+  #reviews-summary #incorrect h2,
+  #reviews-summary #correct .apprentice > ul > li.radicals,
+  #reviews-summary #correct .guru > ul > li.radicals,
+  #lessons-summary #radicals h2 {
+    background-color: var(--ED-radical-clr);
+  }
+
+  #lessons-summary #kanji h2 {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  #reviews-summary #correct h2,
+  #lessons-summary #vocabulary h2 {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  #reviews-summary #review-stats [id*="review-stats-"],
+  #reviews-summary #incorrect,
+  #reviews-summary #correct,
+  #reviews-summary #correct .apprentice h3 span,
+  #reviews-summary #incorrect .apprentice h3 span,
+  #reviews-summary #correct .apprentice h3 strong,
+  #reviews-summary #incorrect .apprentice h3 strong,
+  #reviews-summary #correct .guru h3 strong,
+  #reviews-summary #incorrect .guru h3 strong,
+  #reviews-summary #correct .guru h3 span,
+  #reviews-summary #incorrect .guru h3 span,
+  #reviews-summary #correct .master h3 strong,
+  #reviews-summary #incorrect .master h3 strong,
+  #reviews-summary #correct .master h3 span,
+  #reviews-summary #incorrect .master h3 span,
+  #reviews-summary #correct .enlightened h3 strong,
+  #reviews-summary #incorrect .enlightened h3 strong,
+  #reviews-summary #correct .enlightened h3 span,
+  #reviews-summary #incorrect .enlightened h3 span,
+  #reviews-summary #correct .burned h3 strong,
+  #reviews-summary #incorrect .burned h3 strong,
+  #reviews-summary #correct .burned h3 span,
+  #reviews-summary #incorrect .burned h3 span {
+    background-color: var(--ED-gray-3);
+  }
+  #reviews-summary #review-stats [id*="review-stats-"],
+  #reviews-summary #incorrect,
+  #reviews-summary #correct,
+  #reviews-summary #correct .apprentice > ul > li,
+  #reviews-summary #incorrect .apprentice > ul > li,
+  #reviews-summary #correct .apprentice h3 span,
+  #reviews-summary #incorrect .apprentice h3 span,
+  #reviews-summary #correct .guru > ul > li,
+  #reviews-summary #incorrect .guru > ul > li,
+  #reviews-summary #correct .guru h3 span,
+  #reviews-summary #incorrect .guru h3 span,
+  #reviews-summary #correct .master > ul > li,
+  #reviews-summary #incorrect .master > ul > li,
+  #reviews-summary #correct .master h3 span,
+  #reviews-summary #incorrect .master h3 span,
+  #reviews-summary #correct .enlightened > ul > li,
+  #reviews-summary #incorrect .enlightened > ul > li,
+  #reviews-summary #correct .enlightened h3 span,
+  #reviews-summary #incorrect .enlightened h3 span,
+  #reviews-summary #correct .burned > ul > li,
+  #reviews-summary #incorrect .burned > ul > li,
+  #reviews-summary #correct .burned h3 span,
+  #reviews-summary #incorrect .burned h3 span,
+  #reviews-summary footer #last-session-date,
+  #reviews-summary footer #copyright,
+  #lessons-summary #radicals,
+  #lessons-summary #kanji,
+  #lessons-summary #vocabulary,
+  #lessons-summary footer #last-session-date,
+  #lessons-summary #kanji > div > ul > li.kanji,
+  #lessons-summary #radicals > div > ul > li.radicals,
+  #lessons-summary #vocabulary > div > ul > li.vocabulary {
+    box-shadow: none;
+    color: var(--ED-text-color);
+    text-shadow: none;
+  }
+
+  /* prettier-ignore */
+  #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
+    background-color: var(--ED-gray-9);
+    color: var(--ED-gray-1);
+  }
+
+  /* prettier-ignore */
+  #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
+    border-color: transparent transparent transparent var(--ED-gray-9);
+  }
+
+  #reviews-summary footer #last-session-date,
+  #reviews-summary footer #copyright,
+  #lessons-summary footer #copyright,
+  #lessons-summary footer #last-session-date {
+    filter: invert(1);
+    font-size: 16px;
+  }
+
+  /*In reviews/lessons */
+  #loading,
+  #additional-content-load,
+  #loading-screen {
+    filter: grayscale(90%) invert(1) hue-rotate(180deg);
+  }
+
+  #progress-bar,
+  .user-synonyms ul li.user-synonyms-add-btn::before,
+  #lesson #supplement-nav,
+  .bg-gray-400,
+  #lessons-summary #radicals > div,
+  #lessons-summary #kanji > div,
+  #lessons-summary #vocabulary > div,
+  .user-synonyms ul li.user-synonyms-add-form form button {
+    background-color: var(--ED-gray-3);
+  }
+
+  #question #question-type.meaning {
+    background-color: var(--ED-text-color);
+  }
+
+  #question #question-type.meaning h1 {
+    color: var(--ED-gray-3);
+  }
+
+  #question #question-type.meaning {
+    border-color: var(--ED-gray-3);
+  }
+
+  ul.multi-character-grid li[class|="radical"],
+  ul.multi-character-grid li[class|="kanji"],
+  ul.multi-character-grid li[class|="vocabulary"] {
+    border-color: var(--ED-gray-1);
+  }
+
+  #question #character.radical,
+  .highlight-radical,
+  .radical,
+  header #main-info.radical,
+  #lesson #supplement-info .radical,
+  #lessons-summary #radicals > div > ul > li.radicals,
+  #item-info #related-items ul.radical span,
+  #reviews-summary #correct .apprentice > ul > li.radical,
+  #reviews-summary #incorrect .apprentice > ul > li.radical,
+  #reviews-summary #correct .guru > ul > li.radical,
+  #reviews-summary #incorrect .guru > ul > li.radical,
+  #reviews-summary #correct .master > ul > li.radical,
+  #reviews-summary #incorrect .master > ul > li.radical,
+  #reviews-summary #correct .enlightened > ul > li.radical,
+  #reviews-summary #incorrect .enlightened > ul > li.radical,
+  #reviews-summary #correct .burned > ul > li.radical,
+  #reviews-summary #incorrect .burned > ul > li.radical,
+  .search-results li[class^="radical-"] a {
+    background-color: var(--ED-radical-clr);
+  }
+
+  #lessons #stats ul li span.radical {
+    color: var(--ED-radical-clr);
+  }
+
+  #question #character.kanji,
+  .highlight-kanji,
+  .kanji,
+  header #main-info.kanji,
+  #lesson #supplement-info .kanji,
+  #lessons-summary #kanji > div > ul > li.kanji,
+  #item-info #related-items ul.kanji span,
+  #reviews-summary #correct .apprentice > ul > li.kanji,
+  #reviews-summary #incorrect .apprentice > ul > li.kanji,
+  #reviews-summary #correct .guru > ul > li.kanji,
+  #reviews-summary #incorrect .guru > ul > li.kanji,
+  #reviews-summary #correct .master > ul > li.kanji,
+  #reviews-summary #incorrect .master > ul > li.kanji,
+  #reviews-summary #correct .enlightened > ul > li.kanji,
+  #reviews-summary #incorrect .enlightened > ul > li.kanji,
+  #reviews-summary #correct .burned > ul > li.kanji,
+  #reviews-summary #incorrect .burned > ul > li.kanji,
+  .search-results li[class^="kanji-"] a {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  #lessons #stats ul li span.kanji {
+    color: var(--ED-kanji-clr);
+  }
+
+  #question #character.vocabulary,
+  .highlight-vocabulary,
+  .vocabulary,
+  header #main-info.vocabulary,
+  #lesson #supplement-info .vocabulary,
+  #lessons-summary #vocabulary > div > ul > li.vocabulary,
+  #item-info #related-items ul.vocabulary span,
+  #reviews-summary #correct .apprentice > ul > li.vocabulary,
+  #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
+  #reviews-summary #correct .guru > ul > li.vocabulary,
+  #reviews-summary #incorrect .guru > ul > li.vocabulary,
+  #reviews-summary #correct .master > ul > li.vocabulary,
+  #reviews-summary #incorrect .master > ul > li.vocabulary,
+  #reviews-summary #correct .enlightened > ul > li.vocabulary,
+  #reviews-summary #incorrect .enlightened > ul > li.vocabulary,
+  #reviews-summary #correct .burned > ul > li.vocabulary,
+  #reviews-summary #incorrect .burned > ul > li.vocabulary,
+  .search-results li[class^="vocabulary-"] a {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  #lessons #stats ul li span.vocabulary {
+    color: var(--ED-vocab-clr);
+  }
+
+  header #main-info.radical #character,
+  header #main-info.radical #meaning,
+  #lesson #supplement-info .radical,
+  header #main-info.kanji #character,
+  header #main-info.kanji #meaning,
+  #lesson #supplement-info .kanji,
+  header #main-info.vocabulary #character,
+  header #main-info.vocabulary #meaning,
+  #lesson #supplement-info .vocabulary,
+  header.quiz #main-info.vocabulary #character,
+  header.quiz #main-info.kanji #character,
+  header.quiz #main-info.radical #character,
+  #lesson #supplement-nav,
+  #lesson #supplement-info,
+  #lesson #supplement-info #supplement-kan-breakdown ul li div,
+  #lesson #supplement-info h2,
+  #lesson #supplement-info #supplement-kan-related-vocabulary ul li div,
+  .text-gray-900,
+  #quiz #question-type.reading,
+  #question #question-type.reading,
+  #answer-exception span,
+  #item-info #related-items a:visited,
+  #item-info #related-items a,
+  .user-synonyms ul li.user-synonyms-add-form form input,
+  #reviews-summary #correct .apprentice > ul > li.kanji,
+  #reviews-summary #correct .apprentice > ul > li.radical,
+  #reviews-summary #correct .apprentice > ul > li.vocabulary,
+  #reviews-summary #incorrect .apprentice > ul > li.radical,
+  #reviews-summary #incorrect .apprentice > ul > li.kanji,
+  #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
+  #lesson #supplement-info #supplement-voc-breakdown ul li div,
+  #lesson #supplement-info #supplement-rad-related-kanji div {
+    text-shadow: none;
+    box-shadow: none;
+    color: var(--ED-text-color);
+  }
+
+  #quiz #question-type.meaning,
+  #item-info #related-items ul.radical span,
+  .reading-highlight {
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  #lesson #supplement-nav ul li.active::before {
+    border-color: transparent transparent var(--ED-gray-5) transparent;
+  }
+
+  #lesson #supplement-info,
+  #quiz #question-type.reading,
+  #question #question-type.reading {
+    background-color: var(--ED-gray-5);
+  }
+  #answer-form input[type="text"] {
+    box-shadow: none;
+    color: var(--ED-text-color);
+    text-shadow: none;
+    height: 72px;
+    background-color: var(--ED-gray-6);
+  }
+
+  #answer-form button,
+  #lesson #supplement-info blockquote,
+  #answer-exception span,
+  #item-info #all-info,
+  #item-info blockquote,
+  [class^="note-"] form fieldset button[type="submit"],
+  [class^="note-"] form fieldset button,
+  .user-synonyms ul li.user-synonyms-add-form form input {
+    background-color: var(--ED-gray-6);
+    color: var(--ED-text-color);
+  }
+
+  #answer-exception span::before {
+    border-color: transparent transparent var(--ED-gray-6) transparent;
+  }
+
+  #additional-content ul li span,
+  #information {
+    background-color: var(--ED-gray-3);
+    box-shadow: none;
+    color: var(--ED-text-color);
+  }
+
+  #additional-content ul li.active i,
+  #additional-content ul li:not(#option-audio) span:hover::before,
+  #kana-chart.legacy ul li:not(.empty):hover,
+  [class^="note-"] form fieldset {
+    background-color: var(--ED-gray-4);
+    box-shadow: none;
+    color: var(--ED-text-color);
+  }
+
+  .highlight-reading,
+  .highlight-reading > span,
+  .reading-highlight,
+  .bg-\[\#f1d6ff\],
+  .bg-\[\#f8d8ef\],
+  .bg-\[\#d6f1ff\] {
+    background-color: var(--ED-text-color);
+    color: var(--ED-gray-3);
+    text-shadow: none;
+    font-weight: bold;
+  }
+
+  .reading-highlight > span {
+    color: var(--ED-gray-3);
+  }
+
+  #information {
+    margin: 0px 10px 10px 10px;
+  }
+
+  #additional-content ul li.active::before {
+    border-color: transparent transparent var(--ED-gray-3);
+  }
+
+  #lesson #supplement-nav ul li:hover:not(.active)::before {
+    border-color: transparent transparent var(--ED-gray-6);
+  }
+
+  #kana-chart.legacy ul li span {
+    filter: invert(1);
+  }
+
+  #additional-content ul li span:hover {
+    color: var(--ED-gray-1);
+  }
+
+  .menu-bar,
+  .note-meaning,
+  #item-info #item-info-col1 section {
+    font-size: 16px;
+  }
+
+  #answer-form fieldset.correct button,
+  #answer-form fieldset.correct input[type="text"],
+  #answer-form fieldset.correct input[type="text"]:disabled {
+    background-color: var(--ED-vocab-clr) !important;
+  }
+
+  #answer-form fieldset.incorrect button,
+  #answer-form fieldset.incorrect input[type="text"],
+  #answer-form fieldset.incorrect input[type="text"]:disabled {
+    background-color: var(--ED-radical-clr) !important;
+  }
+
+  #reviews #additional-content ul li#option-audio.new-audio .audio-btn {
+    height: 32px !important;
+  }
+
+  .srs .srs-up {
+    background-color: transparent;
+    color: var(--ED-vocab-clr);
+    text-shadow: 0px 0px 10px var(--ED-gray-1);
+  }
+
+  .srs .srs-down {
+    background-color: transparent;
+    color: var(--ED-radical-clr);
+    text-shadow: 0px 0px 10px var(--ED-gray-1);
+  }
+
+  /* overlay message */
+
+  .screen-overlay--background,
+  .dashboard section.system-alert {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .dashboard section.system-alert {
+    box-shadow: none;
+    border: none;
+    color: var(--ED-text-color);
+  }
+
+  .screen-overlay-with-box img,
+  .screen-overlay-with-box .btn-set li.dominant a {
+    filter: hue-rotate(160deg);
+  }
+  .screen-overlay-with-box .btn-set li.dominant a,
+  .screen-overlay-with-box .icon-close,
+  .screen-overlay-with-box .btn-set li a {
+    filter: hue-rotate(160deg) grayscale(0.4);
+  }
+
+  section#related-items > .radical {
+    background-color: var(--ED-gray-3);
+  }
+
+  /* Levels page */
+
+  .subject-legend,
+  .subject-legend__item-badge--recently-unlocked,
+  .subject-legend__item-badge--locked,
+  .subject-legend__item-badge--all,
+  .subject-legend__item-badge--burned,
+  .character-grid__header,
+  .page-nav__item-link,
+  .progress-bar__label,
+  .subject-legend__item-badge--radicals,
+  .subject-legend__item-badge--kanji,
+  .subject-legend__item-badge--vocabulary {
+    color: var(--ED-text-color);
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  .subject-legend__item-badge--radicals {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .subject-legend__item-badge--kanji {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  .subject-legend__item-badge--vocabulary {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  .subject-legend,
+  .character-grid__header,
+  .page-nav__item-link {
+    background-color: var(--ED-gray-3);
+  }
+
+  .page-nav__item-link {
+    border-color: var(--ED-gray-3);
+  }
+
+  .subject-legend__item-badge--recently-unlocked,
+  .component-character__badge,
+  .character-item__badge {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .component-character__badge,
+  .character-item__badge {
+    box-shadow: 0px 0px 5px var(--ED-gray-6);
+  }
+
+  .subject-legend__item-badge--all {
+    background-color: var(--ED-kanji-clr);
+  }
+  .subject-legend__item-badge--locked,
+  .character-item--locked {
+    filter: brightness(0.5);
+  }
+
+  .character-item--kanji {
+    background-color: var(--ED-kanji-clr);
+    border-color: var(--ED-gray-3);
+  }
+
+  .character-item--kanji:not(.character-item--locked) {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  .character-item--radical {
+    background-color: var(--ED-radical-clr);
+    border-color: var(--ED-gray-3);
+  }
+
+  .character-item--radical:not(.character-item--locked) {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .character-item--vocabulary {
+    background-color: var(--ED-vocab-clr);
+    border-color: var(--ED-gray-3);
+  }
+
+  .character-item--vocabulary:not(.character-item--locked) {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  .progress-bar__bar {
+    background-color: var(--ED-text-color);
+  }
+
+  .character-grid .progress-bar__label,
+  .subject-progress .progress-bar__label {
+    background-color: var(--ED-gray-7);
+  }
+
+  .progress-bar__label::after,
+  .progress-bar__label::before {
+    border-top-color: var(--ED-gray-7);
+  }
+
+  /* Individual item page colors */
+
+  .page-header__icon--level,
+  .page-header__icon--radical,
+  .page-header__icon--kanji,
+  .page-header__icon--vocabulary,
+  .subject-section__title,
+  .subject-section__meanings-title,
+  .user-synonyms__button,
+  .radical-highlight,
+  .kanji-highlight,
+  .vocabulary-highlight,
+  .subject-progress,
+  .subject-progress__streak-title,
+  .subject-hint__title,
+  .subject-section__text,
+  .user-note__button,
+  .user-note__character-count,
+  .user-note,
+  #user_reading_note .user-note__input,
+  .component-character__meaning,
+  .component-character--radical .component-character__characters,
+  .subject-readings-with-audio__item,
+  .subject-collocations__pattern-collocation--selected,
+  .text-black {
+    box-shadow: none;
+    color: var(--ED-text-color);
+    text-shadow: none;
+  }
+
+  .user-note__button:hover,
+  .user-note__button:active,
+  .user-note__button:focus {
+    color: var(--ED-gray-11);
+  }
+
+  .page-header__icon--radical:hover,
+  .page-header__icon--kanji:hover,
+  .page-header__icon--vocabulary:hover {
+    box-shadow: none;
+  }
+
+  .user-synonyms__button,
+  .user-synonyms__form-input {
+    background-color: var(--ED-gray-3);
+    border: none;
+    color: var(--ED-text-color);
+  }
+
+  .user-synonyms__button:hover {
+    color: var(--ED-gray-11);
+  }
+
+  .user-synonyms__form-input:focus {
+    box-shadow: 0px 0px 5px var(--ED-gray-6);
+  }
+
+  .page-header__icon--level,
+  .subject-progress__streak-value {
+    background-color: var(--ED-gray-5);
+  }
+
+  .page-header__icon--radical,
+  .radical-highlight,
+  .component-character--radical .component-character__characters {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .page-header__icon--kanji,
+  .kanji-highlight {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  .page-header__icon--vocabulary,
+  .vocabulary-highlight {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  .subject-hint {
+    background-color: var(--ED-gray-6);
+  }
+
+  .user-note__input,
+  .user-note__footer {
+    background-color: var(--ED-gray-4);
+    border: none;
+  }
+
+  #user_reading_note > .user-note__form {
+    background-color: var(--ED-gray-4);
+  }
+
+  .fa-solid {
+    color: var(--ED-text-color);
+  }
+
+  .subject-collocations__patterns::after {
+    box-shadow: none;
+    right: -9px;
+    background-color: var(--ED-text-color);
+  }
+
+  .word-types--with-collocations::after {
+    box-shadow: none;
+    background-color: var(--ED-text-color);
+    left: calc(100% - 1px);
+  }
+
+  .subject-collocations__pattern-name--selected,
+  .context__word-types .bg-gray-300,
+  .context__word-types .bg-gray-300 > span {
+    background-color: var(--ED-gray-11);
+    color: var(--ED-gray-3);
+  }
+
+  /* Contact us page */
+
+  input[type="text"],
+  form .control-group textarea {
+    background-color: var(--ED-gray-3);
+    border: none;
+    box-shadow: none;
+  }
+
+  input[type="submit"] {
+    background-color: var(--ED-radical-clr);
+  }
+
+  input[type="text"],
+  textarea,
+  form label,
+  input[type="file"],
+  input[type="submit"] {
+    color: var(--ED-text-color);
+    text-shadow: none;
+  }
+
+  input[type="text"]:focus,
+  input[type="text"]:active,
+  textarea:focus,
+  textarea:active {
+    box-shadow: 0px 0px 10px var(--ED-gray-6);
+  }
+
+  /* Profile page */
+
+  html#public-profile .public-profile-header::before {
+    background-color: transparent;
+  }
+
+  html#public-profile .public-profile-header div.avatar {
+    border: 15px solid var(--ED-gray-3);
+  }
+
+  html#public-profile .public-profile-header div.user-info {
+    background-color: var(--ED-gray-3);
+    background-image: none;
+    box-shadow: none;
+  }
+
+  html#public-profile .public-profile-header div.user-info::after {
+    border-bottom-color: var(--ED-gray-3);
+  }
+
+  html#public-profile .public-profile-header div.user-info h3.small-caps,
+  /* prettier-ignore */
+  html#public-profile .public-profile-header div.user-info div[class*="span"] ul li,
+  html#public-profile div.wall-of-shame h3 span,
+  .worst-kanji .progress .bar span,
+  .worst-radical .progress .bar span,
+  .worst-vocabulary .progress .bar span,
+  html#public-profile div.wall-of-shame ul li > span:first-child,
+  #quiz .bg-gray-300 {
+    color: var(--ED-text-color);
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  .kanji-icon,
+  .radical-icon,
+  .vocabulary-icon {
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  html#public-profile div.wall-of-shame {
+    background-color: var(--ED-gray-3);
+  }
+
+  html#public-profile div.wall-of-shame h3 span {
+    background-color: var(--ED-gray-6);
+  }
+
+  .radical-icon {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .kanji-icon {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  .vocabulary-icon {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  html#public-profile div.wall-of-shame .progress,
+  .kanji-progress .progress,
+  .vocabulary-progress .progress {
+    background-color: var(--ED-gray-6);
+  }
+
+  .kanji-progress .progress .bar,
+  .vocabulary-progress .progress .bar,
+  .wall-of-shame .progress .bar {
+    background-color: var(--ED-text-color);
+  }
+
+  .worst-kanji .progress .bar span,
+  .worst-radical .progress .bar span,
+  .worst-vocabulary .progress .bar span,
+  #quiz .bg-gray-300:hover {
+    background-color: var(--ED-gray-6);
+  }
+
+  #quiz .bg-gray-300 {
+    background-color: var(--ED-gray-5);
+  }
+
+  .worst-kanji .progress .bar span:after,
+  .worst-radical .progress .bar span:after,
+  .worst-vocabulary .progress .bar span:after {
+    border-top-color: var(--ED-gray-6);
+  }
+
+  .user-note__form,
+  .autoresize-textarea-container .appearance-none,
+  #item-info #related-items ul {
+    background-color: var(--ED-gray-3);
+  }
+
+  #item-info #related-items ul.kanji span,
+  #item-info #related-items ul.radical span,
+  #item-info #related-items ul.vocabulary span {
+    box-shadow: none;
+  }
+
+  #item-info [class*="highlight-"] {
+    text-shadow: none;
+  }
+
+  /* Settings page */
+
+  .settings-section,
+  .settings-section h2,
+  .settings-section .btn,
+  .page-list ul > li > a {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  .settings-section,
+  .page-list ul > li > a {
+    background-color: var(--ED-gray-3);
+  }
+
+  .page-list ul {
+    background-color: var(--ED-gray-1);
+  }
+
+  .page-list ul > li > a {
+    border: none;
+  }
+
+  .settings-section aside,
+  .settings-section .table td,
+  #personal-access-tokens-list th,
+  .personal-access-token-permissions__namespace-header,
+  .personal-access-token-permission__description {
+    color: var(--ED-gray-8);
+  }
+
+  .page-list ul > li > a,
+  .settings-section h2 {
+    color: var(--ED-text-color);
+  }
+
+  .account-settings form.form-auto-submit-on-select-change select,
+  input[type="password"],
+  .settings-section .btn,
+  .settings-section select {
+    background-color: var(--ED-gray-6);
+    color: var(--ED-text-color);
+    border-color: var(--ED-text-color);
+    border-width: 1px;
+  }
+
+  .settings-section .btn:hover,
+  .settings-section .btn:focus {
+    background-color: var(--ED-gray-3);
+  }
+
+  .settings-section .btn:active {
+    background-color: var(--ED-text-color);
+    color: var(--ED-gray-3);
+  }
+
+  .indicator--success {
+    border-color: var(--ED-vocab-clr);
+    background-color: var(--ED-vocab-clr);
+  }
+
+  .indicator {
+    border-top: 0.5em solid rgba(255, 255, 255, 0.2);
+    border-right: 0.5em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.5em solid rgba(255, 255, 255, 0.2);
+    border-left: 0.5em solid rgba(255, 255, 255, 0.5);
+  }
+
+  .settings-section input[type="text"] {
+    border: 1px solid var(--ED-text-color);
+    background-color: var(--ED-gray-6);
+  }
+
+  .settings-section form .control-group textarea {
+    border: 1px solid var(--ED-text-color);
+  }
+
+  /* Subscription page */
+
+  .account-billing .bg-gray-100 {
+    background-color: var(--ED-gray-3);
+  }
+
+  .account-billing .bg-\[\#00aaff\] {
+    background-color: var(--ED-radical-clr);
+  }
+
+  .border-blue-300:hover,
+  .border-blue-300:active,
+  .border-blue-300:focus {
+    border-color: var(--ED-radical-clr);
+  }
+
+  .account-billing h2 {
+    text-shadow: none;
+    color: var(--ED-text-color);
+  }
+
+  .highlight-radical,
+  .radical-highlight,
+  .highlight-kanji,
+  .kanji-highlight,
+  .highlight-vocabulary,
+  .vocabulary-highlight {
+    font-weight: bold;
+    text-shadow: 0px 0px 3px var(--ED-gray-1);
+  }
 }

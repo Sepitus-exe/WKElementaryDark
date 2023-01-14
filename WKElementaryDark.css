@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WaniKani Elementary Dark
 @namespace    github.com/openstyles/stylus
-@version      1.0.3
+@version      1.0.4
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -31,6 +31,12 @@ body {
     --ED-kanji-clr: #56638a;
     --ED-vocab-clr: #58b09c;
     --ED-extra-clr: #d7af70;
+  
+    /*  Semantic color names */
+    --ED-quiz-meaning-background: var(--ED-text-color);
+    --ED-quiz-meaning-text: var(--ED-gray-3);
+    --ED-quiz-reading-background: var(--ED-gray-3);
+    --ED-quiz-reading-text: var(--ED-text-color);
   }
 
   body,
@@ -496,15 +502,16 @@ body {
   }
 
   #question #question-type.meaning {
-    background-color: var(--ED-text-color);
+    background-color: var(--ED-quiz-meaning-background);
+    background-image: none;
   }
 
   #question #question-type.meaning h1 {
-    color: var(--ED-gray-3);
+    color: var(--ED-quiz-meaning-text);
   }
 
   #question #question-type.meaning {
-    border-color: var(--ED-gray-3);
+    border-color: var(--ED-quiz-meaning-background);
   }
 
   ul.multi-character-grid li[class|="radical"],
@@ -642,9 +649,18 @@ body {
   #lesson #supplement-info,
   #quiz #question-type.reading,
   #question #question-type.reading {
-    background-color: var(--ED-gray-5);
+    background-color: var(--ED-quiz-reading-background);
     background-image: none;
   }
+
+  #question #question-type.reading{
+    border-color: var(--ED-quiz-reading-background);
+  }
+
+  #question #question-type h1 {
+    color: var(--ED-quiz-reading-text);
+  }
+
   #answer-form input[type="text"] {
     box-shadow: none;
     color: var(--ED-text-color);
@@ -933,7 +949,6 @@ body {
   .user-synonyms__form-input {
     background-color: var(--ED-gray-3);
     border: none;
-    color: var(--ED-text-color);
   }
 
   .user-synonyms__button:hover {

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WaniKani Elementary Dark
 @namespace    github.com/openstyles/stylus
-@version      1.0.4
+@version      1.0.5
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -1026,30 +1026,31 @@ body {
 
   /* Contact us page */
 
-  input[type="text"],
-  form .control-group textarea {
+  .span12 form .control-group input[type="text"],
+  .span12 form .control-group textarea {
     background-color: var(--ED-gray-3);
     border: none;
     box-shadow: none;
   }
 
-  input[type="submit"] {
+  .span12 form .control-group input[type="submit"] {
     background-color: var(--ED-radical-clr);
+    background-image: none;
   }
 
-  input[type="text"],
-  textarea,
-  form label,
-  input[type="file"],
-  input[type="submit"] {
+  .span12 form .control-group input[type="text"],
+  .span12 form .control-group textarea,
+  .span12 form label,
+  .span12 form .control-group input[type="file"],
+  .span12 form .control-group input[type="submit"] {
     color: var(--ED-text-color);
     text-shadow: none;
   }
 
-  input[type="text"]:focus,
-  input[type="text"]:active,
-  textarea:focus,
-  textarea:active {
+  .span12 form .control-group input[type="text"]:focus,
+  .span12 form .control-group input[type="text"]:active,
+  .span12 form .control-group textarea:focus,
+  .span12 form .control-group textarea:active {
     box-shadow: 0px 0px 10px var(--ED-gray-6);
   }
 

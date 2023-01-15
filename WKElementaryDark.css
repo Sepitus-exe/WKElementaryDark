@@ -646,7 +646,10 @@ body {
     border-color: transparent transparent var(--ED-gray-5) transparent;
   }
 
-  #lesson #supplement-info,
+  #lesson #supplement-info {
+    background-color: var(--ED-gray-5);
+  }
+
   #quiz #question-type.reading,
   #question #question-type.reading {
     background-color: var(--ED-quiz-reading-background);

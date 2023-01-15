@@ -30,33 +30,43 @@
     --ED-green-1: #58b09c;
     --ED-yellow-1: #d7af70;
 
-    /*  Semantic color names */
-    --ED-text-color: var(--ED-gray-14); /* light text against dark bg */
+    /*  Text colors */
+    --ED-text-darkbg: var(--ED-gray-14); /* light text against dark bg */
     --ED-text-lightbg: var(--ED-gray-1); /* dark text against light bg */
+
+    --ED-text-color: var(
+      --ED-text-darkbg
+    ); /* Default is light text / dark bg */
+
     --ED-highlight-text: var(--ED-yellow-1);
     --ED-grayed-text: var(--ED-gray-8); /* de-emphasized text */
 
+    /* Branding colors */
     --ED-brand: var(--ED-red-1);
     --ED-brand-2: var(--ED-yellow-1);
 
+    /* Answer indicators */
     --ED-correct: var(--ED-green-1);
     --ED-incorrect: var(--ED-red-1);
 
+    /* Surfaces / overlapping containers */
     --ED-surface-1: var(--ED-gray-1); /* farthest back */
     --ED-surface-2: var(--ED-gray-3);
     --ED-surface-3: var(--ED-gray-5);
     --ED-surface-4: var(--ED-gray-7);
     --ED-surface-5: var(--ED-gray-9); /* closest to user */
 
+    /* Semantic indication of review vs. lesson */
     --ED-lesson-clr: var(--ED-red-1);
     --ED-review-clr: var(--ED-blue-1);
 
+    /* Semantic indication of item types */
     --ED-radical-clr: var(--ED-red-1);
     --ED-kanji-clr: var(--ED-blue-1);
     --ED-vocab-clr: var(--ED-green-1);
     --ED-extra-clr: var(--ED-yellow-1);
 
-    /* TODY: Box shadows */
+    /* TODo: Box shadows */
 
     --ED-quiz-meaning-background: var(--ED-text-color);
     --ED-quiz-meaning-text: var(--ED-gray-3);
@@ -338,10 +348,14 @@
   }
 
   /* RRW dark text better contrast here */
+  .kotoba-table-list table {
+    --ED-text-color: var(--ED-text-lightbg);
+  }
+
   .kotoba-table-list table a span,
   .kotoba-table-list table a time,
   .kotoba-table-list table td span.pull-right {
-    color: var(--ED-text-lightbg);
+    color: var(--ED-text-color);
   }
 
   .kotoba-table-list tr[class|="radical"],
@@ -463,12 +477,19 @@
 
   /* RRW Fix ugly white border-bottom and layout */
 
+  #reviews-summary .pure-g-r:first-child,
+  #lessons-summary .pure-g-r:first-child {
+    padding: 0 0 10px;
+  }
+
   #reviews-summary header,
   #lessons-summary header {
+    background-color: var(--ED-surface-2);
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-end;
     justify-content: space-between;
+    padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--ED-surface-4);
     margin-bottom: 3rem;
@@ -479,12 +500,12 @@
     position: relative;
     border: none;
     margin: 0;
-    padding: 0;
+    padding: 0 20px 0;
   }
 
   #reviews-summary header h1,
   #lessons-summary header h1 {
-    padding-top: 0;
+    padding: 0 0 0 20px;
   }
 
   #reviews-summary header nav #back-dashboard,
@@ -614,11 +635,8 @@
       color: var(--ED-text-lightbg);
     }
 
-  /* prettier-ignore  RRW the little triangle to the right of the accuracy heading */
-  #reviews-summary
-    #review-stats
-    [class*="pure-u-"]:first-child
-    [id*="review-stats-"]::after {
+  /* prettier-ignore */
+  #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
     border-color: transparent transparent transparent var(--ED-surface-5);
   }
 

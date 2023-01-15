@@ -39,10 +39,14 @@
     --ED-brand: var(--ED-red-1);
     --ED-brand-2: var(--ED-yellow-1);
 
+    --ED-correct: var(--ED-green-1);
+    --ED-incorrect: var(--ED-red-1);
+
     --ED-surface-1: var(--ED-gray-1); /* farthest back */
     --ED-surface-2: var(--ED-gray-3);
     --ED-surface-3: var(--ED-gray-5);
-    --ED-surface-4: var(--ED-gray-7); /* closest to user */
+    --ED-surface-4: var(--ED-gray-7);
+    --ED-surface-5: var(--ED-gray-9); /* closest to user */
 
     --ED-lesson-clr: var(--ED-red-1);
     --ED-review-clr: var(--ED-blue-1);
@@ -455,7 +459,34 @@
     background-color: var(--ED-extra-clr);
   }
 
-  /* Review screen */
+  /* Review/lesson summary */
+
+  /* RRW Fix ugly white border-bottom and layout */
+
+  #reviews-summary header,
+  #lessons-summary header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--ED-surface-4);
+    margin-bottom: 3rem;
+  }
+
+  #reviews-summary header nav,
+  #lessons-summary header nav {
+    position: relative;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #reviews-summary header h1,
+  #lessons-summary header h1 {
+    padding-top: 0;
+  }
+
   #reviews-summary header nav #back-dashboard,
   #lessons-summary header nav #back-dashboard {
     /* filter: hue-rotate(40deg) saturate(0.9) grayscale(60%); RRW - yuck. sorry :-) */
@@ -487,24 +518,31 @@
 
   #reviews-summary header nav #start-session a:hover.disabled,
   #lessons-summary header nav #start-session a:hover.disabled {
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-2);
   }
 
+  /* RRW Why just apprentice and guru? This smells wrong. */
   #reviews-summary #incorrect .apprentice > ul > li.radicals,
-  #reviews-summary #incorrect h2,
   #reviews-summary #correct .apprentice > ul > li.radicals,
-  #reviews-summary #correct .guru > ul > li.radicals,
-  #lessons-summary #radicals h2 {
+  #reviews-summary #correct .guru > ul > li.radicals {
     background-color: var(--ED-radical-clr);
   }
 
+  /* RRW answered incorectly headers */
+  #reviews-summary #incorrect h2,
+  #lessons-summary #radicals h2 {
+    background-color: var(--ED-incorrect);
+  }
+
+  /* RRW come back to this */
   #lessons-summary #kanji h2 {
     background-color: var(--ED-kanji-clr);
   }
 
+  /* RRW answered correctly headers */
   #reviews-summary #correct h2,
   #lessons-summary #vocabulary h2 {
-    background-color: var(--ED-vocab-clr);
+    background-color: var(--ED-correct);
   }
 
   #reviews-summary #review-stats [id*="review-stats-"],
@@ -530,8 +568,9 @@
   #reviews-summary #incorrect .burned h3 strong,
   #reviews-summary #correct .burned h3 span,
   #reviews-summary #incorrect .burned h3 span {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-text-lightbg);
   }
+
   #reviews-summary #review-stats [id*="review-stats-"],
   #reviews-summary #incorrect,
   #reviews-summary #correct,
@@ -571,14 +610,17 @@
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
-      background-color: var(--ED-gray-9);
-      color: var(--ED-gray-1);
+      background-color: var(--ED-surface-5);
+      color: var(--ED-text-lightbg);
     }
 
-  /* prettier-ignore */
-  #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
-      border-color: transparent transparent transparent var(--ED-gray-9);
-    }
+  /* prettier-ignore  RRW the little triangle to the right of the accuracy heading */
+  #reviews-summary
+    #review-stats
+    [class*="pure-u-"]:first-child
+    [id*="review-stats-"]::after {
+    border-color: transparent transparent transparent var(--ED-surface-5);
+  }
 
   #reviews-summary footer #last-session-date,
   #reviews-summary footer #copyright,
@@ -588,7 +630,9 @@
     font-size: 16px;
   }
 
-  /*In reviews/lessons */
+  /* reviews/lessons */
+
+  /* RRW Freaky! X-ray Wanikani! */
   #loading,
   #additional-content-load,
   #loading-screen {
@@ -603,27 +647,28 @@
   #lessons-summary #kanji > div,
   #lessons-summary #vocabulary > div,
   .user-synonyms ul li.user-synonyms-add-form form button {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
 
-  #question #question-type.meaning {
-    background-color: var(--ED-quiz-meaning-background);
+  #question #question-type.meaning,
+  #question #question-type.reading {
+    background-color: var(--ED-surface-2);
     background-image: none;
+    border: none;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
   }
 
-  #question #question-type.meaning h1 {
-    color: var(--ED-quiz-meaning-text);
+  #question #question-type h1 {
+    color: var(--ED-text-color);
   }
 
-  #question #question-type.meaning {
-    border-color: var(--ED-quiz-meaning-background);
-  }
-
-  ul.multi-character-grid li[class|="radical"],
+  /* RRW What is this? Can't find it */
+  /* ul.multi-character-grid li[class|="radical"],
   ul.multi-character-grid li[class|="kanji"],
   ul.multi-character-grid li[class|="vocabulary"] {
-    border-color: var(--ED-gray-1);
-  }
+    border-color: var(--ED-surface-1);
+  } */
 
   #question #character.radical,
   .highlight-radical,
@@ -722,7 +767,7 @@
   #lesson #supplement-info #supplement-kan-related-vocabulary ul li div,
   .text-gray-900,
   #quiz #question-type.reading,
-  #question #question-type.reading,
+  /* #question #question-type.reading, RRW belongs above */
   #answer-exception span,
   #item-info #related-items a:visited,
   #item-info #related-items a,
@@ -751,6 +796,7 @@
     border-color: transparent transparent var(--ED-gray-5) transparent;
   }
 
+  /* RRW These selectors don't seem to belong together. Moving the question stuff above
   #lesson #supplement-info,
   #quiz #question-type.reading,
   #question #question-type.reading {
@@ -764,6 +810,13 @@
 
   #question #question-type h1 {
     color: var(--ED-quiz-reading-text);
+  }
+  */
+
+  #lesson #supplement-info,
+  #quiz {
+    background-color: var(--ED-quiz-reading-background);
+    background-image: none;
   }
 
   #answer-form input[type="text"] {

@@ -83,7 +83,6 @@
   /* Indicate review vs. lesson */
   /* --ED-lesson-clr: var(--ED-red); Original */
   /* --ED-review-clr: var(--ED-blue); Original */
-
   --ED-lesson-clr: var(--ED-burned-clr);
   --ED-review-clr: var(--ED-apprentice-clr);
 
@@ -91,6 +90,9 @@
   --ED-alert-clr: var(--ED-red);
   --ED-warn-clr: var(--ED-yellow);
   --ED-success-clr: var(--ED-green);
+
+  /* Progress bars */
+  --ED-progress-clr: var(--ED-brand);
 
   /* TODO: Box shadows, gradients */
 
@@ -273,7 +275,7 @@ p {
 }
 
 .progress-bar .progress-bar__progress {
-  background-color: var(--ED-brand-alt);
+  background-color: var(--ED-progress-clr);
   background-image: none;
 }
 
@@ -516,9 +518,9 @@ the selector? */
   --ED-text-color: var(--ED-text-darkbg) !important;
 }
 
-/* RRW brand the counts if work to do */
+/* RRW highlight the counts if work to do */
 .navigation-shortcut a span {
-  background-color: var(--ED-brand);
+  background-color: var(--ED-progress-clr);
 }
 
 .progress-entry .radical-icon {
@@ -822,6 +824,10 @@ section.srs-progress ul li:nth-child(4) {
 .bg-gray-400, /* ugh */
 .user-synonyms ul li.user-synonyms-add-form form button {
   background-color: var(--ED-surface-2);
+}
+
+#progress-bar #bar {
+  background-color: var(--ED-progress-clr);
 }
 
 /* Header/prompt with e.g. "Vocabulary **Reading**" */

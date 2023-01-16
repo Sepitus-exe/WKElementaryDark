@@ -33,6 +33,7 @@
   --ED-surface-3: var(--ED-gray-5);
   --ED-surface-4: var(--ED-gray-7);
   --ED-surface-5: var(--ED-gray-9); /* lightest, closest to user */
+  /* NOTE: surface-5 must work with dark text */
 
   /*
    * Text colors 
@@ -55,15 +56,15 @@
    */
 
   /* Theme/branding colors */
-  --ED-brand: var(--ED-red);
-  --ED-brand-alt: var(--ED-yellow);
+  --ED-brand: var(--ED-yellow);
+  --ED-brand-alt: var(--ED-red);
 
   /* Indicate correct/incorrect answers */
   --ED-correct: var(--ED-green);
   --ED-incorrect: var(--ED-red);
 
   /* Indicate reading vs. meaning */
-  --ED-meaning-clr: var(--ED-yellow); /* should be light color */
+  --ED-meaning-clr: var(--ED-yellow); /* must work with dark text */
   --ED-reading-clr: var(--ED-gray-3);
 
   /* Indicate item types */
@@ -80,13 +81,11 @@
   --ED-burned-clr: var(--ED-surface-4);
 
   /* Indicate review vs. lesson */
-  --ED-lesson-clr: var(--ED-red);
-  --ED-review-clr: var(--ED-blue);
-  /* 
-    Rex prefers:
-      --ED-lesson-clr: var(--ED-burned-clr);
-      --ED-review-clr: var(--ED-apprentice-clr);
-  */
+  /* --ED-lesson-clr: var(--ED-red); Original */
+  /* --ED-review-clr: var(--ED-blue); Original */
+
+  --ED-lesson-clr: var(--ED-burned-clr);
+  --ED-review-clr: var(--ED-apprentice-clr);
 
   /* Alerts/warnings */
   --ED-alert-clr: var(--ED-red);
@@ -142,7 +141,8 @@
   --ED-blue-hsl: 225, 23%, 44%; /* #56638a */
   --ED-blue-light-hsl: 225, 23%, 64%;
   --ED-blue-dark-hsl: 225, 23%, 24%;
-  --ED-green-hsl: 166, 36%, 52%; /* #58b09c */
+  /* --ED-green-hsl: 166, 36%, 52%; /* #58b09c original */
+  --ED-green-hsl: 166, 36%, 32%; /* makes light text work */
   --ED-green-light-hsl: 166, 36%, 72%;
   --ED-green-dark-hsl: 166, 36%, 32%;
   --ED-yellow-hsl: 37, 56%, 64%; /* #d7af70 */
@@ -190,6 +190,7 @@ body,
 .sitemap {
   background-color: var(--ED-surface-2);
   background-image: none;
+  border-color: var(--ED-surface-4);
 }
 
 span,
@@ -320,7 +321,6 @@ p {
 .sitemap__pages--vocabulary li > a:hover,
 .sitemap__expandable-chunk--vocabulary::before {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
 }
 
 footer {
@@ -418,10 +418,6 @@ section.srs-progress ul li:nth-child(5),
   ) !important;
 }
 
-.kotoba-table-list table {
-  --ED-text-color: var(--ED-text-lightbg);
-}
-
 .kotoba-table-list table a span,
 .kotoba-table-list table a time,
 .kotoba-table-list table td span.pull-right {
@@ -450,7 +446,6 @@ section.srs-progress ul li:nth-child(5),
 
 .kotoba-table-list tr[class|="vocabulary"] {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
 }
 
 .small-caps.invert,
@@ -522,9 +517,12 @@ the selector? */
 }
 
 /* RRW brand the counts if work to do */
-.progress-entry .radical-icon,
 .navigation-shortcut a span {
   background-color: var(--ED-brand);
+}
+
+.progress-entry .radical-icon {
+  background-color: var(--ED-radical-clr);
 }
 
 .progress-entry .kanji-icon,
@@ -537,7 +535,6 @@ the selector? */
 .progress-entry .vocabulary-icon,
 .popover.srs .popover-content ul li:last-child {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
   background-image: none;
   border: none;
 }
@@ -787,7 +784,6 @@ section.srs-progress ul li:nth-child(4) {
 #reviews-summary #incorrect .burned > ul > li.vocabulary,
 .search-results li[class^="vocabulary-"] a {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
   background-image: none;
 }
 
@@ -882,7 +878,6 @@ header #main-info.vocabulary,
 #lesson #supplement-info .vocabulary,
 #item-info #related-items ul.vocabulary span {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
   background-image: none;
 }
 
@@ -994,7 +989,8 @@ header.quiz #main-info.radical #character,
 
 /* RRW Not sure where this is to test this works */
 .reading-highlight > span {
-  --ED-text-color: var(--ED-text-lightbg);
+  /* --ED-text-color: var(--ED-text-lightbg); */
+  --ED-text-color: chartreuse;
 }
 
 #information {
@@ -1201,13 +1197,11 @@ section#related-items > .radical {
 
 .character-item--vocabulary {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
   border-color: var(--ED-gray-3);
 }
 
 .character-item--vocabulary:not(.character-item--locked) {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
   background-image: none;
 }
 
@@ -1467,7 +1461,6 @@ html#public-profile div.wall-of-shame h3 span {
 
 .vocabulary-icon {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
 }
 
 html#public-profile div.wall-of-shame .progress,

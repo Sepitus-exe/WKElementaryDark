@@ -1131,6 +1131,29 @@ section#related-items > .radical {
   background-color: var(--ED-vocab-clr);
 }
 
+/* Item stage movement indicators */
+.srs .srs-up {
+  color: var(--ED-text-color);
+}
+.srs .srs-down {
+  color: var(--ED-grayed-text);
+}
+.srs .srs-apprentice {
+  background-color: var(--ED-apprentice-clr);
+}
+.srs .srs-guru {
+  background-color: var(--ED-guru-clr);
+}
+.srs .srs-master {
+  background-color: var(--ED-master-clr);
+}
+.srs .srs-enlightened {
+  background-color: var(--ED-enlightened-clr);
+}
+.srs .srs-burn {
+  background-color: var(--ED-burned-clr);
+}
+
 /*************************************************************************************************/
 /* Levels page
 /*************************************************************************************************/

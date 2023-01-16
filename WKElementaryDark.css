@@ -1,3 +1,14 @@
+/* ==UserStyle==
+@name         WaniKani Elementary Dark
+@namespace    github.com/openstyles/stylus
+@version      1.1.0
+@license      MIT
+@description  Dark theme for the WaniKani domain
+@author       Sepitus
+@homepageURL  https://github.com/Sepitus-exe/WKElementaryDark
+@supportURL   https://github.com/Sepitus-exe/WKElementaryDark/issues
+==/UserStyle== */
+
 :root {
   /* CSS variables (technically, "custom properties") for theming */
 

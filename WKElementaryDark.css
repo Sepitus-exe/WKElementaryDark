@@ -148,7 +148,7 @@
   --ED-WKblue-hsl: 228, 71%, 51%; /* WK Master blue */
   --ED-WKlightblue-hsl: 200, 100%, 43%; /* WK Enlightened lightblue */
 
-  --ED-DWKpink-hsl: 320, 100%, 15%; /* Dark WK Apprentice pink */
+  --ED-DWKpink-hsl: 320, 100%, 23%; /* Dark WK Apprentice pink */
   --ED-DWKpurple-hsl: 288, 56%, 15%; /* Dark WK Guru purple */
   --ED-DWKblue-hsl: 228, 71%, 16%; /* Dark WK Master blue */
   --ED-DWKlightblue-hsl: 200, 100%, 18%; /* Dark WK Enlightened lightblue */
@@ -1023,16 +1023,24 @@ header.quiz #main-info.radical #character,
   height: 32px !important;
 }
 
-.srs .srs-up {
-  background-color: transparent;
-  color: var(--ED-vocab-clr);
-  text-shadow: 0px 0px 10px var(--ED-surface-1);
+.srs .srs-apprentice {
+  background-color: var(--ED-apprentice-clr);
+  color: var(--ED-text-darkbg);
 }
 
-.srs .srs-down {
-  background-color: transparent;
-  color: var(--ED-radical-clr);
-  text-shadow: 0px 0px 10px var(--ED-surface-1);
+.srs .srs-guru {
+  background-color: var(--ED-guru-clr);
+  color: var(--ED-text-darkbg);
+}
+
+.srs .srs-master {
+  background-color: var(--ED-master-clr);
+  color: var(--ED-text-darkbg);
+}
+
+.srs .srs-englightened {
+  background-color: var(--ED-enlightened-clr);
+  color: var(--ED-text-darkbg);
 }
 
 /* overlay message */

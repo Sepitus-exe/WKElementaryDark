@@ -544,9 +544,13 @@ section.srs-progress ul li:nth-child(3) {
   background-color: var(--ED-master-clr);
 }
 
-section.srs-progress ul li:nth-child(4),
-.bg-green {
+section.srs-progress ul li:nth-child(4) {
   background-color: var(--ED-enlightened-clr);
+}
+
+/* Guru progress indicators under indiviual items */
+.bg-green {
+  background-color: var(--ED-extra-clr);
 }
 
 /* Review/lesson summary */

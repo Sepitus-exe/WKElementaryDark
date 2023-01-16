@@ -148,10 +148,10 @@
   --ED-WKblue-hsl: 228, 71%, 51%; /* WK Master blue */
   --ED-WKlightblue-hsl: 200, 100%, 43%; /* WK Enlightened lightblue */
 
-  --ED-DWKpink-hsl: 320, 100%, 23%; /* Dark WK Apprentice pink */
-  --ED-DWKpurple-hsl: 288, 56%, 15%; /* Dark WK Guru purple */
-  --ED-DWKblue-hsl: 228, 71%, 16%; /* Dark WK Master blue */
-  --ED-DWKlightblue-hsl: 200, 100%, 18%; /* Dark WK Enlightened lightblue */
+  --ED-DWKpink-hsl: 320, 50%, 23%; /* Dark WK Apprentice pink */
+  --ED-DWKpurple-hsl: 288, 28%, 15%; /* Dark WK Guru purple */
+  --ED-DWKblue-hsl: 228, 35%, 16%; /* Dark WK Master blue */
+  --ED-DWKlightblue-hsl: 200, 50%, 18%; /* Dark WK Enlightened lightblue */
 
   --ED-red: hsla(var(--ED-red-hsl), 1);
   --ED-blue: hsla(var(--ED-blue-hsl), 1);

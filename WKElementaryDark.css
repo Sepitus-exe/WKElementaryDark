@@ -1133,7 +1133,7 @@ section#related-items > .radical {
 .subject-legend__item-badge--radicals,
 .subject-legend__item-badge--kanji,
 .subject-legend__item-badge--vocabulary {
-  color: var(--ED-text-color);
+  color: var(--ED-pure-white);
   text-shadow: none;
   box-shadow: none;
 }

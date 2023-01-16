@@ -360,9 +360,7 @@ footer ul li:last-child {
 .progress-entry .radical-icon,
 .progress-entry .vocabulary-icon,
 .dashboard section.dashboard-sub-section div.see-more,
-.small-caps.invert,
-.popover.srs .popover-content ul li:nth-child(2),
-.popover.srs .popover-content ul li:last-child {
+.small-caps.invert {
   border: 0px;
   box-shadow: 0 0px;
 }
@@ -481,11 +479,26 @@ the selector? */
   color: var(--ED-grayed-text);
 }
 
+/* Popover when hovering over appr/guru/master/enl stage counts */
+.popover.srs .popover-content ul li {
+  background-color: var(--ED-extra-clr);
+  background-image: none !important;
+}
+.popover.srs .popover-inner .popover-content ul li:nth-child(1) {
+  background-color: var(--ED-radical-clr);
+}
+.popover.srs .popover-content ul li:nth-child(2) {
+  background-color: var(--ED-kanji-clr) !important;
+}
+.popover.srs .popover-content ul li:nth-child(3) {
+  background-color: var(--ED-vocab-clr) !important;
+  --ED-text-color: var(--ED-text-darkbg) !important;
+}
+
 /* RRW brand the counts if work to do */
 .progress-entry .radical-icon,
 section.srs-progress ul li:first-child,
-.navigation-shortcut a span,
-.popover.srs .popover-content ul li:first-child {
+.navigation-shortcut a span {
   background-color: var(--ED-brand);
 }
 

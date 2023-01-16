@@ -62,10 +62,6 @@
   --ED-correct: var(--ED-green);
   --ED-incorrect: var(--ED-red);
 
-  /* Indicate review vs. lesson */
-  --ED-lesson-clr: var(--ED-red);
-  --ED-review-clr: var(--ED-blue);
-
   /* Indicate reading vs. meaning */
   --ED-meaning-clr: var(--ED-yellow); /* should be light color */
   --ED-reading-clr: var(--ED-gray-3);
@@ -81,6 +77,16 @@
   --ED-guru-clr: hsl(var(--ED-DWKpurple-hsl));
   --ED-master-clr: hsl(var(--ED-DWKblue-hsl));
   --ED-enlightened-clr: hsl(var(--ED-DWKlightblue-hsl));
+  --ED-burned-clr: var(--ED-surface-4);
+
+  /* Indicate review vs. lesson */
+  --ED-lesson-clr: var(--ED-red);
+  --ED-review-clr: var(--ED-blue);
+  /* 
+    Rex prefers:
+      --ED-lesson-clr: var(--ED-burned-clr);
+      --ED-review-clr: var(--ED-apprentice-clr);
+  */
 
   /* Alerts/warnings */
   --ED-alert-clr: var(--ED-red);
@@ -162,17 +168,17 @@
    * If, for example, you needed a 50% transparent overlay of a dark
    * green color, you could use: hsla(var(--ED-yellow-dark-hsl), 0.5)
    */
-
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 }
 
-/************************************************************************************************
+/*************************************************************************************************
  * 
  * BEGIN CSS RULES
  *
  * There should be no reason to edit anything below this point
  *
- *************************************************************************************************/
+/*************************************************************************************************/
+
+/* General reset */
 
 body,
 .dashboard section.dashboard-sub-section div.see-more {
@@ -209,6 +215,10 @@ p {
   color: var(--ED-text-color);
   text-shadow: none;
 }
+
+/*************************************************************************************************
+ * Dashboard page specifics
+/*************************************************************************************************/
 
 .review-forecast__toggleicon,
 .kotoba-table-list table tr.none-available {
@@ -553,7 +563,9 @@ section.srs-progress ul li:nth-child(4) {
   background-color: var(--ED-extra-clr);
 }
 
-/* Review/lesson summary */
+/*************************************************************************************************/
+/* Review & lesson summary pages
+/*************************************************************************************************/
 
 /* Sticky header */
 #reviews-summary .pure-g-r:first-child,
@@ -797,9 +809,9 @@ section.srs-progress ul li:nth-child(4) {
   background-color: var(--ED-surface-2);
 }
 
-/*
- * individual review/lesson pages
- */
+/*************************************************************************************************/
+/* Individual review/lesson pages
+/*************************************************************************************************/
 
 /* RRW Freaky! X-ray Wanikani! (loading image) */
 #loading,
@@ -1105,7 +1117,9 @@ section#related-items > .radical {
   background-color: var(--ED-vocab-clr);
 }
 
-/* Levels page */
+/*************************************************************************************************/
+/* Levels page
+/*************************************************************************************************/
 
 .subject-legend,
 .subject-legend__item-badge--recently-unlocked,
@@ -1212,7 +1226,9 @@ section#related-items > .radical {
   border-top-color: var(--ED-surface-4);
 }
 
-/* Individual item page colors */
+/*************************************************************************************************/
+/* Individual item page colors
+/*************************************************************************************************/
 
 .page-header__icon--level,
 .page-header__icon--radical,
@@ -1358,7 +1374,9 @@ span.highlight-vocabulary {
   text-shadow: none;
 }
 
-/* Contact us page */
+/*************************************************************************************************/
+/* Contact us page
+/*************************************************************************************************/
 
 input[type="text"],
 form .control-group textarea {
@@ -1387,7 +1405,9 @@ textarea:active {
   outline: 3px solid var(--ED-highlight-text);
 }
 
-/* Profile page */
+/*************************************************************************************************/
+/* Profile page
+/*************************************************************************************************/
 
 html#public-profile .public-profile-header::before {
   background-color: transparent;
@@ -1482,7 +1502,9 @@ html#public-profile div.wall-of-shame .progress,
   border-top-color: var(--ED-surface-5);
 }
 
-/* Settings page */
+/*************************************************************************************************/
+/* Settings page
+/*************************************************************************************************/
 
 .settings-section,
 .settings-section h2,
@@ -1558,7 +1580,9 @@ input[type="password"],
   border: 1px solid var(--ED-grayed-text);
 }
 
-/* Subscription page */
+/*************************************************************************************************/
+/* Subscription page
+/*************************************************************************************************/
 
 .account-billing .bg-gray-100 {
   background-color: var(--ED-surface-2);

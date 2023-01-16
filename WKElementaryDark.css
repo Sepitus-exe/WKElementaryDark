@@ -137,6 +137,14 @@
   --ED-quiz-reading-text: var(--ED-text-color);
 }
 
+/************************************************************************************************
+ * 
+ * BEGIN CSS RULES
+ *
+ * There _should_ be no reason to edit anything below this point
+ *
+ *************************************************************************************************/
+
 body,
 .dashboard section.dashboard-sub-section div.see-more {
   background-color: var(--ED-surface-1);
@@ -240,15 +248,12 @@ p {
 
 .progress-bar {
   background-color: var(--ED-surface-3);
+  --ED-text-color: var(--ED-text-lightbg);
 }
 
-.progress-bar__label,
-.progress-bar__extra-label {
-  color: var(--ED-text-color);
-}
-
-.bg-pink-gradient {
+.progress-bar .progress-bar__progress {
   background-color: var(--ED-brand-alt);
+  background-image: none;
 }
 
 /* RRW Ugh. This utiility class is used on the search button when visible,
@@ -1070,7 +1075,6 @@ section#related-items > .radical {
 .subject-legend__item-badge--burned,
 .character-grid__header,
 .page-nav__item-link,
-.progress-bar__label,
 .subject-legend__item-badge--radicals,
 .subject-legend__item-badge--kanji,
 .subject-legend__item-badge--vocabulary {
@@ -1415,7 +1419,6 @@ html#public-profile div.wall-of-shame .progress,
   background-color: var(--ED-surface-2);
 }
 
-
 .progress .bar span {
   --ED-text-color: var(--ED-text-lightbg);
   background-color: var(--ED-surface-5);
@@ -1441,7 +1444,6 @@ html#public-profile div.wall-of-shame .progress,
 .worst-vocabulary .progress .bar span:after {
   border-top-color: var(--ED-surface-5);
 }
-
 
 /* Settings page */
 
@@ -1538,4 +1540,4 @@ input[type="password"],
 .account-billing h2 {
   text-shadow: none;
   color: var(--ED-text-color);
-}1G
+}

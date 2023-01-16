@@ -2,77 +2,18 @@
   /* CSS variables (technically, "custom properties") for theming */
 
   /*
-   * Color palette
-   *
-   * It's okay to choose your own palette colors, but:
-   *
-   *     1. Limit the total number of colors (but it's okay if
-   *        some, or even many, aren't used).
-   *
-   *     2. In general, don't use palette colors directly, instead, define
-   *        variables with "semantic" names (that describe what something
-   *        is, does, or means, rather than merely what it looks like).
-   */
-
-  /* Grays */
-  --ED-gray-1: #151515; /* darkest */
-  --ED-gray-2: #242424;
-  --ED-gray-3: #282828;
-  --ED-gray-4: #2c2c2c;
-  --ED-gray-5: #2e2e2e;
-  --ED-gray-6: #434343;
-  --ED-gray-7: #535353;
-  --ED-gray-8: #aaaaaa;
-  --ED-gray-9: #bababa;
-  --ED-gray-10: #bbbbbb;
-  --ED-gray-11: #bcbcbc;
-  --ED-gray-12: #bfbfbf;
-  --ED-gray-13: #cccccc;
-  --ED-gray-14: #dedede; /* lightest */
-
-  --ED-pure-black: #000;
-  --ED-pure-white: #fff;
-
-  /*
-   * Colors -- the fun stuff
-   *
-   * Define colors using hue/saturation/lightness values. This makes it easy 
-   * to create tints and shades as shown. It also makes it easy to use 
-   * transparency with hsla().
-   */
-
-  --ED-red-hsl: 1, 39%, 44%; /* #9d4745 */
-  --ED-red-light-hsl: 1, 39%, 64%;
-  --ED-red-dark-hsl: 1, 39%, 24%;
-  --ED-blue-hsl: 225, 23%, 44%; /* #56638a */
-  --ED-blue-light-hsl: 225, 23%, 64%;
-  --ED-blue-dark-hsl: 225, 23%, 24%;
-  --ED-green-hsl: 166, 36%, 52%; /* #58b09c */
-  --ED-green-light-hsl: 166, 36%, 72%;
-  --ED-green-dark-hsl: 166, 36%, 32%;
-  --ED-yellow-hsl: 37, 56%, 64%; /* #d7af70 */
-  --ED-yellow-light-hsl: 37, 56%, 84%;
-  --ED-yellow-dark-hsl: 37, 56%, 44%;
-
-  --ED-red: hsla(var(--ED-red-hsl), 1);
-  --ED-blue: hsla(var(--ED-blue-hsl), 1);
-  --ED-green: hsla(var(--ED-green-hsl), 1);
-  --ED-yellow: hsla(var(--ED-yellow-hsl), 1);
-
-  /*
-   * If, for example, you needed a 50% transparent overlay of a dark
-   * green color, you could use: hsla(var(--ED-yellow-dark-hsl), 0.5)
-   */
-
-  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-  /*
    * Semantic variables
    *
-   * For the most part, the palette colors above shouldn't be used directly.
-   * Instead, use these semantically named variables in your css rules.
+   * Edit these to specify your desired colors.
    *
-   * Users can then modify these as they like, using the palette colors defined above.
+   * You can use the palette colors defined below (as shown) or use CSS
+   * color definitions (e.g. "-ED-surface-1: #223344;").
+   *
+   * For the most part, the palette colors below shouldn't be used in CSS
+   * rules directly. Instead, use these semantically named variables.
+   *
+   * Users can then modify these as they like, and all pages will update
+   * accordingly (without weird surprises).
    */
 
   /* Surfaces / overlapping containers for layout */
@@ -87,11 +28,11 @@
    */
 
   /* One color for dark backgrounds, one for light */
-  --ED-text-darkbg: var(--ED-gray-13); /* light text against dark bg */
+  --ED-text-darkbg: var(--ED-gray-11); /* light text against dark bg */
   --ED-text-lightbg: var(--ED-gray-1); /* dark text against light bg */
 
   /* Default color assuming dark background */
-  /* Redefine this value in CSS rules as required */
+  /* Redefined in CSS rules as required */
   --ED-text-color: var(--ED-text-darkbg); /* default */
 
   /* Specially coloring needs */
@@ -131,17 +72,78 @@
 
   /* TODO: Box shadows, gradients */
 
-  --ED-quiz-meaning-background: var(--ED-text-color);
-  --ED-quiz-meaning-text: var(--ED-gray-3);
-  --ED-quiz-reading-background: var(--ED-gray-3);
-  --ED-quiz-reading-text: var(--ED-text-color);
+  /*
+   * Color palette
+   *
+   * It's okay to edit these palette colors, but:
+   *
+   *     1. Limit the total number of colors (but it's okay if
+   *        some, or even many, aren't used).
+   *
+   *     2. In general, don't use palette colors directly in CSS rules, 
+   *        instead, define variables with "semantic" names (that describe 
+   *        what something is, does, or means, rather than merely what it 
+   *        looks like).
+   */
+
+  /* 
+   *  Grays 
+   */
+
+  --ED-gray-1: #151515; /* darkest */
+  --ED-gray-2: #242424;
+  --ED-gray-3: #282828;
+  --ED-gray-4: #2c2c2c;
+  --ED-gray-5: #303030;
+  --ED-gray-6: #434343;
+  --ED-gray-7: #535353;
+  --ED-gray-8: #aaaaaa;
+  --ED-gray-9: #bababa;
+  --ED-gray-10: #bfbfbf;
+  --ED-gray-11: #cccccc;
+
+  --ED-pure-black: #000;
+  --ED-pure-white: #fff;
+
+  /*
+   * Hues
+   *
+   * Define colors using hue/saturation/lightness values. This makes it easy 
+   * to create tints and shades as shown. It also makes it easy to use 
+   * transparency with hsla().
+   */
+
+  --ED-red-hsl: 1, 39%, 44%; /* #9d4745 */
+  --ED-red-light-hsl: 1, 39%, 64%;
+  --ED-red-dark-hsl: 1, 39%, 24%;
+  --ED-blue-hsl: 225, 23%, 44%; /* #56638a */
+  --ED-blue-light-hsl: 225, 23%, 64%;
+  --ED-blue-dark-hsl: 225, 23%, 24%;
+  --ED-green-hsl: 166, 36%, 52%; /* #58b09c */
+  --ED-green-light-hsl: 166, 36%, 72%;
+  --ED-green-dark-hsl: 166, 36%, 32%;
+  --ED-yellow-hsl: 37, 56%, 64%; /* #d7af70 */
+  --ED-yellow-light-hsl: 37, 56%, 84%;
+  --ED-yellow-dark-hsl: 37, 56%, 44%;
+
+  --ED-red: hsla(var(--ED-red-hsl), 1);
+  --ED-blue: hsla(var(--ED-blue-hsl), 1);
+  --ED-green: hsla(var(--ED-green-hsl), 1);
+  --ED-yellow: hsla(var(--ED-yellow-hsl), 1);
+
+  /*
+   * If, for example, you needed a 50% transparent overlay of a dark
+   * green color, you could use: hsla(var(--ED-yellow-dark-hsl), 0.5)
+   */
+
+  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 }
 
 /************************************************************************************************
  * 
  * BEGIN CSS RULES
  *
- * There _should_ be no reason to edit anything below this point
+ * There should be no reason to edit anything below this point
  *
  *************************************************************************************************/
 
@@ -155,7 +157,6 @@ body,
 .sitemap {
   background-color: var(--ED-surface-2);
   background-image: none;
-  /* RRW border-bottom: var(--ED-gray-1); */ /* appears to have no effect */
 }
 
 span,
@@ -187,29 +188,12 @@ p {
   color: var(--ED-brand);
 }
 
-/* RRW Usure what this rule does
-  .kotoba-table-list table tr.none-available div {
-    background-color: chartreuse;
-    border: none;
-    box-shadow: none;
-  } 
-  */
-
 .sitemap__expandable-chunk,
 .extra-study > div,
 .review-forecast__day,
 .bg-white {
   background-color: var(--ED-surface-3);
 }
-
-/* RRW I don't know what this does. Taking it out doesn't appear to break anything
-  .sitemap__grouped-pages > .sitemap__page > a,
-  .navigation__toggle[data-expanded="true"],
-  .forum-topics-list table td,
-  .kotoba-table-list table tr.none-available {
-    background-color: var(--ED-surface-3);
-  }
-  */
 
 .sitemap__grouped-pages > .sitemap__page > a,
 .navigation__toggle[data-expanded="true"] {
@@ -231,7 +215,6 @@ p {
   filter: invert(0.86);
 }
 
-/* RRW This is almost, but not entirely obscured. I guess it's necessary */
 .review-forecast__day-header::before {
   background-color: var(--ED-surface-2);
 }
@@ -256,8 +239,6 @@ p {
   background-image: none;
 }
 
-/* RRW Ugh. This utiility class is used on the search button when visible,
-    but where else? Could be all over. Probably should be more tightly specified. */
 .bg-gray-500 {
   background-color: var(--ED-brand);
 }
@@ -321,23 +302,9 @@ footer ul li:last-child {
   background-color: var(--ED-brand);
 }
 
-/* RRW Ugh. Again. Unsure where this might appear besides extra-study outlines */
 .border-blue-300 {
   border-color: var(--ED-brand);
 }
-
-/* RRW Broke these apart to style closer to the default
-  .lessons-and-reviews__reviews-button,
-  .lessons-and-reviews__lessons-button {
-    background-color: var(--ED-radical-clr);
-  }
-
-
-  .lessons-and-reviews__reviews-button span,
-  .lessons-and-reviews__lessons-button span {
-    color: var(--ED-radical-clr);
-  }
-  */
 
 .lessons-and-reviews__lessons-button {
   background-color: var(--ED-lesson-clr);
@@ -411,12 +378,11 @@ section.srs-progress ul li:nth-child(5),
 .kanji-icon--locked {
   background-image: linear-gradient(
     180deg,
-    var(--ED-gray-13) 0%,
-    var(--ED-gray-12) 100%
+    var(--ED-gray-11) 0%,
+    var(--ED-gray-10) 100%
   ) !important;
 }
 
-/* RRW dark text better contrast here */
 .kotoba-table-list table {
   --ED-text-color: var(--ED-text-lightbg);
 }
@@ -452,29 +418,18 @@ section.srs-progress ul li:nth-child(5),
   --ED-text-color: var(--ED-text-lightbg);
 }
 
-/* RRW Sheesh. The WK forum-topics stuff is a mess. Re-write
-  .small-caps.invert {
-    background-color: var(--ED-surface-4);
-    background-image: none;
-    filter: invert(0);
-  }
-  */
-
-/* RRW undo some weirdness */
 .small-caps.invert,
 .forum-topics-list table tbody tr td {
   box-shadow: none;
   background: none;
 }
 
-/* RRW selector for the heading */
 .forum-topics-list > h3.small-caps {
   background-color: var(--ED-surface-2);
   background-image: none;
   filter: invert(0);
 }
 
-/* RRW. Sigh. WK isn't using the cascade. Have to get crazy specific */
 .forum-topics-list table,
 .forum-topics-list table tbody tr {
   color: var(--ED-text-color);
@@ -493,7 +448,8 @@ section.srs-progress ul li:nth-child(5),
   border-radius: 0px 0px 5px 5px;
 }
 
-/* RRW Used in the community forum section, God only knows where else. Tightnen the selector?*/
+/* RRW Used in the community forum section, God only knows where else. Tightnen
+the selector? */
 .text-blue-500:hover,
 .text-blue-500:active,
 .text-blue-500:focus,
@@ -583,7 +539,6 @@ section.srs-progress ul li:nth-child(4),
 
 #reviews-summary header nav #back-dashboard,
 #lessons-summary header nav #back-dashboard {
-  /* filter: hue-rotate(40deg) saturate(0.9) grayscale(60%); RRW - yuck. sorry :-) */
   background-color: var(--ED-brand);
   box-shadow: none;
 }
@@ -622,13 +577,13 @@ section.srs-progress ul li:nth-child(4),
   background-color: var(--ED-radical-clr);
 }
 
-/* RRW answered incorectly headers */
+/* RRW answered incorrectly headers */
 #reviews-summary #incorrect h2,
 #lessons-summary #radicals h2 {
   background-color: var(--ED-incorrect);
 }
 
-/* RRW come back to this */
+/* RRW missing radicals and vocabulary? Revisit this */
 #lessons-summary #kanji h2 {
   background-color: var(--ED-kanji-clr);
 }
@@ -827,13 +782,6 @@ section.srs-progress ul li:nth-child(4),
   color: var(--ED-text-color);
 }
 
-/* RRW What is this? Can't find it */
-/* ul.multi-character-grid li[class|="radical"],
-ul.multi-character-grid li[class|="kanji"],
-ul.multi-character-grid li[class|="vocabulary"] {
-  border-color: var(--ED-surface-1);
-} */
-
 #question #character.radical,
 .highlight-radical,
 .radical,
@@ -1026,7 +974,6 @@ header.quiz #main-info.radical #character,
   height: 32px !important;
 }
 
-/* RRW Where are these used?!! */
 .srs .srs-up {
   background-color: transparent;
   color: var(--ED-vocab-clr);
@@ -1112,7 +1059,6 @@ section#related-items > .radical {
   background-color: var(--ED-brand);
 }
 
-/* RRW Can't find this on levels page */
 .component-character__badge,
 .character-item__badge {
   box-shadow: 0px 0px 5px var(--ED-surface-3);
@@ -1346,7 +1292,6 @@ input[type="text"]:focus,
 input[type="text"]:active,
 textarea:focus,
 textarea:active {
-  /* box-shadow: 0px 0px 10px var(--ED-gray-6); */
   outline: 3px solid var(--ED-highlight-text);
 }
 

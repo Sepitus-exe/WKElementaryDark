@@ -40,7 +40,7 @@
    */
 
   /* One color for dark backgrounds, one for light */
-  --ED-text-darkbg: var(--ED-gray-11); /* light text against dark bg */
+  --ED-text-darkbg: var(--ED-gray-12); /* light text against dark bg */
   --ED-text-lightbg: var(--ED-gray-1); /* dark text against light bg */
 
   /* Default color assuming dark background */
@@ -125,6 +125,7 @@
   --ED-gray-9: #bababa;
   --ED-gray-10: #bfbfbf;
   --ED-gray-11: #cccccc;
+  --ED-gray-12: #eeeeee;
 
   --ED-pure-black: #000;
   --ED-pure-white: #fff;
@@ -195,6 +196,12 @@ body,
   border-color: var(--ED-surface-4);
 }
 
+.navigation__toggle-lines,
+.navigation__toggle-lines::before,
+.navigation__toggle-lines::after {
+  border-color: var(--ED-text-color);
+}
+
 span,
 a,
 h1,
@@ -217,6 +224,10 @@ time,
 p {
   color: var(--ED-text-color);
   text-shadow: none;
+}
+
+.dashboard .forum-topics-list h3.small-caps.invert div.heading-symbol {
+  border-color: var(--ED-text-color);
 }
 
 /*************************************************************************************************
@@ -347,17 +358,21 @@ footer ul li:last-child {
 
 .lessons-and-reviews__lessons-button {
   background-color: var(--ED-lesson-clr);
+  color: var(--ED-text-color);
 }
 
 .lessons-and-reviews__lessons-button span {
+  background-color: var(--ED-text-color); /* inverse text */
   color: var(--ED-lesson-clr);
 }
 
 .lessons-and-reviews__reviews-button {
   background-color: var(--ED-review-clr);
+  color: var(--ED-text-color);
 }
 
 .lessons-and-reviews__reviews-button span {
+  background-color: var(--ED-text-color); /* inverse text */
   color: var(--ED-review-clr);
 }
 
@@ -368,17 +383,6 @@ footer ul li:last-child {
 .lessons-and-reviews__reviews-button:active,
 .lessons-and-reviews__reviews-button:focus {
   color: var(--ED-highlight-text);
-}
-
-/* RRW Where are these used? Can't find on dashboard or reviews/lessons pages */
-.lessons-and-reviews__reviews-button--0,
-.lessons-and-reviews__lessons-button--0 {
-  background-color: chartreuse;
-}
-
-.lessons-and-reviews__reviews-button--0 span,
-.lessons-and-reviews__lessons-button--0 span {
-  color: chartreuse;
 }
 
 .dashboard section.newbie,
@@ -408,6 +412,11 @@ section.srs-progress ul li:nth-child(5),
 .progress-entry .vocabulary-icon,
 .forum-topics-list a.small-caps {
   background-image: none;
+}
+
+section.srs-progress,
+section.srs-progress span {
+  color: var(--ED-text-color);
 }
 
 /* RRW Note: I think it's okay to use palette colors directly here instead of semantic names */
@@ -502,6 +511,14 @@ the selector? */
   color: var(--ED-grayed-text);
 }
 
+/* RRW highlight the counts if work to do */
+.navigation-shortcut a span {
+  background-color: var(--ED-review-clr);
+}
+.navigation-shortcut--lessons a span {
+  background-color: var(--ED-lesson-clr);
+}
+
 /* Popover when hovering over appr/guru/master/enl stage counts */
 .popover.srs .popover-content ul li {
   background-color: var(--ED-extra-clr);
@@ -516,11 +533,6 @@ the selector? */
 .popover.srs .popover-content ul li:nth-child(3) {
   background-color: var(--ED-vocab-clr) !important;
   --ED-text-color: var(--ED-text-darkbg) !important;
-}
-
-/* RRW highlight the counts if work to do */
-.navigation-shortcut a span {
-  background-color: var(--ED-progress-clr);
 }
 
 .progress-entry .radical-icon {
@@ -1164,7 +1176,7 @@ section#related-items > .radical {
 .subject-legend__item-badge--recently-unlocked,
 .component-character__badge,
 .character-item__badge {
-  background-color: var(--ED-brand);
+  background-color: var(--ED-brand-alt);
 }
 
 .component-character__badge,

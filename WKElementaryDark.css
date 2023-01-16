@@ -1074,6 +1074,37 @@ section#related-items > .radical {
   background-color: var(--ED-surface-2);
 }
 
+/* "Last" section when opened */
+
+#information .last-item {
+  background-color: var(--ED-surface-4);
+}
+
+#information .last-item__label,
+#information .last-item__srs-level {
+  color: var(--ED-grayed-text);
+}
+
+#information .last-item__value {
+  color: var(--ED-pure-white);
+}
+
+#information .last-item__characters {
+  color: var(--ED-pure-white);
+}
+
+#information .last-item .last-item__characters--radical {
+  background-color: var(--ED-radical-clr);
+}
+
+#information .last-item .last-item__characters--kanji {
+  background-color: var(--ED-kanji-clr);
+}
+
+#information .last-item .last-item__characters--vocab {
+  background-color: var(--ED-vocab-clr);
+}
+
 /* Levels page */
 
 .subject-legend,

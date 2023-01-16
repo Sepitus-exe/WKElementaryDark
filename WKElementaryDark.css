@@ -76,6 +76,12 @@
   --ED-vocab-clr: var(--ED-green);
   --ED-extra-clr: var(--ED-yellow);
 
+  /* Indicate SRS stages */
+  --ED-apprentice-clr: hsl(var(--ED-DWKpink-hsl));
+  --ED-guru-clr: hsl(var(--ED-DWKpurple-hsl));
+  --ED-master-clr: hsl(var(--ED-DWKblue-hsl));
+  --ED-enlightened-clr: hsl(var(--ED-DWKlightblue-hsl));
+
   /* Alerts/warnings */
   --ED-alert-clr: var(--ED-red);
   --ED-warn-clr: var(--ED-yellow);
@@ -136,6 +142,16 @@
   --ED-yellow-hsl: 37, 56%, 64%; /* #d7af70 */
   --ED-yellow-light-hsl: 37, 56%, 84%;
   --ED-yellow-dark-hsl: 37, 56%, 44%;
+
+  --ED-WKpink-hsl: 320, 100%, 43%; /* WK Apprentice pink */
+  --ED-WKpurple-hsl: 288, 56%, 40%; /* WK Guru purple */
+  --ED-WKblue-hsl: 228, 71%, 51%; /* WK Master blue */
+  --ED-WKlightblue-hsl: 200, 100%, 43%; /* WK Enlightened lightblue */
+
+  --ED-DWKpink-hsl: 320, 100%, 15%; /* Dark WK Apprentice pink */
+  --ED-DWKpurple-hsl: 288, 56%, 15%; /* Dark WK Guru purple */
+  --ED-DWKblue-hsl: 228, 71%, 16%; /* Dark WK Master blue */
+  --ED-DWKlightblue-hsl: 200, 100%, 18%; /* Dark WK Enlightened lightblue */
 
   --ED-red: hsla(var(--ED-red-hsl), 1);
   --ED-blue: hsla(var(--ED-blue-hsl), 1);
@@ -497,13 +513,11 @@ the selector? */
 
 /* RRW brand the counts if work to do */
 .progress-entry .radical-icon,
-section.srs-progress ul li:first-child,
 .navigation-shortcut a span {
   background-color: var(--ED-brand);
 }
 
 .progress-entry .kanji-icon,
-section.srs-progress ul li:nth-child(2),
 .popover.srs .popover-content ul li:nth-child(2) {
   background-color: var(--ED-kanji-clr);
   background-image: none;
@@ -511,7 +525,6 @@ section.srs-progress ul li:nth-child(2),
 }
 
 .progress-entry .vocabulary-icon,
-section.srs-progress ul li:nth-child(3),
 .popover.srs .popover-content ul li:last-child {
   background-color: var(--ED-vocab-clr);
   --ED-text-color: var(--ED-text-lightbg);
@@ -519,9 +532,21 @@ section.srs-progress ul li:nth-child(3),
   border: none;
 }
 
+section.srs-progress ul li:nth-child(1) {
+  background-color: var(--ED-apprentice-clr);
+}
+
+section.srs-progress ul li:nth-child(2) {
+  background-color: var(--ED-guru-clr);
+}
+
+section.srs-progress ul li:nth-child(3) {
+  background-color: var(--ED-master-clr);
+}
+
 section.srs-progress ul li:nth-child(4),
 .bg-green {
-  background-color: var(--ED-extra-clr);
+  background-color: var(--ED-enlightened-clr);
 }
 
 /* Review/lesson summary */

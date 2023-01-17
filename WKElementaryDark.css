@@ -14,51 +14,62 @@
     /* CSS variables (technically, "custom properties") for theming */
 
     /*
-   * Semantic variables
-   *
-   * Edit these to specify your desired colors.
-   *
-   * You can use the palette colors defined below (as shown) or use CSS
-   * color definitions (e.g. "-ED-surface-1: #223344;").
-   *
-   * For the most part, the palette colors below shouldn't be used in CSS
-   * rules directly. Instead, use these semantically named variables.
-   *
-   * Users can then modify these as they like, and all pages will update
-   * accordingly (without weird surprises).
-   */
+     * Semantic variables
+     *
+     * Edit these to specify your desired colors.
+     *
+     * You can use the palette colors defined below (as shown) or use CSS
+     * color definitions (e.g. "-ED-surface-1: #223344;"). 
+     *
+     * Note that this stylesheet assume a dark theme! It specifically uses
+     * light text (colored with --ED-text-light) over everything except
+     * containers with a background color of --ED-light-surface-5.
+     *
+     * For the most part, the palette colors below shouldn't be used in CSS
+     * rules directly. Instead, use these semantically named variables.
+     *
+     * Users can then modify these as they like, and all pages will update
+     * accordingly (without weird surprises).
+     */
 
-    /* Surfaces / overlapping containers for layout */
+    /* 
+     * Surfaces / overlapping containers for layout
+     */
     --ED-surface-1: var(--ED-gray-1); /* darkest, farthest back */
     --ED-surface-2: var(--ED-gray-3);
     --ED-surface-3: var(--ED-gray-5);
-    --ED-surface-4: var(--ED-gray-7);
-    --ED-surface-5: var(--ED-gray-9); /* lightest, closest to user */
-    /* NOTE: surface-5 must work with dark text */
+    --ED-surface-4: var(--ED-gray-7); /* lightest, closest to user */
+
+    /* 
+     * Light surfaces. Text will be colored with --ED-text-dark
+     */
+    --ED-light-surface-5: var(--ED-gray-9);
 
     /*
-   * Text colors 
-   */
+     * Text colors 
+     */
 
-    /* One color for dark backgrounds, one for light */
-    --ED-text-darkbg: var(--ED-gray-12); /* light text against dark bg */
-    --ED-text-lightbg: var(--ED-gray-1); /* dark text against light bg */
-
-    /* Default color assuming dark background */
-    /* Redefined in CSS rules as required */
-    --ED-text-color: var(--ED-text-darkbg); /* default */
+    /* 
+     * One color for dark backgrounds, one for light.
+     *
+     * --ED-text-dark is used over --ED-light-surface-5 ONLY
+     *
+     * --ED-text-light is used everywhere else
+     */
+    --ED-text-light: var(--ED-gray-12); /* light text -- used EVERYWHERE */
+    --ED-text-dark: var(--ED-gray-1); /* dark text used over light surface o*/
 
     /* Specially coloring needs */
     --ED-highlight-text: var(--ED-yellow); /* emphasized */
     --ED-grayed-text: var(--ED-gray-8); /* de-emphasized */
 
     /*
-   * Other semantic types
-   */
+     * Other semantic types
+     */
 
     /* Theme/branding colors */
-    --ED-brand: var(--ED-yellow);
-    --ED-brand-alt: var(--ED-red);
+    --ED-brand: var(--ED-red);
+    --ED-brand-alt: var(--ED-yellow);
 
     /* Indicate correct/incorrect answers */
     --ED-correct: var(--ED-green);
@@ -75,17 +86,15 @@
     --ED-extra-clr: var(--ED-yellow);
 
     /* Indicate SRS stages */
-    --ED-apprentice-clr: hsl(var(--ED-DWKpink-hsl));
-    --ED-guru-clr: hsl(var(--ED-DWKpurple-hsl));
-    --ED-master-clr: hsl(var(--ED-DWKblue-hsl));
-    --ED-enlightened-clr: hsl(var(--ED-DWKlightblue-hsl));
-    --ED-burned-clr: var(--ED-surface-4);
+    --ED-apprentice-clr: var(--ED-yellow-desat1);
+    --ED-guru-clr: var(--ED-yellow-desat2);
+    --ED-master-clr: var(--ED-yellow-desat3);
+    --ED-enlightened-clr: var(--ED-yellow-desat4);
+    --ED-burned-clr: var(--ED-yellow-desat5);
 
     /* Indicate review vs. lesson */
-    /* --ED-lesson-clr: var(--ED-red); Original */
-    /* --ED-review-clr: var(--ED-blue); Original */
-    --ED-lesson-clr: var(--ED-burned-clr);
-    --ED-review-clr: var(--ED-apprentice-clr);
+    --ED-lesson-clr: var(--ED-yellow-desat1);
+    --ED-review-clr: var(--ED-red);
 
     /* Alerts/warnings */
     --ED-alert-clr: var(--ED-red);
@@ -98,22 +107,25 @@
     /* TODO: Box shadows, gradients */
 
     /*
-   * Color palette
-   *
-   * It's okay to edit these palette colors, but:
-   *
-   *     1. Limit the total number of colors (but it's okay if
-   *        some, or even many, aren't used).
-   *
-   *     2. In general, don't use palette colors directly in CSS rules, 
-   *        instead, define variables with "semantic" names (that describe 
-   *        what something is, does, or means, rather than merely what it 
-   *        looks like).
-   */
+     * Color palette
+     *
+     * Define any colors you need for the the variables above. They won't be 
+     * directly used by any of the CSS rules below.
+     *
+     * This stylesheet doesn't use palette colors directly, instead, it uses
+     * the variables defined above that have "semantic" names (names that
+     * describe what something is, does, or means, rather than merely what it 
+     * looks like).
+     *
+     * In general, themes that limit the total number of hues look best. 
+     *
+     * It's okay if some, or even many, of the colors defined here aren't used.
+     *
+     */
 
     /* 
-   *  Grays 
-   */
+     *  Grays 
+     */
 
     --ED-gray-1: #151515; /* darkest */
     --ED-gray-2: #242424;
@@ -132,56 +144,69 @@
     --ED-pure-white: #fff;
 
     /*
-   * Hues
-   *
-   * Define colors using hue/saturation/lightness values. This makes it easy 
-   * to create tints and shades as shown. It also makes it easy to use 
-   * transparency with hsla().
-   */
+     * HSL values
+     *
+     * Colors defined using hue/saturation/lightness values make 
+     * it easy to create tints and shades as shown below. It also makes 
+     * it easy to use transparency with hsla().
+     */
 
-    --ED-red-hsl: 1, 39%, 44%; /* #9d4745 */
+    --ED-red-hsl: 1, 39%, 44%; /* Bunpro #9d4745 */
     --ED-red-light-hsl: 1, 39%, 64%;
     --ED-red-dark-hsl: 1, 39%, 24%;
-    --ED-blue-hsl: 225, 23%, 44%; /* #56638a */
+
+    --ED-blue-hsl: 225, 23%, 44%; /* Bunpro #56638a */
     --ED-blue-light-hsl: 225, 23%, 64%;
     --ED-blue-dark-hsl: 225, 23%, 24%;
-    /* --ED-green-hsl: 166, 36%, 52%; /* #58b09c original */
+
+    /* --ED-green-hsl: 166, 36%, 52%; /* Bunpro #58b09c */
     --ED-green-hsl: 166, 36%, 32%; /* makes light text work */
     --ED-green-light-hsl: 166, 36%, 72%;
     --ED-green-dark-hsl: 166, 36%, 22%;
-    /* --ED-yellow-hsl: 37, 56%, 64%; /* #d7af70 original */
+
+    /* --ED-yellow-hsl: 37, 56%, 64%; /* Bunpro #d7af70 */
     --ED-yellow-hsl: 36, 56%, 44%; /* makes light text work */
     --ED-yellow-light-hsl: 37, 56%, 84%;
     --ED-yellow-dark-hsl: 37, 56%, 34%;
-
-    --ED-WKpink-hsl: 320, 100%, 43%; /* WK Apprentice pink */
-    --ED-WKpurple-hsl: 288, 56%, 40%; /* WK Guru purple */
-    --ED-WKblue-hsl: 228, 71%, 51%; /* WK Master blue */
-    --ED-WKlightblue-hsl: 200, 100%, 43%; /* WK Enlightened lightblue */
-
-    --ED-DWKpink-hsl: 320, 50%, 23%; /* Dark WK Apprentice pink */
-    --ED-DWKpurple-hsl: 288, 28%, 15%; /* Dark WK Guru purple */
-    --ED-DWKblue-hsl: 228, 35%, 16%; /* Dark WK Master blue */
-    --ED-DWKlightblue-hsl: 200, 50%, 18%; /* Dark WK Enlightened lightblue */
-
-    --ED-red: hsla(var(--ED-red-hsl), 1);
-    --ED-blue: hsla(var(--ED-blue-hsl), 1);
-    --ED-green: hsla(var(--ED-green-hsl), 1);
-    --ED-yellow: hsla(var(--ED-yellow-hsl), 1);
+    --ED-yellow-desat1-hsl: 37, 16%, 24%;
+    --ED-yellow-desat2-hsl: 37, 26%, 34%;
+    --ED-yellow-desat3-hsl: 37, 36%, 34%;
+    --ED-yellow-desat4-hsl: 37, 46%, 44%;
+    --ED-yellow-desat5-hsl: 37, 56%, 44%;
 
     /*
-   * If, for example, you needed a 50% transparent overlay of a dark
-   * green color, you could use: hsla(var(--ED-yellow-dark-hsl), 0.5)
-   */
+     * Colors defined from the HSL values above
+     */
+    --ED-red: hsl(var(--ED-red-hsl));
+    --ED-red-light: hsl(var(--ED-red-light-hsl));
+
+    --ED-blue: hsl(var(--ED-blue-hsl));
+
+    --ED-green: hsl(var(--ED-green-hsl));
+
+    --ED-yellow: hsl(var(--ED-yellow-hsl));
+    --ED-yellow-light: hsl(var(--ED-yellow-light-hsl));
+    --ED-yellow-desat1: hsl(var(--ED-yellow-desat1-hsl));
+    --ED-yellow-desat2: hsl(var(--ED-yellow-desat2-hsl));
+    --ED-yellow-desat3: hsl(var(--ED-yellow-desat3-hsl));
+    --ED-yellow-desat4: hsl(var(--ED-yellow-desat4-hsl));
+    --ED-yellow-desat5: hsl(var(--ED-yellow-desat5-hsl));
+
+    /*
+    * If, for example, you needed a 50% transparent overlay of a dark
+    * green color, you could use: 
+    *
+    *         --ED-my-color: hsla(var(--ED-yellow-dark-hsl), 0.5);
+    */
   }
 
   /*************************************************************************************************
- * 
- * BEGIN CSS RULES
- *
- * There should be no reason to edit anything below this point
- *
-/*************************************************************************************************/
+   * 
+   * BEGIN CSS RULES
+   *
+   *                 ** NOTHING BELOW THIS POINT IS INTENDED TO BE EDITED **
+   *
+  /*************************************************************************************************/
 
   /* General reset */
 
@@ -189,6 +214,9 @@
   .dashboard section.dashboard-sub-section div.see-more {
     background-color: var(--ED-surface-1);
     background-image: none;
+
+    /* Default color assumes dark background */
+    --ED-text-color: var(--ED-text-light); /* default */
   }
 
   .global-header,
@@ -533,7 +561,7 @@ the selector? */
   }
   .popover.srs .popover-content ul li:nth-child(3) {
     background-color: var(--ED-vocab-clr) !important;
-    --ED-text-color: var(--ED-text-darkbg) !important;
+    --ED-text-color: var(--ED-text-light) !important;
   }
 
   .progress-entry .radical-icon {
@@ -736,14 +764,14 @@ the selector? */
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
-    background-color: var(--ED-surface-5); /* light background */
-    --ED-text-color: var(--ED-text-lightbg);
+    background-color: var(--ED-light-surface-5); /* light background */
+    --ED-text-color: var(--ED-text-dark);
     color: var(--ED-text-color);
   }
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
-  border-color: transparent transparent transparent var(--ED-surface-5);
+  border-color: transparent transparent transparent var(--ED-light-surface-5);
 }
 
   #reviews-summary footer #last-session-date,
@@ -858,7 +886,7 @@ the selector? */
   #question #question-type.meaning,
   #quiz #question-type.meaning {
     background-color: var(--ED-meaning-clr); /* light background */
-    --ED-text-color: var(--ED-text-lightbg);
+    --ED-text-color: var(--ED-text-dark);
   }
 
   #question #question-type h1 {
@@ -1009,7 +1037,7 @@ the selector? */
 
   /* RRW Not sure where this is to test this works */
   .reading-highlight > span {
-    /* --ED-text-color: var(--ED-text-lightbg); */
+    /* --ED-text-color: var(--ED-text-dark); */
     --ED-text-color: chartreuse;
   }
 
@@ -1057,22 +1085,22 @@ the selector? */
 
   .srs .srs-apprentice {
     background-color: var(--ED-apprentice-clr);
-    color: var(--ED-text-darkbg);
+    color: var(--ED-text-light);
   }
 
   .srs .srs-guru {
     background-color: var(--ED-guru-clr);
-    color: var(--ED-text-darkbg);
+    color: var(--ED-text-light);
   }
 
   .srs .srs-master {
     background-color: var(--ED-master-clr);
-    color: var(--ED-text-darkbg);
+    color: var(--ED-text-light);
   }
 
   .srs .srs-englightened {
     background-color: var(--ED-enlightened-clr);
-    color: var(--ED-text-darkbg);
+    color: var(--ED-text-light);
   }
 
   /* overlay message */
@@ -1397,8 +1425,8 @@ the selector? */
   }
 
   button.search__button {
-    background-color: var(--ED-surface-5);
-    --ED-text-color: var(--ED-text-lightbg);
+    background-color: var(--ED-light-surface-5);
+    --ED-text-color: var(--ED-text-dark);
     color: var(--ED-text-color);
   }
 
@@ -1422,7 +1450,7 @@ the selector? */
   }
 
   input.btn[type="submit"] {
-    --ED-text-color: var(--ED-text-lightbg);
+    --ED-text-color: var(--ED-text-dark);
   }
 
   input[type="text"],
@@ -1512,29 +1540,29 @@ the selector? */
   }
 
   .progress .bar span {
-    --ED-text-color: var(--ED-text-lightbg);
-    background-color: var(--ED-surface-5);
+    --ED-text-color: var(--ED-text-dark);
+    background-color: var(--ED-light-surface-5);
     color: var(--ED-text-color);
     box-shadow: none;
     text-shadow: none;
   }
 
   .progress .bar span:after {
-    border-top-color: var(--ED-surface-5);
+    border-top-color: var(--ED-light-surface-5);
   }
 
   .worst-kanji .progress .bar span,
   .worst-radical .progress .bar span,
   .worst-vocabulary .progress .bar span,
   #quiz .bg-gray-300:hover {
-    --ED-text-color: var(--ED-text-lightbg);
-    background-color: var(--ED-surface-5);
+    --ED-text-color: var(--ED-text-dark);
+    background-color: var(--ED-light-surface-5);
   }
 
   .worst-kanji .progress .bar span:after,
   .worst-radical .progress .bar span:after,
   .worst-vocabulary .progress .bar span:after {
-    border-top-color: var(--ED-surface-5);
+    border-top-color: var(--ED-light-surface-5);
   }
 
   /*************************************************************************************************/
@@ -1579,8 +1607,8 @@ the selector? */
   input[type="password"],
   .settings-section .btn,
   .settings-section select {
-    background-color: var(--ED-surface-5);
-    --ED-text-color: var(--ED-text-lightbg);
+    background-color: var(--ED-light-surface-5);
+    --ED-text-color: var(--ED-text-dark);
   }
 
   .settings-section .btn:hover,
@@ -1607,8 +1635,8 @@ the selector? */
 
   .settings-section input[type="text"] {
     border: 1px solid var(--ED-text-color);
-    background-color: var(--ED-surface-5);
-    --ED-text-color: var(--ED-text-lightbg);
+    background-color: var(--ED-light-surface-5);
+    --ED-text-color: var(--ED-text-dark);
   }
 
   .settings-section form .control-group textarea {

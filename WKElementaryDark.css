@@ -373,6 +373,11 @@ footer ul li:last-child {
   border-color: var(--ED-brand);
 }
 
+.lessons-and-reviews .lessons-and-reviews__lessons-button--0 {
+  /* No lessons, no color */
+  background-color: var(--ED-surface-4);
+}
+
 .lessons-and-reviews__lessons-button {
   background-color: var(--ED-lesson-clr);
   color: var(--ED-text-color);
@@ -381,6 +386,11 @@ footer ul li:last-child {
 .lessons-and-reviews__lessons-button span {
   background-color: var(--ED-text-color); /* inverse text */
   color: var(--ED-lesson-clr);
+}
+
+.lessons-and-reviews .lessons-and-reviews__reviews-button--0 {
+  /* No reviews, no color */
+  background-color: var(--ED-surface-4);
 }
 
 .lessons-and-reviews__reviews-button {

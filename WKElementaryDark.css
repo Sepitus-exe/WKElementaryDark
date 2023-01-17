@@ -534,7 +534,7 @@ the selector? */
 /* RRW De-emphasize counts if 0 in shortcut navigation to lessons/reviews in top nav  bar */
 .navigation-shortcut[data-count="0"] span,
 .navigation-shortcut[data-count="0"] .navigation-shortcut__count {
-  background-color: var(--ED-surface-2);
+  background-color: var(--ED-surface-3);
   color: var(--ED-grayed-text);
 }
 

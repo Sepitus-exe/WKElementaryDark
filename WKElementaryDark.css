@@ -1006,13 +1006,13 @@ the selector? */
   }
 
   #additional-content ul li span,
+  #additional-content ul li.active i,
   #information {
     background-color: var(--ED-surface-2);
     box-shadow: none;
     color: var(--ED-text-color);
   }
 
-  #additional-content ul li.active i,
   #additional-content ul li:not(#option-audio) span:hover::before,
   #kana-chart.legacy ul li:not(.empty):hover,
   [class^="note-"] form fieldset {
@@ -1416,7 +1416,7 @@ the selector? */
 
   .page-header {
     background-color: var(--ED-surface-2);
-    padding-top: 10px;
+    padding: 10px 20px 0;
   }
 
   .subject-section {

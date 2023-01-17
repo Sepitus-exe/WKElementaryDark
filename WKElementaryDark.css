@@ -1156,6 +1156,9 @@ section#related-items > .radical {
 }
 
 /* Item stage movement indicators */
+.srs .srs-up {
+  color: var(--ED-text-color);
+}
 .srs .srs-down {
   color: var(--ED-grayed-text);
 }

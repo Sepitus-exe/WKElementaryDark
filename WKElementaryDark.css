@@ -1244,8 +1244,12 @@ the selector? */
     background-image: none;
   }
 
+  .progress-bar__label {
+    box-shadow: none;
+  }
+
   .progress-bar__bar {
-    background-color: var(--ED-surface-1);
+    background-color: var(--ED-progress-clr);
     background-image: none;
   }
 

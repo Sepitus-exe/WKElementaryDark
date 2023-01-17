@@ -1009,6 +1009,7 @@ header.quiz #main-info.radical #character,
   background-color: var(--ED-surface-2);
   box-shadow: none;
   color: var(--ED-text-color);
+  line-height: 1;
 }
 
 #additional-content ul li:not(#option-audio) span:hover::before,
@@ -1075,10 +1076,6 @@ header.quiz #main-info.radical #character,
 #answer-form fieldset.incorrect input[type="text"],
 #answer-form fieldset.incorrect input[type="text"]:disabled {
   background-color: var(--ED-incorrect) !important;
-}
-
-#reviews #additional-content ul li#option-audio.new-audio .audio-btn {
-  height: 32px !important;
 }
 
 .srs .srs-apprentice {

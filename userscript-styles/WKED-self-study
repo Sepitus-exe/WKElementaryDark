@@ -1,0 +1,69 @@
+/* ==UserStyle==
+@name         WaniKani Elementary Dark -- Self-Study
+@namespace    github.com/openstyles/stylus
+@version      1.0.0
+@license      MIT
+@description  Adds WKED styling to the self-study userscript
+@author       Sepitus
+@homepageURL  https://github.com/Sepitus-exe/WKElementaryDark
+@supportURL   https://github.com/Sepitus-exe/WKElementaryDark/issues
+==/UserStyle== */
+
+#wkof_ds #ss_quiz {
+  border-color: var(--ED-surface-2);
+  background-color: var(--ED-surface-2);
+}
+
+#wkof_ds #ss_quiz .titlebar {
+  background-color: var(--ED-surface-2);
+  color: var(--ED-text-color);
+}
+
+#wkof_ds #ss_quiz .statusbar {
+  background-color: var(--ED-surface-2);
+  color: var(--ED-text-color);
+}
+
+#wkof_ds #ss_quiz .answer {
+  background-color: var(--ED-surface-3);
+}
+
+#wkof_ds #ss_quiz .answer input {
+  background-color: var(--ED-surface-5);
+  border-color: var(--ED-surface-4);
+  --ED-text-color: var(--ED-text-lightbg);
+}
+
+#ss_quiz[data-itype="radical"] .qwrap,
+#ss_quiz .summary .que[title~="Radical"] {
+  background-color: var(--ED-radical-clr);
+}
+
+#ss_quiz[data-itype="kanji"] .qwrap,
+#ss_quiz .summary .que[title~="Kanji"] {
+  background-color: var(--ED-kanji-clr);
+}
+
+#ss_quiz[data-itype="vocabulary"] .qwrap,
+#ss_quiz .summary .que[title~="Vocabulary"] {
+  background-color: var(--ED-vocab-clr);
+}
+
+#ss_quiz[data-atype="reading"] .atype {
+  color: var(--ED-text-color);
+  text-shadow: none;
+  border: none;
+  background-color: var(--ED-reading-clr);
+}
+
+#ss_quiz[data-atype="meaning"] .atype {
+  color: var(--ED-text-lightbg);
+  text-shadow: none;
+  border: none;
+  background-color: var(--ED-meaning-clr);
+  background-image: none;
+}
+
+#ss_quiz .settings span.active {
+  color: var(--ED-text-color);
+}

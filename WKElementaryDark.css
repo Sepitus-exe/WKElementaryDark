@@ -148,10 +148,11 @@
     /* --ED-green-hsl: 166, 36%, 52%; /* #58b09c original */
     --ED-green-hsl: 166, 36%, 32%; /* makes light text work */
     --ED-green-light-hsl: 166, 36%, 72%;
-    --ED-green-dark-hsl: 166, 36%, 32%;
-    --ED-yellow-hsl: 37, 56%, 64%; /* #d7af70 */
+    --ED-green-dark-hsl: 166, 36%, 22%;
+    /* --ED-yellow-hsl: 37, 56%, 64%; /* #d7af70 original */
+    --ED-yellow-hsl: 36, 56%, 44%; /* makes light text work */
     --ED-yellow-light-hsl: 37, 56%, 84%;
-    --ED-yellow-dark-hsl: 37, 56%, 44%;
+    --ED-yellow-dark-hsl: 37, 56%, 34%;
 
     --ED-WKpink-hsl: 320, 100%, 43%; /* WK Apprentice pink */
     --ED-WKpurple-hsl: 288, 56%, 40%; /* WK Guru purple */
@@ -283,7 +284,6 @@
 
   .progress-bar {
     background-color: var(--ED-surface-3);
-    --ED-text-color: var(--ED-text-lightbg);
   }
 
   .progress-bar .progress-bar__progress {

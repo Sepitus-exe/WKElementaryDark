@@ -844,7 +844,9 @@ section.srs-progress ul li:nth-child(4) {
 
 /* Header/prompt with e.g. "Vocabulary **Reading**" */
 #question #question-type.meaning,
-#question #question-type.reading {
+#question #question-type.reading,
+#quiz #question-type.meaning,
+#quiz #question-type.reading {
   background-color: var(--ED-reading-clr);
   background-image: none;
   border: none;
@@ -852,7 +854,8 @@ section.srs-progress ul li:nth-child(4) {
   padding-bottom: 0.1em;
 }
 
-#question #question-type.meaning {
+#question #question-type.meaning,
+#quiz #question-type.meaning {
   background-color: var(--ED-meaning-clr); /* light background */
   --ED-text-color: var(--ED-text-lightbg);
 }
@@ -921,7 +924,6 @@ header.quiz #main-info.radical #character,
 #lesson #supplement-info h2,
 #lesson #supplement-info #supplement-kan-related-vocabulary ul li div,
 .text-gray-900,
-#quiz #question-type.reading,
 #answer-exception span,
 #item-info #related-items a:visited,
 #item-info #related-items a,
@@ -933,7 +935,6 @@ header.quiz #main-info.radical #character,
   color: var(--ED-text-color);
 }
 
-#quiz #question-type.meaning,
 #item-info #related-items ul.radical span,
 .reading-highlight {
   text-shadow: none;
@@ -1132,9 +1133,6 @@ section#related-items > .radical {
 }
 
 /* Item stage movement indicators */
-.srs .srs-up {
-  color: var(--ED-text-color);
-}
 .srs .srs-down {
   color: var(--ED-grayed-text);
 }
@@ -1183,7 +1181,6 @@ section#related-items > .radical {
 
 .subject-legend__item-badge--vocabulary {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
 }
 
 .subject-legend,
@@ -1341,7 +1338,6 @@ section#related-items > .radical {
 .page-header__icon--vocabulary,
 .vocabulary-highlight {
   background-color: var(--ED-vocab-clr);
-  --ED-text-color: var(--ED-text-lightbg);
   background-image: none;
 }
 

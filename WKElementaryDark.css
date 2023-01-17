@@ -64,7 +64,7 @@
   --ED-incorrect: var(--ED-red);
 
   /* Indicate reading vs. meaning */
-  --ED-meaning-clr: var(--ED-yellow); /* must work with dark text */
+  --ED-meaning-clr: var(--ED-yellow);
   --ED-reading-clr: var(--ED-gray-3);
 
   /* Indicate item types */
@@ -873,8 +873,7 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 
 #question #question-type.meaning,
 #quiz #question-type.meaning {
-  background-color: var(--ED-meaning-clr); /* light background */
-  --ED-text-color: var(--ED-text-dark);
+  background-color: var(--ED-meaning-clr);
 }
 
 #question #question-type h1 {

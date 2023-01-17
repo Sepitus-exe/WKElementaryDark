@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WaniKani Elementary Dark
 @namespace    github.com/openstyles/stylus
-@version      1.0.5
+@version      1.1.0-dev
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -10,46 +10,197 @@
 ==/UserStyle== */
 
 @-moz-document domain("www.wanikani.com") {
-body {
+  :root {
+    /* CSS variables (technically, "custom properties") for theming */
+
+    /*
+   * Semantic variables
+   *
+   * Edit these to specify your desired colors.
+   *
+   * You can use the palette colors defined below (as shown) or use CSS
+   * color definitions (e.g. "-ED-surface-1: #223344;").
+   *
+   * For the most part, the palette colors below shouldn't be used in CSS
+   * rules directly. Instead, use these semantically named variables.
+   *
+   * Users can then modify these as they like, and all pages will update
+   * accordingly (without weird surprises).
+   */
+
+    /* Surfaces / overlapping containers for layout */
+    --ED-surface-1: var(--ED-gray-1); /* darkest, farthest back */
+    --ED-surface-2: var(--ED-gray-3);
+    --ED-surface-3: var(--ED-gray-5);
+    --ED-surface-4: var(--ED-gray-7);
+    --ED-surface-5: var(--ED-gray-9); /* lightest, closest to user */
+    /* NOTE: surface-5 must work with dark text */
+
+    /*
+   * Text colors 
+   */
+
+    /* One color for dark backgrounds, one for light */
+    --ED-text-darkbg: var(--ED-gray-12); /* light text against dark bg */
+    --ED-text-lightbg: var(--ED-gray-1); /* dark text against light bg */
+
+    /* Default color assuming dark background */
+    /* Redefined in CSS rules as required */
+    --ED-text-color: var(--ED-text-darkbg); /* default */
+
+    /* Specially coloring needs */
+    --ED-highlight-text: var(--ED-yellow); /* emphasized */
+    --ED-grayed-text: var(--ED-gray-8); /* de-emphasized */
+
+    /*
+   * Other semantic types
+   */
+
+    /* Theme/branding colors */
+    --ED-brand: var(--ED-yellow);
+    --ED-brand-alt: var(--ED-red);
+
+    /* Indicate correct/incorrect answers */
+    --ED-correct: var(--ED-green);
+    --ED-incorrect: var(--ED-red);
+
+    /* Indicate reading vs. meaning */
+    --ED-meaning-clr: var(--ED-yellow); /* must work with dark text */
+    --ED-reading-clr: var(--ED-gray-3);
+
+    /* Indicate item types */
+    --ED-radical-clr: var(--ED-red);
+    --ED-kanji-clr: var(--ED-blue);
+    --ED-vocab-clr: var(--ED-green);
+    --ED-extra-clr: var(--ED-yellow);
+
+    /* Indicate SRS stages */
+    --ED-apprentice-clr: hsl(var(--ED-DWKpink-hsl));
+    --ED-guru-clr: hsl(var(--ED-DWKpurple-hsl));
+    --ED-master-clr: hsl(var(--ED-DWKblue-hsl));
+    --ED-enlightened-clr: hsl(var(--ED-DWKlightblue-hsl));
+    --ED-burned-clr: var(--ED-surface-4);
+
+    /* Indicate review vs. lesson */
+    /* --ED-lesson-clr: var(--ED-red); Original */
+    /* --ED-review-clr: var(--ED-blue); Original */
+    --ED-lesson-clr: var(--ED-burned-clr);
+    --ED-review-clr: var(--ED-apprentice-clr);
+
+    /* Alerts/warnings */
+    --ED-alert-clr: var(--ED-red);
+    --ED-warn-clr: var(--ED-yellow);
+    --ED-success-clr: var(--ED-green);
+
+    /* Progress bars */
+    --ED-progress-clr: var(--ED-brand);
+
+    /* TODO: Box shadows, gradients */
+
+    /*
+   * Color palette
+   *
+   * It's okay to edit these palette colors, but:
+   *
+   *     1. Limit the total number of colors (but it's okay if
+   *        some, or even many, aren't used).
+   *
+   *     2. In general, don't use palette colors directly in CSS rules, 
+   *        instead, define variables with "semantic" names (that describe 
+   *        what something is, does, or means, rather than merely what it 
+   *        looks like).
+   */
+
+    /* 
+   *  Grays 
+   */
+
     --ED-gray-1: #151515; /* darkest */
     --ED-gray-2: #242424;
     --ED-gray-3: #282828;
     --ED-gray-4: #2c2c2c;
-    --ED-gray-5: #2e2e2e;
+    --ED-gray-5: #303030;
     --ED-gray-6: #434343;
     --ED-gray-7: #535353;
     --ED-gray-8: #aaaaaa;
     --ED-gray-9: #bababa;
-    --ED-gray-10: #bbbbbb;
-    --ED-gray-11: #bcbcbc;
-    --ED-gray-12: #bfbfbf;
-    --ED-gray-13: #cccccc; /* lightest */
+    --ED-gray-10: #bfbfbf;
+    --ED-gray-11: #cccccc;
+    --ED-gray-12: #eeeeee;
 
-    --ED-text-color: #ffffff;
+    --ED-pure-black: #000;
+    --ED-pure-white: #fff;
 
-    --ED-radical-clr: #9d4745;
-    --ED-kanji-clr: #56638a;
-    --ED-vocab-clr: #58b09c;
-    --ED-extra-clr: #d7af70;
-  
-    /*  Semantic color names */
-    --ED-quiz-meaning-background: var(--ED-text-color);
-    --ED-quiz-meaning-text: var(--ED-gray-3);
-    --ED-quiz-reading-background: var(--ED-gray-3);
-    --ED-quiz-reading-text: var(--ED-text-color);
+    /*
+   * Hues
+   *
+   * Define colors using hue/saturation/lightness values. This makes it easy 
+   * to create tints and shades as shown. It also makes it easy to use 
+   * transparency with hsla().
+   */
+
+    --ED-red-hsl: 1, 39%, 44%; /* #9d4745 */
+    --ED-red-light-hsl: 1, 39%, 64%;
+    --ED-red-dark-hsl: 1, 39%, 24%;
+    --ED-blue-hsl: 225, 23%, 44%; /* #56638a */
+    --ED-blue-light-hsl: 225, 23%, 64%;
+    --ED-blue-dark-hsl: 225, 23%, 24%;
+    /* --ED-green-hsl: 166, 36%, 52%; /* #58b09c original */
+    --ED-green-hsl: 166, 36%, 32%; /* makes light text work */
+    --ED-green-light-hsl: 166, 36%, 72%;
+    --ED-green-dark-hsl: 166, 36%, 32%;
+    --ED-yellow-hsl: 37, 56%, 64%; /* #d7af70 */
+    --ED-yellow-light-hsl: 37, 56%, 84%;
+    --ED-yellow-dark-hsl: 37, 56%, 44%;
+
+    --ED-WKpink-hsl: 320, 100%, 43%; /* WK Apprentice pink */
+    --ED-WKpurple-hsl: 288, 56%, 40%; /* WK Guru purple */
+    --ED-WKblue-hsl: 228, 71%, 51%; /* WK Master blue */
+    --ED-WKlightblue-hsl: 200, 100%, 43%; /* WK Enlightened lightblue */
+
+    --ED-DWKpink-hsl: 320, 50%, 23%; /* Dark WK Apprentice pink */
+    --ED-DWKpurple-hsl: 288, 28%, 15%; /* Dark WK Guru purple */
+    --ED-DWKblue-hsl: 228, 35%, 16%; /* Dark WK Master blue */
+    --ED-DWKlightblue-hsl: 200, 50%, 18%; /* Dark WK Enlightened lightblue */
+
+    --ED-red: hsla(var(--ED-red-hsl), 1);
+    --ED-blue: hsla(var(--ED-blue-hsl), 1);
+    --ED-green: hsla(var(--ED-green-hsl), 1);
+    --ED-yellow: hsla(var(--ED-yellow-hsl), 1);
+
+    /*
+   * If, for example, you needed a 50% transparent overlay of a dark
+   * green color, you could use: hsla(var(--ED-yellow-dark-hsl), 0.5)
+   */
   }
+
+  /*************************************************************************************************
+ * 
+ * BEGIN CSS RULES
+ *
+ * There should be no reason to edit anything below this point
+ *
+/*************************************************************************************************/
+
+  /* General reset */
 
   body,
   .dashboard section.dashboard-sub-section div.see-more {
-    background-color: var(--ED-gray-1);
+    background-color: var(--ED-surface-1);
     background-image: none;
   }
 
   .global-header,
   .sitemap {
-    background-color: var(--ED-gray-5);
+    background-color: var(--ED-surface-2);
     background-image: none;
-    border-bottom: var(--ED-gray-1);
+    border-color: var(--ED-surface-4);
+  }
+
+  .navigation__toggle-lines,
+  .navigation__toggle-lines::before,
+  .navigation__toggle-lines::after {
+    border-color: var(--ED-text-color);
   }
 
   span,
@@ -76,29 +227,29 @@ body {
     text-shadow: none;
   }
 
-  .review-forecast__toggleicon,
-  .kotoba-table-list table tr.none-available {
-    color: var(--ED-text-color);
+  .dashboard .forum-topics-list h3.small-caps.invert div.heading-symbol {
+    border-color: var(--ED-text-color);
   }
 
-  .kotoba-table-list table tr.none-available div {
-    background-color: var(--ED-gray-8);
-    border: none;
-    box-shadow: none;
+  /*************************************************************************************************
+ * Dashboard page specifics
+/*************************************************************************************************/
+
+  .review-forecast__toggleicon,
+  .kotoba-table-list table tr.none-available {
+    color: var(--ED-brand);
   }
 
   .sitemap__expandable-chunk,
   .extra-study > div,
   .review-forecast__day,
   .bg-white {
-    background-color: var(--ED-gray-2);
+    background-color: var(--ED-surface-3);
   }
 
   .sitemap__grouped-pages > .sitemap__page > a,
-  .navigation__toggle[data-expanded="true"],
-  .forum-topics-list table td,
-  .kotoba-table-list table tr.none-available {
-    background-color: var(--ED-gray-5);
+  .navigation__toggle[data-expanded="true"] {
+    background-color: var(--ED-surface-3);
   }
 
   .extra-study,
@@ -107,7 +258,7 @@ body {
   .recent-unlocks > h3,
   .see-more > a,
   .dashboard-sub-section h3 {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
 
   .extra-study img,
@@ -117,7 +268,7 @@ body {
   }
 
   .review-forecast__day-header::before {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
 
   .logo,
@@ -127,24 +278,21 @@ body {
   }
 
   #query {
-    background-color: var(--ED-gray-9);
+    background-color: var(--ED-surface-1);
   }
 
   .progress-bar {
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-3);
+    --ED-text-color: var(--ED-text-lightbg);
   }
 
-  .progress-bar__label,
-  .progress-bar__extra-label {
-    color: var(--ED-text-color);
-  }
-
-  .bg-pink-gradient {
-    background-color: var(--ED-extra-clr);
+  .progress-bar .progress-bar__progress {
+    background-color: var(--ED-progress-clr);
+    background-image: none;
   }
 
   .bg-gray-500 {
-    background-color: var(--ED-radical-clr);
+    background-color: var(--ED-brand);
   }
 
   .sitemap__pages--radical > .sitemap__page--subject,
@@ -202,21 +350,31 @@ body {
 
   .review-forecast__bar,
   .dashboard section.newbie {
-    background-color: var(--ED-radical-clr);
+    background-color: var(--ED-brand);
   }
 
   .border-blue-300 {
-    border-color: var(--ED-radical-clr);
+    border-color: var(--ED-brand);
   }
 
-  .lessons-and-reviews__reviews-button,
   .lessons-and-reviews__lessons-button {
-    background-color: var(--ED-radical-clr);
+    background-color: var(--ED-lesson-clr);
+    color: var(--ED-text-color);
   }
 
-  .lessons-and-reviews__reviews-button span,
   .lessons-and-reviews__lessons-button span {
-    color: var(--ED-radical-clr);
+    background-color: var(--ED-text-color); /* inverse text */
+    color: var(--ED-lesson-clr);
+  }
+
+  .lessons-and-reviews__reviews-button {
+    background-color: var(--ED-review-clr);
+    color: var(--ED-text-color);
+  }
+
+  .lessons-and-reviews__reviews-button span {
+    background-color: var(--ED-text-color); /* inverse text */
+    color: var(--ED-review-clr);
   }
 
   .lessons-and-reviews__lessons-button:hover,
@@ -225,17 +383,7 @@ body {
   .lessons-and-reviews__reviews-button:hover,
   .lessons-and-reviews__reviews-button:active,
   .lessons-and-reviews__reviews-button:focus {
-    color: var(--ED-gray-10);
-  }
-
-  .lessons-and-reviews__reviews-button--0,
-  .lessons-and-reviews__lessons-button--0 {
-    background-color: var(--ED-gray-6);
-  }
-
-  .lessons-and-reviews__reviews-button--0 span,
-  .lessons-and-reviews__lessons-button--0 span {
-    color: var(--ED-gray-6);
+    color: var(--ED-highlight-text);
   }
 
   .dashboard section.newbie,
@@ -245,15 +393,14 @@ body {
   .progress-entry .radical-icon,
   .progress-entry .vocabulary-icon,
   .dashboard section.dashboard-sub-section div.see-more,
-  .small-caps.invert,
-  .popover.srs .popover-content ul li:nth-child(2),
-  .popover.srs .popover-content ul li:last-child {
+  .small-caps.invert {
     border: 0px;
     box-shadow: 0 0px;
   }
 
+  /* RRW Can't find this, either (not a newbie tho :-) */
   .dashboard section.newbie hr {
-    border-color: var(--ED-text-color);
+    border-color: chartreuse;
   }
 
   section.srs-progress ul li:first-child,
@@ -268,13 +415,25 @@ body {
     background-image: none;
   }
 
+  section.srs-progress,
+  section.srs-progress span {
+    color: var(--ED-text-color);
+  }
+
+  /* RRW Note: I think it's okay to use palette colors directly here instead of semantic names */
   .radical-icon--locked,
   .kanji-icon--locked {
     background-image: linear-gradient(
       180deg,
-      var(--ED-gray-13) 0%,
-      var(--ED-gray-12) 100%
+      var(--ED-gray-11) 0%,
+      var(--ED-gray-10) 100%
     ) !important;
+  }
+
+  .kotoba-table-list table a span,
+  .kotoba-table-list table a time,
+  .kotoba-table-list table td span.pull-right {
+    color: var(--ED-text-color);
   }
 
   .kotoba-table-list tr[class|="radical"],
@@ -286,7 +445,7 @@ body {
   .kotoba-table-list tr[class|="radical"]:nth-child(odd),
   .kotoba-table-list tr[class|="kanji"]:nth-child(odd),
   .kotoba-table-list tr[class|="vocabulary"]:nth-child(odd) {
-    filter: saturate(1.3);
+    filter: brightness(1.1);
   }
 
   .kotoba-table-list tr[class|="radical"] {
@@ -301,10 +460,26 @@ body {
     background-color: var(--ED-vocab-clr);
   }
 
-  .small-caps.invert {
-    background-color: var(--ED-gray-3);
+  .small-caps.invert,
+  .forum-topics-list table tbody tr td {
+    box-shadow: none;
+    background: none;
+  }
+
+  .forum-topics-list > h3.small-caps {
+    background-color: var(--ED-surface-2);
     background-image: none;
     filter: invert(0);
+  }
+
+  .forum-topics-list table,
+  .forum-topics-list table tbody tr {
+    color: var(--ED-text-color);
+    background-color: var(--ED-surface-3);
+  }
+
+  .forum-topics-list table tbody tr:hover {
+    background-color: var(--ED-surface-4);
   }
 
   .heading-symbol {
@@ -315,30 +490,57 @@ body {
     border-radius: 0px 0px 5px 5px;
   }
 
+  /* RRW Used in the community forum section, God only knows where else. Tightnen
+the selector? */
   .text-blue-500:hover,
   .text-blue-500:active,
   .text-blue-500:focus,
   .forum-topics-list a:hover {
-    color: var(--ED-radical-clr);
-    --tw-ring-color: var(--ED-radical-clr);
+    color: var(--ED-highlight-text);
+    --tw-ring-color: var(--ED-highlight-text);
   }
 
-  .navigation-shortcut[data-count="0"] span,
-  .navigation-shortcut[data-count="0"] .navigation-shortcut__count {
-    background-color: var(--ED-gray-6);
-  }
-
-  .progress-entry .radical-icon,
-  section.srs-progress ul li:first-child,
-  .navigation-shortcut a span,
-  .popover.srs .popover-content ul li:first-child {
-    background-color: var(--ED-radical-clr);
+  .navigation-shortcut {
     background-image: none;
     border: none;
   }
 
+  /* RRW De-emphasize counts if 0 in shortcut navigation to lessons/reviews in top nav  bar */
+  .navigation-shortcut[data-count="0"] span,
+  .navigation-shortcut[data-count="0"] .navigation-shortcut__count {
+    background-color: var(--ED-surface-2);
+    color: var(--ED-grayed-text);
+  }
+
+  /* RRW highlight the counts if work to do */
+  .navigation-shortcut a span {
+    background-color: var(--ED-review-clr);
+  }
+  .navigation-shortcut--lessons a span {
+    background-color: var(--ED-lesson-clr);
+  }
+
+  /* Popover when hovering over appr/guru/master/enl stage counts */
+  .popover.srs .popover-content ul li {
+    background-color: var(--ED-extra-clr);
+    background-image: none !important;
+  }
+  .popover.srs .popover-inner .popover-content ul li:nth-child(1) {
+    background-color: var(--ED-radical-clr);
+  }
+  .popover.srs .popover-content ul li:nth-child(2) {
+    background-color: var(--ED-kanji-clr) !important;
+  }
+  .popover.srs .popover-content ul li:nth-child(3) {
+    background-color: var(--ED-vocab-clr) !important;
+    --ED-text-color: var(--ED-text-darkbg) !important;
+  }
+
+  .progress-entry .radical-icon {
+    background-color: var(--ED-radical-clr);
+  }
+
   .progress-entry .kanji-icon,
-  section.srs-progress ul li:nth-child(2),
   .popover.srs .popover-content ul li:nth-child(2) {
     background-color: var(--ED-kanji-clr);
     background-image: none;
@@ -346,60 +548,127 @@ body {
   }
 
   .progress-entry .vocabulary-icon,
-  section.srs-progress ul li:nth-child(3),
   .popover.srs .popover-content ul li:last-child {
     background-color: var(--ED-vocab-clr);
     background-image: none;
     border: none;
   }
 
-  section.srs-progress ul li:nth-child(4),
+  section.srs-progress ul li:nth-child(1) {
+    background-color: var(--ED-apprentice-clr);
+  }
+
+  section.srs-progress ul li:nth-child(2) {
+    background-color: var(--ED-guru-clr);
+  }
+
+  section.srs-progress ul li:nth-child(3) {
+    background-color: var(--ED-master-clr);
+  }
+
+  section.srs-progress ul li:nth-child(4) {
+    background-color: var(--ED-enlightened-clr);
+  }
+
+  /* Guru progress indicators under indiviual items */
   .bg-green {
     background-color: var(--ED-extra-clr);
   }
 
-  /* Review screen */
+  /*************************************************************************************************/
+  /* Review & lesson summary pages
+/*************************************************************************************************/
+
+  /* Sticky header */
+  #reviews-summary .pure-g-r:first-child,
+  #lessons-summary .pure-g-r:first-child {
+    padding: 0 0 10px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  #reviews-summary header,
+  #lessons-summary header {
+    background-color: var(--ED-surface-2);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--ED-surface-4);
+    margin-bottom: 3rem;
+  }
+
+  #reviews-summary header nav,
+  #lessons-summary header nav {
+    position: relative;
+    border: none;
+    margin: 0;
+    padding: 0 20px 0;
+  }
+
+  #reviews-summary header h1,
+  #lessons-summary header h1 {
+    padding: 0 0 0 20px;
+  }
+
   #reviews-summary header nav #back-dashboard,
   #lessons-summary header nav #back-dashboard {
-    filter: hue-rotate(40deg) saturate(0.9) grayscale(60%);
+    background-color: var(--ED-brand);
+    box-shadow: none;
+  }
+
+  #reviews-summary header nav #back-dashboard:hover,
+  #lessons-summary header nav #back-dashboard:hover {
+    background-color: var(--ED-brand);
+    filter: brightness(0.8);
   }
 
   #reviews-summary header nav #start-session a.disabled,
   #lessons-summary header nav #start-session a.disabled {
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-2);
   }
 
   #reviews-summary header nav #start-session a,
   #lessons-summary header nav #start-session a {
-    background-color: var(--ED-radical-clr);
+    background-color: var(--ED-brand);
   }
 
   #reviews-summary header nav #start-session a:hover,
   #lessons-summary header nav #start-session a:hover {
-    background-color: var(--ED-radical-clr);
-    filter: saturate(0.8);
+    background-color: var(--ED-brand);
+    filter: brightness(0.8);
   }
 
   #reviews-summary header nav #start-session a:hover.disabled,
   #lessons-summary header nav #start-session a:hover.disabled {
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-2);
   }
 
+  /* RRW Why just apprentice and guru? This smells wrong. */
   #reviews-summary #incorrect .apprentice > ul > li.radicals,
-  #reviews-summary #incorrect h2,
   #reviews-summary #correct .apprentice > ul > li.radicals,
-  #reviews-summary #correct .guru > ul > li.radicals,
-  #lessons-summary #radicals h2 {
+  #reviews-summary #correct .guru > ul > li.radicals {
     background-color: var(--ED-radical-clr);
   }
 
+  /* RRW answered incorrectly headers */
+  #reviews-summary #incorrect h2,
+  #lessons-summary #radicals h2 {
+    background-color: var(--ED-incorrect);
+  }
+
+  /* RRW missing radicals and vocabulary? Revisit this */
   #lessons-summary #kanji h2 {
     background-color: var(--ED-kanji-clr);
   }
 
+  /* RRW answered correctly headers */
   #reviews-summary #correct h2,
   #lessons-summary #vocabulary h2 {
-    background-color: var(--ED-vocab-clr);
+    background-color: var(--ED-correct);
   }
 
   #reviews-summary #review-stats [id*="review-stats-"],
@@ -425,8 +694,9 @@ body {
   #reviews-summary #incorrect .burned h3 strong,
   #reviews-summary #correct .burned h3 span,
   #reviews-summary #incorrect .burned h3 span {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
+
   #reviews-summary #review-stats [id*="review-stats-"],
   #reviews-summary #incorrect,
   #reviews-summary #correct,
@@ -466,14 +736,15 @@ body {
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
-    background-color: var(--ED-gray-9);
-    color: var(--ED-gray-1);
+    background-color: var(--ED-surface-5); /* light background */
+    --ED-text-color: var(--ED-text-lightbg);
+    color: var(--ED-text-color);
   }
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
-    border-color: transparent transparent transparent var(--ED-gray-9);
-  }
+  border-color: transparent transparent transparent var(--ED-surface-5);
+}
 
   #reviews-summary footer #last-session-date,
   #reviews-summary footer #copyright,
@@ -483,50 +754,7 @@ body {
     font-size: 16px;
   }
 
-  /*In reviews/lessons */
-  #loading,
-  #additional-content-load,
-  #loading-screen {
-    filter: grayscale(90%) invert(1) hue-rotate(180deg);
-  }
-
-  #progress-bar,
-  .user-synonyms ul li.user-synonyms-add-btn::before,
-  #lesson #supplement-nav,
-  .bg-gray-400,
-  #lessons-summary #radicals > div,
-  #lessons-summary #kanji > div,
-  #lessons-summary #vocabulary > div,
-  .user-synonyms ul li.user-synonyms-add-form form button {
-    background-color: var(--ED-gray-3);
-  }
-
-  #question #question-type.meaning {
-    background-color: var(--ED-quiz-meaning-background);
-    background-image: none;
-  }
-
-  #question #question-type.meaning h1 {
-    color: var(--ED-quiz-meaning-text);
-  }
-
-  #question #question-type.meaning {
-    border-color: var(--ED-quiz-meaning-background);
-  }
-
-  ul.multi-character-grid li[class|="radical"],
-  ul.multi-character-grid li[class|="kanji"],
-  ul.multi-character-grid li[class|="vocabulary"] {
-    border-color: var(--ED-gray-1);
-  }
-
-  #question #character.radical,
-  .highlight-radical,
-  .radical,
-  header #main-info.radical,
-  #lesson #supplement-info .radical,
   #lessons-summary #radicals > div > ul > li.radicals,
-  #item-info #related-items ul.radical span,
   #reviews-summary #correct .apprentice > ul > li.radical,
   #reviews-summary #incorrect .apprentice > ul > li.radical,
   #reviews-summary #correct .guru > ul > li.radical,
@@ -542,17 +770,7 @@ body {
     background-image: none;
   }
 
-  #lessons #stats ul li span.radical {
-    color: var(--ED-radical-clr);
-  }
-
-  #question #character.kanji,
-  .highlight-kanji,
-  .kanji,
-  header #main-info.kanji,
-  #lesson #supplement-info .kanji,
   #lessons-summary #kanji > div > ul > li.kanji,
-  #item-info #related-items ul.kanji span,
   #reviews-summary #correct .apprentice > ul > li.kanji,
   #reviews-summary #incorrect .apprentice > ul > li.kanji,
   #reviews-summary #correct .guru > ul > li.kanji,
@@ -568,17 +786,7 @@ body {
     background-image: none;
   }
 
-  #lessons #stats ul li span.kanji {
-    color: var(--ED-kanji-clr);
-  }
-
-  #question #character.vocabulary,
-  .highlight-vocabulary,
-  .vocabulary,
-  header #main-info.vocabulary,
-  #lesson #supplement-info .vocabulary,
   #lessons-summary #vocabulary > div > ul > li.vocabulary,
-  #item-info #related-items ul.vocabulary span,
   #reviews-summary #correct .apprentice > ul > li.vocabulary,
   #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
   #reviews-summary #correct .guru > ul > li.vocabulary,
@@ -590,6 +798,107 @@ body {
   #reviews-summary #correct .burned > ul > li.vocabulary,
   #reviews-summary #incorrect .burned > ul > li.vocabulary,
   .search-results li[class^="vocabulary-"] a {
+    background-color: var(--ED-vocab-clr);
+    background-image: none;
+  }
+
+  #reviews-summary #correct .apprentice > ul > li.kanji,
+  #reviews-summary #correct .apprentice > ul > li.radical,
+  #reviews-summary #correct .apprentice > ul > li.vocabulary,
+  #reviews-summary #incorrect .apprentice > ul > li.radical,
+  #reviews-summary #incorrect .apprentice > ul > li.kanji,
+  #reviews-summary #incorrect .apprentice > ul > li.vocabulary {
+    text-shadow: none;
+    box-shadow: none;
+    color: var(--ED-text-color);
+  }
+
+  /* Summary statistics containers on lesson summary pages (might be empty) */
+  #lessons-summary #radicals > div,
+  #lessons-summary #kanji > div,
+  #lessons-summary #vocabulary > div {
+    background-color: var(--ED-surface-2);
+  }
+
+  /*************************************************************************************************/
+  /* Individual review/lesson pages
+/*************************************************************************************************/
+
+  /* RRW Freaky! X-ray Wanikani! (loading image) */
+  #loading,
+  #additional-content-load,
+  #loading-screen {
+    filter: grayscale(90%) invert(1) hue-rotate(180deg);
+  }
+
+  #progress-bar,
+.user-synonyms ul li.user-synonyms-add-btn::before,
+#lesson #supplement-nav,
+.bg-gray-400, /* ugh */
+.user-synonyms ul li.user-synonyms-add-form form button {
+    background-color: var(--ED-surface-2);
+  }
+
+  #progress-bar #bar {
+    background-color: var(--ED-progress-clr);
+  }
+
+  /* Header/prompt with e.g. "Vocabulary **Reading**" */
+  #question #question-type.meaning,
+  #question #question-type.reading,
+  #quiz #question-type.meaning,
+  #quiz #question-type.reading {
+    background-color: var(--ED-reading-clr);
+    background-image: none;
+    border: none;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+  }
+
+  #question #question-type.meaning,
+  #quiz #question-type.meaning {
+    background-color: var(--ED-meaning-clr); /* light background */
+    --ED-text-color: var(--ED-text-lightbg);
+  }
+
+  #question #question-type h1 {
+    color: var(--ED-text-color);
+  }
+
+  #question #character.radical,
+  .highlight-radical,
+  .radical,
+  header #main-info.radical,
+  #lesson #supplement-info .radical,
+  #item-info #related-items ul.radical span {
+    background-color: var(--ED-radical-clr);
+    background-image: none;
+  }
+
+  #lessons #stats ul li span.radical {
+    color: var(--ED-radical-clr);
+  }
+
+  #question #character.kanji,
+  .highlight-kanji,
+  .kanji,
+  header #main-info.kanji,
+  #lesson #supplement-info .kanji,
+  #item-info #related-items ul.kanji span {
+    background-color: var(--ED-kanji-clr);
+    background-image: none;
+  }
+
+  #lessons #stats ul li span.kanji {
+    color: var(--ED-kanji-clr);
+  }
+
+  #question #character.vocabulary,
+  .highlight-vocabulary,
+  .vocabulary,
+  header #main-info.vocabulary,
+  #lesson #supplement-info .vocabulary,
+  #item-info #related-items ul.vocabulary span {
     background-color: var(--ED-vocab-clr);
     background-image: none;
   }
@@ -616,18 +925,10 @@ body {
   #lesson #supplement-info h2,
   #lesson #supplement-info #supplement-kan-related-vocabulary ul li div,
   .text-gray-900,
-  #quiz #question-type.reading,
-  #question #question-type.reading,
   #answer-exception span,
   #item-info #related-items a:visited,
   #item-info #related-items a,
   .user-synonyms ul li.user-synonyms-add-form form input,
-  #reviews-summary #correct .apprentice > ul > li.kanji,
-  #reviews-summary #correct .apprentice > ul > li.radical,
-  #reviews-summary #correct .apprentice > ul > li.vocabulary,
-  #reviews-summary #incorrect .apprentice > ul > li.radical,
-  #reviews-summary #incorrect .apprentice > ul > li.kanji,
-  #reviews-summary #incorrect .apprentice > ul > li.vocabulary,
   #lesson #supplement-info #supplement-voc-breakdown ul li div,
   #lesson #supplement-info #supplement-rad-related-kanji div {
     text-shadow: none;
@@ -635,33 +936,21 @@ body {
     color: var(--ED-text-color);
   }
 
-  #quiz #question-type.meaning,
   #item-info #related-items ul.radical span,
   .reading-highlight {
     text-shadow: none;
     box-shadow: none;
   }
 
+  /* Upward pointing triangle nav indicator */
   #lesson #supplement-nav ul li.active::before {
-    border-color: transparent transparent var(--ED-gray-5) transparent;
+    border-color: transparent transparent var(--ED-surface-2) transparent;
   }
 
-  #lesson #supplement-info {
-    background-color: var(--ED-gray-5);
-  }
-
-  #quiz #question-type.reading,
-  #question #question-type.reading {
-    background-color: var(--ED-quiz-reading-background);
+  #lesson #supplement-info,
+  #quiz {
+    background-color: var(--ED-surface-2);
     background-image: none;
-  }
-
-  #question #question-type.reading{
-    border-color: var(--ED-quiz-reading-background);
-  }
-
-  #question #question-type h1 {
-    color: var(--ED-quiz-reading-text);
   }
 
   #answer-form input[type="text"] {
@@ -669,7 +958,7 @@ body {
     color: var(--ED-text-color);
     text-shadow: none;
     height: 72px;
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-4);
   }
 
   #answer-form button,
@@ -680,17 +969,17 @@ body {
   [class^="note-"] form fieldset button[type="submit"],
   [class^="note-"] form fieldset button,
   .user-synonyms ul li.user-synonyms-add-form form input {
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-3);
     color: var(--ED-text-color);
   }
 
   #answer-exception span::before {
-    border-color: transparent transparent var(--ED-gray-6) transparent;
+    border-color: transparent transparent var(--ED-surface-4) transparent;
   }
 
   #additional-content ul li span,
   #information {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
     box-shadow: none;
     color: var(--ED-text-color);
   }
@@ -699,11 +988,12 @@ body {
   #additional-content ul li:not(#option-audio) span:hover::before,
   #kana-chart.legacy ul li:not(.empty):hover,
   [class^="note-"] form fieldset {
-    background-color: var(--ED-gray-4);
+    background-color: var(--ED-surface-3);
     box-shadow: none;
     color: var(--ED-text-color);
   }
 
+  /* RRW Not sure where this is to test this works */
   .highlight-reading,
   .highlight-reading > span,
   .reading-highlight,
@@ -711,14 +1001,16 @@ body {
   .bg-\[\#f8d8ef\],
   .bg-\[\#d6f1ff\] {
     background-color: var(--ED-text-color);
-    color: var(--ED-gray-3);
+    color: var(--ED-surface-2);
     text-shadow: none;
     font-weight: bold;
     background-image: none;
   }
 
+  /* RRW Not sure where this is to test this works */
   .reading-highlight > span {
-    color: var(--ED-gray-3);
+    /* --ED-text-color: var(--ED-text-lightbg); */
+    --ED-text-color: chartreuse;
   }
 
   #information {
@@ -726,11 +1018,11 @@ body {
   }
 
   #additional-content ul li.active::before {
-    border-color: transparent transparent var(--ED-gray-3);
+    border-color: transparent transparent var(--ED-surface-2);
   }
 
   #lesson #supplement-nav ul li:hover:not(.active)::before {
-    border-color: transparent transparent var(--ED-gray-6);
+    border-color: transparent transparent var(--ED-surface-2);
   }
 
   #kana-chart.legacy ul li span {
@@ -738,7 +1030,7 @@ body {
   }
 
   #additional-content ul li span:hover {
-    color: var(--ED-gray-1);
+    color: var(--ED-surface-1);
   }
 
   .menu-bar,
@@ -750,36 +1042,44 @@ body {
   #answer-form fieldset.correct button,
   #answer-form fieldset.correct input[type="text"],
   #answer-form fieldset.correct input[type="text"]:disabled {
-    background-color: var(--ED-vocab-clr) !important;
+    background-color: var(--ED-correct) !important;
   }
 
   #answer-form fieldset.incorrect button,
   #answer-form fieldset.incorrect input[type="text"],
   #answer-form fieldset.incorrect input[type="text"]:disabled {
-    background-color: var(--ED-radical-clr) !important;
+    background-color: var(--ED-incorrect) !important;
   }
 
   #reviews #additional-content ul li#option-audio.new-audio .audio-btn {
     height: 32px !important;
   }
 
-  .srs .srs-up {
-    background-color: transparent;
-    color: var(--ED-vocab-clr);
-    text-shadow: 0px 0px 10px var(--ED-gray-1);
+  .srs .srs-apprentice {
+    background-color: var(--ED-apprentice-clr);
+    color: var(--ED-text-darkbg);
   }
 
-  .srs .srs-down {
-    background-color: transparent;
-    color: var(--ED-radical-clr);
-    text-shadow: 0px 0px 10px var(--ED-gray-1);
+  .srs .srs-guru {
+    background-color: var(--ED-guru-clr);
+    color: var(--ED-text-darkbg);
+  }
+
+  .srs .srs-master {
+    background-color: var(--ED-master-clr);
+    color: var(--ED-text-darkbg);
+  }
+
+  .srs .srs-englightened {
+    background-color: var(--ED-enlightened-clr);
+    color: var(--ED-text-darkbg);
   }
 
   /* overlay message */
 
   .screen-overlay--background,
   .dashboard section.system-alert {
-    background-color: var(--ED-radical-clr);
+    background-color: var(--ED-alert-clr);
   }
 
   .dashboard section.system-alert {
@@ -799,10 +1099,63 @@ body {
   }
 
   section#related-items > .radical {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
 
-  /* Levels page */
+  /* "Last" section when opened */
+
+  #information .last-item {
+    background-color: var(--ED-surface-4);
+  }
+
+  #information .last-item__label,
+  #information .last-item__srs-level {
+    color: var(--ED-grayed-text);
+  }
+
+  #information .last-item__value {
+    color: var(--ED-pure-white);
+  }
+
+  #information .last-item__characters {
+    color: var(--ED-pure-white);
+  }
+
+  #information .last-item .last-item__characters--radical {
+    background-color: var(--ED-radical-clr);
+  }
+
+  #information .last-item .last-item__characters--kanji {
+    background-color: var(--ED-kanji-clr);
+  }
+
+  #information .last-item .last-item__characters--vocab {
+    background-color: var(--ED-vocab-clr);
+  }
+
+  /* Item stage movement indicators */
+  .srs .srs-down {
+    color: var(--ED-grayed-text);
+  }
+  .srs .srs-apprentice {
+    background-color: var(--ED-apprentice-clr);
+  }
+  .srs .srs-guru {
+    background-color: var(--ED-guru-clr);
+  }
+  .srs .srs-master {
+    background-color: var(--ED-master-clr);
+  }
+  .srs .srs-enlighten {
+    background-color: var(--ED-enlightened-clr);
+  }
+  .srs .srs-burn {
+    background-color: var(--ED-burned-clr);
+  }
+
+  /*************************************************************************************************/
+  /* Levels page
+/*************************************************************************************************/
 
   .subject-legend,
   .subject-legend__item-badge--recently-unlocked,
@@ -811,11 +1164,10 @@ body {
   .subject-legend__item-badge--burned,
   .character-grid__header,
   .page-nav__item-link,
-  .progress-bar__label,
   .subject-legend__item-badge--radicals,
   .subject-legend__item-badge--kanji,
   .subject-legend__item-badge--vocabulary {
-    color: var(--ED-text-color);
+    color: var(--ED-pure-white);
     text-shadow: none;
     box-shadow: none;
   }
@@ -835,24 +1187,25 @@ body {
   .subject-legend,
   .character-grid__header,
   .page-nav__item-link {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
 
   .page-nav__item-link {
-    border-color: var(--ED-gray-3);
+    border-color: var(--ED-surface-2);
   }
 
   .subject-legend__item-badge--recently-unlocked,
   .component-character__badge,
   .character-item__badge {
-    background-color: var(--ED-radical-clr);
+    background-color: var(--ED-brand-alt);
   }
 
   .component-character__badge,
   .character-item__badge {
-    box-shadow: 0px 0px 5px var(--ED-gray-6);
+    box-shadow: 0px 0px 5px var(--ED-surface-3);
   }
 
+  /* Use kanji color for the "New" sample at top of page */
   .subject-legend__item-badge--all {
     background-color: var(--ED-kanji-clr);
   }
@@ -892,21 +1245,23 @@ body {
   }
 
   .progress-bar__bar {
-    background-color: var(--ED-text-color);
+    background-color: var(--ED-surface-1);
     background-image: none;
   }
 
   .character-grid .progress-bar__label,
   .subject-progress .progress-bar__label {
-    background-color: var(--ED-gray-7);
+    background-color: var(--ED-surface-4);
   }
 
   .progress-bar__label::after,
   .progress-bar__label::before {
-    border-top-color: var(--ED-gray-7);
+    border-top-color: var(--ED-surface-4);
   }
 
-  /* Individual item page colors */
+  /*************************************************************************************************/
+  /* Individual item page colors
+/*************************************************************************************************/
 
   .page-header__icon--level,
   .page-header__icon--radical,
@@ -939,7 +1294,7 @@ body {
   .user-note__button:hover,
   .user-note__button:active,
   .user-note__button:focus {
-    color: var(--ED-gray-11);
+    color: var(--ED-highlight-text);
   }
 
   .page-header__icon--radical:hover,
@@ -950,21 +1305,21 @@ body {
 
   .user-synonyms__button,
   .user-synonyms__form-input {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
     border: none;
   }
 
   .user-synonyms__button:hover {
-    color: var(--ED-gray-11);
+    color: var(--ED-highlight-text);
   }
 
   .user-synonyms__form-input:focus {
-    box-shadow: 0px 0px 5px var(--ED-gray-6);
+    outline: 3px solid var(--ED-highlight-text);
   }
 
   .page-header__icon--level,
   .subject-progress__streak-value {
-    background-color: var(--ED-gray-5);
+    background-color: var(--ED-surface-3);
     background-image: none;
   }
 
@@ -988,90 +1343,121 @@ body {
   }
 
   .subject-hint {
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-3);
   }
 
   .user-note__input,
   .user-note__footer {
-    background-color: var(--ED-gray-4);
+    background-color: var(--ED-surface-2);
     border: none;
   }
 
   #user_reading_note > .user-note__form {
-    background-color: var(--ED-gray-4);
+    background-color: var(--ED-surface-2);
   }
 
   .fa-solid {
     color: var(--ED-text-color);
   }
 
+  /* where is this? */
   .subject-collocations__patterns::after {
     box-shadow: none;
     right: -9px;
-    background-color: var(--ED-text-color);
+    background-color: chartreuse;
   }
 
   .word-types--with-collocations::after {
     box-shadow: none;
-    background-color: var(--ED-text-color);
+    background-color: chartreuse;
     left: calc(100% - 1px);
   }
 
   .subject-collocations__pattern-name--selected,
   .context__word-types .bg-gray-300,
   .context__word-types .bg-gray-300 > span {
-    background-color: var(--ED-gray-11);
+    background-color: chartreuse;
     color: var(--ED-gray-3);
   }
 
-  /* Contact us page */
+  /* Rex's additions to individual item pages */
 
-  .span12 form .control-group input[type="text"],
-  .span12 form .control-group textarea {
-    background-color: var(--ED-gray-3);
+  .page-header {
+    background-color: var(--ED-surface-2);
+    padding-top: 10px;
+  }
+
+  .subject-section {
+    background-color: var(--ED-surface-2);
+    padding: 20px;
+  }
+
+  button.search__button {
+    background-color: var(--ED-surface-5);
+    --ED-text-color: var(--ED-text-lightbg);
+    color: var(--ED-text-color);
+  }
+
+  span.kanji-highlight,
+  span.highlight-kanji,
+  span.vocabulary-highlight,
+  span.highlight-vocabulary {
+    font-weight: normal;
+    text-shadow: none;
+  }
+
+  /*************************************************************************************************/
+  /* Contact us page
+/*************************************************************************************************/
+
+  input[type="text"],
+  form .control-group textarea {
+    background-color: var(--ED-surface-2);
     border: none;
     box-shadow: none;
   }
 
-  .span12 form .control-group input[type="submit"] {
-    background-color: var(--ED-radical-clr);
-    background-image: none;
+  input.btn[type="submit"] {
+    --ED-text-color: var(--ED-text-lightbg);
   }
 
-  .span12 form .control-group input[type="text"],
-  .span12 form .control-group textarea,
-  .span12 form label,
-  .span12 form .control-group input[type="file"],
-  .span12 form .control-group input[type="submit"] {
+  input[type="text"],
+  textarea,
+  form label,
+  input[type="file"],
+  input[type="submit"] {
     color: var(--ED-text-color);
     text-shadow: none;
   }
 
-  .span12 form .control-group input[type="text"]:focus,
-  .span12 form .control-group input[type="text"]:active,
-  .span12 form .control-group textarea:focus,
-  .span12 form .control-group textarea:active {
-    box-shadow: 0px 0px 10px var(--ED-gray-6);
+  input[type="text"]:focus,
+  input[type="text"]:active,
+  textarea:focus,
+  textarea:active {
+    outline: 3px solid var(--ED-highlight-text);
   }
 
-  /* Profile page */
+  /*************************************************************************************************/
+  /* Profile page
+/*************************************************************************************************/
 
   html#public-profile .public-profile-header::before {
     background-color: transparent;
   }
 
   html#public-profile .public-profile-header div.avatar {
-    border: 15px solid var(--ED-gray-3);
+    border: 15px solid var(--ED-surface-2);
   }
 
   html#public-profile .public-profile-header div.user-info {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
     background-image: none;
     box-shadow: none;
   }
 
+  /* sheesh. little itty-bitty triangle below profile pic */
   html#public-profile .public-profile-header div.user-info::after {
-    border-bottom-color: var(--ED-gray-3);
+    border-bottom-color: var(--ED-surface-2);
   }
 
   html#public-profile .public-profile-header div.user-info h3.small-caps,
@@ -1096,11 +1482,11 @@ body {
   }
 
   html#public-profile div.wall-of-shame {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
 
   html#public-profile div.wall-of-shame h3 span {
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-3);
   }
 
   .radical-icon {
@@ -1118,49 +1504,38 @@ body {
   html#public-profile div.wall-of-shame .progress,
   .kanji-progress .progress,
   .vocabulary-progress .progress {
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-2);
   }
 
-  .kanji-progress .progress .bar,
-  .vocabulary-progress .progress .bar,
-  .wall-of-shame .progress .bar {
-    background-color: var(--ED-text-color);
+  .progress .bar span {
+    --ED-text-color: var(--ED-text-lightbg);
+    background-color: var(--ED-surface-5);
+    color: var(--ED-text-color);
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  .progress .bar span:after {
+    border-top-color: var(--ED-surface-5);
   }
 
   .worst-kanji .progress .bar span,
   .worst-radical .progress .bar span,
   .worst-vocabulary .progress .bar span,
   #quiz .bg-gray-300:hover {
-    background-color: var(--ED-gray-6);
-  }
-
-  #quiz .bg-gray-300 {
-    background-color: var(--ED-gray-5);
+    --ED-text-color: var(--ED-text-lightbg);
+    background-color: var(--ED-surface-5);
   }
 
   .worst-kanji .progress .bar span:after,
   .worst-radical .progress .bar span:after,
   .worst-vocabulary .progress .bar span:after {
-    border-top-color: var(--ED-gray-6);
+    border-top-color: var(--ED-surface-5);
   }
 
-  .user-note__form,
-  .autoresize-textarea-container .appearance-none,
-  #item-info #related-items ul {
-    background-color: var(--ED-gray-3);
-  }
-
-  #item-info #related-items ul.kanji span,
-  #item-info #related-items ul.radical span,
-  #item-info #related-items ul.vocabulary span {
-    box-shadow: none;
-  }
-
-  #item-info [class*="highlight-"] {
-    text-shadow: none;
-  }
-
-  /* Settings page */
+  /*************************************************************************************************/
+  /* Settings page
+/*************************************************************************************************/
 
   .settings-section,
   .settings-section h2,
@@ -1172,11 +1547,11 @@ body {
 
   .settings-section,
   .page-list ul > li > a {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
 
   .page-list ul {
-    background-color: var(--ED-gray-1);
+    background-color: var(--ED-surface-1);
   }
 
   .page-list ul > li > a {
@@ -1188,7 +1563,7 @@ body {
   #personal-access-tokens-list th,
   .personal-access-token-permissions__namespace-header,
   .personal-access-token-permission__description {
-    color: var(--ED-gray-8);
+    color: var(--ED-grayed-text);
   }
 
   .page-list ul > li > a,
@@ -1200,15 +1575,13 @@ body {
   input[type="password"],
   .settings-section .btn,
   .settings-section select {
-    background-color: var(--ED-gray-6);
-    color: var(--ED-text-color);
-    border-color: var(--ED-text-color);
-    border-width: 1px;
+    background-color: var(--ED-surface-5);
+    --ED-text-color: var(--ED-text-lightbg);
   }
 
   .settings-section .btn:hover,
   .settings-section .btn:focus {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-yellow);
   }
 
   .settings-section .btn:active {
@@ -1217,10 +1590,10 @@ body {
   }
 
   .indicator--success {
-    border-color: var(--ED-vocab-clr);
-    background-color: var(--ED-vocab-clr);
+    background-color: var(--ED-success-clr);
   }
 
+  /* Is this necessary? */
   .indicator {
     border-top: 0.5em solid rgba(255, 255, 255, 0.2);
     border-right: 0.5em solid rgba(255, 255, 255, 0.2);
@@ -1230,293 +1603,34 @@ body {
 
   .settings-section input[type="text"] {
     border: 1px solid var(--ED-text-color);
-    background-color: var(--ED-gray-6);
+    background-color: var(--ED-surface-5);
+    --ED-text-color: var(--ED-text-lightbg);
   }
 
   .settings-section form .control-group textarea {
-    border: 1px solid var(--ED-text-color);
+    border: 1px solid var(--ED-grayed-text);
   }
 
-  /* Subscription page */
+  /*************************************************************************************************/
+  /* Subscription page
+/*************************************************************************************************/
 
   .account-billing .bg-gray-100 {
-    background-color: var(--ED-gray-3);
+    background-color: var(--ED-surface-2);
   }
 
   .account-billing .bg-\[\#00aaff\] {
-    background-color: var(--ED-radical-clr);
+    background-color: var(--ED-brand);
   }
 
   .border-blue-300:hover,
   .border-blue-300:active,
   .border-blue-300:focus {
-    border-color: var(--ED-radical-clr);
+    border-color: var(--ED-brand);
   }
 
   .account-billing h2 {
     text-shadow: none;
     color: var(--ED-text-color);
-  }
-
-  .highlight-radical,
-  .radical-highlight,
-  .highlight-kanji,
-  .kanji-highlight,
-  .highlight-vocabulary,
-  .vocabulary-highlight {
-    font-weight: bold;
-    text-shadow: 0px 0px 3px var(--ED-gray-1);
-  }
-
-  /* =============== UserScript Compatibility ===================== */
-
-  /* Ultimate Timeline */
-  #timeline {
-    background-color: var(--ED-gray-3);
-    color: var(--ED-text-color);
-    border-bottom: none;
-    
-    
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 23px;
-  }
-
-  #timeline svg .bkgd {
-    fill: var(--ED-gray-3);
-  }
-
-  #timeline svg text,
-  #timeline svg .markers .cur {
-    fill: var(--ED-text-color);
-  }
-
-  #timeline > .link {
-    color: var(--ED-text-color);
-  }
-
-  #timeline > .link:hover,
-  #timeline > .link:focus,
-  #timeline > .link:active {
-    color: var(--ED-radical-clr);
-  }
-
-  #timeline .bar_style select {
-    background-color: var(--ED-gray-5);
-    color: var(--ED-text-color);
-    border: 1px solid var(--ED-text-color);
-  }
-
-  #timeline svg .highlight path.marker {
-    fill: var(--ED-radical-clr);
-    stroke: var(--ED-radical-clr);
-  }
-
-  #timeline svg .highlight rect.marker {
-    stroke: var(--ED-radical-clr);
-    fill: var(--ED-radical-clr);
-    filter: opacity(0.2);
-  }
-
-  #timeline svg text.redtic {
-    fill: var(--ED-radical-clr);
-  }
-
-  #timeline svg .grid path {
-    stroke: var(--ED-text-color);
-  }
-
-  #timeline svg .grid .redtic {
-    stroke: var(--ED-radical-clr);
-  }
-
-  #timeline svg .resize_grip .light {
-    stroke: var(--ED-gray-8);
-  }
-
-  #timeline svg .rad {
-    fill: var(--ED-radical-clr);
-  }
-
-  #timeline .review_info[data-mode="item_type"] .rad,
-  #timeline .review_info[data-mode="item_type"] .rad > span {
-    background-color:var(--ED-radical-clr);
-    background-image: none;
-  }
-
-  #timeline svg .kan {
-    fill: var(--ED-kanji-clr);
-  }
-
-  #timeline .review_info[data-mode="item_type"] .kan,
-  #timeline .review_info[data-mode="item_type"] .kan > span {
-    background-color:var(--ED-kanji-clr);
-    background-image: none;
-  }
-
-  #timeline svg .voc {
-    fill: var(--ED-vocab-clr);
-  }
-
-  #timeline .review_info[data-mode="item_type"] .voc,
-  #timeline .review_info[data-mode="item_type"] .voc > span {
-    background-color:var(--ED-vocab-clr);
-    background-image: none;
-  }
-
-  #timeline .review_info .summary .indent > .cur,
-  #timeline .review_info .summary .indent > .cur > span {
-    background-color:var(--ED-gray-6);
-    background-image: none;
-    color: var(--ED-text-color);
-  }
-
-  #timeline .review_info .inner {
-    color: var(--ED-text-color);
-    background-color: var(--ED-gray-3);
-    border: 1px solid var(--ED-text-color);
-  }
-
-  #timeline .review_info .summary .tot {
-    color: var(--ED-text-color);
-    background-color: var(--ED-gray-3);
-    background-image: none;
-  }
-
-  #timeline .detail_buttons button {
-    color: var(--ED-text-color);
-    background-color: var(--ED-gray-3);
-    border: 1px solid var(--ED-text-color);
-    border-radius: 5px;
-  }
-
-  #timeline .item_info {
-    border: 1px solid var(--ED-text-color);
-    padding: 10px;
-  }
-
-  #timeline .review_info[data-mode="count"] .item_list > li {
-    background-color: var(--ED-gray-13);
-    background-image: none;
-    color: var(--ED-gray-3);
-  }
-
-  #timeline .review_info[data-mode="srs_stage"] .appr {
-    background-color:var(--ED-radical-clr);
-    background-image: none;
-  }
-
-  #timeline .review_info[data-mode="srs_stage"] .guru {
-    background-color:var(--ED-kanji-clr);
-    background-image: none;
-  }
-
-  #timeline .review_info[data-mode="srs_stage"] .mast {
-    background-color:var(--ED-vocab-clr);
-    background-image: none;
-  }
-
-  #timeline .review_info[data-mode="srs_stage"] .enli {
-    background-color:var(--ED-extra-clr);
-    background-image: none;
-  }
-
-  #timeline .review_info[data-mode="level"] .lvlgrp0 {
-    background-color:var(--ED-radical-clr);
-    filter: grayscale(1);
-    background-image: none;
-    color: var(--ED-text-color);
-  }
-
-  #timeline svg .lvlgrp0 {
-    fill: var(--ED-radical-clr);
-    filter: grayscale(1);
-  }
-
-  #timeline .review_info[data-mode="level"] .lvlgrp1 {
-    background-color:var(--ED-radical-clr);
-    filter: grayscale(0.8);
-    background-image: none;
-    color: var(--ED-text-color);
-  }
-
-  #timeline svg .lvlgrp1 {
-    fill: var(--ED-radical-clr);
-    filter: grayscale(0.8);
-  }
-
-  #timeline .review_info[data-mode="level"] .lvlgrp2 {
-    background-color:var(--ED-radical-clr);
-    filter: grayscale(0.6);
-    background-image: none;
-    color: var(--ED-text-color);
-  }
-
-  #timeline svg .lvlgrp2 {
-    fill: var(--ED-radical-clr);
-    filter: grayscale(0.6);
-  }
-
-  #timeline .review_info[data-mode="level"] .lvlgrp3 {
-    background-color:var(--ED-radical-clr);
-    filter: grayscale(0.4);
-    background-image: none;
-    color: var(--ED-text-color);
-  }
-
-  #timeline svg .lvlgrp3 {
-    fill: var(--ED-radical-clr);
-    filter: grayscale(0.4);
-  }
-
-  #timeline .review_info[data-mode="level"] .lvlgrp4 {
-    background-color:var(--ED-radical-clr);
-    filter: grayscale(0.2);
-    background-image: none;
-    color: var(--ED-text-color);
-  }
-
-  #timeline svg .lvlgrp4 {
-    fill: var(--ED-radical-clr);
-    filter: grayscale(0.2);
-  }
-
-  #timeline .review_info[data-mode="level"] .lvlgrp5 {
-    background-color:var(--ED-radical-clr);
-    background-image: none;
-    color: var(--ED-text-color);
-  }
-
-  #timeline svg .lvlgrp5 {
-    fill: var(--ED-radical-clr);
-  }
-
-  #timeline .item_list svg.radical,
-  #timeline .item_list svg.kanji,
-  #timeline .item_list svg.vocabulary,
-  #timeline .item_info .item svg.radical,
-  #timeline .item_info .item svg.kanji,
-  #timeline .item_info .item svg.vocabulary {
-    background-color: transparent;
-  }
-
-  #timeline svg .count {
-    fill: var(--ED-radical-clr);
-  }
-
-  #timeline svg .appr {
-    fill: var(--ED-radical-clr);
-  }
-
-  #timeline svg .guru {
-    fill: var(--ED-kanji-clr);
-  }
-
-  #timeline svg .mast {
-    fill: var(--ED-vocab-clr);
-  }
-
-  #timeline svg .enli {
-    fill: var(--ED-extra-clr);
   }
 }

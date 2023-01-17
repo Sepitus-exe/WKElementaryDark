@@ -1415,7 +1415,7 @@ section#related-items > .radical {
 .subject-collocations__pattern-name--selected,
 .context__word-types .bg-gray-300,
 .context__word-types .bg-gray-300 > span {
-  background-color: chartreuse;
+  background-color: var(--ED-surface-3);
   color: var(--ED-gray-3);
 }
 

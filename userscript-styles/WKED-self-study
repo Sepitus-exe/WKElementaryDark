@@ -10,60 +10,60 @@
 ==/UserStyle== */
 
 #wkof_ds #ss_quiz {
-  border-color: var(--ED-surface-2);
-  background-color: var(--ED-surface-2);
+  border-color: var(--ED-surface-2, #282828);
+  background-color: var(--ED-surface-2, #282828);
 }
 
 #wkof_ds #ss_quiz .titlebar {
-  background-color: var(--ED-surface-2);
-  color: var(--ED-text-color);
+  background-color: var(--ED-surface-2, #282828);
+  color: var(--ED-text-color, #eeeeee);
 }
 
 #wkof_ds #ss_quiz .statusbar {
-  background-color: var(--ED-surface-2);
-  color: var(--ED-text-color);
+  background-color: var(--ED-surface-2, #282828);
+  color: var(--ED-text-color, #eeeeee);
 }
 
 #wkof_ds #ss_quiz .answer {
-  background-color: var(--ED-surface-3);
+  background-color: var(--ED-surface-3, #303030);
 }
 
 #wkof_ds #ss_quiz .answer input {
-  background-color: var(--ED-surface-5);
-  border-color: var(--ED-surface-4);
-  --ED-text-color: var(--ED-text-lightbg);
+  background-color: var(--ED-surface-5, #bababa);
+  border-color: var(--ED-surface-4, #535353);
+  --ED-text-color: var(--ED-text-dark, #151515);
 }
 
 #ss_quiz[data-itype="radical"] .qwrap,
 #ss_quiz .summary .que[title~="Radical"] {
-  background-color: var(--ED-radical-clr);
+  background-color: var(--ED-radical-clr, hsl(1, 39%, 44%));
 }
 
 #ss_quiz[data-itype="kanji"] .qwrap,
 #ss_quiz .summary .que[title~="Kanji"] {
-  background-color: var(--ED-kanji-clr);
+  background-color: var(--ED-kanji-clr, hsl(225, 23%, 44%));
 }
 
 #ss_quiz[data-itype="vocabulary"] .qwrap,
 #ss_quiz .summary .que[title~="Vocabulary"] {
-  background-color: var(--ED-vocab-clr);
+  background-color: var(--ED-vocab-clr, hsl(166, 36%, 32%));
 }
 
 #ss_quiz[data-atype="reading"] .atype {
-  color: var(--ED-text-color);
+  color: var(--ED-text-color, #eeeeee);
   text-shadow: none;
   border: none;
-  background-color: var(--ED-reading-clr);
+  background-color: var(--ED-reading-clr, #282828);
 }
 
 #ss_quiz[data-atype="meaning"] .atype {
-  color: var(--ED-text-lightbg);
+  color: var(--ED-text-dark, #151515);
   text-shadow: none;
   border: none;
-  background-color: var(--ED-meaning-clr);
+  background-color: var(--ED-meaning-clr, hsl(36, 56%, 44%));
   background-image: none;
 }
 
 #ss_quiz .settings span.active {
-  color: var(--ED-text-color);
+  color: var(--ED-text-color, #eeeeee);
 }

@@ -385,7 +385,7 @@ footer ul li:last-child {
 
 .lessons-and-reviews__lessons-button span {
   background-color: var(--ED-text-color); /* inverse text */
-  color: var(--ED-lesson-clr);
+  color: var(--ED-surface-4);
 }
 
 .lessons-and-reviews .lessons-and-reviews__reviews-button--0 {
@@ -400,7 +400,7 @@ footer ul li:last-child {
 
 .lessons-and-reviews__reviews-button span {
   background-color: var(--ED-text-color); /* inverse text */
-  color: var(--ED-review-clr);
+  color: var(--ED-surface-4);
 }
 
 .lessons-and-reviews__lessons-button:hover,

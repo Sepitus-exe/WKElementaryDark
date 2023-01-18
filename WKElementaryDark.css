@@ -1433,6 +1433,10 @@ section#related-items > .radical {
   left: calc(100% - 1px);
 }
 
+#supplement-voc-context .word-type__button--selected::after {
+  background-color: var(--ED-light-surface-5);
+}
+
 .subject-collocations__pattern-name--selected,
 .context__word-types .bg-gray-300,
 .context__word-types .bg-gray-300 > span {

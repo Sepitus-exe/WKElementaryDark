@@ -876,7 +876,7 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 #quiz #question-type.reading {
   background-color: var(--ED-reading-clr);
   background-image: none;
-  border: none;
+  border-color: var(--ED-reading-clr);
 }
 
 #question #question-type.meaning,

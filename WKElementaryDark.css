@@ -1426,9 +1426,10 @@ section#related-items > .radical {
   background-color: chartreuse;
 }
 
+/* "Pattern of Use" separator - found in lessons/reviews of some words/kanji in dropdown boxes*/
 .word-types--with-collocations::after {
   box-shadow: none;
-  background-color: chartreuse;
+  background-color: var(--ED-light-surface-5);
   left: calc(100% - 1px);
 }
 
@@ -1436,7 +1437,7 @@ section#related-items > .radical {
 .context__word-types .bg-gray-300,
 .context__word-types .bg-gray-300 > span {
   background-color: var(--ED-surface-3);
-  color: var(--ED-gray-3);
+  color: var(--ED-text-color);
 }
 
 /* Rex's additions to individual item pages */

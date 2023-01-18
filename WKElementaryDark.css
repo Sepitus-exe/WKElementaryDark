@@ -877,13 +877,12 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
   background-color: var(--ED-reading-clr);
   background-image: none;
   border: none;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
 }
 
 #question #question-type.meaning,
 #quiz #question-type.meaning {
   background-color: var(--ED-meaning-clr);
+  color: var(--ED-text-color);
 }
 
 #question #question-type h1 {
@@ -984,6 +983,11 @@ header.quiz #main-info.radical #character,
 
 #lesson #supplement-info,
 #quiz {
+  background-color: var(--ED-surface-1);
+  background-image: none;
+}
+
+#lesson #supplement-info {
   background-color: var(--ED-surface-2);
   background-image: none;
 }
@@ -1073,6 +1077,13 @@ header.quiz #main-info.radical #character,
 .note-meaning,
 #item-info #item-info-col1 section {
   font-size: 16px;
+}
+
+#answer-form fieldset {
+  position: relative;
+  margin-bottom: 0;
+  padding: 10px;
+  border: 1px solid var(--ED-surface-3);
 }
 
 #answer-form fieldset.correct button,

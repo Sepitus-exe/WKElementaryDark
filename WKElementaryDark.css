@@ -1123,12 +1123,21 @@ header.quiz #main-info.radical #character,
 .screen-overlay--background,
 .dashboard section.system-alert {
   background-color: var(--ED-alert-clr);
+  background-image: none;
 }
 
 .dashboard section.system-alert {
   box-shadow: none;
   border: none;
   color: var(--ED-text-color);
+}
+
+.dashboard section.system-alert time,
+.dashboard section.system-alert a,
+.dashboard section.system-alert h3 {
+  color: var(--ED-text-color);
+  text-shadow: none;
+  opacity: 1;
 }
 
 .screen-overlay-with-box img,

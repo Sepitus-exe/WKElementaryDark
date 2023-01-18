@@ -987,6 +987,10 @@ header.quiz #main-info.radical #character,
   background-image: none;
 }
 
+#quiz .bg-gray-300 {
+  background-color: var(--ED-surface-3);
+}
+
 #lesson #supplement-info {
   background-color: var(--ED-surface-2);
   background-image: none;
@@ -1531,8 +1535,7 @@ html#public-profile div.wall-of-shame h3 span,
 .worst-kanji .progress .bar span,
 .worst-radical .progress .bar span,
 .worst-vocabulary .progress .bar span,
-html#public-profile div.wall-of-shame ul li > span:first-child,
-#quiz .bg-gray-300 {
+html#public-profile div.wall-of-shame ul li > span:first-child {
   color: var(--ED-text-color);
   text-shadow: none;
   box-shadow: none;

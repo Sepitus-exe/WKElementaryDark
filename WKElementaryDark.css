@@ -262,6 +262,15 @@ p {
     text-shadow: none;
 }
 
+table:has(.none-available) + .see-more a.small-caps {
+  display: none;
+}
+
+table:has(.none-available) + div.see-more {
+  padding: 7.5px 30px;
+  background-color: var(--ED-surface-3) !important;
+}
+
 .sitemap__expandable-chunk,
 .extra-study > div,
 .review-forecast__day,

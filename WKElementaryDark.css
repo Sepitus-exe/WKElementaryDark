@@ -252,9 +252,14 @@ p {
 * Dashboard page specifics
 /*************************************************************************************************/
 
-.review-forecast__toggleicon,
-.kotoba-table-list table tr.none-available {
+.review-forecast__toggleicon {
   color: var(--ED-brand);
+}
+
+.kotoba-table-list table tr.none-available {
+    background-color: var(--ED-surface-3);
+    color: var(--ED-text-color);
+    text-shadow: none;
 }
 
 .sitemap__expandable-chunk,

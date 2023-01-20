@@ -23,3 +23,6 @@
 .stroke_order_diagram--existing_path {
     stroke: var(--ED-surface-4, #535353);
 }
+.stroke_order_diagram--path_start {
+    fill: var(--ED-red, #9c4745);
+}

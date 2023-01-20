@@ -373,34 +373,42 @@ footer ul li:last-child {
   border-color: var(--ED-brand);
 }
 
-.lessons-and-reviews .lessons-and-reviews__lessons-button--0 {
-  /* No lessons, no color */
-  background-color: var(--ED-surface-4);
-}
-
 .lessons-and-reviews__lessons-button {
-  background-color: var(--ED-lesson-clr);
-  color: var(--ED-text-color);
+  --ED-button-fg: var(--ED-text-color);
+  --ED-button-bg: var(--ED-lesson-clr);
+  background-color: var(--ED-button-bg);
+  color: var(--ED-button-fg);
 }
 
 .lessons-and-reviews__lessons-button span {
-  background-color: var(--ED-text-color); /* inverse text */
-  color: var(--ED-lesson-clr);
+  /* count badge inverts fg/bg */
+  background-color: var(--ED-button-fg);
+  color: var(--ED-button-bg);
+}
+
+.lessons-and-reviews .lessons-and-reviews__lessons-button--0 {
+  /* No lessons, no color */
+  --ED-button-fg: var(--ED-text-color);
+  --ED-button-bg: var(--ED-surface-4);
+}
+
+.lessons-and-reviews__reviews-button {
+  --ED-button-fg: var(--ED-text-color);
+  --ED-button-bg: var(--ED-review-clr);
+  background-color: var(--ED-button-bg);
+  color: var(--ED-button-fg);
+}
+
+.lessons-and-reviews__reviews-button span {
+  /* count badge inverts fg/bg */
+  background-color: var(--ED-button-fg);
+  color: var(--ED-button-bg);
 }
 
 .lessons-and-reviews .lessons-and-reviews__reviews-button--0 {
   /* No reviews, no color */
-  background-color: var(--ED-surface-4);
-}
-
-.lessons-and-reviews__reviews-button {
-  background-color: var(--ED-review-clr);
-  color: var(--ED-text-color);
-}
-
-.lessons-and-reviews__reviews-button span {
-  background-color: var(--ED-text-color); /* inverse text */
-  color: var(--ED-review-clr);
+  --ED-button-fg: var(--ED-text-color);
+  --ED-button-bg: var(--ED-surface-4);
 }
 
 .lessons-and-reviews__lessons-button:hover,

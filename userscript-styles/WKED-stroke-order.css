@@ -26,3 +26,8 @@
 .stroke_order_diagram--path_start {
     fill: var(--ED-red, #9c4745);
 }
+
+.item-info-injector:not(.page-nav__item):not(.subject-section__meanings) {
+  background-color: var(--ED-surface-2, #282828);
+  padding: 20px;
+}

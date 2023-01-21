@@ -1666,6 +1666,13 @@ input[type="password"],
 .settings-section select {
   background-color: var(--ED-light-surface-5);
   --ED-text-color: var(--ED-text-dark);
+  background-image: none;
+}
+
+/* SEP using generic red a opposed to a semantic color to denote expire/reset WK buttons */
+.settings-section .btn-danger {
+  --ED-text-color: var(--ED-text-light);
+  background-color: var(--ED-red);
 }
 
 .settings-section .btn:hover,

@@ -310,6 +310,7 @@ table:has(.none-available) + div.see-more {
 
 #query {
   background-color: var(--ED-surface-1);
+  color: var(--ED-text-color);
 }
 
 .progress-bar {

@@ -68,21 +68,21 @@
   --ED-reading-clr: var(--ED-gray-3);
 
   /* Indicate item types */
-  --ED-radical-clr: var(--ED-red);
-  --ED-kanji-clr: var(--ED-blue);
+  --ED-radical-clr: var(--ED-blue);
+  --ED-kanji-clr: var(--ED-red);
   --ED-vocab-clr: var(--ED-green);
   --ED-extra-clr: var(--ED-yellow);
 
   /* Indicate SRS stages */
-  --ED-apprentice-clr: var(--ED-yellow-desat1);
-  --ED-guru-clr: var(--ED-yellow-desat2);
-  --ED-master-clr: var(--ED-yellow-desat3);
-  --ED-enlightened-clr: var(--ED-yellow-desat4);
-  --ED-burned-clr: var(--ED-yellow-desat5);
+  --ED-apprentice-clr: var(--ED-blue);
+  --ED-guru-clr: var(--ED-red);
+  --ED-master-clr: var(--ED-green);
+  --ED-enlightened-clr: var(--ED-yellow);
+  --ED-burned-clr: var(--ED-gray-6);
 
   /* Indicate review vs. lesson */
-  --ED-lesson-clr: var(--ED-yellow-desat1);
-  --ED-review-clr: var(--ED-red);
+  --ED-lesson-clr: var(--ED-radical-clr);
+  --ED-review-clr: var(--ED-kanji-clr);
 
   /* Alerts/warnings */
   --ED-alert-clr: var(--ED-red);
@@ -90,7 +90,7 @@
   --ED-success-clr: var(--ED-green);
 
   /* Progress bars */
-  --ED-progress-clr: var(--ED-brand);
+  --ED-progress-clr: var(--ED-yellow);
 
   /* TODO: Box shadows, gradients */
 
@@ -141,45 +141,39 @@
 
   --ED-red-hsl: 1, 39%, 44%; /* Bunpro #9d4745 */
   --ED-red-light-hsl: 1, 39%, 64%;
-  --ED-red-dark-hsl: 1, 39%, 24%;
-
+  --ED-red-dark-hsl: 1, 34%, 24%;
+  
   --ED-blue-hsl: 225, 23%, 44%; /* Bunpro #56638a */
   --ED-blue-light-hsl: 225, 23%, 64%;
-  --ED-blue-dark-hsl: 225, 23%, 24%;
+  --ED-blue-dark-hsl: 225, 18%, 24%;
 
   /* --ED-green-hsl: 166, 36%, 52%; /* Bunpro #58b09c */
-  --ED-green-hsl: 166, 36%, 32%; /* makes light text work */
-  --ED-green-light-hsl: 166, 36%, 72%;
-  --ED-green-dark-hsl: 166, 36%, 22%;
+  --ED-green-hsl: 148, 22%, 44%; /* makes light text work */
+  --ED-green-light-hsl: 148, 22%, 64%;
+  --ED-green-dark-hsl: 148, 17%, 24%;
 
   /* --ED-yellow-hsl: 37, 56%, 64%; /* Bunpro #d7af70 */
-  --ED-yellow-hsl: 36, 56%, 44%; /* makes light text work */
-  --ED-yellow-light-hsl: 37, 56%, 84%;
-  --ED-yellow-dark-hsl: 37, 56%, 34%;
-  --ED-yellow-desat1-hsl: 37, 16%, 24%;
-  --ED-yellow-desat2-hsl: 37, 26%, 34%;
-  --ED-yellow-desat3-hsl: 37, 36%, 34%;
-  --ED-yellow-desat4-hsl: 37, 46%, 44%;
-  --ED-yellow-desat5-hsl: 37, 56%, 44%;
+  --ED-yellow-hsl: 35, 44%, 46%; /* makes light text work */
+  --ED-yellow-light-hsl: 35, 44%, 66%;
+  --ED-yellow-dark-hsl: 35, 39%, 26%;
 
   /*
    * Colors defined from the HSL values above
    */
   --ED-red: hsl(var(--ED-red-hsl));
   --ED-red-light: hsl(var(--ED-red-light-hsl));
+  --ED-red-dark: hsl(var(--ED-red-dark-hsl));
 
   --ED-blue: hsl(var(--ED-blue-hsl));
+  --ED-blue-dark: hsl(var(--ED-blue-dark-hsl));
 
   --ED-green: hsl(var(--ED-green-hsl));
+  --ED-green-dark: hsl(var(--ED-green-dark-hsl));
 
   --ED-yellow: hsl(var(--ED-yellow-hsl));
   --ED-yellow-light: hsl(var(--ED-yellow-light-hsl));
-  --ED-yellow-desat1: hsl(var(--ED-yellow-desat1-hsl));
-  --ED-yellow-desat2: hsl(var(--ED-yellow-desat2-hsl));
-  --ED-yellow-desat3: hsl(var(--ED-yellow-desat3-hsl));
-  --ED-yellow-desat4: hsl(var(--ED-yellow-desat4-hsl));
-  --ED-yellow-desat5: hsl(var(--ED-yellow-desat5-hsl));
-
+  --ED-yellow-dark: hsl(var(--ED-yellow-dark-hsl));
+  
   /*
   * If, for example, you needed a 50% transparent overlay of a dark
   * green color, you could use: 
@@ -448,7 +442,7 @@ footer ul li:last-child {
 
 /* RRW Can't find this, either (not a newbie tho :-) */
 .dashboard section.newbie hr {
-  border-color: chartreuse;
+  border-color: var(--ED-brand);
 }
 
 section.srs-progress ul li:first-child,
@@ -468,14 +462,10 @@ section.srs-progress span {
   color: var(--ED-text-color);
 }
 
-/* RRW Note: I think it's okay to use palette colors directly here instead of semantic names */
 .radical-icon--locked,
 .kanji-icon--locked {
-  background-image: linear-gradient(
-    180deg,
-    var(--ED-gray-11) 0%,
-    var(--ED-gray-10) 100%
-  ) !important;
+  background-color: var(--ED-surface-4) !important;
+  filter: brightness(80%);
 }
 
 .kotoba-table-list table a span,
@@ -616,6 +606,10 @@ section.srs-progress ul li:nth-child(3) {
 
 section.srs-progress ul li:nth-child(4) {
   background-color: var(--ED-enlightened-clr);
+}
+
+section.srs-progress ul li:last-child {
+  background-color: var(--ED-burned-clr);
 }
 
 /* Guru progress indicators under indiviual items */

@@ -862,6 +862,14 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
   color: var(--ED-text-color);
 }
 
+/* Search result borders */
+.search-results  ul.multi-character-grid li[class^="radical-"],
+.search-results  ul.multi-character-grid li[class^="kanji-"],
+.search-results  ul.multi-character-grid li[class^="vocabulary-"] {
+  border-bottom: 2px solid var(--ED-surface-1);
+  border-top: transparent;
+}
+
 /* Summary statistics containers on lesson summary pages (might be empty) */
 #lessons-summary #radicals > div,
 #lessons-summary #kanji > div,

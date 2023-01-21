@@ -12,7 +12,7 @@
   --ED-UT-vocab-clr: var(--ED-vocab-clr, #59B19C);
   --ED-UT-extra-clr: var(--ED-extra-clr, #D7AF70);
   
-  --ED-UT-highlight-clt: var(--ED-red, #9d4745);
+  --ED-UT-highlight-clt: var(--ED-brand, #9d4745);
 
 }
 

@@ -1,0 +1,273 @@
+:root{
+  --ED-UT-surface-1: var(--ED-surface-1, #151515);
+  --ED-UT-surface-2: var(--ED-surface-2, #282828);
+  --ED-UT-surface-3: var(--ED-surface-3, #303030);
+  --ED-UT-surface-4: var(--ED-surface-4, #535353);
+  
+  --ED-UT-text-light: var(--ED-text-light, #eeeeee);
+  --ED-UT-text-dark: var(--ED-text-dark, #151515);
+  
+  --ED-UT-radical-clr: var(--ED-radical-clr, #56638a);
+  --ED-UT-kanji-clr: var(--ED-kanji-clr, #9d4745);
+  --ED-UT-vocab-clr: var(--ED-vocab-clr, #59B19C);
+  --ED-UT-extra-clr: var(--ED-extra-clr, #D7AF70);
+  
+  --ED-UT-highlight-clt: var(--ED-red, #9d4745);
+
+}
+
+body {
+  --ED-UT-text-color: var(--ED-UT-text-light);
+}
+
+#timeline {
+  background-color: var(--ED-UT-surface-2);
+  color: var(--ED-UT-text-color);
+  border-bottom: none;
+  
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 23px;
+}
+
+#timeline svg .bkgd {
+  fill: var(--ED-UT-surface-2);
+}
+
+#timeline svg text,
+#timeline svg .markers .cur {
+  fill: var(--ED-UT-text-color);
+}
+
+#timeline > .link {
+  color: var(--ED-UT-text-color);
+}
+
+#timeline > .link:hover,
+#timeline > .link:focus,
+#timeline > .link:active {
+  color: var(--ED-UT-radical-clr);
+}
+
+#timeline .bar_style select {
+  background-color: var(--ED-UT-surface-3);
+  color: var(--ED-UT-text-color);
+  border: 1px solid var(--ED-UT-text-color);
+}
+
+#timeline svg .highlight path.marker {
+  fill: var(--ED-UT-highlight-clt);
+  stroke: var(--ED-UT-highlight-clt);
+}
+
+#timeline svg .highlight rect.marker {
+  stroke: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clt);
+  filter: opacity(0.2);
+}
+
+#timeline svg text.redtic {
+  fill: var(--ED-UT-highlight-clt);
+}
+
+#timeline svg .grid path {
+  stroke: var(--ED-UT-text-color);
+}
+
+#timeline svg .grid .redtic {
+  stroke: var(--ED-UT-highlight-clt);
+}
+
+#timeline svg .resize_grip .light {
+  stroke: var(--ED-UT-surface-4);
+}
+
+#timeline svg .rad {
+  fill: var(--ED-UT-radical-clr);
+}
+
+#timeline .review_info[data-mode="item_type"] .rad,
+#timeline .review_info[data-mode="item_type"] .rad > span {
+  background-color:var(--ED-UT-radical-clr);
+  background-image: none;
+}
+
+#timeline svg .kan {
+  fill: var(--ED-UT-kanji-clr);
+}
+
+#timeline .review_info[data-mode="item_type"] .kan,
+#timeline .review_info[data-mode="item_type"] .kan > span {
+  background-color:var(--ED-UT-kanji-clr);
+  background-image: none;
+}
+
+#timeline svg .voc {
+  fill: var(--ED-UT-vocab-clr);
+}
+
+#timeline .review_info[data-mode="item_type"] .voc,
+#timeline .review_info[data-mode="item_type"] .voc > span {
+  background-color:var(--ED-UT-vocab-clr);
+  background-image: none;
+}
+
+#timeline .review_info .summary .indent > .cur,
+#timeline .review_info .summary .indent > .cur > span {
+  background-color:var(--ED-UT-surface-4);
+  background-image: none;
+  color: var(--ED-UT-text-color);
+}
+
+#timeline .review_info .inner {
+  color: var(--ED-UT-text-color);
+  background-color: var(--ED-UT-surface-2);
+  border: 1px solid var(--ED-UT-text-color);
+}
+
+#timeline .review_info .summary .tot {
+  color: var(--ED-UT-text-color);
+  background-color: var(--ED-UT-surface-2);
+  background-image: none;
+}
+
+#timeline .detail_buttons button {
+  color: var(--ED-UT-text-color);
+  background-color: var(--ED-UT-surface-2);
+  border: 1px solid var(--ED-UT-text-color);
+  border-radius: 5px;
+}
+
+#timeline .item_info {
+  border: 1px solid var(--ED-UT-text-color);
+  padding: 10px;
+}
+
+#timeline .review_info[data-mode="count"] .item_list > li {
+  background-color: var(--ED-UT-surface-4);
+  background-image: none;
+  color: var(--ED-UT-text-color);
+}
+
+#timeline .review_info[data-mode="count"] .item_list > li > svg {
+  stroke: var(--ED-UT-text-color);
+}
+
+#timeline .review_info[data-mode="srs_stage"] .appr {
+  background-color:var(--ED-UT-radical-clr);
+  background-image: none;
+}
+
+#timeline .review_info[data-mode="srs_stage"] .guru {
+  background-color:var(--ED-UT-kanji-clr);
+  background-image: none;
+}
+
+#timeline .review_info[data-mode="srs_stage"] .mast {
+  background-color:var(--ED-UT-vocab-clr);
+  background-image: none;
+}
+
+#timeline .review_info[data-mode="srs_stage"] .enli {
+  background-color:var(--ED-UT-extra-clr);
+  background-image: none;
+}
+
+#timeline .review_info[data-mode="level"] .lvlgrp0 {
+  background-color:var(--ED-UT-radical-clr);
+  filter: grayscale(1);
+  background-image: none;
+  color: var(--ED-UT-text-color);
+}
+
+#timeline svg .lvlgrp0 {
+  fill: var(--ED-UT-highlight-clt);
+  filter: grayscale(1);
+}
+
+#timeline .review_info[data-mode="level"] .lvlgrp1 {
+  background-color:var(--ED-UT-highlight-clt);
+  filter: grayscale(0.8);
+  background-image: none;
+  color: var(--ED-UT-text-color);
+}
+
+#timeline svg .lvlgrp1 {
+  fill: var(--ED-UT-highlight-clt);
+  filter: grayscale(0.8);
+}
+
+#timeline .review_info[data-mode="level"] .lvlgrp2 {
+  background-color:var(--ED-UT-highlight-clt);
+  filter: grayscale(0.6);
+  background-image: none;
+  color: var(--ED-UT-text-color);
+}
+
+#timeline svg .lvlgrp2 {
+  fill: var(--ED-UT-highlight-clt);
+  filter: grayscale(0.6);
+}
+
+#timeline .review_info[data-mode="level"] .lvlgrp3 {
+  background-color:var(--ED-UT-highlight-clt);
+  filter: grayscale(0.4);
+  background-image: none;
+  color: var(--ED-UT-text-color);
+}
+
+#timeline svg .lvlgrp3 {
+  fill: var(--ED-UT-highlight-clt);
+  filter: grayscale(0.4);
+}
+
+#timeline .review_info[data-mode="level"] .lvlgrp4 {
+  background-color:var(--ED-UT-highlight-clt);
+  filter: grayscale(0.2);
+  background-image: none;
+  color: var(--ED-UT-text-color);
+}
+
+#timeline svg .lvlgrp4 {
+  fill: var(--ED-UT-highlight-clt);
+  filter: grayscale(0.2);
+}
+
+#timeline .review_info[data-mode="level"] .lvlgrp5 {
+  background-color:var(--ED-UT-highlight-clt);
+  background-image: none;
+  color: var(--ED-UT-text-color);
+}
+
+#timeline svg .lvlgrp5 {
+  fill: var(--ED-UT-highlight-clt);
+}
+
+#timeline .item_list svg.radical,
+#timeline .item_list svg.kanji,
+#timeline .item_list svg.vocabulary,
+#timeline .item_info .item svg.radical,
+#timeline .item_info .item svg.kanji,
+#timeline .item_info .item svg.vocabulary {
+  background-color: transparent;
+}
+
+#timeline svg .count {
+  fill: var(--ED-UT-highlight-clt);
+}
+
+#timeline svg .appr {
+  fill: var(--ED-UT-radical-clr);
+}
+
+#timeline svg .guru {
+  fill: var(--ED-UT-kanji-clr);
+}
+
+#timeline svg .mast {
+  fill: var(--ED-UT-vocab-clr);
+}
+
+#timeline svg .enli {
+  fill: var(--ED-UT-extra-clr);
+}

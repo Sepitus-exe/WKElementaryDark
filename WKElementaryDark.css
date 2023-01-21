@@ -1411,6 +1411,15 @@ section#related-items > .radical {
   outline: 3px solid var(--ED-highlight-text);
 }
 
+.user-synonyms__item .user-synonym {
+  background-color: var(--ED-surface-4);
+}
+
+/* SEP since its a close button, I opted to use a generic red instead of any semantic color */
+.user-synonyms__item .user-synonym i {
+  background-color: var(--ED-red);
+}
+
 .page-header__icon--level,
 .subject-progress__streak-value {
   background-color: var(--ED-surface-3);

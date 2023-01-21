@@ -289,7 +289,7 @@ table:has(.none-available) + div.see-more {
 .extra-study img,
 .review-forecast__empty-image,
 .none-available div {
-  filter: invert(0.86);
+  filter: invert(0.81);
 }
 
 .review-forecast__day-header::before {

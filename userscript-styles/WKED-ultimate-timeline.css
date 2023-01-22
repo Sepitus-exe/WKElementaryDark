@@ -9,10 +9,15 @@
   
   --ED-UT-radical-clr: var(--ED-radical-clr, #56638a);
   --ED-UT-kanji-clr: var(--ED-kanji-clr, #9d4745);
-  --ED-UT-vocab-clr: var(--ED-vocab-clr, #59B19C);
-  --ED-UT-extra-clr: var(--ED-extra-clr, #D7AF70);
+  --ED-UT-vocab-clr: var(--ED-vocab-clr, #58896f);
+  --ED-UT-extra-clr: var(--ED-extra-clr, #a97e42);
   
-  --ED-UT-highlight-clt: var(--ED-brand, #9d4745);
+  --ED-UT-highlight-clr: var(--ED-brand, #9d4745);
+  
+  --ED-UT-apprentice-clr: var(--ED-apprentice-clr, #434343);
+  --ED-UT-guru-clr: var(--ED-guru-clr, #756043);
+  --ED-UT-master-clr: var(--ED-master-clr, #a97e42);
+  --ED-UT-enlightened-clr: var(--ED-enlightened-clr, #a26144);
 
 }
 
@@ -56,18 +61,18 @@ body {
 }
 
 #timeline svg .highlight path.marker {
-  fill: var(--ED-UT-highlight-clt);
-  stroke: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
+  stroke: var(--ED-UT-highlight-clr);
 }
 
 #timeline svg .highlight rect.marker {
-  stroke: var(--ED-UT-highlight-clt);
-  fill: var(--ED-UT-highlight-clt);
+  stroke: var(--ED-UT-highlight-clr);
+  fill: var(--ED-UT-highlight-clr);
   filter: opacity(0.2);
 }
 
 #timeline svg text.redtic {
-  fill: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
 }
 
 #timeline svg .grid path {
@@ -75,7 +80,7 @@ body {
 }
 
 #timeline svg .grid .redtic {
-  stroke: var(--ED-UT-highlight-clt);
+  stroke: var(--ED-UT-highlight-clr);
 }
 
 #timeline svg .resize_grip .light {
@@ -154,22 +159,22 @@ body {
 }
 
 #timeline .review_info[data-mode="srs_stage"] .appr {
-  background-color:var(--ED-UT-radical-clr);
+  background-color:var(--ED-UT-apprentice-clr);
   background-image: none;
 }
 
 #timeline .review_info[data-mode="srs_stage"] .guru {
-  background-color:var(--ED-UT-kanji-clr);
+  background-color:var(--ED-UT-guru-clr);
   background-image: none;
 }
 
 #timeline .review_info[data-mode="srs_stage"] .mast {
-  background-color:var(--ED-UT-vocab-clr);
+  background-color:var(--ED-UT-master-clr);
   background-image: none;
 }
 
 #timeline .review_info[data-mode="srs_stage"] .enli {
-  background-color:var(--ED-UT-extra-clr);
+  background-color:var(--ED-UT-enlightened-clr);
   background-image: none;
 }
 
@@ -181,66 +186,66 @@ body {
 }
 
 #timeline svg .lvlgrp0 {
-  fill: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
   filter: grayscale(1);
 }
 
 #timeline .review_info[data-mode="level"] .lvlgrp1 {
-  background-color:var(--ED-UT-highlight-clt);
+  background-color:var(--ED-UT-highlight-clr);
   filter: grayscale(0.8);
   background-image: none;
   color: var(--ED-UT-text-color);
 }
 
 #timeline svg .lvlgrp1 {
-  fill: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
   filter: grayscale(0.8);
 }
 
 #timeline .review_info[data-mode="level"] .lvlgrp2 {
-  background-color:var(--ED-UT-highlight-clt);
+  background-color:var(--ED-UT-highlight-clr);
   filter: grayscale(0.6);
   background-image: none;
   color: var(--ED-UT-text-color);
 }
 
 #timeline svg .lvlgrp2 {
-  fill: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
   filter: grayscale(0.6);
 }
 
 #timeline .review_info[data-mode="level"] .lvlgrp3 {
-  background-color:var(--ED-UT-highlight-clt);
+  background-color:var(--ED-UT-highlight-clr);
   filter: grayscale(0.4);
   background-image: none;
   color: var(--ED-UT-text-color);
 }
 
 #timeline svg .lvlgrp3 {
-  fill: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
   filter: grayscale(0.4);
 }
 
 #timeline .review_info[data-mode="level"] .lvlgrp4 {
-  background-color:var(--ED-UT-highlight-clt);
+  background-color:var(--ED-UT-highlight-clr);
   filter: grayscale(0.2);
   background-image: none;
   color: var(--ED-UT-text-color);
 }
 
 #timeline svg .lvlgrp4 {
-  fill: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
   filter: grayscale(0.2);
 }
 
 #timeline .review_info[data-mode="level"] .lvlgrp5 {
-  background-color:var(--ED-UT-highlight-clt);
+  background-color:var(--ED-UT-highlight-clr);
   background-image: none;
   color: var(--ED-UT-text-color);
 }
 
 #timeline svg .lvlgrp5 {
-  fill: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
 }
 
 #timeline .item_list svg.radical,
@@ -253,21 +258,21 @@ body {
 }
 
 #timeline svg .count {
-  fill: var(--ED-UT-highlight-clt);
+  fill: var(--ED-UT-highlight-clr);
 }
 
 #timeline svg .appr {
-  fill: var(--ED-UT-radical-clr);
+  fill: var(--ED-UT-apprentice-clr);
 }
 
 #timeline svg .guru {
-  fill: var(--ED-UT-kanji-clr);
+  fill: var(--ED-UT-guru-clr);
 }
 
 #timeline svg .mast {
-  fill: var(--ED-UT-vocab-clr);
+  fill: var(--ED-UT-master-clr);
 }
 
 #timeline svg .enli {
-  fill: var(--ED-UT-extra-clr);
+  fill: var(--ED-UT-enlightened-clr);
 }

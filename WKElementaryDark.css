@@ -74,12 +74,12 @@
   --ED-extra-clr: var(--ED-yellow);
 
   /* Indicate SRS stages */
-  --ED-apprentice-clr: var(--ED-blue);
-  --ED-guru-clr: var(--ED-red);
-  --ED-master-clr: var(--ED-green);
-  --ED-enlightened-clr: var(--ED-yellow);
-  --ED-burned-clr: var(--ED-gray-6);
-
+  --ED-apprentice-clr: var(--ED-gray-6);
+  --ED-guru-clr: var(--ED-gray-yellow);
+  --ED-master-clr: var(--ED-yellow);
+  --ED-enlightened-clr: var(--ED-yellow-red);
+  --ED-burned-clr: var(--ED-red);
+  
   /* Indicate review vs. lesson */
   --ED-lesson-clr: var(--ED-radical-clr);
   --ED-review-clr: var(--ED-kanji-clr);
@@ -156,6 +156,9 @@
   --ED-yellow-hsl: 35, 44%, 46%; /* makes light text work */
   --ED-yellow-light-hsl: 35, 44%, 66%;
   --ED-yellow-dark-hsl: 35, 39%, 26%;
+  
+  --ED-gray-yellow-hsl: 35, 27%, 36%;
+  --ED-yellow-red-hsl: 19, 41%, 45%;
 
   /*
    * Colors defined from the HSL values above
@@ -174,6 +177,8 @@
   --ED-yellow-light: hsl(var(--ED-yellow-light-hsl));
   --ED-yellow-dark: hsl(var(--ED-yellow-dark-hsl));
   
+  --ED-gray-yellow: hsl(var(--ED-gray-yellow-hsl));
+  --ED-yellow-red: hsl(var(--ED-yellow-red-hsl));
   /*
   * If, for example, you needed a 50% transparent overlay of a dark
   * green color, you could use: 

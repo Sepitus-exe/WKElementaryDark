@@ -702,19 +702,24 @@ section.srs-progress ul li:last-child {
 }
 
 /* RRW answered incorrectly headers */
-#reviews-summary #incorrect h2,
-#lessons-summary #radicals h2 {
+#reviews-summary #incorrect h2 {
   background-color: var(--ED-incorrect);
 }
 
-/* RRW missing radicals and vocabulary? Revisit this */
+#lessons-summary #radicals h2 {
+  background-color: var(--ED-radical-clr);
+}
+
 #lessons-summary #kanji h2 {
   background-color: var(--ED-kanji-clr);
 }
 
-/* RRW answered correctly headers */
-#reviews-summary #correct h2,
 #lessons-summary #vocabulary h2 {
+  background-color: var(--ED-vocab-clr);
+}
+
+/* RRW answered correctly headers */
+#reviews-summary #correct h2 {
   background-color: var(--ED-correct);
 }
 

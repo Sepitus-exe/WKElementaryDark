@@ -179,7 +179,7 @@ body {
 }
 
 #timeline .review_info[data-mode="level"] .lvlgrp0 {
-  background-color:var(--ED-UT-radical-clr);
+  background-color:var(--ED-UT-highlight-clr);
   filter: grayscale(1);
   background-image: none;
   color: var(--ED-UT-text-color);

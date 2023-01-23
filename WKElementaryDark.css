@@ -892,7 +892,8 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 }
 
 #reviews #progress-bar,
-#lesson #progress-bar {
+#lessons #progress-bar,
+#lessons #progress-bar #bar{
   height: 10px;
 }
 

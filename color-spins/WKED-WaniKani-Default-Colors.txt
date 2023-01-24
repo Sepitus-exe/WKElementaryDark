@@ -56,7 +56,7 @@
    */
 
   /* Theme/branding colors */
-  --ED-brand: var(--ED-red);
+  --ED-brand: var(--WK-enlightened);
   --ED-brand-alt: var(--ED-yellow);
 
   /* Indicate correct/incorrect answers */
@@ -68,18 +68,18 @@
   --ED-reading-clr: var(--ED-gray-3);
 
   /* Indicate item types */
-  --ED-radical-clr: var(--ED-blue);
-  --ED-kanji-clr: var(--ED-red);
-  --ED-vocab-clr: var(--ED-green);
+  --ED-radical-clr: var(--WK-enlightened);
+  --ED-kanji-clr: var(--WK-apprentice);
+  --ED-vocab-clr: var(--WK-guru);
   --ED-extra-clr: var(--ED-yellow);
 
   /* Indicate SRS stages */
-  --ED-apprentice-clr: var(--ED-gray-7);
-  --ED-guru-clr: var(--ED-gray-yellow);
-  --ED-master-clr: var(--ED-yellow);
-  --ED-enlightened-clr: var(--ED-yellow-red);
-  --ED-burned-clr: var(--ED-red);
-  
+  --ED-apprentice-clr: var(--WK-apprentice);
+  --ED-guru-clr: var(--WK-guru);
+  --ED-master-clr: var(--WK-master);
+  --ED-enlightened-clr: var(--WK-enlightened);
+  --ED-burned-clr: var(--ED-gray-6);
+
   /* Indicate review vs. lesson */
   --ED-lesson-clr: var(--ED-radical-clr);
   --ED-review-clr: var(--ED-kanji-clr);
@@ -156,10 +156,13 @@
   --ED-yellow-hsl: 35, 44%, 46%; /* makes light text work */
   --ED-yellow-light-hsl: 35, 44%, 66%;
   --ED-yellow-dark-hsl: 35, 39%, 26%;
-  
-  --ED-gray-yellow-hsl: 35, 25%, 39%;
-  --ED-yellow-red-hsl: 19, 41%, 45%;
 
+  --WK-apprentice-hsl: 320, 50%, 43%;
+  --WK-guru-hsl: 288, 50%, 40%;
+  --WK-master-hsl: 228, 50%, 51%;
+  --WK-enlightened-hsl: 200, 50%, 43%;
+  --WK-burned-hsl: 0, 0%, 26%;
+  
   /*
    * Colors defined from the HSL values above
    */
@@ -177,8 +180,12 @@
   --ED-yellow-light: hsl(var(--ED-yellow-light-hsl));
   --ED-yellow-dark: hsl(var(--ED-yellow-dark-hsl));
   
-  --ED-gray-yellow: hsl(var(--ED-gray-yellow-hsl));
-  --ED-yellow-red: hsl(var(--ED-yellow-red-hsl));
+  --WK-apprentice: hsl(var(--WK-apprentice-hsl));
+  --WK-guru: hsl(var(--WK-guru-hsl));
+  --WK-master: hsl(var(--WK-master-hsl));
+  --WK-enlightened: hsl(var(--WK-enlightened-hsl));
+  --WK-burned: hsl(var(--WK-apprentice-hsl));
+  
   /*
   * If, for example, you needed a 50% transparent overlay of a dark
   * green color, you could use: 
@@ -702,24 +709,19 @@ section.srs-progress ul li:last-child {
 }
 
 /* RRW answered incorrectly headers */
-#reviews-summary #incorrect h2 {
+#reviews-summary #incorrect h2,
+#lessons-summary #radicals h2 {
   background-color: var(--ED-incorrect);
 }
 
-#lessons-summary #radicals h2 {
-  background-color: var(--ED-radical-clr);
-}
-
+/* RRW missing radicals and vocabulary? Revisit this */
 #lessons-summary #kanji h2 {
   background-color: var(--ED-kanji-clr);
 }
 
-#lessons-summary #vocabulary h2 {
-  background-color: var(--ED-vocab-clr);
-}
-
 /* RRW answered correctly headers */
-#reviews-summary #correct h2 {
+#reviews-summary #correct h2,
+#lessons-summary #vocabulary h2 {
   background-color: var(--ED-correct);
 }
 
@@ -892,8 +894,7 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 }
 
 #reviews #progress-bar,
-#lessons #progress-bar,
-#lessons #progress-bar #bar{
+#lesson #progress-bar {
   height: 10px;
 }
 

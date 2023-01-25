@@ -309,6 +309,7 @@ table:has(.none-available) + div.see-more {
 
 #query {
   background-color: var(--ED-surface-1);
+  color: var(--ED-text-color);
 }
 
 .progress-bar {
@@ -865,6 +866,14 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
   color: var(--ED-text-color);
 }
 
+/* Search result borders */
+.search-results  ul.multi-character-grid li[class^="radical-"],
+.search-results  ul.multi-character-grid li[class^="kanji-"],
+.search-results  ul.multi-character-grid li[class^="vocabulary-"] {
+  border-bottom: 2px solid var(--ED-surface-1);
+  border-top: transparent;
+}
+
 /* Summary statistics containers on lesson summary pages (might be empty) */
 #lessons-summary #radicals > div,
 #lessons-summary #kanji > div,
@@ -1415,6 +1424,15 @@ section#related-items > .radical {
 
 .user-synonyms__form-input:focus {
   outline: 3px solid var(--ED-highlight-text);
+}
+
+.user-synonyms__item .user-synonym {
+  background-color: var(--ED-surface-4);
+}
+
+/* SEP since its a close button, I opted to use a generic red instead of any semantic color */
+.user-synonyms__item .user-synonym i {
+  background-color: var(--ED-red);
 }
 
 .page-header__icon--level,

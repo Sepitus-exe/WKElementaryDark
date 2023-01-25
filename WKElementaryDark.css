@@ -1023,6 +1023,11 @@ header.quiz #main-info.radical #character,
   background-color: var(--ED-surface-3);
 }
 
+#quiz .bg-gray-300:hover {
+  --ED-text-color: var(--ED-text-dark);
+  background-color: var(--ED-light-surface-5);
+}
+
 #lesson #supplement-info {
   background-color: var(--ED-surface-2);
   background-image: none;
@@ -1590,20 +1595,31 @@ html#public-profile div.wall-of-shame h3 span {
 
 .radical-icon {
   background-color: var(--ED-radical-clr);
+  background-image: none;
 }
 
 .kanji-icon {
   background-color: var(--ED-kanji-clr);
+  background-image: none;
 }
 
 .vocabulary-icon {
   background-color: var(--ED-vocab-clr);
+  background-image: none;
 }
 
 html#public-profile div.wall-of-shame .progress,
 .kanji-progress .progress,
 .vocabulary-progress .progress {
-  background-color: var(--ED-surface-2);
+  background-color: var(--ED-surface-3);
+  background-image: none;
+}
+
+html#public-profile div.wall-of-shame .progress .bar,
+.kanji-progress .progress .bar,
+.vocabulary-progress .progress .bar {
+  background-image: none;
+  background-color: var(--ED-progress-clr);
 }
 
 .progress .bar span {
@@ -1620,16 +1636,15 @@ html#public-profile div.wall-of-shame .progress,
 
 .worst-kanji .progress .bar span,
 .worst-radical .progress .bar span,
-.worst-vocabulary .progress .bar span,
-#quiz .bg-gray-300:hover {
-  --ED-text-color: var(--ED-text-dark);
-  background-color: var(--ED-light-surface-5);
+.worst-vocabulary .progress .bar span {
+  background-color: var(--ED-surface-4);
+  --ED-text-color: var(--ED-text-light);
 }
 
 .worst-kanji .progress .bar span:after,
 .worst-radical .progress .bar span:after,
 .worst-vocabulary .progress .bar span:after {
-  border-top-color: var(--ED-light-surface-5);
+  border-top-color: var(--ED-surface-4);
 }
 
 /*************************************************************************************************/

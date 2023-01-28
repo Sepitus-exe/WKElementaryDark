@@ -563,6 +563,7 @@ the selector? */
 /* RRW highlight the counts if work to do */
 .navigation-shortcut a span {
   background-color: var(--ED-review-clr);
+  z-index: -1;
 }
 .navigation-shortcut--lessons a span {
   background-color: var(--ED-lesson-clr);

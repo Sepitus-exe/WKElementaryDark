@@ -79,7 +79,7 @@
   --ED-master-clr: var(--ED-yellow);
   --ED-enlightened-clr: var(--ED-yellow-red);
   --ED-burned-clr: var(--ED-red);
-  
+
   /* Indicate review vs. lesson */
   --ED-lesson-clr: var(--ED-radical-clr);
   --ED-review-clr: var(--ED-kanji-clr);
@@ -142,7 +142,7 @@
   --ED-red-hsl: 1, 39%, 44%; /* Bunpro #9d4745 */
   --ED-red-light-hsl: 1, 39%, 64%;
   --ED-red-dark-hsl: 1, 34%, 24%;
-  
+
   --ED-blue-hsl: 225, 23%, 44%; /* Bunpro #56638a */
   --ED-blue-light-hsl: 225, 23%, 64%;
   --ED-blue-dark-hsl: 225, 18%, 24%;
@@ -156,7 +156,7 @@
   --ED-yellow-hsl: 35, 44%, 46%; /* makes light text work */
   --ED-yellow-light-hsl: 35, 44%, 66%;
   --ED-yellow-dark-hsl: 35, 39%, 26%;
-  
+
   --ED-gray-yellow-hsl: 35, 25%, 39%;
   --ED-yellow-red-hsl: 19, 41%, 45%;
 
@@ -176,7 +176,7 @@
   --ED-yellow: hsl(var(--ED-yellow-hsl));
   --ED-yellow-light: hsl(var(--ED-yellow-light-hsl));
   --ED-yellow-dark: hsl(var(--ED-yellow-dark-hsl));
-  
+
   --ED-gray-yellow: hsl(var(--ED-gray-yellow-hsl));
   --ED-yellow-red: hsl(var(--ED-yellow-red-hsl));
   /*
@@ -256,9 +256,9 @@ p {
 }
 
 .kotoba-table-list table tr.none-available {
-    background-color: var(--ED-surface-3);
-    color: var(--ED-text-color);
-    text-shadow: none;
+  background-color: var(--ED-surface-3);
+  color: var(--ED-text-color);
+  text-shadow: none;
 }
 
 table:has(.none-available) + .see-more a.small-caps {
@@ -331,7 +331,7 @@ table:has(.none-available) + div.see-more {
 .sitemap__section-header--radicals:active,
 .sitemap__section-header--radicals:focus,
 .sitemap__section--open .sitemap__section-header--radicals {
-  border-color: var(--ED-radical-clr);
+  border-color: var(--ED-radical-clr) !important;
 }
 
 .sitemap__pages--radical li > a:hover,
@@ -345,7 +345,7 @@ table:has(.none-available) + div.see-more {
 .sitemap__section-header--kanji:active,
 .sitemap__section-header--kanji:focus,
 .sitemap__section--open .sitemap__section-header--kanji {
-  border-color: var(--ED-kanji-clr);
+  border-color: var(--ED-kanji-clr) !important;
 }
 
 .sitemap__pages--kanji li > a:hover,
@@ -359,7 +359,7 @@ table:has(.none-available) + div.see-more {
 .sitemap__section-header--vocabulary:active,
 .sitemap__section-header--vocabulary:focus,
 .sitemap__section--open .sitemap__section-header--vocabulary {
-  border-color: var(--ED-vocab-clr);
+  border-color: var(--ED-vocab-clr) !important;
 }
 
 .sitemap__pages--vocabulary li > a:hover,
@@ -549,6 +549,10 @@ the selector? */
   border: none;
 }
 
+.navigation-shortcut a {
+  border: 2px solid var(--ED-surface-4);
+}
+
 /* RRW De-emphasize counts if 0 in shortcut navigation to lessons/reviews in top nav  bar */
 .navigation-shortcut[data-count="0"] span,
 .navigation-shortcut[data-count="0"] .navigation-shortcut__count {
@@ -562,6 +566,23 @@ the selector? */
 }
 .navigation-shortcut--lessons a span {
   background-color: var(--ED-lesson-clr);
+}
+
+.navigation-shortcut a:hover,
+.navigation-shortcut a:focus {
+  border-color: var(--ED-text-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .sitemap__section-header:hover,
+  .sitemap__section-header:focus,
+  #search__trigger:hover,
+  #search__trigger:focus {
+    border-color: var(--ED-text-color);
+  }
+  .navigation-shortcut a span {
+    z-index: -1;
+  }
 }
 
 /* Popover when hovering over appr/guru/master/enl stage counts */
@@ -867,9 +888,9 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 }
 
 /* Search result borders */
-.search-results  ul.multi-character-grid li[class^="radical-"],
-.search-results  ul.multi-character-grid li[class^="kanji-"],
-.search-results  ul.multi-character-grid li[class^="vocabulary-"] {
+.search-results ul.multi-character-grid li[class^="radical-"],
+.search-results ul.multi-character-grid li[class^="kanji-"],
+.search-results ul.multi-character-grid li[class^="vocabulary-"] {
   border-bottom: 2px solid var(--ED-surface-1);
   border-top: transparent;
 }
@@ -902,7 +923,7 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 
 #reviews #progress-bar,
 #lessons #progress-bar,
-#lessons #progress-bar #bar{
+#lessons #progress-bar #bar {
   height: 10px;
 }
 

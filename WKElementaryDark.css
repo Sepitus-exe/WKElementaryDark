@@ -716,13 +716,6 @@ section.srs-progress ul li:last-child {
   background-color: var(--ED-surface-2);
 }
 
-/* RRW Why just apprentice and guru? This smells wrong. */
-#reviews-summary #incorrect .apprentice > ul > li.radicals,
-#reviews-summary #correct .apprentice > ul > li.radicals,
-#reviews-summary #correct .guru > ul > li.radicals {
-  background-color: var(--ED-radical-clr);
-}
-
 /* RRW answered incorrectly headers */
 #reviews-summary #incorrect h2 {
   background-color: var(--ED-incorrect);
@@ -829,16 +822,16 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 }
 
 #lessons-summary #radicals > div > ul > li.radicals,
-#reviews-summary #correct .apprentice > ul > li.radical,
-#reviews-summary #incorrect .apprentice > ul > li.radical,
-#reviews-summary #correct .guru > ul > li.radical,
-#reviews-summary #incorrect .guru > ul > li.radical,
-#reviews-summary #correct .master > ul > li.radical,
-#reviews-summary #incorrect .master > ul > li.radical,
-#reviews-summary #correct .enlightened > ul > li.radical,
-#reviews-summary #incorrect .enlightened > ul > li.radical,
-#reviews-summary #correct .burned > ul > li.radical,
-#reviews-summary #incorrect .burned > ul > li.radical,
+#reviews-summary #correct .apprentice > ul > li.radicals,
+#reviews-summary #incorrect .apprentice > ul > li.radicals,
+#reviews-summary #correct .guru > ul > li.radicals,
+#reviews-summary #incorrect .guru > ul > li.radicals,
+#reviews-summary #correct .master > ul > li.radicals,
+#reviews-summary #incorrect .master > ul > li.radicals,
+#reviews-summary #correct .enlightened > ul > li.radicals,
+#reviews-summary #incorrect .enlightened > ul > li.radicals,
+#reviews-summary #correct .burned > ul > li.radicals,
+#reviews-summary #incorrect .burned > ul > li.radicals,
 .search-results li[class^="radical-"] a {
   background-color: var(--ED-radical-clr);
   background-image: none;

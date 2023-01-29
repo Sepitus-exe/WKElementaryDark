@@ -1,30 +1,34 @@
+/*
+ * Rex's sample color scheme. It uses 21 unique colors (sort of a "royal" gold
+ * and blue theme) from a palette of 228 from the open-props project (see
+ * https://open-props.style) for details.
+ *
+ * The cooler colors (blues/violets) mostly represent item _types_ (radical,
+ * kanji, or vocabulary). The warmer colors (browns and golds) are used for
+ * branding and progress (SRS stages, progress bars, etc.).
+ */
+
 :root {
-  --USER-surface-1: hsl(var(--gray-12-hsl));
+  /* Unique colors */
+
+  --USER-surface-1: hsl(var(--gray-11-hsl));
   --USER-surface-2: hsl(var(--gray-10-hsl));
   --USER-surface-3: hsl(var(--gray-9-hsl));
   --USER-surface-4: hsl(var(--gray-8-hsl));
 
   --USER-light-surface-5: hsl(var(--gray-4-hsl)); /* inverts text color */
 
-  --USER-text-light: hsl(var(--stone-2-hsl));
-  --USER-text-dark: #151515;
+  --USER-text-light: hsl(var(--gray-5-hsl));
+  --USER-text-dark: hsl(var(--gray-12-hsl));
 
-  --USER-highlight-text: #a97e42;
-  --USER-grayed-text: #aaaaaa;
+  --USER-highlight-text: var(--USER-brand);
+  --USER-grayed-text: hsl(var(--gray-7-hsl));
 
-  --USER-brand: var(--USER-burned-clr);
-  --USER-brand-alt: #a97e42;
-
-  --USER-correct: #58896f;
-  --USER-incorrect: #9c4644;
-
-  --USER-meaning-clr: #a97e42;
-  --USER-reading-clr: #282828;
+  --USER-meaning-clr: hsl(var(--indigo-10-hsl));
 
   --USER-radical-clr: hsl(var(--purple-10-hsl));
   --USER-kanji-clr: hsl(var(--violet-11-hsl));
   --USER-vocab-clr: hsl(var(--indigo-12-hsl));
-  --USER-extra-clr: var(--USER-brand);
 
   --USER-apprentice-clr: hsl(var(--yellow-12-hsl));
   --USER-guru-clr: hsl(var(--yellow-11-hsl));
@@ -33,13 +37,23 @@
   --USER-burned-clr: hsl(var(--yellow-7-hsl));
 
   --USER-lesson-clr: hsl(var(--stone-9-hsl));
+
+  --USER-success-clr: hsl(var(--green-9-hsl));
+  --USER-alert-clr: hsl(var(--red-9-hsl));
+
+  /* Re-used colors */
+
+  --USER-brand: var(--USER-enlightened-clr);
+  --USER-brand-alt: var(--USER-brand);
+
+  --USER-reading-clr: var(--USER-surface-2);
+
   --USER-review-clr: var(--USER-kanji-clr);
 
-  --USER-alert-clr: #9c4644;
-  --USER-warn-clr: #a97e42;
-  --USER-success-clr: #58896f;
+  --USER-correct: var(--USER-success-clr);
+  --USER-incorrect: var(--USER-alert-clr);
 
-  --USER-progress-clr: #a97e42;
+  --USER-progress-clr: var(--USER-brand);
 
   /* Palette colors -- stolen from open props! */
 

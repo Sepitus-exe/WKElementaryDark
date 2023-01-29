@@ -1,10 +1,14 @@
 # WaniKani Elementary Dark
 
-A dark-themed css stylesheet for the wanikani.com domain:
+A dark-themed css stylesheet and styling platform for the wanikani.com domain.
 
 This stylesheet overrides the default WaniKani styling with a consistent set of
-dark colors. Elementary Dark also makes it easy for users to specify their own
-desired colors. Finally, Elementary Dark also makes it easy for script writers
+dark colors.
+
+Elementary Dark also makes it easy for users to specify their own
+desired colors.
+
+Finally, Elementary Dark also makes it easy for script writers
 to specify their desired default colors as well as pick up a user's desired colors
 if they have the Elementary Dark theme loaded.
 
@@ -28,7 +32,6 @@ to request any changes or additions to these stylesheets.
 1. First, install a userstyle manager in your browser.
 
    We recommend [stylus](https://github.com/openstyles/stylus). It is available on
-
    the [Chrome Web Store](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
    as well as a [Firefox add-on](https://addons.mozilla.org/firefox/addon/styl-us/).
 
@@ -45,7 +48,7 @@ to request any changes or additions to these stylesheets.
 3. [Optional] Install any additional stylesheets desired for [Wanikani user
    scripts](#styling-user-scripts).
 
-4. [Optional] See the section on [user overrides](#user-overrides) if
+4. [Optional] See the section on [defining custom colors](#defining-custom-colors) if
    you'd like to override the default colors.
 
 ## Styling user scripts
@@ -69,7 +72,7 @@ install in stylus):
 - Stroke Order Diagram: [installation link](#) [source code](./userscript-styles/WKED-stroke-order.css)
 - Ultimate timeline: [installation link](#) [source code](./userscript-styles/WKED-ultimate-timeline.css)
 
-## Overriding colors
+## Defining custom colors
 
 Every color in Wanikani Elementary Dark can be customized!
 
@@ -89,7 +92,7 @@ If you'd prefer a different color scheme:
    4. Give your stylesheet a name (in the upper left of your screen).
    5. Click the "Save" button.
 
-### Notes on colors
+## Notes on colors
 
 Choose your surface and text colors wisely.
 
@@ -109,15 +112,15 @@ example.
 Using HSL rather than RGB/hex values can be handy when defining colors. It's
 easy to create tints and shades of the same hue with HSL.
 
-### Semantic naming
+## Semantic naming
 
 All of the user-overridable properties use a _semantic_ naming convention. The
 authors have attempted to group related things. This makes it easier to know
 what will be affected if you override a setting: it would be difficult to know
 what, say, "--reddish-brown-32" might be used to represent, but hopefully
-"--ED-kanji-clr" is easier to guess.
+"--USER-kanji-clr" is easier to guess.
 
-#### Surfaces
+### Surfaces
 
 The variables `--USER-surface-1` to `--USER-surface-4` represent four
 overlapping "layers" of boxes/containers in the UI. Surface-1 is the farthest
@@ -127,7 +130,7 @@ The topmost compositional layer is `--USER-light-surface-5` and is closest to
 the user. Unlike the other surfaces, this color is expected to be so light that
 it needs dark colored text to remain legible. Everything else uses `text-light`.
 
-#### Text
+### Text
 
 There are four text colors you can override:
 
@@ -142,62 +145,66 @@ There are four text colors you can override:
 
 - `--USER-grayed-text` specifies the color to use for de-emphasized text.
 
-#### Branding
+### Branding
 
-These specify the "chrome" or branding colors for things that don't require a
-particular color to indicate it's meaning (like kanji/vocabulary or
-apprentice/guru/etc.).
+These specify the "chrome" or branding color for things that can have an arbitrary
+color that doesn't imply a particular meaning (unlike kanji/vocabulary or
+apprentice/guru/etc., for example, where the color has a meaning).
 
-`--USER-brand` is the primary brand color, and `--USER-brand-alt` is a secondary
-color that should be harmonious but distinct.
+`--USER-brand` is the primary brand color. You might consider setting this to
+the same color as your kanji color, or your enlightened/burned colors.
 
-#### Correct/incorrect
-
-These are used to indicate correct/incorrect answers during reviews and lessons.
-They may also be used in other correct/incorrect scenarios.
-
-#### Meaning/reading
+### Meaning/reading
 
 These are used to color the headings during lessons and reviews to indicate
 whether the current quiz is asking about a _meaning_ or a _reading_.
 
-#### Item type
+### Item type
 
 The radical/kanji/vocabulary/extra colors indicate the _type_ of an item. This
 provides most of the styling for the site, so choose your colors wisely.
 
-#### SRS stages
+### SRS stages
 
 The "buckets" for SRS stages also get their own colors: apprentice, guru,
 master, enlightened, and burned. In general, you'll want some sort of clear
 progression in your color choices here. The idea is to show progress toward
 burning an item.
 
-#### Review/lesson
+### Review/lesson
 
 As you'd expect, these colors indicate whether a UI element is for reviewing
 something you've already "learned," or if it's for "lessons" to learn something
 new.
 
-#### Misc
+### Misc
 
-Finally, we have colors for alerts, warnings, and "success" indications that are
-used as you'd expect.
+Finally, we have colors for correct and incorrect responses, alerts, and
+"success" indications. These are used as you'd expect.
 
 The only other variable is the progress color, which is used to color progress
-bars throughout.
+bars throughout. You may want to re-use your branding color to indicate progress.
 
 ## Notes for user script writers
 
 The authors would like to encourage script writers to use these same naming
-conventions. Please use the `--ED-*` variables in your own CSS!
+conventions.
 
-This is easiest in your CSS rules if you use the fallback facility in case these
-variables aren't defined (if the user _hasn't_ installed Elementary Dark for
-some unfathomable reason).
+The `--ED-*` variables in the main stylesheet are the external API. We will try
+not to make any breaking changes or delete any of these (though additions
+shouldn't break anything pre-existing).
 
-Say, for example, you're writing a script that creates an outermost element with
-an id of "#my-awesome-script" and a container div with class "container".
+Please use the `--ED-*` variables in your own CSS, and, in particular, do NOT use
+`--USER-*` properties directly in your css files. Using the similarly named
+`--ED-*` variables ensures that users only need to define the specific colors
+they want to override rather than always having to include everything.
+
+You can safely use any `--ED-*` property directly if WKElementaryDark is loaded,
+but your CSS rules should use the custom property fallback/default
+facility in case the main stylesheet isn't loaded for some unfathomable reason.
+
+As an example, imagine your script has an outermost element with
+an id of "#my-awesome-script" and a container div with the CSS class "container".
 Suppose further that you wanted a dark olive green background, white text, and
 white border unless Elementary Dark is loaded.
 
@@ -211,8 +218,7 @@ Your css rule might look like:
 }
 ```
 
-Please do NOT use `--USER-*` properties directly in your css files. Only use the
-semantically named `--ED-*` variables.
+Your container div will look
 
 ## Authors
 

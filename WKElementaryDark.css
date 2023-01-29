@@ -71,7 +71,6 @@
   --ED-radical-clr: var(--USER-radical-clr, var(--ED-blue));
   --ED-kanji-clr: var(--USER-kanji-clr, var(--ED-red));
   --ED-vocab-clr: var(--USER-vocab-clr, var(--ED-green));
-  --ED-extra-clr: var(--USER-extra-clr, var(--ED-yellow));
 
   /* Indicate SRS stages */
   --ED-apprentice-clr: var(--USER-apprentice-clr, var(--ED-gray-7));
@@ -566,7 +565,7 @@ the selector? */
 
 /* Popover when hovering over appr/guru/master/enl stage counts */
 .popover.srs .popover-content ul li {
-  background-color: var(--ED-extra-clr);
+  background-color: var(--ED-brand);
   background-image: none !important;
 }
 .popover.srs .popover-inner .popover-content ul li:nth-child(1) {
@@ -620,7 +619,7 @@ section.srs-progress ul li:last-child {
 
 /* Guru progress indicators under indiviual items */
 .bg-green {
-  background-color: var(--ED-extra-clr);
+  background-color: var(--ED-brand);
 }
 
 /*************************************************************************************************/

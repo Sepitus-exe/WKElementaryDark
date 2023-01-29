@@ -1,9 +1,221 @@
 # WaniKani Elementary Dark
-A user css theme for the wanikani domain
-![Dash img](https://github.com/Sepitus-exe/WKElementaryDark/blob/main/pics/Dash.png)
-![LessonRadical img](https://github.com/Sepitus-exe/WKElementaryDark/blob/main/pics/LessonRadical.png)
-![Kanji img](https://github.com/Sepitus-exe/WKElementaryDark/blob/main/pics/Kanji.png)
-![Vocab img](https://github.com/Sepitus-exe/WKElementaryDark/blob/main/pics/Vocab.png)
-![Summary img](https://github.com/Sepitus-exe/WKElementaryDark/blob/main/pics/Summary.png)
-![Item img](https://github.com/Sepitus-exe/WKElementaryDark/blob/main/pics/Item.png)
-![Level img](https://github.com/Sepitus-exe/WKElementaryDark/blob/main/pics/Level.png)
+
+A dark-themed css stylesheet for the wanikani.com domain:
+
+This stylesheet overrides the default WaniKani styling with a consistent set of
+dark colors. Elementary Dark also makes it easy for users to specify their own
+desired colors. Finally, Elementary Dark also makes it easy for script writers
+to specify their desired default colors as well as pick up a user's desired colors
+if they have the Elementary Dark theme loaded.
+
+This theme was heavily influenced by [OpenProps](https://open-props.style/) and
+leverages CSS custom properties (AKA "CSS variables") throughout.
+
+Please use the [Wanikani Community
+Forum](https://community.wanikani.com/t/userstyle-wanikani-elementary-dark/60137)
+to request any changes or additions to these stylesheets.
+
+## Default appearance
+
+![Dashboard view](./pics/dash-thumb.jpg)
+
+- Dashboard view: [avif](./pics/dashboard.avif) [jpeg](./pics/dashboard.jpg)
+- Individual kanji page: [avif](./pics/kanji.avif) [jpeg](./pics/kanji.jpg)
+- Review screen: [avif](./pics/review.avif) [jpeg](./pics/review.jpg)
+
+## Installation
+
+1. First, install a userstyle manager in your browser.
+
+   We recommend [stylus](https://github.com/openstyles/stylus). It is available on
+
+   the [Chrome Web Store](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
+   as well as a [Firefox add-on](https://addons.mozilla.org/firefox/addon/styl-us/).
+
+2. Next, install the WaniKani Elementary Dark stylesheet itself:
+
+   - This [install link](https://userstyles.world/api/style/8103.user.css) will
+     install it in Stylus directly.
+
+   - The script is hosted on [userstyles.world](https://userstyles.world/style/8103/wanikani-elementary-dark).
+
+   - The [source repository](https://github.com/Sepitus-exe/WKElementaryDark) is
+     hosted on GitHub.
+
+3. [Optional] Install any additional stylesheets desired for [Wanikani user
+   scripts](#styling-user-scripts).
+
+4. [Optional] See the section on [user overrides](#user-overrides) if
+   you'd like to override the default colors.
+
+## Styling user scripts
+
+In general, the authors would prefer that individual script writers update their
+own scripts to support theming in general (if not Elementary Dark in
+particular).
+
+With very few exceptions, the Elementary Dark stylesheet itself only styles the
+official Wanikani pages. It makes no changes to sections that user scripts
+may have added or modified.
+
+The authors have, however, created [additional
+stylesheets](./userscript-styles/) for popular scripts that don't support
+theming. Feel free to contact the authors if you'd like to request any others.
+
+Currently, the following scripts are supported (click the installation links to
+install in stylus):
+
+- Self-study Quiz: [installation link](#) [source code](./userscript-styles/WKED-self-study.css)
+- Stroke Order Diagram: [installation link](#) [source code](./userscript-styles/WKED-stroke-order.css)
+- Ultimate timeline: [installation link](#) [source code](./userscript-styles/WKED-ultimate-timeline.css)
+
+## Overriding colors
+
+Every color in Wanikani Elementary Dark can be customized!
+
+If you'd prefer a different color scheme:
+
+1. Make a copy of the [All-variables stylesheet](./user-overrides.css).
+
+2. Uncomment and edit any of the custom properties you wish to change. You only
+   need to specify the properties you wish to change.
+
+3. Save your file in the stylus editor:
+
+   1. Click "manage" under the stylus plugin dialog in your browser.
+   2. Unclick the "as Usercss" checkbox, then click the "Write new Style"
+      button.
+   3. Copy and paste the contents of your override stylesheet into the editor.
+   4. Give your stylesheet a name (in the upper left of your screen).
+   5. Click the "Save" button.
+
+### Notes on colors
+
+Choose your surface and text colors wisely.
+
+- Surface-1 is intended to represent containers/surfaces that are lowest in
+  the stacking order (farthest from the user). Higher numbered surfaces
+  stack on top of each other, with light-surface-5 closest to the user.
+
+- The custom property names assume a dark color theme. In particular, the
+  text-light color is used over everything _except_ light-surface-5 which uses
+  text-dark.
+
+It's a good idea to create your own palette of colors using your own custom
+properties, then re-define the `--USER-*` properties using your own custom
+props. See [Rex's user override](./user-overrides/rexs-overrides.css) for an
+example.
+
+Using HSL rather than RGB/hex values can be handy when defining colors. It's
+easy to create tints and shades of the same hue with HSL.
+
+### Semantic naming
+
+All of the user-overridable properties use a _semantic_ naming convention. The
+authors have attempted to group related things. This makes it easier to know
+what will be affected if you override a setting: it would be difficult to know
+what, say, "--reddish-brown-32" might be used to represent, but hopefully
+"--ED-kanji-clr" is easier to guess.
+
+#### Surfaces
+
+The variables `--USER-surface-1` to `--USER-surface-4` represent four
+overlapping "layers" of boxes/containers in the UI. Surface-1 is the farthest
+from the user, surface-2 stacks "on top" of that, and so on.
+
+The topmost compositional layer is `--USER-light-surface-5` and is closest to
+the user. Unlike the other surfaces, this color is expected to be so light that
+it needs dark colored text to remain legible. Everything else uses `text-light`.
+
+#### Text
+
+There are four text colors you can override:
+
+- `--USER-text-light` is the default color used over everything except
+  `light-surface-5`. Please ensure text remains legible over all your color
+  choices with this foreground text color.
+
+- `--USER-text-dark` is the inverted foreground color used over
+  `light-surface-5`.
+
+- `--USER-highlighted-text` specifies the color to use for emphasized text.
+
+- `--USER-grayed-text` specifies the color to use for de-emphasized text.
+
+#### Branding
+
+These specify the "chrome" or branding colors for things that don't require a
+particular color to indicate it's meaning (like kanji/vocabulary or
+apprentice/guru/etc.).
+
+`--USER-brand` is the primary brand color, and `--USER-brand-alt` is a secondary
+color that should be harmonious but distinct.
+
+#### Correct/incorrect
+
+These are used to indicate correct/incorrect answers during reviews and lessons.
+They may also be used in other correct/incorrect scenarios.
+
+#### Meaning/reading
+
+These are used to color the headings during lessons and reviews to indicate
+whether the current quiz is asking about a _meaning_ or a _reading_.
+
+#### Item type
+
+The radical/kanji/vocabulary/extra colors indicate the _type_ of an item. This
+provides most of the styling for the site, so choose your colors wisely.
+
+#### SRS stages
+
+The "buckets" for SRS stages also get their own colors: apprentice, guru,
+master, enlightened, and burned. In general, you'll want some sort of clear
+progression in your color choices here. The idea is to show progress toward
+burning an item.
+
+#### Review/lesson
+
+As you'd expect, these colors indicate whether a UI element is for reviewing
+something you've already "learned," or if it's for "lessons" to learn something
+new.
+
+#### Misc
+
+Finally, we have colors for alerts, warnings, and "success" indications that are
+used as you'd expect.
+
+The only other variable is the progress color, which is used to color progress
+bars throughout.
+
+## Notes for user script writers
+
+The authors would like to encourage script writers to use these same naming
+conventions. Please use the `--ED-*` variables in your own CSS!
+
+This is easiest in your CSS rules if you use the fallback facility in case these
+variables aren't defined (if the user _hasn't_ installed Elementary Dark for
+some unfathomable reason).
+
+Say, for example, you're writing a script that creates an outermost element with
+an id of "#my-awesome-script" and a container div with class "container".
+Suppose further that you wanted a dark olive green background, white text, and
+white border unless Elementary Dark is loaded.
+
+Your css rule might look like:
+
+```css
+#my-awesome-script .container {
+  background-color: var(--ED-surface-2, darkolivegreen);
+  color: var(--ED-text-color, #ffff);
+  border: 1px solid var(--ED-surface-5, #ffffff);
+}
+```
+
+Please do NOT use `--USER-*` properties directly in your css files. Only use the
+semantically named `--ED-*` variables.
+
+## Authors
+
+- @Sepitus-exe Original author, lead designer, primary developer
+
+- @wrex Contributor, responsible for most bugs

@@ -1,10 +1,10 @@
 :root {
-  --USER-surface-1: hsl(var(--stone-12-hsl));
-  --USER-surface-2: hsl(var(--stone-11-hsl));
-  --USER-surface-3: hsl(var(--stone-10-hsl));
-  --USER-surface-4: hsl(var(--stone-9-hsl));
+  --USER-surface-1: hsl(var(--gray-12-hsl));
+  --USER-surface-2: hsl(var(--gray-10-hsl));
+  --USER-surface-3: hsl(var(--gray-9-hsl));
+  --USER-surface-4: hsl(var(--gray-8-hsl));
 
-  --USER-light-surface-5: hsl(var(--stone-4-hsl)); /* inverts text color */
+  --USER-light-surface-5: hsl(var(--gray-4-hsl)); /* inverts text color */
 
   --USER-text-light: hsl(var(--stone-2-hsl));
   --USER-text-dark: #151515;
@@ -21,9 +21,9 @@
   --USER-meaning-clr: #a97e42;
   --USER-reading-clr: #282828;
 
-  --USER-radical-clr: hsl(var(--lime-10-hsl));
-  --USER-kanji-clr: hsl(var(--green-11-hsl));
-  --USER-vocab-clr: hsl(var(--teal-12-hsl));
+  --USER-radical-clr: hsl(var(--purple-10-hsl));
+  --USER-kanji-clr: hsl(var(--violet-11-hsl));
+  --USER-vocab-clr: hsl(var(--indigo-12-hsl));
   --USER-extra-clr: var(--USER-brand);
 
   --USER-apprentice-clr: hsl(var(--yellow-12-hsl));

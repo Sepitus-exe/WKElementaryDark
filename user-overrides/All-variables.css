@@ -23,10 +23,6 @@
     /* --USER-grayed-text: #aaaaaa; */
 
     /* --USER-brand: #9c4644; */
-    /* --USER-brand-alt: #a97e42; */
-
-    /* --USER-correct: #58896f; */
-    /* --USER-incorrect: #9c4644; */
 
     /* --USER-meaning-clr: #a97e42; */
     /* --USER-reading-clr: #282828; */
@@ -45,8 +41,9 @@
     /* --USER-lesson-clr: #56638a; */
     /* --USER-review-clr: #9c4644; */
 
+    /* --USER-correct: #58896f; */
+    /* --USER-incorrect: #9c4644; */
     /* --USER-alert-clr: #9c4644; */
-    /* --USER-warn-clr: #a97e42; */
     /* --USER-success-clr: #58896f; */
 
     /* --USER-progress-clr: #a97e42; */

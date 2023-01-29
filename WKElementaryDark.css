@@ -59,10 +59,6 @@
   --ED-brand: var(--USER-brand, var(--ED-red));
   --ED-brand-alt: var(--USER-brand-alt, var(--ED-yellow));
 
-  /* Indicate correct/incorrect answers */
-  --ED-correct: var(--USER-correct, var(--ED-green));
-  --ED-incorrect: var(--USER-incorrect, var(--ED-red));
-
   /* Indicate reading vs. meaning */
   --ED-meaning-clr: var(--USER-meaning-clr, var(--ED-yellow));
   --ED-reading-clr: var(--USER-reading-clr, var(--ED-gray-3));
@@ -85,8 +81,9 @@
 
   /* Alerts/warnings */
   --ED-alert-clr: var(--USER-alert-clr, var(--ED-red));
-  --ED-warn-clr: var(--USER-warn-clr, var(--ED-yellow));
   --ED-success-clr: var(--USER-success-clr, var(--ED-green));
+  --ED-correct: var(--USER-correct, var(--ED-green));
+  --ED-incorrect: var(--USER-incorrect, var(--ED-red));
 
   /* Progress bars */
   --ED-progress-clr: var(--USER-progress-clr, var(--ED-yellow));

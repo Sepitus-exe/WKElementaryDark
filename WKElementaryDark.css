@@ -1782,3 +1782,88 @@ input[type="password"],
   text-shadow: none;
   color: var(--ED-text-color);
 }
+
+/*************************************************************************************************/
+/* Non-Wanikani styling. Currently just the Wanikani Open Framework settings 
+/*************************************************************************************************/
+
+#wkof_ds .ui-dialog,
+#wkof_ds .ui-widget,
+#wkof_ds .ui-widget-content {
+  border: 1px solid var(--ED-surface-1, #151515);
+  background-color: var(--ED-surface-2, #282828);
+  color: var(--ED-text-color, #eeeeee);
+  background-image: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+#wkof_ds select,
+#wkof_ds input {
+  background-color: var(--ED-light-surface-5, #bababa);
+  --ED-text-color: var(--ED-text-dark, #151515);
+}
+
+#wkof_ds .ui-dialog .ui-dialog-titlebar {
+  text-shadow: none;
+}
+
+#wkof_ds .ui-widget-header {
+  background-color: var(--ED-surface-3, #303030);
+  font-weight: normal;
+}
+
+#wkof_ds .ui-dialog .ui-dialog-titlebar-close {
+  border: 1px solid var(--ED-surface-2, #282828);
+}
+
+#wkof_ds .ui-widget button {
+  text-shadow: none;
+}
+
+#wkof_ds .ui-state-default a,
+#wkof_ds .ui-state-default a:link,
+#wkof_ds .ui-state-default a:visited,
+#wkof_ds a.ui-button,
+#wkof_ds a:link.ui-button,
+#wkof_ds a:visited.ui-button,
+#wkof_ds .ui-button {
+  color: var(--ED-text-color, #eeeeee);
+  text-decoration: none;
+}
+
+#wkof_ds .wkof_settings .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  background-color: var(--ED-surface-3, #303030);
+  border-bottom: none;
+}
+
+#wkof_ds .ui-state-default,
+#wkof_ds .ui-widget-content .ui-state-default,
+#wkof_ds .ui-widget-header .ui-state-default,
+#wkof_ds .ui-button,
+html #wkof_ds .ui-button.ui-state-disabled:hover,
+html #wkof_ds .ui-button.ui-state-disabled:active {
+  background: var(--ED-surface-4, #535353);
+  font-weight: normal;
+  color: var(--ED-text-color, #eeeeee);
+}
+
+#wkof_ds .ui-dialog .ui-dialog-buttonpane {
+  background-color: var(--ED-surface-2, #282828);
+}
+
+#wkof_ds .ui-widget {
+  text-shadow: none;
+}
+
+#wkof_ds .wkof_settings legend {
+  color: var(--ED-text-color, #eeeeee);
+}
+
+/* Item inspector does some of it's own settings dialog styling.
+   Might as well include it here. Ugly, but functional. */
+
+#wkofs_Item_Inspector .filters .row.checked {
+  background-color: var(--ED-light-surface-5, #bababa);
+  --ED-text-color: var(--ED-text-dark, #151515);
+}

@@ -184,7 +184,7 @@ body,
   background-image: none;
 
   /* Default color assumes dark background */
-  --ED-text-color: var(--ED-text-light); /* default */
+  --EDI-text-color: var(--ED-text-light); /* default */
 }
 
 .global-header,
@@ -197,7 +197,7 @@ body,
 .navigation__toggle-lines,
 .navigation__toggle-lines::before,
 .navigation__toggle-lines::after {
-  border-color: var(--ED-text-color);
+  border-color: var(--EDI-text-color);
 }
 
 span,
@@ -220,12 +220,12 @@ time,
 .small-caps.invert,
 .kotoba-table-list table tr.none-available,
 p {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   text-shadow: none;
 }
 
 .dashboard .forum-topics-list h3.small-caps.invert div.heading-symbol {
-  border-color: var(--ED-text-color);
+  border-color: var(--EDI-text-color);
 }
 
 /*************************************************************************************************
@@ -238,7 +238,7 @@ p {
 
 .kotoba-table-list table tr.none-available {
   background-color: var(--ED-surface-3);
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   text-shadow: none;
 }
 
@@ -290,7 +290,7 @@ table:has(.none-available) + div.see-more {
 
 #query {
   background-color: var(--ED-surface-1);
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 .progress-bar {
@@ -369,7 +369,7 @@ footer ul li:last-child {
 }
 
 .lessons-and-reviews__lessons-button {
-  --ED-button-fg: var(--ED-text-color);
+  --ED-button-fg: var(--EDI-text-color);
   --ED-button-bg: var(--ED-lesson-clr);
   background-color: var(--ED-button-bg);
   color: var(--ED-button-fg);
@@ -383,12 +383,12 @@ footer ul li:last-child {
 
 .lessons-and-reviews .lessons-and-reviews__lessons-button--0 {
   /* No lessons, no color */
-  --ED-button-fg: var(--ED-text-color);
+  --ED-button-fg: var(--EDI-text-color);
   --ED-button-bg: var(--ED-surface-4);
 }
 
 .lessons-and-reviews__reviews-button {
-  --ED-button-fg: var(--ED-text-color);
+  --ED-button-fg: var(--EDI-text-color);
   --ED-button-bg: var(--ED-review-clr);
   background-color: var(--ED-button-bg);
   color: var(--ED-button-fg);
@@ -402,7 +402,7 @@ footer ul li:last-child {
 
 .lessons-and-reviews .lessons-and-reviews__reviews-button--0 {
   /* No reviews, no color */
-  --ED-button-fg: var(--ED-text-color);
+  --ED-button-fg: var(--EDI-text-color);
   --ED-button-bg: var(--ED-surface-4);
 }
 
@@ -446,7 +446,7 @@ section.srs-progress ul li:nth-child(5),
 
 section.srs-progress,
 section.srs-progress span {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 .radical-icon--locked,
@@ -458,7 +458,7 @@ section.srs-progress span {
 .kotoba-table-list table a span,
 .kotoba-table-list table a time,
 .kotoba-table-list table td span.pull-right {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 .kotoba-table-list tr[class|="radical"],
@@ -499,7 +499,7 @@ section.srs-progress span {
 
 .forum-topics-list table,
 .forum-topics-list table tbody tr {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   background-color: var(--ED-surface-3);
 }
 
@@ -551,7 +551,7 @@ the selector? */
 
 .navigation-shortcut a:hover,
 .navigation-shortcut a:focus {
-  border-color: var(--ED-text-color);
+  border-color: var(--EDI-text-color);
 }
 
 @media screen and (min-width: 1024px) {
@@ -559,7 +559,7 @@ the selector? */
   .sitemap__section-header:focus,
   #search__trigger:hover,
   #search__trigger:focus {
-    border-color: var(--ED-text-color);
+    border-color: var(--EDI-text-color);
   }
   .navigation-shortcut a span {
     z-index: -1;
@@ -579,7 +579,7 @@ the selector? */
 }
 .popover.srs .popover-content ul li:nth-child(3) {
   background-color: var(--ED-vocab-clr) !important;
-  --ED-text-color: var(--ED-text-light) !important;
+  --EDI-text-color: var(--ED-text-light) !important;
 }
 
 .progress-entry .radical-icon {
@@ -778,15 +778,15 @@ section.srs-progress ul li:last-child {
 #lessons-summary #radicals > div > ul > li.radicals,
 #lessons-summary #vocabulary > div > ul > li.vocabulary {
   box-shadow: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   text-shadow: none;
 }
 
 /* prettier-ignore */
 #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
   background-color: var(--ED-light-surface-5); /* light background */
-  --ED-text-color: var(--ED-text-dark);
-  color: var(--ED-text-color);
+  --EDI-text-color: var(--ED-text-dark);
+  color: var(--EDI-text-color);
 }
 
 /* prettier-ignore */
@@ -858,7 +858,7 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 #reviews-summary #incorrect .apprentice > ul > li.vocabulary {
   text-shadow: none;
   box-shadow: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 /* Search result borders */
@@ -918,11 +918,11 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
 #question #question-type.meaning,
 #quiz #question-type.meaning {
   background-color: var(--ED-meaning-clr);
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 #question #question-type h1 {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 #item-info #related-items ul {
@@ -1003,7 +1003,7 @@ header.quiz #main-info.radical #character,
 #lesson #supplement-info #supplement-rad-related-kanji div {
   text-shadow: none;
   box-shadow: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 #item-info #related-items ul.radical span,
@@ -1028,7 +1028,7 @@ header.quiz #main-info.radical #character,
 }
 
 #quiz .bg-gray-300:hover {
-  --ED-text-color: var(--ED-text-dark);
+  --EDI-text-color: var(--ED-text-dark);
   background-color: var(--ED-light-surface-5);
 }
 
@@ -1039,7 +1039,7 @@ header.quiz #main-info.radical #character,
 
 #answer-form input[type="text"] {
   box-shadow: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   text-shadow: none;
   height: 72px;
   background-color: var(--ED-surface-4);
@@ -1054,7 +1054,7 @@ header.quiz #main-info.radical #character,
 [class^="note-"] form fieldset button,
 .user-synonyms ul li.user-synonyms-add-form form input {
   background-color: var(--ED-surface-3);
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 #answer-exception span::before {
@@ -1066,7 +1066,7 @@ header.quiz #main-info.radical #character,
 #information {
   background-color: var(--ED-surface-2);
   box-shadow: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   line-height: 1;
 }
 
@@ -1075,7 +1075,7 @@ header.quiz #main-info.radical #character,
 [class^="note-"] form fieldset {
   background-color: var(--ED-surface-3);
   box-shadow: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 /* RRW Not sure where this is to test this works */
@@ -1085,7 +1085,7 @@ header.quiz #main-info.radical #character,
 .bg-\[\#f1d6ff\],
 .bg-\[\#f8d8ef\],
 .bg-\[\#d6f1ff\] {
-  background-color: var(--ED-text-color);
+  background-color: var(--EDI-text-color);
   color: var(--ED-surface-2);
   text-shadow: none;
   font-weight: bold;
@@ -1094,8 +1094,8 @@ header.quiz #main-info.radical #character,
 
 /* RRW Not sure where this is to test this works */
 .reading-highlight > span {
-  /* --ED-text-color: var(--ED-text-dark); */
-  --ED-text-color: chartreuse;
+  /* --EDI-text-color: var(--ED-text-dark); */
+  --EDI-text-color: chartreuse;
 }
 
 #information {
@@ -1174,13 +1174,13 @@ header.quiz #main-info.radical #character,
 .dashboard section.system-alert {
   box-shadow: none;
   border: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 .dashboard section.system-alert time,
 .dashboard section.system-alert a,
 .dashboard section.system-alert h3 {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   text-shadow: none;
   opacity: 1;
 }
@@ -1232,7 +1232,7 @@ section#related-items > .radical {
 
 /* Item stage movement indicators */
 .srs .srs-up {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 .srs .srs-down {
   color: var(--ED-grayed-text);
@@ -1391,7 +1391,7 @@ section#related-items > .radical {
 .subject-collocations__pattern-collocation--selected,
 .text-black {
   box-shadow: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   text-shadow: none;
 }
 
@@ -1470,7 +1470,7 @@ section#related-items > .radical {
 }
 
 .fa-solid {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 /* where is this? */
@@ -1495,7 +1495,7 @@ section#related-items > .radical {
 .context__word-types .bg-gray-300,
 .context__word-types .bg-gray-300 > span {
   background-color: var(--ED-surface-3);
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 /* Rex's additions to individual item pages */
@@ -1512,8 +1512,8 @@ section#related-items > .radical {
 
 button.search__button {
   background-color: var(--ED-light-surface-5);
-  --ED-text-color: var(--ED-text-dark);
-  color: var(--ED-text-color);
+  --EDI-text-color: var(--ED-text-dark);
+  color: var(--EDI-text-color);
 }
 
 span.kanji-highlight,
@@ -1536,7 +1536,7 @@ form .control-group textarea {
 }
 
 input.btn[type="submit"] {
-  --ED-text-color: var(--ED-text-dark);
+  --EDI-text-color: var(--ED-text-dark);
 }
 
 input[type="text"],
@@ -1544,7 +1544,7 @@ textarea,
 form label,
 input[type="file"],
 input[type="submit"] {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   text-shadow: none;
 }
 
@@ -1586,7 +1586,7 @@ html#public-profile div.wall-of-shame h3 span,
 .worst-radical .progress .bar span,
 .worst-vocabulary .progress .bar span,
 html#public-profile div.wall-of-shame ul li > span:first-child {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   text-shadow: none;
   box-shadow: none;
 }
@@ -1636,9 +1636,9 @@ html#public-profile div.wall-of-shame .progress .bar,
 }
 
 .progress .bar span {
-  --ED-text-color: var(--ED-text-dark);
+  --EDI-text-color: var(--ED-text-dark);
   background-color: var(--ED-light-surface-5);
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
   box-shadow: none;
   text-shadow: none;
 }
@@ -1651,7 +1651,7 @@ html#public-profile div.wall-of-shame .progress .bar,
 .worst-radical .progress .bar span,
 .worst-vocabulary .progress .bar span {
   background-color: var(--ED-surface-4);
-  --ED-text-color: var(--ED-text-light);
+  --EDI-text-color: var(--ED-text-light);
 }
 
 .worst-kanji .progress .bar span:after,
@@ -1695,7 +1695,7 @@ html#public-profile div.wall-of-shame .progress .bar,
 
 .page-list ul > li > a,
 .settings-section h2 {
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 .account-settings form.form-auto-submit-on-select-change select,
@@ -1703,13 +1703,13 @@ input[type="password"],
 .settings-section .btn,
 .settings-section select {
   background-color: var(--ED-light-surface-5);
-  --ED-text-color: var(--ED-text-dark);
+  --EDI-text-color: var(--ED-text-dark);
   background-image: none;
 }
 
 /* SEP using generic red a opposed to a semantic color to denote expire/reset WK buttons */
 .settings-section .btn-danger {
-  --ED-text-color: var(--ED-text-light);
+  --EDI-text-color: var(--ED-text-light);
   background-color: var(--EDI-red);
 }
 
@@ -1719,7 +1719,7 @@ input[type="password"],
 }
 
 .settings-section .btn:active {
-  background-color: var(--ED-text-color);
+  background-color: var(--EDI-text-color);
   color: var(--EDI-gray-3);
 }
 
@@ -1736,9 +1736,9 @@ input[type="password"],
 }
 
 .settings-section input[type="text"] {
-  border: 1px solid var(--ED-text-color);
+  border: 1px solid var(--EDI-text-color);
   background-color: var(--ED-light-surface-5);
-  --ED-text-color: var(--ED-text-dark);
+  --EDI-text-color: var(--ED-text-dark);
 }
 
 .settings-section form .control-group textarea {
@@ -1765,7 +1765,7 @@ input[type="password"],
 
 .account-billing h2 {
   text-shadow: none;
-  color: var(--ED-text-color);
+  color: var(--EDI-text-color);
 }
 
 /*************************************************************************************************/
@@ -1777,7 +1777,7 @@ input[type="password"],
 #wkof_ds .ui-widget-content {
   border: 1px solid var(--ED-surface-1, #151515);
   background-color: var(--ED-surface-2, #282828);
-  color: var(--ED-text-color, #eeeeee);
+  color: var(--EDI-text-color, #eeeeee);
   background-image: none;
   box-shadow: none;
   text-decoration: none;
@@ -1786,7 +1786,7 @@ input[type="password"],
 #wkof_ds select,
 #wkof_ds input {
   background-color: var(--ED-light-surface-5, #bababa);
-  --ED-text-color: var(--ED-text-dark, #151515);
+  --EDI-text-color: var(--ED-text-dark, #151515);
 }
 
 #wkof_ds .ui-dialog .ui-dialog-titlebar {
@@ -1813,7 +1813,7 @@ input[type="password"],
 #wkof_ds a:link.ui-button,
 #wkof_ds a:visited.ui-button,
 #wkof_ds .ui-button {
-  color: var(--ED-text-color, #eeeeee);
+  color: var(--EDI-text-color, #eeeeee);
   text-decoration: none;
 }
 
@@ -1830,7 +1830,7 @@ html #wkof_ds .ui-button.ui-state-disabled:hover,
 html #wkof_ds .ui-button.ui-state-disabled:active {
   background: var(--ED-surface-4, #535353);
   font-weight: normal;
-  color: var(--ED-text-color, #eeeeee);
+  color: var(--EDI-text-color, #eeeeee);
 }
 
 #wkof_ds .ui-dialog .ui-dialog-buttonpane {
@@ -1842,7 +1842,7 @@ html #wkof_ds .ui-button.ui-state-disabled:active {
 }
 
 #wkof_ds .wkof_settings legend {
-  color: var(--ED-text-color, #eeeeee);
+  color: var(--EDI-text-color, #eeeeee);
 }
 
 /* Item inspector does some of it's own settings dialog styling.
@@ -1850,5 +1850,5 @@ html #wkof_ds .ui-button.ui-state-disabled:active {
 
 #wkofs_Item_Inspector .filters .row.checked {
   background-color: var(--ED-light-surface-5, #bababa);
-  --ED-text-color: var(--ED-text-dark, #151515);
+  --EDI-text-color: var(--ED-text-dark, #151515);
 }

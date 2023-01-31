@@ -18,7 +18,7 @@
 
   --USER-light-surface-5: hsl(var(--gray-4-hsl)); /* inverts text color */
 
-  --USER-text-light: hsl(var(--gray-5-hsl));
+  --USER-text-light: hsl(var(--gray-3-hsl));
   --USER-text-dark: hsl(var(--gray-12-hsl));
 
   --USER-highlight-text: var(--USER-brand);

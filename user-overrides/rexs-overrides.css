@@ -1,11 +1,87 @@
 /*
- * Rex's sample color scheme. It uses 21 unique colors (sort of a "royal" gold
- * and blue theme) from a palette of 228 from the open-props project (see
- * https://open-props.style) for details.
+ * Rex's color scheme. 
  *
- * The cooler colors (blues/violets) mostly represent item _types_ (radical,
- * kanji, or vocabulary). The warmer colors (browns and golds) are used for
- * branding and progress (SRS stages, progress bars, etc.).
+ * While this is intended as a showcase for how to override your own colors,
+ * it's also a _working_ theme (just like the lovely default WKElementaryDark
+ * colors that @Sepitus-exe designed). 
+ *
+ * I really use this every day with WaniKani, and find it a significant
+ * improvement over the default WK theme. Try it yourself and see what you
+ * think. Make your own even better!
+ *
+ * It uses 20 unique colors (sort of a "royal" gold and blue theme) from a 
+ * palette of 228 from the open-props project (see https://open-props.style 
+ * for details).
+ *
+ * I wanted to ensure review pages in particular achieve the goals described
+ * below as much as possible. We spend a significant portion of our lives
+ * looking at WK review pages. Anything we can do to make that experience more
+ * pleasant and easy-to-understand is worthwhile.
+ * 
+ * The WaniKani UI communicates a surprising amount of information, even on the
+ * "simple" review and lesson pages. It's normal for dashboards to be complex
+ * and information dense, but the "simple" layout of the review and lesson pages
+ * provide their own challenges -- they communicate an awful lot with color!
+ *
+ * DESIGN GOALS 
+ * ------------
+ *
+ * (You may also wish to consider these when designing your own color scheme)
+ *
+ * Dark colors with light text (after switching to dark themes, I'll never go
+ * back).
+ * 
+ * A reasonably harmonious color scheme (keeping in mind that I have the graphic
+ * design sensibilities of a drunken gorilla). Using the open-props palette
+ * helped with this considerably.
+ * 
+ * Readable text with decent contrast ratios everywhere (harder than it sounds).
+ * 
+ * Subtly emphasize _reviews_ over lessons on the dashboard.
+ *
+ * A bold "brand" color that stands out well (I like gold on dark backgrounds) 
+ *
+ * A sharp distinction between: 
+ *
+ *   - colors indicating progress through SRS stages (I used tints/shades of the
+ *     brand color) 
+ *
+ *   - colors representing item _types_ (radical, kanji, or vocabulary). I used
+ *     cooler (blueish) colors for these to contrast with the progress/SRS/brand colors.
+ *
+ * Very clear distinction between item types (R/K/V). (This is particularly
+ *   important during reviews.)
+ *
+ * The SRS stage colors (apprentice, guru, master, enlightened, burned) should
+ * imply a clear progression. It always struck me as weird that the WK default
+ * A/G/M/E/B colors seemed unrelated. During reviews, this subtly informs you
+ * whether an item is moving to higher or lower stages (burns are particularly
+ * visible).
+ *
+ * Make it as obvious as possible during reviews whether you're being quizzed on
+ * meanings or readings. Since my mind tends to want to provide readings first
+ * when I see kanji (a good thing, IMHO), I made the reading color a normal
+ * surface color, and the meaning color an "in your face," hard to ignore,
+ * bright pink. I want to _notice_ when I'm being quizzed on meanings!
+ *
+ * We're pretty much hard-wired these days to expect red/green colors after
+ * incorrect/correct answers. I chose shades that are obvious, but harmonious.
+ *
+ * Technical constraints:
+ *
+ * The single most difficult constraint is that the text-light, grayed-text, and
+ * highlight-text colors must all work well over almost **everything**. 
+ * 
+ * This includes:
+ *
+ * - all surface colors (except light-surface-5), 
+ * - all A/G/M/E/B stage colors, 
+ * - all R/K/V item type colors, 
+ * - correct/incorrect/alert/success colors
+ * - the lessons and reviews colors
+ * - the reading and meanings colors
+ * - the brand color
+ *
  */
 
 :root {
@@ -21,10 +97,9 @@
   --USER-text-light: hsl(var(--gray-3-hsl));
   --USER-text-dark: hsl(var(--gray-12-hsl));
 
-  --USER-highlight-text: var(--USER-brand);
-  --USER-grayed-text: hsl(var(--gray-7-hsl));
+  --USER-grayed-text: hsl(var(--sand-5-hsl));
 
-  --USER-meaning-clr: hsl(var(--indigo-10-hsl));
+  --USER-meaning-clr: hsl(var(--pink-8-hsl));
 
   --USER-radical-clr: hsl(var(--purple-10-hsl));
   --USER-kanji-clr: hsl(var(--violet-11-hsl));
@@ -45,6 +120,8 @@
 
   --USER-brand: var(--USER-enlightened-clr);
   --USER-brand-alt: var(--USER-brand);
+
+  --USER-highlight-text: var(--USER-brand);
 
   --USER-reading-clr: var(--USER-surface-2);
 

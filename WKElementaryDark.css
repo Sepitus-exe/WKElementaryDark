@@ -622,7 +622,7 @@ section.srs-progress ul li:last-child {
 
 /* Guru progress indicators under indiviual items */
 .bg-green {
-  background-color: var(--ED-brand);
+  background-color: var(--ED-progress-clr);
 }
 
 /*************************************************************************************************/

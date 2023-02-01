@@ -64,6 +64,16 @@
   background-image: none;
 }
 
+#wkof_ds #ss_quiz[data-result="correct"] .answer input {
+  color: var(--ED-text-light, #eeeeee) !important;
+  background-color: var(--ED-correct, #58896f) !important;
+}
+
+#wkof_ds #ss_quiz[data-result="incorrect"] .answer input {
+  color: var(--ED-text-light, #eeeeee) !important;
+  background-color: var(--ED-incorrect, #9c4644) !important;
+}
+
 #ss_quiz .settings span.active {
   color: var(--ED-text-color, #eeeeee);
 }

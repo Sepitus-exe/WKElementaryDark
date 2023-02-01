@@ -12,19 +12,19 @@
 /* See https://community.wanikani.com/t/userscript-stroke-order-diagram/46724 */
 
 .stroke_order_diagram--bounding_box {
-    stroke: var(--ED-surface-4, #535353);
+  stroke: var(--ED-surface-4, #535353);
 }
 .stroke_order_diagram--guide_line {
-    stroke: var(--ED-surface-3, #303030);
+  stroke: var(--ED-surface-3, #303030);
 }
 .stroke_order_diagram--current_path {
-    stroke: var(--ED-light-surface-5, #bababa);
+  stroke: var(--ED-light-surface-5, #bababa);
 }
 .stroke_order_diagram--existing_path {
-    stroke: var(--ED-surface-4, #535353);
+  stroke: var(--ED-surface-4, #535353);
 }
 .stroke_order_diagram--path_start {
-    fill: var(--ED-red, #9c4745);
+  fill: var(--ED-brand, #9c4745);
 }
 
 .item-info-injector:not(.page-nav__item):not(.subject-section__meanings) {

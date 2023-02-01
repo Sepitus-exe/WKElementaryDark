@@ -78,7 +78,7 @@ Every color in Wanikani Elementary Dark can be customized!
 
 If you'd prefer a different color scheme:
 
-1. Make a copy of the [All-variables stylesheet](./user-overrides.css).
+1. Make a copy of the [All-variables stylesheet](./user-overrides/All-variables.css).
 
 2. Uncomment and edit any of the custom properties you wish to change. You only
    need to specify the properties you wish to change.

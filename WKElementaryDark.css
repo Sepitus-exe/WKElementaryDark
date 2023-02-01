@@ -88,8 +88,6 @@
   /* Progress bars */
   --ED-progress-clr: var(--USER-progress-clr, var(--EDI-yellow));
 
-  /* TODO: Box shadows, gradients */
-
   /*
    * Begin internal-only custom property definitions. DO NOT REFERENCE THESE
    * PROPERTIES OUTSIDE OF THIS FILE.
@@ -115,7 +113,7 @@
   --EDI-gray-9: #bababa;
   --EDI-gray-10: #bfbfbf;
   --EDI-gray-11: #cccccc;
-  --EDI-gray-12: #eeeeee;
+  --EDI-gray-12: #eeeeee; /* lightest */
 
   --EDI-pure-black: #000;
   --EDI-pure-white: #fff;
@@ -128,21 +126,19 @@
    * it easy to use transparency with hsla().
    */
 
-  --EDI-red-hsl: 1, 39%, 44%; /* Bunpro #9d4745 */
+  --EDI-red-hsl: 1, 39%, 44%;
   --EDI-red-light-hsl: 1, 39%, 64%;
   --EDI-red-dark-hsl: 1, 34%, 24%;
 
-  --EDI-blue-hsl: 225, 23%, 44%; /* Bunpro #56638a */
+  --EDI-blue-hsl: 225, 23%, 44%;
   --EDI-blue-light-hsl: 225, 23%, 64%;
   --EDI-blue-dark-hsl: 225, 18%, 24%;
 
-  /* --EDI-green-hsl: 166, 36%, 52%; /* Bunpro #58b09c */
-  --EDI-green-hsl: 148, 22%, 44%; /* makes light text work */
+  --EDI-green-hsl: 148, 22%, 44%;
   --EDI-green-light-hsl: 148, 22%, 64%;
   --EDI-green-dark-hsl: 148, 17%, 24%;
 
-  /* --EDI-yellow-hsl: 37, 56%, 64%; /* Bunpro #d7af70 */
-  --EDI-yellow-hsl: 35, 44%, 46%; /* makes light text work */
+  --EDI-yellow-hsl: 35, 44%, 46%;
   --EDI-yellow-light-hsl: 35, 44%, 66%;
   --EDI-yellow-dark-hsl: 35, 39%, 26%;
 

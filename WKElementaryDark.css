@@ -621,6 +621,15 @@ section.srs-progress ul li:last-child {
   background-color: var(--ED-progress-clr);
 }
 
+.community-banner {
+  background-color: var(--ED-surface-2);
+  border: none;
+}
+
+.community-banner__title {
+  text-shadow: none;
+}
+
 /*************************************************************************************************/
 /* Review & lesson summary pages
 /*************************************************************************************************/

@@ -71,7 +71,7 @@
 
 #wkof_ds #ss_quiz[data-result="incorrect"] .answer input {
   color: var(--ED-text-light, #eeeeee) !important;
-  background-color: var(--ED-incorrect, #9c4644;) !important;
+  background-color: var(--ED-incorrect, #9c4644) !important;
 }
 
 #ss_quiz .settings span.active {

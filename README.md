@@ -53,7 +53,7 @@ to request any changes or additions to these stylesheets.
 
 ## Styling user scripts
 
-In general, the authors would prefer that individual script writers update their
+In general, we would prefer that individual script writers update their
 own scripts to support theming in general (if not Elementary Dark in
 particular).
 
@@ -61,9 +61,9 @@ With very few exceptions, the Elementary Dark stylesheet itself only styles the
 official Wanikani pages. It makes no changes to sections that user scripts
 may have added or modified.
 
-The authors have, however, created [additional
-stylesheets](./userscript-styles/) for popular scripts that don't support
-theming. Feel free to contact the authors if you'd like to request any others.
+We have, however, created [additional stylesheets](./userscript-styles/) for
+popular scripts that don't support theming. Feel free to contact the authors if
+you'd like to request any others.
 
 Currently, the following scripts are supported (click the installation links to
 install in stylus):
@@ -187,8 +187,8 @@ bars throughout. You may want to re-use your branding color to indicate progress
 
 ## Notes for user script writers
 
-The authors would like to encourage script writers to use these same naming
-conventions.
+We would like to encourage WaniKani user script writers to use these same naming
+conventions in their own CSS rules.
 
 The `--ED-*` variables in the main stylesheet are the external API. We will try
 not to make any breaking changes or delete any of these (though additions

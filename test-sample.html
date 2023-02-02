@@ -103,6 +103,22 @@
         color: var(--ED-highlight-text);
       }
 
+      .lessons-and-reviews .lessons span,
+      .lessons-and-reviews .reviews span {
+        float: right;
+        padding: 5px 10px;
+        border-radius: 15px;
+        background-color: var(--ED-text-light);
+      }
+
+      .lessons-and-reviews .lessons span {
+        color: var(--ED-lesson-clr);
+      }
+
+      .lessons-and-reviews .reviews span {
+        color: var(--ED-review-clr);
+      }
+
       .extra-study {
         grid-column: 1 / span 4;
         grid-row: 2 / 3;
@@ -337,7 +353,7 @@
       }
 
       .grayed {
-        color: var(--ED-grayed-text);
+        opacity: 0.25;
       }
 
       /* review pages */
@@ -465,10 +481,10 @@
         <div class="lessons-and-reviews">
           <ul>
             <li>
-              <div class="lessons">Lessons</div>
+              <div class="lessons">Lessons <span class="right">21</span></div>
             </li>
             <li>
-              <div class="reviews">Reviews</div>
+              <div class="reviews">Reviews <span class="right">99</span></div>
             </li>
           </ul>
         </div>

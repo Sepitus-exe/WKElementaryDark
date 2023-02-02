@@ -234,11 +234,12 @@
       .today,
       .otherday {
         background-color: var(--ED-surface-3);
-        margin-block: 12px;
+        margin-bottom: 12px;
+        padding-inline: 12px;
       }
 
-      .week-forecast > * {
-        padding: 12px;
+      .today {
+        padding-block: 12px;
       }
 
       .today h3,
@@ -252,9 +253,12 @@
         border-bottom: 1px solid var(--ED-text-light);
       }
 
-      .today h3 .right,
-      .otherday h3 .right {
+      .right {
         float: right;
+      }
+
+      .today h3,
+      .otherday h3 {
         font-weight: normal;
       }
 
@@ -354,6 +358,45 @@
 
       .grayed {
         opacity: 0.25;
+      }
+
+      .kotoba-table {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 30px 20px;
+        margin-block: 80px;
+      }
+
+      .kotoba-table .span2 {
+        grid-column: span 2;
+        background-color: var(--ED-surface-2);
+      }
+
+      .kotoba-table-list h3,
+      .see-more h3 {
+        text-align: center;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+
+      .kotoba-table-list table {
+        width: 100%;
+        line-height: 1em;
+        color: var(--ED-text-light);
+      }
+
+      .kotoba-table-list tr[class|="radical"]:nth-child(odd),
+      .kotoba-table-list tr[class|="kanji"]:nth-child(odd),
+      .kotoba-table-list tr[class|="vocabulary"]:nth-child(odd) {
+        filter: brightness(1.1);
+      }
+
+      .kotoba-table-list table a,
+      .kotoba-table-list table a:hover {
+        display: block;
+        padding: 0.7em 1em;
+        color: var(--ED-text-light);
+        text-decoration: none;
       }
 
       /* review pages */
@@ -702,6 +745,341 @@
           <p>Burned</p>
         </div>
       </section>
+
+      <section class="kotoba-table">
+        <div class="span2">
+          <section
+            class="recent-unlocks kotoba-table-list dashboard-sub-section"
+          >
+            <h3 class="small-caps">New Unlocks In The Last 30 Days</h3>
+            <table>
+              <tbody>
+                <tr class="vocabulary-9120 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">梓川</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-28T19:30:48Z"
+                          >Jan 28</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-8547 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">ご無沙汰</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-23T13:01:28Z"
+                          >Jan 23</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-8538 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">慶弔</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-20T01:20:47Z"
+                          >Jan 20</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-8537 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">慶祝</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-20T01:20:47Z"
+                          >Jan 20</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-8536 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">弁慶</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-20T01:20:46Z"
+                          >Jan 20</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-8535 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">慶事</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-20T01:20:46Z"
+                          >Jan 20</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-9126 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">沙羅</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-20T01:05:04Z"
+                          >Jan 20</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-8652 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">容赦なく</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-20T01:05:04Z"
+                          >Jan 20</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="kanji-2456 kotoba-list-item">
+                  <td>
+                    <a href="/kanji/%E7%BD%B7"
+                      ><span lang="ja">罷</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-20T01:05:04Z"
+                          >Jan 20</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="kanji-2466 kotoba-list-item">
+                  <td>
+                    <a href="/kanji/%E7%8B%90"
+                      ><span lang="ja">狐</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-20T01:05:04Z"
+                          >Jan 20</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="see-more">
+              <h3 class="small-caps">See More Unlocks...</h3>
+            </div>
+          </section>
+        </div>
+        <!-- span2 -->
+        <div class="span2">
+          <div class="kotoba-table-list">
+            <h3>Critical Condition Items</h3>
+            <table>
+              <tbody>
+                <tr class="vocabulary-8542 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">稚拙</span
+                      ><span class="right">74%</span></a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="see-more">
+              <h3>See More Critical Items...</h3>
+            </div>
+          </div>
+        </div>
+        <!-- span2 -->
+        <div class="span2">
+          <section
+            class="recent-retired kotoba-table-list dashboard-sub-section"
+          >
+            <h3 class="small-caps">Burned Items In The Last 30 Days</h3>
+            <table>
+              <tbody>
+                <tr class="vocabulary-5955 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">貿易</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-02-01T17:45:44Z"
+                          >Feb 1</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-5797 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">指揮</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-02-01T17:31:55Z"
+                          >Feb 1</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="kanji-1871 kotoba-list-item">
+                  <td>
+                    <a href="/kanji/%E7%90%B4"
+                      ><span lang="ja">琴</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-02-01T02:56:45Z"
+                          >Feb 1</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-6206 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">基盤</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-31T22:52:02Z"
+                          >Jan 31</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-7252 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">殴打</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-31T22:44:26Z"
+                          >Jan 31</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-4935 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">故障</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-31T01:44:43Z"
+                          >Jan 31</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="kanji-1619 kotoba-list-item">
+                  <td>
+                    <a href="/kanji/%E5%8F%8A"
+                      ><span lang="ja">及</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-31T01:43:04Z"
+                          >Jan 31</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="vocabulary-6222 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">賄う</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-31T01:41:30Z"
+                          >Jan 31</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="kanji-1622 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">廃</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-31T01:33:59Z"
+                          >Jan 31</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+                <tr class="kanji-1851 kotoba-list-item">
+                  <td>
+                    <a href="#"
+                      ><span lang="ja">垣</span
+                      ><span class="right"
+                        ><time
+                          class="relative_date"
+                          datetime="2023-01-31T01:33:54Z"
+                          >Jan 31</time
+                        ></span
+                      ></a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="see-more">
+              <h3 class="small-caps">See More Burned Items...</h3>
+            </div>
+          </section>
+        </div>
+        <!-- span2 -->
+      </section>
+      <!-- row -->
     </div>
 
     <!-- radical meaning question -->

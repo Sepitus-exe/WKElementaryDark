@@ -92,7 +92,7 @@
         --ED-button-bg: var(--ED-review-clr);
         background-color: var(--ED-button-bg);
         color: var(--ED-button-fg);
-        margin-left: 30px;
+        margin: 0 -30px 0 30px;
       }
 
       .lessons:hover,
@@ -135,6 +135,70 @@
       .dashboard-progress {
         grid-column: 1 / span 4;
         grid-row: 3 / 4;
+        background-color: var(--ED-surface-2);
+        padding-left: 12px;
+      }
+
+      .dashboard-progress .overall-progress {
+        background-color: var(--ED-surface-3);
+        padding: 12px;
+        border-radius: 36px;
+      }
+
+      .dashboard-progress .radical-progress,
+      .dashboard-progress .kanji-progress {
+        background-color: var(--ED-surface-3);
+        padding: 12px;
+        margin-block: 12px;
+      }
+
+      .radical-progress h2,
+      .kanji-progress h2 {
+        border-bottom: 1px solid var(--ED-text-light);
+      }
+
+      .progress-entries {
+        display: grid;
+        gap: 12px 8px;
+        grid-gap: 12px 8px;
+        grid-template-columns: repeat(auto-fill, minmax(39px, auto));
+      }
+
+      .progress-entry {
+        margin-bottom: 0;
+        margin-right: 0;
+        text-align: center;
+        font-size: 21px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+      }
+
+      .progress-entry .radical,
+      .progress-entry .kanji,
+      .progress-entry .locked {
+        flex-grow: 1;
+        padding-block: 12px;
+      }
+
+      .pips {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+      }
+
+      .pip {
+        height: 10px;
+        background-color: var(--ED-light-surface-5);
+      }
+
+      .brand {
+        background-color: var(--ED-brand);
+      }
+
+      .locked {
+        background-color: var(--ED-surface-4);
       }
 
       .review-forecast {
@@ -305,8 +369,81 @@
             class="w-2/3 sm:w-full"
           />
         </div>
-        <div class="dashboard-progress">level progress</div>
-        <div class="review-forecast">review forecaset</div>
+        <div class="dashboard-progress">
+          <h1>Level 60 Progress</h1>
+          <div class="overall-progress">10 of 30 kanji passed</div>
+          <div class="radical-progress">
+            <h2>Radicals</h2>
+            <div class="progress-entries">
+              <div class="progress-entry">
+                <div class="radical">宀</div>
+                <div class="pips">
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kanji-progress">
+            <h2>Kanji</h2>
+            <div class="progress-entries">
+              <div class="progress-entry">
+                <div class="kanji">字</div>
+                <div class="pips">
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                </div>
+              </div>
+              <div class="progress-entry">
+                <div class="kanji">字</div>
+                <div class="pips">
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                </div>
+              </div>
+              <div class="progress-entry">
+                <div class="kanji">字</div>
+                <div class="pips">
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                </div>
+              </div>
+              <div class="progress-entry">
+                <div class="kanji">字</div>
+                <div class="pips">
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                </div>
+              </div>
+              <div class="progress-entry">
+                <div class="locked">秘</div>
+                <div class="pips">
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip brand">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                  <div class="pip">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="review-forecast">review forecast</div>
       </div>
       <section class="srs-progress">srs progress</section>
     </div>

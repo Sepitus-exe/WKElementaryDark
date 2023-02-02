@@ -232,6 +232,10 @@ p {
   color: var(--ED-brand);
 }
 
+.kotoba-table-list table {
+  color: var(--EDI-text-color);
+}
+
 .kotoba-table-list table tr.none-available {
   background-color: var(--ED-surface-3);
   color: var(--EDI-text-color);

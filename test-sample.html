@@ -8,14 +8,141 @@
     <link rel="stylesheet" href="./WKElementaryDark.css" />
 
     <!-- Replace the next line as appropriate -->
+    <!-- <link rel="stylesheet" href="./user-overrides/example-light.css" /> -->
     <link rel="stylesheet" href="./user-overrides/rexs-overrides.css" />
 
     <style>
       body {
         box-sizing: border-box;
         background-color: var(--ED-surface-1);
+        color: var(--ED-text-light);
         margin: 0;
       }
+
+      /* dashboard */
+
+      .header {
+        background-color: var(--ED-surface-2);
+        color: var(--ED-text-light);
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 16px 20px;
+        font-size: 16px;
+      }
+
+      .header ul {
+        display: flex;
+        gap: 60px;
+        list-style-type: none;
+      }
+
+      .container {
+        width: 1170px;
+        margin: 40px auto;
+      }
+
+      .progress-and-forecast {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 150px auto auto;
+        gap: 30px 20px;
+      }
+
+      .lessons-and-reviews {
+        grid-column: 1 / span 4;
+        grid-row: 1 / 2;
+      }
+
+      .lessons-and-reviews ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .lessons-and-reviews li {
+        flex: 0 1 370px;
+        /* margin-right: 30px; */
+      }
+
+      .lessons-and-reviews .lessons,
+      .lessons-and-reviews .reviews {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto 150px;
+        border-radius: 5px;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1;
+        padding: 116px 16px 16px;
+        position: relative;
+        background-image: url(https://assets.wanikani.com/assets/dashboard/buttons/bg_lessons-1-9c106fff33b5cbfbc1a01f82f9966bec87cc935ab91fc0275dc42dcbeb2e82ba.png);
+      }
+
+      .lessons-and-reviews .lessons {
+        --ED-button-fg: var(--EDI-text-color);
+        --ED-button-bg: var(--ED-lesson-clr);
+        background-color: var(--ED-button-bg);
+        color: var(--ED-button-fg);
+      }
+
+      .lessons-and-reviews .reviews {
+        --ED-button-fg: var(--EDI-text-color);
+        --ED-button-bg: var(--ED-review-clr);
+        background-color: var(--ED-button-bg);
+        color: var(--ED-button-fg);
+        margin-left: 30px;
+      }
+
+      .lessons:hover,
+      .reviews:hover {
+        color: var(--ED-highlight-text);
+      }
+
+      .extra-study {
+        grid-column: 1 / span 4;
+        grid-row: 2 / 3;
+        background-color: var(--ED-surface-2);
+        margin: 0;
+        padding: 16px 12px 12px;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .extra-study > * {
+        width: 358px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .extra-study > h1 {
+        width: 100%;
+      }
+
+      .extra-study-block {
+        margin: 10px 0;
+        border: 1px solid var(--ED-brand);
+      }
+
+      .extra-study-block p {
+        margin-left: 10px;
+      }
+
+      .dashboard-progress {
+        grid-column: 1 / span 4;
+        grid-row: 3 / 4;
+      }
+
+      .review-forecast {
+        grid-column: 5 / span 2;
+        grid-row: 1 / 4;
+      }
+
+      /* review pages */
 
       .reviews {
         margin-bottom: 100px;
@@ -124,6 +251,66 @@
     </style>
   </head>
   <body>
+    <!-- dashboard -->
+    <div class="header">
+      <p>logo</p>
+      <ul>
+        <li>Levels</li>
+        <li>Radicals</li>
+        <li>Kanji</li>
+        <li>Vocabulary</li>
+        <li>Help</li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="progress-and-forecast">
+        <div class="lessons-and-reviews">
+          <ul>
+            <li>
+              <div class="lessons">Lessons</div>
+            </li>
+            <li>
+              <div class="reviews">Reviews</div>
+            </li>
+          </ul>
+        </div>
+        <div class="extra-study">
+          <h1>Extra Study</h1>
+          <div class="es-left-content">
+            <p>
+              Extra Study lets you practice your radicals, kanji, and vocabulary
+              outside of your regular Reviews. Practice done here won't count
+              toward regular Reviews, but will count toward making your memory
+              stronger!
+            </p>
+            <div class="extra-study-block">
+              <p>51 Recent Lessons</p>
+            </div>
+            <div class="extra-study-block">
+              <p>67 Recent Mistakes</p>
+            </div>
+            <div class="extra-study-block">
+              <p>6530 Burned Items</p>
+            </div>
+          </div>
+          <img
+            src="https://assets.wanikani.com/packs/media/components/ExtraStudyDashboard/Images/coach-finish-line-512-980420c43848f1e230e4c25242ea46e5.png"
+            srcset="
+              https://assets.wanikani.com/packs/media/components/ExtraStudyDashboard/Images/coach-finish-line-512-980420c43848f1e230e4c25242ea46e5.png   512w,
+              https://assets.wanikani.com/packs/media/components/ExtraStudyDashboard/Images/coach-finish-line-1024-697940e075b3520fda3492c3abae0bbd.png 1024w,
+              https://assets.wanikani.com/packs/media/components/ExtraStudyDashboard/Images/coach-finish-line-2048-18fceaaf605e0bdc5309acb57f64885e.png 2048w
+            "
+            sizes="(min-width: 768px) 29vw, 100vw"
+            alt=""
+            class="w-2/3 sm:w-full"
+          />
+        </div>
+        <div class="dashboard-progress">level progress</div>
+        <div class="review-forecast">review forecaset</div>
+      </div>
+      <section class="srs-progress">srs progress</section>
+    </div>
+
     <!-- radical meaning question -->
     <div class="reviews">
       <div class="review-progress"></div>

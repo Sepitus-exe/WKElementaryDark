@@ -686,9 +686,12 @@ section.srs-progress ul li:last-child {
   background-color: var(--ED-surface-2);
 }
 
-#reviews-summary header nav #start-session a,
+#reviews-summary header nav #start-session a {
+  background-color: var(--ED-review-clr);
+}
+
 #lessons-summary header nav #start-session a {
-  background-color: var(--ED-brand);
+  background-color: var(--ED-lesson-clr);
 }
 
 #reviews-summary header nav #start-session a:hover,

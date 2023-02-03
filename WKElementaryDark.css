@@ -702,6 +702,10 @@ section.srs-progress ul li:last-child {
   background-color: var(--ED-surface-2);
 }
 
+#lesson .bg-gray-200 {
+  background-color: var(--ED-surface-3);
+}
+
 /* RRW answered incorrectly headers */
 #reviews-summary #incorrect h2 {
   background-color: var(--ED-incorrect);
@@ -855,6 +859,7 @@ border-color: transparent transparent transparent var(--ED-light-surface-5);
   background-image: none;
 }
 
+/* SEP Is removing the text/box shadow necessary here? */
 #reviews-summary #correct .apprentice > ul > li.kanji,
 #reviews-summary #correct .apprentice > ul > li.radical,
 #reviews-summary #correct .apprentice > ul > li.vocabulary,

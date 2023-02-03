@@ -69,12 +69,12 @@
  *
  * Technical constraints:
  *
- * The single most difficult constraint is that the text-light, grayed-text, and
+ * The single most difficult constraint is that the text-clr, grayed-text, and
  * highlight-text colors must all work well over almost **everything**. 
  * 
  * This includes:
  *
- * - all surface colors (except light-surface-5), 
+ * - all surface colors (except inverted-surface), 
  * - all A/G/M/E/B stage colors, 
  * - all R/K/V item type colors, 
  * - correct/incorrect/alert/success colors
@@ -92,10 +92,10 @@
   --USER-surface-3: hsl(var(--gray-9-hsl));
   --USER-surface-4: hsl(var(--gray-8-hsl));
 
-  --USER-light-surface-5: hsl(var(--gray-4-hsl)); /* inverts text color */
+  --USER-inverted-surface: hsl(var(--gray-4-hsl)); /* inverts text color */
 
-  --USER-text-light: hsl(var(--gray-3-hsl));
-  --USER-text-dark: hsl(var(--gray-12-hsl));
+  --USER-text-clr: hsl(var(--gray-3-hsl));
+  --USER-inverted-text: hsl(var(--gray-12-hsl));
 
   --USER-grayed-text: hsl(var(--sand-5-hsl));
 

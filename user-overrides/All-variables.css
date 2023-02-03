@@ -14,11 +14,11 @@
     /* --USER-surface-3: #303030; */
     /* --USER-surface-4: #535353; */
 
-    /* --USER-light-surface-5: #bababa; */ /* inverts text color */
+    /* --USER-inverted-surface: #bababa; */
 
-    /* --USER-text-light: #eeeeee; */
-    /* --USER-text-dark: #151515; */
+    /* --USER-text-clr: #eeeeee; */
 
+    /* --USER-inverted-text: #151515; */
     /* --USER-highlight-text: #a97e42; */
     /* --USER-grayed-text: #aaaaaa; */
 

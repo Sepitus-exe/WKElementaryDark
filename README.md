@@ -98,11 +98,12 @@ Choose your surface and text colors wisely.
 
 - Surface-1 is intended to represent containers/surfaces that are lowest in
   the stacking order (farthest from the user). Higher numbered surfaces
-  stack on top of each other, with light-surface-5 closest to the user.
+  stack on top of each other, with surface-4 closest to the user. The inverted
+  surface can be considered closest of all.
 
 - The custom property names assume a dark color theme. In particular, the
-  text-light color is used over everything _except_ light-surface-5 which uses
-  text-dark.
+  text-clr color is used over everything _except_ inverted-surface which uses
+  text-inverted-text.
 
 It's a good idea to create your own palette of colors using your own custom
 properties, then re-define the `--USER-*` properties using your own custom
@@ -126,20 +127,20 @@ The variables `--USER-surface-1` to `--USER-surface-4` represent four
 overlapping "layers" of boxes/containers in the UI. Surface-1 is the farthest
 from the user, surface-2 stacks "on top" of that, and so on.
 
-The topmost compositional layer is `--USER-light-surface-5` and is closest to
+The topmost compositional layer is `--USER-inverted-surface` and is closest to
 the user. Unlike the other surfaces, this color is expected to be so light that
-it needs dark colored text to remain legible. Everything else uses `text-light`.
+it needs dark colored text to remain legible. Everything else uses `text-clr`.
 
 ### Text
 
 There are four text colors you can override:
 
-- `--USER-text-light` is the default color used over everything except
-  `light-surface-5`. Please ensure text remains legible over all your color
+- `--USER-text-clr` is the default color used over everything except
+  `inverted-surface`. Please ensure text remains legible over all your color
   choices with this foreground text color.
 
-- `--USER-text-dark` is the inverted foreground color used over
-  `light-surface-5`.
+- `--USER-inverted-text` is the inverted foreground color used over
+  `inverted-surface`.
 
 - `--USER-highlighted-text` specifies the color to use for emphasized text.
 

@@ -105,7 +105,7 @@
   --USER-kanji-clr: hsl(var(--violet-11-hsl));
   --USER-vocab-clr: hsl(var(--indigo-12-hsl));
 
-  --USER-apprentice-clr: hsl(var(--yellow-12-hsl));
+  --USER-apprentice-clr: hsl(var(--choco-3-hsl));
   --USER-guru-clr: hsl(var(--yellow-11-hsl));
   --USER-master-clr: hsl(var(--yellow-10-hsl));
   --USER-enlightened-clr: hsl(var(--yellow-8-hsl));
@@ -130,7 +130,7 @@
   --USER-correct: var(--USER-success-clr);
   --USER-incorrect: var(--USER-alert-clr);
 
-  --USER-progress-clr: var(--USER-brand);
+  --USER-progress-clr: var(--USER-guru-clr);
 
   /* Palette colors -- stolen from open props! */
 

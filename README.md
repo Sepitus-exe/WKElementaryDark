@@ -103,7 +103,7 @@ Choose your surface and text colors wisely.
 
 - The custom property names assume a dark color theme. In particular, the
   text-clr color is used over everything _except_ inverted-surface which uses
-  text-inverted-text.
+  inverted-text.
 
 It's a good idea to create your own palette of colors using your own custom
 properties, then re-define the `--USER-*` properties using your own custom

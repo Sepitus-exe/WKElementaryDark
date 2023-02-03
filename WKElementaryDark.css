@@ -671,7 +671,7 @@ section.srs-progress ul li:last-child {
 
 #reviews-summary header nav #back-dashboard,
 #lessons-summary header nav #back-dashboard {
-  background-color: var(--ED-brand);
+  background-color: var(--ED-progress-clr);
   box-shadow: none;
 }
 

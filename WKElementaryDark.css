@@ -29,7 +29,7 @@
   --ED-surface-4: var(--USER-surface-4, var(--EDI-gray-7));
 
   /* 
-   * Light surfaces. Text will be colored with --ED-inverted-text
+   * Inverted surfaces. Text will be colored with --ED-inverted-text
    */
   --ED-inverted-surface: var(--USER-inverted-surface, var(--EDI-gray-9));
 

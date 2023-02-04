@@ -15,8 +15,8 @@
    * shouldn't be referenced outside of this file.
    *
    * Note that this stylesheet assume a dark theme! It specifically uses
-   * light text (colored with --ED-text-light) over everything except
-   * containers with a background color of --ED-light-surface-5.
+   * light text (colored with --ED-text-clr) over everything except
+   * containers with a background color of --ED-inverted-surface.
    *
    */
 
@@ -29,9 +29,9 @@
   --ED-surface-4: var(--USER-surface-4, var(--EDI-gray-7));
 
   /* 
-   * Light surfaces. Text will be colored with --ED-text-dark
+   * Inverted surfaces. Text will be colored with --ED-inverted-text
    */
-  --ED-light-surface-5: var(--USER-light-surface-5, var(--EDI-gray-9));
+  --ED-inverted-surface: var(--USER-inverted-surface, var(--EDI-gray-9));
 
   /*
    * Text colors 
@@ -40,12 +40,12 @@
   /* 
    * One color for dark backgrounds, one for light.
    *
-   * --ED-text-dark is used over --ED-light-surface-5 ONLY
+   * --ED-inverted-text is used over --ED-inverted-surface ONLY
    *
-   * --ED-text-light is used everywhere else
+   * --ED-text-clr is used everywhere else
    */
-  --ED-text-light: var(--USER-text-light, var(--EDI-gray-12));
-  --ED-text-dark: var(--USER-text-dark, var(--EDI-gray-1));
+  --ED-text-clr: var(--USER-text-clr, var(--EDI-gray-12));
+  --ED-inverted-text: var(--USER-inverted-text, var(--EDI-gray-1));
 
   /* Special coloring needs */
   --ED-highlight-text: var(--USER-highlight-text, var(--EDI-yellow));
@@ -180,7 +180,7 @@ body,
   background-image: none;
 
   /* Default color assumes dark background */
-  --EDI-text-color: var(--ED-text-light); /* default */
+  --EDI-text-color: var(--ED-text-clr); /* default */
 }
 
 .global-header,
@@ -575,7 +575,7 @@ the selector? */
 }
 .popover.srs .popover-content ul li:nth-child(3) {
   background-color: var(--ED-vocab-clr) !important;
-  --EDI-text-color: var(--ED-text-light) !important;
+  --EDI-text-color: var(--ED-text-clr) !important;
 }
 
 .progress-entry .radical-icon {
@@ -792,14 +792,14 @@ section.srs-progress ul li:last-child {
 
 /* prettier-ignore */
 #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
-  background-color: var(--ED-light-surface-5); /* light background */
-  --EDI-text-color: var(--ED-text-dark);
+  background-color: var(--ED-inverted-surface); /* light background */
+  --EDI-text-color: var(--ED-inverted-text);
   color: var(--EDI-text-color);
 }
 
 /* prettier-ignore */
 #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
-border-color: transparent transparent transparent var(--ED-light-surface-5);
+border-color: transparent transparent transparent var(--ED-inverted-surface);
 }
 
 #reviews-summary footer #last-session-date,
@@ -1036,8 +1036,8 @@ header.quiz #main-info.radical #character,
 }
 
 #quiz .bg-gray-300:hover {
-  --EDI-text-color: var(--ED-text-dark);
-  background-color: var(--ED-light-surface-5);
+  --EDI-text-color: var(--ED-inverted-text);
+  background-color: var(--ED-inverted-surface);
 }
 
 #lesson #supplement-info {
@@ -1102,7 +1102,7 @@ header.quiz #main-info.radical #character,
 
 /* RRW Not sure where this is to test this works */
 .reading-highlight > span {
-  /* --EDI-text-color: var(--ED-text-dark); */
+  /* --EDI-text-color: var(--ED-inverted-text); */
   --EDI-text-color: chartreuse;
 }
 
@@ -1153,22 +1153,22 @@ header.quiz #main-info.radical #character,
 
 .srs .srs-apprentice {
   background-color: var(--ED-apprentice-clr);
-  color: var(--ED-text-light);
+  color: var(--ED-text-clr);
 }
 
 .srs .srs-guru {
   background-color: var(--ED-guru-clr);
-  color: var(--ED-text-light);
+  color: var(--ED-text-clr);
 }
 
 .srs .srs-master {
   background-color: var(--ED-master-clr);
-  color: var(--ED-text-light);
+  color: var(--ED-text-clr);
 }
 
 .srs .srs-englightened {
   background-color: var(--ED-enlightened-clr);
-  color: var(--ED-text-light);
+  color: var(--ED-text-clr);
 }
 
 /* overlay message */
@@ -1491,12 +1491,12 @@ section#related-items > .radical {
 /* "Pattern of Use" separator - found in lessons/reviews of some words/kanji in dropdown boxes*/
 .word-types--with-collocations::after {
   box-shadow: none;
-  background-color: var(--ED-light-surface-5);
+  background-color: var(--ED-inverted-surface);
   left: calc(100% - 1px);
 }
 
 #supplement-voc-context .word-type__button--selected::after {
-  background-color: var(--ED-light-surface-5);
+  background-color: var(--ED-inverted-surface);
 }
 
 .subject-collocations__pattern-name--selected,
@@ -1519,8 +1519,8 @@ section#related-items > .radical {
 }
 
 button.search__button {
-  background-color: var(--ED-light-surface-5);
-  --EDI-text-color: var(--ED-text-dark);
+  background-color: var(--ED-inverted-surface);
+  --EDI-text-color: var(--ED-inverted-text);
   color: var(--EDI-text-color);
 }
 
@@ -1544,7 +1544,7 @@ form .control-group textarea {
 }
 
 input.btn[type="submit"] {
-  --EDI-text-color: var(--ED-text-dark);
+  --EDI-text-color: var(--ED-inverted-text);
 }
 
 input[type="text"],
@@ -1644,22 +1644,22 @@ html#public-profile div.wall-of-shame .progress .bar,
 }
 
 .progress .bar span {
-  --EDI-text-color: var(--ED-text-dark);
-  background-color: var(--ED-light-surface-5);
+  --EDI-text-color: var(--ED-inverted-text);
+  background-color: var(--ED-inverted-surface);
   color: var(--EDI-text-color);
   box-shadow: none;
   text-shadow: none;
 }
 
 .progress .bar span:after {
-  border-top-color: var(--ED-light-surface-5);
+  border-top-color: var(--ED-inverted-surface);
 }
 
 .worst-kanji .progress .bar span,
 .worst-radical .progress .bar span,
 .worst-vocabulary .progress .bar span {
   background-color: var(--ED-surface-4);
-  --EDI-text-color: var(--ED-text-light);
+  --EDI-text-color: var(--ED-text-clr);
 }
 
 .worst-kanji .progress .bar span:after,
@@ -1710,14 +1710,14 @@ html#public-profile div.wall-of-shame .progress .bar,
 input[type="password"],
 .settings-section .btn,
 .settings-section select {
-  background-color: var(--ED-light-surface-5);
-  --EDI-text-color: var(--ED-text-dark);
+  background-color: var(--ED-inverted-surface);
+  --EDI-text-color: var(--ED-inverted-text);
   background-image: none;
 }
 
 /* SEP using generic red a opposed to a semantic color to denote expire/reset WK buttons */
 .settings-section .btn-danger {
-  --EDI-text-color: var(--ED-text-light);
+  --EDI-text-color: var(--ED-text-clr);
   background-color: var(--EDI-red);
 }
 
@@ -1745,8 +1745,8 @@ input[type="password"],
 
 .settings-section input[type="text"] {
   border: 1px solid var(--EDI-text-color);
-  background-color: var(--ED-light-surface-5);
-  --EDI-text-color: var(--ED-text-dark);
+  background-color: var(--ED-inverted-surface);
+  --EDI-text-color: var(--ED-inverted-text);
 }
 
 .settings-section form .control-group textarea {
@@ -1793,8 +1793,8 @@ input[type="password"],
 
 #wkof_ds select,
 #wkof_ds input {
-  background-color: var(--ED-light-surface-5, #bababa);
-  --EDI-text-color: var(--ED-text-dark, #151515);
+  background-color: var(--ED-inverted-surface, #bababa);
+  --EDI-text-color: var(--ED-inverted-text, #151515);
 }
 
 #wkof_ds .ui-dialog .ui-dialog-titlebar {
@@ -1857,6 +1857,6 @@ html #wkof_ds .ui-button.ui-state-disabled:active {
    Might as well include it here. Ugly, but functional. */
 
 #wkofs_Item_Inspector .filters .row.checked {
-  background-color: var(--ED-light-surface-5, #bababa);
-  --EDI-text-color: var(--ED-text-dark, #151515);
+  background-color: var(--ED-inverted-surface, #bababa);
+  --EDI-text-color: var(--ED-inverted-text, #151515);
 }

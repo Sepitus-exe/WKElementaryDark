@@ -31,7 +31,7 @@
 #wkof_ds #ss_quiz .answer input {
   background-color: var(--ED-surface-5, #bababa);
   border-color: var(--ED-surface-4, #535353);
-  --ED-text-color: var(--ED-text-dark, #151515);
+  --ED-text-color: var(--ED-inverted-text, #151515);
 }
 
 #ss_quiz[data-itype="radical"] .qwrap,
@@ -57,7 +57,7 @@
 }
 
 #ss_quiz[data-atype="meaning"] .atype {
-  color: var(--ED-text-dark, #151515);
+  color: var(--ED-inverted-text, #151515);
   text-shadow: none;
   border: none;
   background-color: var(--ED-meaning-clr, hsl(36, 56%, 44%));
@@ -65,12 +65,12 @@
 }
 
 #wkof_ds #ss_quiz[data-result="correct"] .answer input {
-  color: var(--ED-text-light, #eeeeee) !important;
+  color: var(--ED-text-clr, #eeeeee) !important;
   background-color: var(--ED-correct, #58896f) !important;
 }
 
 #wkof_ds #ss_quiz[data-result="incorrect"] .answer input {
-  color: var(--ED-text-light, #eeeeee) !important;
+  color: var(--ED-text-clr, #eeeeee) !important;
   background-color: var(--ED-incorrect, #9c4644) !important;
 }
 

@@ -18,7 +18,7 @@
   stroke: var(--ED-surface-3, #303030);
 }
 .stroke_order_diagram--current_path {
-  stroke: var(--ED-light-surface-5, #bababa);
+  stroke: var(--ED-inverted-surface, #bababa);
 }
 .stroke_order_diagram--existing_path {
   stroke: var(--ED-surface-4, #535353);

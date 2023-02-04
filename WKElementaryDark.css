@@ -702,7 +702,7 @@ section.srs-progress ul li:last-child {
   background-color: var(--ED-surface-2);
 }
 
-#lesson .bg-gray-200 {
+#lessons .font-lessons textarea {
   background-color: var(--ED-surface-3);
 }
 

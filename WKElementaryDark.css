@@ -14,9 +14,12 @@
    * Properties with the --EDI-* naming convention are _internal_ variables that
    * shouldn't be referenced outside of this file.
    *
-   * Note that this stylesheet assume a dark theme! It specifically uses
+   * Note that the colors in this file form a dark theme. It specifically uses
    * light text (colored with --ED-text-clr) over everything except
    * containers with a background color of --ED-inverted-surface.
+   * 
+   * Light themes are possible by overriding these color definitions with
+   * --USER-* properties in an override file.
    *
    */
 

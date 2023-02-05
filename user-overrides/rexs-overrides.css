@@ -1,5 +1,6 @@
 /*
  * Rex's color scheme. 
+ * -------------------
  *
  * While this is intended as a showcase for how to override your own colors,
  * it's also a _working_ theme (just like the lovely default WKElementaryDark
@@ -7,7 +8,8 @@
  *
  * I really use this every day with WaniKani, and find it a significant
  * improvement over the default WK theme. Try it yourself and see what you
- * think. Make your own even better!
+ * think. Consistently coloring related things ("semantic colors")
+ * subconsciously makes the user experience even better.
  *
  * It uses 20 unique colors (sort of a "royal" gold and blue theme) from a 
  * palette of 228 from the open-props project (see https://open-props.style 
@@ -23,56 +25,88 @@
  * and information dense, but the "simple" layout of the review and lesson pages
  * provide their own challenges -- they communicate an awful lot with color!
  *
- * DESIGN GOALS 
+ * DESIGN IDEAS
  * ------------
  *
- * (You may also wish to consider these when designing your own color scheme)
- *
- * Dark colors with light text (after switching to dark themes, I'll never go
- * back).
+ * This section describes my thinking as I created this color scheme. You may
+ * wish to use some or all of these ideas in your own schemes.
  * 
- * A reasonably harmonious color scheme (keeping in mind that I have the graphic
- * design sensibilities of a drunken gorilla). Using the open-props palette
- * helped with this considerably.
+ * My main goal was a consistent coloring scheme based on _semantics_. Things
+ * that mean or even imply "kanji" should always be colored the same. Things
+ * that mean "guru" should have a different color from "kanji", but should also
+ * all be colored the same.
+ *
+ * I wanted dark colors with light text (after switching to dark themes, I'll
+ * never go back).
  * 
- * Readable text with decent contrast ratios everywhere (harder than it sounds).
+ * I also strove for reasonably harmonious colors (keeping in mind that
+ * I have the graphic design sensibilities of a drunken gorilla). Using the
+ * open-props palette helped with this considerably, but there are probably
+ * too many unrelated colors in this scheme (otoh, there is a **LOT** to
+ * communicate in the WK UI).
  * 
- * Subtly emphasize _reviews_ over lessons on the dashboard.
+ * It had to have readable text with decent contrast ratios everywhere (harder
+ * than it sounds).
  *
- * A bold "brand" color that stands out well (I like gold on dark backgrounds) 
+ * I wanted to subtly emphasize the _review_ button over the lesson button on
+ * the dashboard. I believe some new users are led to believe they must continue
+ * to do all lessons as soon as they are available. This caused some users to
+ * get themselves into trouble.
  *
- * A sharp distinction between: 
+ * I chose the gold "brand" color because it stands out well (I like gold on
+ * dark backgrounds).
  *
- *   - colors indicating progress through SRS stages (I used tints/shades of the
- *     brand color) 
+ * I wanted a sharp distinction between: 
  *
- *   - colors representing item _types_ (radical, kanji, or vocabulary). I used
- *     cooler (blueish) colors for these to contrast with the progress/SRS/brand colors.
+ *   - Colors indicating progress through SRS stages (I used tints/shades of the
+ *     brand color for everything except "apprentice").
  *
- * Very clear distinction between item types (R/K/V). (This is particularly
- *   important during reviews.)
+ *   - Colors representing item _types_ (radical, kanji, or vocabulary). I used
+ *     cooler (blueish) colors for these to contrast with the progress/SRS/brand
+ *     colors.
+ *
+ * I also wanted a significant color difference between apprentice stages and
+ * all subsequent stages. Since progressing between levels literally means
+ * moving stuff from apprentice stages to guru, I made the "progress" color the
+ * same as the guru color.
+ * 
+ * Completing a lesson puts it into the "apprentice" stage, so I made the lesson
+ * color and the "apprentice" color the same.
+ *
+ * Similarly, we are mostly reviewing _kanji_ during our reviews (including the
+ * kanji in vocabulary items), so I made the review color and the kanji color
+ * the same.
+ *
+ * I wanted a very clear distinction between item types (R/K/V). (This is
+ * particularly important during reviews.)
  *
  * The SRS stage colors (apprentice, guru, master, enlightened, burned) should
  * imply a clear progression. It always struck me as weird that the WK default
- * A/G/M/E/B colors seemed unrelated. During reviews, this subtly informs you
- * whether an item is moving to higher or lower stages (burns are particularly
- * visible).
+ * A/G/M/E/B colors seemed unrelated. During reviews, this pgrogression of
+ * colors subtly informs you whether an item is moving to higher or lower stages
+ * (burns are particularly visible and a "desirable" color).
  *
- * Make it as obvious as possible during reviews whether you're being quizzed on
- * meanings or readings. Since my mind tends to want to provide readings first
- * when I see kanji (a good thing, IMHO), I made the reading color a normal
- * surface color, and the meaning color an "in your face," hard to ignore,
- * bright pink. I want to _notice_ when I'm being quizzed on meanings!
+ * I also wanted to make it as obvious as possible during reviews whether you're
+ * being quizzed on meanings or readings. With the default WK white/black
+ * background and inverted text, I was somewhere around level 17 before I even
+ * noticed the color change!
  *
- * We're pretty much hard-wired these days to expect red/green colors after
- * incorrect/correct answers. I chose shades that are obvious, but harmonious.
+ * Since my mind tends to want to provide _readings_ first when I see kanji, I
+ * made the reading color a normal surface color, and the meaning color an "in
+ * your face," hard to ignore, bright pink. I want to _notice_ when I'm being
+ * quizzed on meanings!
  *
- * Technical constraints:
+ * (I think it's a good sign if your mind wants to provide readings by default,
+ * by the way: it indicates you are "thinking in Japanese" rather than in English.)
  *
- * The single most difficult constraint is that the text-clr, grayed-text, and
- * highlight-text colors must all work well over almost **everything**. 
+ * Finally, normal semantics still mandate some shade of red/green colors after
+ * incorrect/correct answers. I chose shades that are obvious, but at least
+ * somewhat harmonious.
+ *
+ * The single most difficult constraint was ensuring that text-clr, grayed-text,
+ * and highlight-text colors all worked well over almost **everything**. 
  * 
- * This includes:
+ * Those three text colors must work well over:
  *
  * - all surface colors (except inverted-surface), 
  * - all A/G/M/E/B stage colors, 
@@ -80,7 +114,6 @@
  * - correct/incorrect/alert/success colors
  * - the lessons and reviews colors
  * - the reading and meanings colors
- * - the brand color
  *
  */
 
@@ -92,26 +125,25 @@
   --USER-surface-3: hsl(var(--gray-9-hsl));
   --USER-surface-4: hsl(var(--gray-8-hsl));
 
-  --USER-inverted-surface: hsl(var(--gray-4-hsl)); /* inverts text color */
+  --USER-inverted-surface: hsl(var(--gray-4-hsl));
 
   --USER-text-clr: hsl(var(--gray-3-hsl));
-  --USER-inverted-text: hsl(var(--gray-12-hsl));
 
+  --USER-inverted-text: hsl(var(--gray-12-hsl));
   --USER-grayed-text: hsl(var(--sand-5-hsl));
+  --USER-highlight-text: hsl(var(--red-6-hsl));
 
   --USER-meaning-clr: hsl(var(--pink-8-hsl));
 
-  --USER-radical-clr: hsl(var(--purple-10-hsl));
+  --USER-radical-clr: hsl(var(--purple-11-hsl));
   --USER-kanji-clr: hsl(var(--violet-11-hsl));
-  --USER-vocab-clr: hsl(var(--indigo-12-hsl));
+  --USER-vocab-clr: hsl(var(--cyan-11-hsl));
 
-  --USER-apprentice-clr: hsl(var(--choco-3-hsl));
+  --USER-apprentice-clr: hsl(var(--sand-7-hsl));
   --USER-guru-clr: hsl(var(--yellow-11-hsl));
   --USER-master-clr: hsl(var(--yellow-10-hsl));
   --USER-enlightened-clr: hsl(var(--yellow-8-hsl));
   --USER-burned-clr: hsl(var(--yellow-7-hsl));
-
-  --USER-lesson-clr: hsl(var(--sand-6-hsl));
 
   --USER-success-clr: hsl(var(--green-9-hsl));
   --USER-alert-clr: hsl(var(--red-9-hsl));
@@ -121,10 +153,9 @@
   --USER-brand: var(--USER-enlightened-clr);
   --USER-brand-alt: var(--USER-brand);
 
-  --USER-highlight-text: var(--USER-brand);
-
   --USER-reading-clr: var(--USER-surface-2);
 
+  --USER-lesson-clr: var(--USER-apprentice-clr);
   --USER-review-clr: var(--USER-kanji-clr);
 
   --USER-correct: var(--USER-success-clr);

@@ -33,8 +33,8 @@
  * 
  * My main goal was a consistent coloring scheme based on _semantics_. Things
  * that mean or even imply "kanji" should always be colored the same. Things
- * that mean "guru" should have a different color from "kanji", but should also
- * all be colored the same.
+ * that mean "progress" should have a different color from "kanji", but should
+ * also all be colored the same.
  *
  * I wanted dark colors with light text (after switching to dark themes, I'll
  * never go back).
@@ -66,56 +66,68 @@
  *     colors.
  *
  * I also wanted a significant color difference between apprentice stages and
- * all subsequent stages. Since progressing between levels literally means
- * moving stuff from apprentice stages to guru, I made the "progress" color the
- * same as the guru color.
+ * all subsequent stages. There are three SRS stage transitions that matter
+ * most:
+ *
+ * 0 -> 1: Completing a lesson moves an item to Apprentice stage. The apprentice
+ *         color indicates things are just starting (it's an intentionally
+ *         reserved color).
+ *
+ * 4 -> 5: This indicates you've "guru'd" an item. You must guru 90% of the
+ *         kanji on a level to progress to the next one). The guru color is thus
+ *         significantly more bold/saturated than the apprentice color
+ *         (indicating you've "learned" but not yet mastered an item).
+ *
+ * 8 -> 9: This indicates you've burned an item, proving you know it well. The
+ *         burned color is thus a "happy", intense color that really stands out.
+ *
+ * Since progressing between levels literally means moving stuff from apprentice
+ * stages to guru, I made the "progress" color the same as the guru color.
  * 
  * Completing a lesson puts it into the "apprentice" stage, so I made the lesson
  * color and the "apprentice" color the same.
- *
+ * 
  * Similarly, we are mostly reviewing _kanji_ during our reviews (including the
  * kanji in vocabulary items), so I made the review color and the kanji color
  * the same.
- *
+ * 
  * I wanted a very clear distinction between item types (R/K/V). (This is
  * particularly important during reviews.)
- *
+ * 
  * The SRS stage colors (apprentice, guru, master, enlightened, burned) should
  * imply a clear progression. It always struck me as weird that the WK default
  * A/G/M/E/B colors seemed unrelated. During reviews, this pgrogression of
  * colors subtly informs you whether an item is moving to higher or lower stages
  * (burns are particularly visible and a "desirable" color).
- *
+ * 
  * I also wanted to make it as obvious as possible during reviews whether you're
  * being quizzed on meanings or readings. With the default WK white/black
  * background and inverted text, I was somewhere around level 17 before I even
  * noticed the color change!
- *
+ * 
  * Since my mind tends to want to provide _readings_ first when I see kanji, I
  * made the reading color a normal surface color, and the meaning color an "in
  * your face," hard to ignore, bright pink. I want to _notice_ when I'm being
  * quizzed on meanings!
- *
+ * 
  * (I think it's a good sign if your mind wants to provide readings by default,
- * by the way: it indicates you are "thinking in Japanese" rather than in English.)
- *
+ * by the way: it indicates you are "thinking in Japanese" rather than in
+ * English.)
+ * 
  * Finally, normal semantics still mandate some shade of red/green colors after
  * incorrect/correct answers. I chose shades that are obvious, but at least
  * somewhat harmonious.
- *
+ * 
  * The single most difficult constraint was ensuring that text-clr, grayed-text,
  * and highlight-text colors all worked well over almost **everything**. 
  * 
  * Those three text colors must work well over:
- *
- * - all surface colors (except inverted-surface), 
- * - all A/G/M/E/B stage colors, 
- * - all R/K/V item type colors, 
- * - correct/incorrect/alert/success colors
- * - the lessons and reviews colors
- * - the reading and meanings colors
- *
- */
+ * 
+ * - all surface colors (except inverted-surface), - all A/G/M/E/B stage colors,
+ * - all R/K/V item type colors, - correct/incorrect/alert/success colors - the
+ * lessons and reviews colors - the reading and meanings colors
+ * 
+ * /
 
 :root {
   /* Unique colors */

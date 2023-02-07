@@ -680,7 +680,7 @@ section.srs-progress ul li:last-child {
 
 #reviews-summary header nav #back-dashboard:hover,
 #lessons-summary header nav #back-dashboard:hover {
-  background-color: var(--ED-brand);
+  background-color: var(--ED-progress-clr);
   filter: brightness(0.8);
 }
 
@@ -693,13 +693,17 @@ section.srs-progress ul li:last-child {
   background-color: var(--ED-review-clr);
 }
 
+#reviews-summary header nav #start-session a:hover {
+  background-color: var(--ED-review-clr);
+  filter: brightness(0.8);
+}
+
 #lessons-summary header nav #start-session a {
   background-color: var(--ED-lesson-clr);
 }
 
-#reviews-summary header nav #start-session a:hover,
 #lessons-summary header nav #start-session a:hover {
-  background-color: var(--ED-brand);
+  background-color: var(--ED-lesson-clr);
   filter: brightness(0.8);
 }
 

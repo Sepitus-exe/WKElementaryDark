@@ -1493,11 +1493,12 @@ section#related-items > .radical {
   color: var(--EDI-text-color);
 }
 
-/* where is this? */
+/* Context menu divider present on some vocab pages */
 .subject-collocations__patterns::after {
   box-shadow: none;
   right: -9px;
-  background-color: chartreuse;
+  background-color: var(--EDI-pure-white);
+  filter: brightness(0.85);
 }
 
 /* "Pattern of Use" separator - found in lessons/reviews of some words/kanji in dropdown boxes*/

@@ -1097,7 +1097,7 @@ header.quiz #main-info.radical #character,
   color: var(--EDI-text-color);
 }
 
-/* RRW Not sure where this is to test this works */
+/* reading highlights present on some item pages and lessons/reviews */
 .highlight-reading,
 .highlight-reading > span,
 .reading-highlight,
@@ -1109,12 +1109,6 @@ header.quiz #main-info.radical #character,
   text-shadow: none;
   font-weight: bold;
   background-image: none;
-}
-
-/* RRW Not sure where this is to test this works */
-.reading-highlight > span {
-  /* --EDI-text-color: var(--ED-inverted-text); */
-  --EDI-text-color: chartreuse;
 }
 
 #information {

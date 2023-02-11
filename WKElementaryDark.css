@@ -1541,7 +1541,7 @@ span.highlight-kanji,
 span.vocabulary-highlight,
 span.highlight-vocabulary {
   font-weight: normal;
-  text-shadow: none;
+  text-shadow: none !important;
 }
 
 /*************************************************************************************************/

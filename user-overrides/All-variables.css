@@ -47,5 +47,9 @@
     /* --USER-success-clr: #58896f; */
 
     /* --USER-progress-clr: #a97e42; */
+
+    /* --USER-logo-filters: invert(1)saturate(0)brightness(1.6) */
+    /* --USER-extra-study-filters: invert(0.81) */
+    /* --USER-loading-filters: grayscale(90%)invert(1)hue-rotate(180deg) */
   }
 }

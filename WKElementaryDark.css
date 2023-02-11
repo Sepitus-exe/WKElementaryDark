@@ -270,10 +270,15 @@ table:has(.none-available) + div.see-more {
   background-color: var(--ED-surface-2);
 }
 
-.extra-study img,
+.extra-study img {
+  filter: var(--USER-extra-study-filters, invert(0.81));
+}
+
+/* The elements bellow are only ever visible on fresh accounts */
+/* Since they display on the same surface shade as extra study, they can share a filter var */
 .review-forecast__empty-image,
 .none-available div {
-  filter: invert(0.81);
+  filter: var(--USER-extra-study-filters, invert(0.81));
 }
 
 .review-forecast__day-header::before {
@@ -283,7 +288,7 @@ table:has(.none-available) + div.see-more {
 .logo,
 .logo:active,
 .logo:focus {
-  filter: invert(1) saturate(0) brightness(1.6);
+  filter: var(--USER-logo-filters, invert(1)saturate(0)brightness(1.6));
 }
 
 #query {
@@ -903,7 +908,7 @@ border-color: transparent transparent transparent var(--ED-inverted-surface);
 #loading,
 #additional-content-load,
 #loading-screen {
-  filter: grayscale(90%) invert(1) hue-rotate(180deg);
+  filter: var(--USER-loading-filters, grayscale(90%)invert(1)hue-rotate(180deg));
 }
 
 #progress-bar,

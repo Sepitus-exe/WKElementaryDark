@@ -60,7 +60,6 @@
 
   /* Theme/branding colors */
   --ED-brand: var(--USER-brand, var(--EDI-red));
-  --ED-brand-alt: var(--USER-brand-alt, var(--EDI-yellow));
 
   /* Indicate reading vs. meaning */
   --ED-meaning-clr: var(--USER-meaning-clr, var(--EDI-yellow));
@@ -1317,7 +1316,7 @@ section#related-items > .radical {
 .subject-legend__item-badge--recently-unlocked,
 .component-character__badge,
 .character-item__badge {
-  background-color: var(--ED-brand-alt);
+  background-color: var(--ED-brand);
 }
 
 .component-character__badge,

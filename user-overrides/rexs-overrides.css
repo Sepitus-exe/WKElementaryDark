@@ -163,7 +163,6 @@
   /* Re-used colors */
 
   --USER-brand: var(--USER-enlightened-clr);
-  --USER-brand-alt: var(--USER-brand);
 
   --USER-reading-clr: var(--USER-surface-2);
 

@@ -51,5 +51,6 @@
     /* --USER-logo-filters: invert(1)saturate(0)brightness(1.6) */
     /* --USER-extra-study-filters: invert(0.81) */
     /* --USER-loading-filters: grayscale(90%)invert(1)hue-rotate(180deg) */
+    /* --USER-box-overlay-filters: hue-rotate(160deg) */
   }
 }

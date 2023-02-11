@@ -1205,12 +1205,12 @@ header.quiz #main-info.radical #character,
 
 .screen-overlay-with-box img,
 .screen-overlay-with-box .btn-set li.dominant a {
-  filter: hue-rotate(160deg);
+  filter: var(--USER-box-overlay-filters, hue-rotate(160deg));
 }
 .screen-overlay-with-box .btn-set li.dominant a,
 .screen-overlay-with-box .icon-close,
 .screen-overlay-with-box .btn-set li a {
-  filter: hue-rotate(160deg) grayscale(0.4);
+  filter: var(--USER-box-overlay-filters, hue-rotate(160deg)) grayscale(0.4);
 }
 
 section#related-items > .radical {

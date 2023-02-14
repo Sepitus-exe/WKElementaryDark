@@ -119,7 +119,7 @@ All of the user-overridable properties use a _semantic_ naming convention. The
 authors have attempted to group related things. This makes it easier to know
 what will be affected if you override a setting: it would be difficult to know
 what, say, "--reddish-brown-32" might be used to represent, but hopefully
-"--USER-kanji-clr" is easier to guess.
+"--USER-kanji" is easier to guess.
 
 ### Surfaces
 
@@ -127,7 +127,7 @@ The variables `--USER-surface-1` to `--USER-surface-4` represent four
 overlapping "layers" of boxes/containers in the UI. Surface-1 is the farthest
 from the user, surface-2 stacks "on top" of that, and so on.
 
-The topmost compositional layer is `--USER-inverted-surface` and is closest to
+The topmost compositional layer is `--USER-surface-inv` and is closest to
 the user. Unlike the other surfaces, this color is expected to be so light that
 it needs dark colored text to remain legible. Everything else uses `text-clr`.
 
@@ -135,16 +135,16 @@ it needs dark colored text to remain legible. Everything else uses `text-clr`.
 
 There are four text colors you can override:
 
-- `--USER-text-clr` is the default color used over everything except
+- `--USER-text` is the default color used over everything except
   `inverted-surface`. Please ensure text remains legible over all your color
   choices with this foreground text color.
 
-- `--USER-inverted-text` is the inverted foreground color used over
+- `--USER-text-inv` is the inverted foreground color used over
   `inverted-surface`.
 
-- `--USER-highlighted-text` specifies the color to use for emphasized text.
+- `--USER-text-hl` specifies the color to use for emphasized text.
 
-- `--USER-grayed-text` specifies the color to use for de-emphasized text.
+- `--USER-text-grayed` specifies the color to use for de-emphasized text.
 
 ### Branding
 

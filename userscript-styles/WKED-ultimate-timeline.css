@@ -1,3 +1,17 @@
+/* ==UserStyle==
+@name         WKED - Ultimate Timeline
+@namespace    github.com/openstyles/stylus
+@version      1.0.0
+@license      MIT
+@description  Adds WKED styling to the ultimate timeline userscript
+@author       Sepitus
+@homepageURL  https://github.com/Sepitus-exe/WKElementaryDark
+@supportURL   https://github.com/Sepitus-exe/WKElementaryDark/issues
+==/UserStyle== */
+
+/* See https://community.wanikani.com/t/userscript-wanikani-ultimate-timeline/10516 */
+
+@-moz-document domain("www.wanikani.com") {
 :root {
   --ED-UT-surface-1: var(--ED-surface-1, #151515);
   --ED-UT-surface-2: var(--ED-surface-2, #282828);
@@ -274,4 +288,5 @@ body {
 
 #timeline svg .enli {
   fill: var(--ED-UT-enlightened-clr);
+}
 }

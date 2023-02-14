@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name         WaniKani Elementary Dark -- Self-Study
+@name         WKED - Self-Study
 @namespace    github.com/openstyles/stylus
 @version      1.0.0
 @license      MIT
@@ -9,6 +9,9 @@
 @supportURL   https://github.com/Sepitus-exe/WKElementaryDark/issues
 ==/UserStyle== */
 
+/* See https://community.wanikani.com/t/userscript-self-study-quiz/13191 */
+
+@-moz-document domain("www.wanikani.com") {
 #wkof_ds #ss_quiz {
   border-color: var(--ED-surface-2, #282828);
   background-color: var(--ED-surface-2, #282828);
@@ -76,4 +79,5 @@
 
 #ss_quiz .settings span.active {
   color: var(--ED-text-color, #eeeeee);
+}
 }

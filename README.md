@@ -78,7 +78,12 @@ Every color in Wanikani Elementary Dark can be customized!
 
 If you'd prefer a different color scheme:
 
-1. Make a copy of the [All-variables stylesheet](./user-overrides/All-variables.css).
+1. Make a _copy_ of the [All-variables
+   stylesheet](./user-overrides/All-variables.css). Note that this file is _not_
+   published to `userstyles.world` (to prevent destroying anyone's edits on a
+   version update.) Regardless, we recommend _copying_ the file and saving it in
+   stylus under your own unique name rather than simply editing and saving the
+   file with the same name.
 
 2. Uncomment and edit any of the custom properties you wish to change. You only
    need to specify the properties you wish to change.
@@ -215,7 +220,7 @@ Your css rule might look like:
 #my-awesome-script .container {
   background-color: var(--ED-surface-2, darkolivegreen);
   color: var(--ED-text-color, #ffff);
-  border: 1px solid var(--ED-surface-5, #ffffff);
+  border: 1px solid var(--ED-surface-inv, #ffffff);
 }
 ```
 

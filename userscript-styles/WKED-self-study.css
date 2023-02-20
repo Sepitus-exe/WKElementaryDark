@@ -53,7 +53,7 @@
   }
 
   #ss_quiz[data-atype="reading"] .atype {
-    color: var(--ED-text-color, #eeeeee);
+    color: var(--ED-text, #eeeeee);
     text-shadow: none;
     border: none;
     background-color: var(--ED-reading, #282828);

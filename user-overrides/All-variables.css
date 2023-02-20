@@ -1,48 +1,70 @@
+/* 
+ * See https://community.wanikani.com/t/userstyle-wanikani-elementary-dark/60137
+ */
+
 @moz-document domain("www.wanikani.com") {
   :root {
     /*
      * Instructions: 
      * 
      * Copy this file verbatim. Uncomment anything below that you wish to change,
-     * then load the file as a separate stylesheet. Current default values are
-     * shown.
+     * then load the file as a separate stylesheet (with your own name). Current
+     * default values are shown.
      * 
      */
 
+    /*
+     * Surfaces
+     */
     /* --USER-surface-1: #151515; */
     /* --USER-surface-2: #282828; */
     /* --USER-surface-3: #303030; */
     /* --USER-surface-4: #535353; */
 
-    /* --USER-inverted-surface: #bababa; */
+    /* --USER-surface-inv: #bababa; */
 
-    /* --USER-text-clr: #eeeeee; */
+    /*
+     * Text
+     */
+    /* --USER-text: #eeeeee; */
+    /* --USER-text-inv: #151515; */
+    /* --USER-text-hl: #a97e42; */
+    /* --USER-text-grayed: #aaaaaa; */
 
-    /* --USER-inverted-text: #151515; */
-    /* --USER-highlight-text: #a97e42; */
-    /* --USER-grayed-text: #aaaaaa; */
-
+    /*
+     * Brand, etc.
+     */
     /* --USER-brand: #9c4644; */
+    /* --USER-progress: #a97e42; */
+    /* --USER-success: #58896f; */
+    /* --USER-alert: #9c4644; */
 
-    /* --USER-meaning-clr: #a97e42; */
-    /* --USER-reading-clr: #282828; */
+    /*
+     * Item types
+     */
+    /* --USER-radical: #56638a; */
+    /* --USER-kanji: #9c4644; */
+    /* --USER-vocab: #58896f; */
 
-    /* --USER-radical-clr: #56638a; */
-    /* --USER-kanji-clr: #9c4644; */
-    /* --USER-vocab-clr: #58896f; */
-    /* --USER-extra-clr: #a97e42; */
+    /*
+     * SRS stages
+     */
+    /* --USER-apprentice: #535353; */
+    /* --USER-guru: #7c684b; */
+    /* --USER-master: #a97e42; */
+    /* --USER-enlightened: #a26144; */
+    /* --USER-burned: #9c4644; */
 
-    /* --USER-apprentice-clr: #535353; */
-    /* --USER-guru-clr: #7c684b; */
-    /* --USER-master-clr: #a97e42; */
-    /* --USER-enlightened-clr: #a26144; */
-    /* --USER-burned-clr: #9c4644; */
-
-    /* --USER-lesson-clr: #56638a; */
-    /* --USER-review-clr: #9c4644; */
-
+    /*
+     * Review/lesson related
+     */
+    /* --USER-lesson: #56638a; */
+    /* --USER-review: #9c4644; */
+    /* --USER-meaning: #a97e42; */
+    /* --USER-reading: #282828; */
     /* --USER-correct: #58896f; */
     /* --USER-incorrect: #9c4644; */
+<<<<<<< HEAD
     /* --USER-alert-clr: #9c4644; */
     /* --USER-success-clr: #58896f; */
 
@@ -52,5 +74,7 @@
     /* --USER-extra-study-filters: invert(0.81) */
     /* --USER-loading-filters: grayscale(90%)invert(1)hue-rotate(180deg) */
     /* --USER-box-overlay-filters: hue-rotate(160deg) */
+=======
+>>>>>>> main
   }
 }

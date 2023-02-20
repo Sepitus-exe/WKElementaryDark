@@ -136,7 +136,7 @@ it needs dark colored text to remain legible. Everything else uses `text`.
 There are four text colors you can override:
 
 - `--USER-text` is the default color used over everything except
-  `inverted-surface`. Please ensure text remains legible over all your color
+  `surface-inv`. Please ensure text remains legible over all your color
   choices with this foreground text color.
 
 - `--USER-text-inv` is the inverted foreground color used over

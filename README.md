@@ -129,7 +129,7 @@ from the user, surface-2 stacks "on top" of that, and so on.
 
 The topmost compositional layer is `--USER-surface-inv` and is closest to
 the user. Unlike the other surfaces, this color is expected to be so light that
-it needs dark colored text to remain legible. Everything else uses `text-clr`.
+it needs dark colored text to remain legible. Everything else uses `text`.
 
 ### Text
 

@@ -78,6 +78,6 @@
   }
 
   #ss_quiz .settings span.active {
-    color: var(--ED-text-color, #eeeeee);
+    color: var(--ED-text, #eeeeee);
   }
 }

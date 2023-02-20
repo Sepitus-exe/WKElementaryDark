@@ -32,7 +32,7 @@
   }
 
   #wkof_ds #ss_quiz .answer input {
-    background-color: var(--ED-surface-5, #bababa);
+    background-color: var(--ED-surface-inv, #bababa);
     border-color: var(--ED-surface-4, #535353);
     --ED-text-color: var(--ED-text-inv, #151515);
   }

@@ -140,7 +140,7 @@ There are four text colors you can override:
   choices with this foreground text color.
 
 - `--USER-text-inv` is the inverted foreground color used over
-  `inverted-surface`.
+  `surface-inv`.
 
 - `--USER-text-hl` specifies the color to use for emphasized text.
 

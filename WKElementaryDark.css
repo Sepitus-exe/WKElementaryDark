@@ -847,15 +847,15 @@
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
-  background-color: var(--ED-surface-inv); /* light background */
-  --EDI-text-color: var(--ED-text-inv);
-  color: var(--EDI-text-color);
-}
+    background-color: var(--ED-surface-inv); /* light background */
+    --EDI-text-color: var(--ED-text-inv);
+    color: var(--EDI-text-color);
+  }
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
-border-color: transparent transparent transparent var(--ED-surface-inv);
-}
+    border-color: transparent transparent transparent var(--ED-surface-inv);
+  }
 
   #lessons-summary #radicals > div > ul > li.radicals,
   #reviews-summary #correct .apprentice > ul > li.radicals,

@@ -102,6 +102,27 @@
     /* Progress bars */
     --ED-progress: var(--USER-progress, var(--EDI-yellow));
 
+    /* Image filters */
+    --ED-logo-filter: var(--USER-logo-filter, var(--EDI-logo-filter));
+    --ED-extra-study-filter: var(
+      --USER-extra-study-filter,
+      var(--EDI-extra-study-filter)
+    );
+    --ED-locked-item-filter: var(
+      --USER-locked-item-filter,
+      var(--EDI-locked-item-filter)
+    );
+    --ED-kotoba-odd-row-filter: var(
+      --USER-kotoba-odd-row-filter,
+      var(--EDI-kotoba-odd-row-filter)
+    );
+    --ED-footer-filter: var(--USER-footer-filter, var(--EDI-footer-filter));
+    --ED-loading-filter: var(--USER-loading-filter, var(--EDI-loading-filter));
+    --ED-overlay-box-highlights-filter: var(
+      --USER-overlay-box-highlights-filter,
+      var(--EDI-overlay-box-highlights-filter)
+    );
+
     /*
      * Begin internal-only custom property definitions. DO NOT REFERENCE THESE
      * PROPERTIES OUTSIDE OF THIS FILE.
@@ -178,6 +199,17 @@
 
     --EDI-gray-yellow: hsl(var(--EDI-gray-yellow-hsl));
     --EDI-yellow-red: hsl(var(--EDI-yellow-red-hsl));
+
+    /*
+     * Filters
+     */
+    --EDI-logo-filter: invert(1) saturate(0) brightness(1.6);
+    --EDI-extra-study-filter: invert(0.81);
+    --EDI-locked-item-filter: brightness(70%);
+    --EDI-kotoba-odd-row-filter: brightness(1.1);
+    --EDI-footer-filter: invert(1);
+    --EDI-loading-filter: grayscale(90%) invert(1) hue-rotate(180deg);
+    --EDI-overlay-box-highlights-filter: hue-rotate(160deg);
   }
 
   /*************************************************************************************************
@@ -285,7 +317,7 @@
   .extra-study img,
   .review-forecast__empty-image,
   .none-available div {
-    filter: invert(0.81);
+    filter: var(--ED-extra-study-filter);
   }
 
   .review-forecast__day-header::before {
@@ -295,7 +327,7 @@
   .logo,
   .logo:active,
   .logo:focus {
-    filter: invert(1) saturate(0) brightness(1.6);
+    filter: var(--ED-logo-filter);
   }
 
   #query {
@@ -358,12 +390,12 @@
     background-color: var(--ED-vocab);
   }
 
-  footer {
-    filter: invert(100%);
+  body > footer {
+    filter: var(--ED-footer-filter);
   }
 
   footer ul {
-    filter: invert(100%);
+    filter: var(--ED-footer-filter);
   }
   footer ul li:last-child {
     filter: hue-rotate(50deg) grayscale(0.75) brightness(2.2);
@@ -461,7 +493,7 @@
   .radical-icon--locked,
   .kanji-icon--locked {
     background-color: var(--ED-surface-4) !important;
-    filter: brightness(80%);
+    filter: var(--ED-locked-item-filter);
   }
 
   .kotoba-table-list table a span,
@@ -479,7 +511,7 @@
   .kotoba-table-list tr[class|="radical"]:nth-child(odd),
   .kotoba-table-list tr[class|="kanji"]:nth-child(odd),
   .kotoba-table-list tr[class|="vocabulary"]:nth-child(odd) {
-    filter: brightness(1.1);
+    filter: var(--ED-kotoba-odd-row-filter);
   }
 
   .kotoba-table-list tr[class|="radical"] {
@@ -503,7 +535,6 @@
   .forum-topics-list > h3.small-caps {
     background-color: var(--ED-surface-2);
     background-image: none;
-    filter: invert(0);
   }
 
   .forum-topics-list table,
@@ -516,6 +547,7 @@
     background-color: var(--ED-surface-4);
   }
 
+  /* Used in the newly absent community div */
   .heading-symbol {
     filter: brightness(0.86);
   }
@@ -815,22 +847,14 @@
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"] {
-  background-color: var(--ED-surface-inv); /* light background */
-  --EDI-text-color: var(--ED-text-inv);
-  color: var(--EDI-text-color);
-}
+    background-color: var(--ED-surface-inv); /* light background */
+    --EDI-text-color: var(--ED-text-inv);
+    color: var(--EDI-text-color);
+  }
 
   /* prettier-ignore */
   #reviews-summary #review-stats [class*="pure-u-"]:first-child [id*="review-stats-"]::after {
-border-color: transparent transparent transparent var(--ED-surface-inv);
-}
-
-  #reviews-summary footer #last-session-date,
-  #reviews-summary footer #copyright,
-  #lessons-summary footer #copyright,
-  #lessons-summary footer #last-session-date {
-    filter: invert(1);
-    font-size: 16px;
+    border-color: transparent transparent transparent var(--ED-surface-inv);
   }
 
   #lessons-summary #radicals > div > ul > li.radicals,
@@ -916,7 +940,7 @@ border-color: transparent transparent transparent var(--ED-surface-inv);
   #loading,
   #additional-content-load,
   #loading-screen {
-    filter: grayscale(90%) invert(1) hue-rotate(180deg);
+    filter: var(--ED-loading-filter);
   }
 
   #progress-bar,
@@ -1137,7 +1161,7 @@ border-color: transparent transparent transparent var(--ED-surface-inv);
   }
 
   #kana-chart.legacy ul li span {
-    filter: invert(1);
+    color: var(--EDI-text-color);
   }
 
   #additional-content ul li span:hover {
@@ -1213,12 +1237,12 @@ border-color: transparent transparent transparent var(--ED-surface-inv);
 
   .screen-overlay-with-box img,
   .screen-overlay-with-box .btn-set li.dominant a {
-    filter: hue-rotate(160deg);
+    filter: var(--ED-overlay-box-highlights-filter);
   }
   .screen-overlay-with-box .btn-set li.dominant a,
   .screen-overlay-with-box .icon-close,
   .screen-overlay-with-box .btn-set li a {
-    filter: hue-rotate(160deg) grayscale(0.4);
+    filter: var(--ED-overlay-box-highlights-filter) grayscale(0.4);
   }
 
   section#related-items > .radical {
@@ -1337,7 +1361,7 @@ border-color: transparent transparent transparent var(--ED-surface-inv);
   }
   .subject-legend__item-badge--locked,
   .character-item--locked {
-    filter: brightness(0.5);
+    filter: var(--ED-locked-item-filter);
   }
 
   .character-item--kanji {
@@ -1878,5 +1902,10 @@ border-color: transparent transparent transparent var(--ED-surface-inv);
   #wkofs_Item_Inspector .filters .row.checked {
     background-color: var(--ED-surface-inv, #bababa);
     --EDI-text-color: var(--ED-text-inv, #151515);
+  }
+
+  #wkofs_ss_quiz .filters .row.checked {
+    background-color: var(--ED-surface-inv);
+    --EDI-text-color: var(--ED-text-inv);
   }
 }

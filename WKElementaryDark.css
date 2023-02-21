@@ -1903,4 +1903,9 @@
     background-color: var(--ED-surface-inv, #bababa);
     --EDI-text-color: var(--ED-text-inv, #151515);
   }
+
+  #wkofs_ss_quiz .filters .row.checked {
+    background-color: var(--ED-surface-inv);
+    --EDI-text-color: var(--ED-text-inv);
+  }
 }

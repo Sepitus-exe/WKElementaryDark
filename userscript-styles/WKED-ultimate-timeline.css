@@ -24,7 +24,7 @@
   }
 
   #timeline svg .bkgd {
-    fill: var(---ED-surface-2, #282828);
+    fill: var(--ED-surface-2, #282828);
   }
 
   #timeline svg text,

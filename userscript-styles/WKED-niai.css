@@ -1,0 +1,88 @@
+/* ==UserStyle==
+@name         WKED - Niai Visually Similar Kanji
+@namespace    github.com/openstyles/stylus
+@version      1.0.0
+@license      MIT
+@description  Adds WKED styling to the niai userscript
+@author       Rrwrex
+@homepageURL  https://github.com/Sepitus-exe/WKElementaryDark
+@supportURL   https://github.com/Sepitus-exe/WKElementaryDark/issues
+==/UserStyle== */
+
+/* See https://community.wanikani.com/t/userscript-niai-%E4%BC%BC%E5%90%88%E3%81%84-visually-similar-kanji/23325 */
+
+@-moz-document domain("www.wanikani.com") {
+  niai_section#niai_section#niai_section#niai_section
+    ul.single-character-grid
+    li[data-kanji],
+  #niai_section#niai_section#niai_section#niai_section
+    ul.multi-character-grid
+    li[data-kanji] {
+    color: var(--ED-text);
+    background-color: var(--ED-kanji);
+    background-image: none;
+    border: 1px solid var(--ED-text);
+    filter: none;
+  }
+  #niai_section#niai_section#niai_section#niai_section
+    ul.single-character-grid
+    li[id|="selfkanji"] {
+    background-color: var(--ED-brand) !important;
+    filter: brightness(1.2) !important;
+    background-image: none;
+    border: 1px solid var(--ED-text);
+  }
+  #niai_section#niai_section#niai_section#niai_section
+    ul.single-character-grid
+    li.character-item,
+  #niai_section#niai_section#niai_section#niai_section
+    ul.multi-character-grid
+    li.character-item {
+    color: var(--ED-text);
+    background-color: var(--ED-kanji);
+    background-image: none;
+    filter: none;
+    border: 1px solid var(--ED-text);
+  }
+  #niai_section#niai_section#niai_section#niai_section .btn {
+    color: var(--ED-text-inv);
+    text-shadow: none;
+    background-color: var(--ED-surface-inv);
+    background-image: none;
+    filter: none;
+    border: none;
+    box-shadow: none;
+  }
+  #niai_section#niai_section#niai_section#niai_section .btn span {
+    color: var(--ED-text-inv);
+  }
+  .wk_niai.modal {
+    background-color: var(--ED-surface-3);
+    border: 1px solid var(--ED-text);
+    box-shadow: none;
+  }
+  .wk_niai .modal-header h3,
+  .wk_niai .modal-body label {
+    color: var(--ED-text);
+  }
+  .wk_niai .modal-footer {
+    background-color: var(--ED-surface-4);
+    border-top: 1px solid var(--ED-surface-inv);
+    box-shadow: none;
+  }
+  .wk_niai button.close {
+    background: transparent;
+    color: var(--ED-text);
+  }
+  #niai_section#niai_section#niai_section#niai_section .dropdown-menu {
+    background-color: var(--ED-surface-4);
+    border: 1px solid var(--ED-text);
+    box-shadow: none;
+  }
+  #niai_section#niai_section#niai_section#niai_section .dropdown-menu textarea {
+    background-color: var(--ED-surface-inv);
+    color: var(--ED-text-inv);
+    border: 1px solid var(--ED-text-inv);
+    box-shadow: none;
+  }
+}

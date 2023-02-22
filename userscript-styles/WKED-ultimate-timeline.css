@@ -14,7 +14,7 @@
 @-moz-document domain("www.wanikani.com") {
 
   #timeline {
-    background-color: var(--ED-surface-2);
+    background-color: var(--ED-surface-2, #282828);
     color: var(--ED-text, #eeeeee);
     border-bottom: none;
 

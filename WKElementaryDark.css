@@ -1213,6 +1213,40 @@
     color: var(--ED-text);
   }
 
+  /* Kanachart in lessons */
+
+  .kana-chart-tab__backspace,
+  #kana-chart .kana-chart-a > button,
+  #kana-chart .kana-chart-k > button,
+  #kana-chart .kana-chart-s > button,
+  #kana-chart .kana-chart-t > button,
+  #kana-chart .kana-chart-h > button,
+  #kana-chart .kana-chart-n > button,
+  #kana-chart .kana-chart-m > button,
+  #kana-chart .kana-chart-r > button,
+  #kana-chart .kana-chart-x > button {
+    color: var(--ED-text);
+    background: var(--ED-surface-3);
+  }
+
+  .kana-chart-tab__backspace:hover,
+  #kana-chart .kana-chart-a > button:hover,
+  #kana-chart .kana-chart-k > button:hover,
+  #kana-chart .kana-chart-s > button:hover,
+  #kana-chart .kana-chart-t > button:hover,
+  #kana-chart .kana-chart-h > button:hover,
+  #kana-chart .kana-chart-n > button:hover,
+  #kana-chart .kana-chart-m > button:hover,
+  #kana-chart .kana-chart-r > button:hover,
+  #kana-chart .kana-chart-x > button:hover {
+    color: var(--ED-text-inv);
+    background: var(--ED-surface-inv);
+  }
+
+  .kana-chart-tabs > button {
+    color: var(--ED-text);
+  }
+
   /* overlay message */
 
   .screen-overlay--background,

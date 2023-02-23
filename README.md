@@ -68,9 +68,10 @@ you'd like to request any others.
 Currently, the following scripts are supported (click the installation links to
 install in stylus):
 
-- Self-study Quiz: [installation link](#) [source code](./userscript-styles/WKED-self-study.css)
-- Stroke Order Diagram: [installation link](#) [source code](./userscript-styles/WKED-stroke-order.css)
-- Ultimate timeline: [installation link](#) [source code](./userscript-styles/WKED-ultimate-timeline.css)
+- Self-study Quiz: [installation link](https://userstyles.world/api/style/8712.user.css), [source code](./userscript-styles/WKED-self-study.css)
+- Stroke Order Diagram: [installation link](https://userstyles.world/api/style/8711.user.css), [source code](./userscript-styles/WKED-stroke-order.css)
+- Ultimate timeline: [installation link](https://userstyles.world/api/style/8710.user.css), [source code](./userscript-styles/WKED-ultimate-timeline.css)
+- Niai Visually Similar Kanji: [installation link](https://userstyles.world/api/style/8713.user.css), [source code](./userscript-styles/WKED-niai.css)
 
 ## Defining custom colors
 

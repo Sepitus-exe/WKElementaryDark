@@ -85,4 +85,7 @@
     border: 1px solid var(--ED-text-inv);
     box-shadow: none;
   }
+  #niai_section#niai_section#niai_section#niai_section .dropdown-menu > li > a {
+    color: var(--ED-text);
+  }
 }

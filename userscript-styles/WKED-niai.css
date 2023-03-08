@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WKED - Niai Visually Similar Kanji
 @namespace    github.com/openstyles/stylus
-@version      1.0.0
+@version      1.0.1
 @license      MIT
 @description  Adds WKED styling to the niai userscript
 @author       Rrwrex
@@ -84,5 +84,8 @@
     color: var(--ED-text-inv);
     border: 1px solid var(--ED-text-inv);
     box-shadow: none;
+  }
+  #niai_section#niai_section#niai_section#niai_section .dropdown-menu > li > a {
+    color: var(--ED-text);
   }
 }

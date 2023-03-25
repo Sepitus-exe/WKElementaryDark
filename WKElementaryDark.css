@@ -9,7 +9,7 @@
 @supportURL   https://github.com/Sepitus-exe/WKElementaryDark/issues
 ==/UserStyle== */
 
-@-moz-document domain("www.wanikani.com") {
+@-moz-document domain("wanikani.com") {
   :root {
     /* CSS variables (technically, "custom properties") for theming */
 
@@ -210,6 +210,50 @@
     --EDI-footer-filter: invert(1);
     --EDI-loading-filter: grayscale(90%) invert(1) hue-rotate(180deg);
     --EDI-overlay-box-highlights-filter: hue-rotate(160deg);
+
+    /* 
+     * Redefine Wanikani provided properties to use ED props
+     */
+    --color-black: var(--EDI-pure-black);
+    --color-gray-light: var(--EDI-gray-12);
+    --color-white: var(--EDI-pure-white);
+    --color-red: var(--EDI-red);
+    --color-text: var(--ED-text);
+    --color-radical: var(--ED-radical);
+    /* --color-radical-gradient: $colorRadicalBlueGradient; */
+    --color-kanji: var(--ED-kanji);
+    /* --color-kanji-gradient: $colorKanjiPinkGradient; */
+    --color-vocabulary: var(--ED-vocab);
+    /* --color-vocabulary-gradient: $colorvocabularyPurpleGradient; */
+    --color-subject-slide-navigation-background: var(--ED-surface-2);
+    --color-subject-slide-navigation-text: var(--ED-text);
+    --color-subject-slide-navigation-button-hover: var(--ED-text-hl);
+    --color-button-default-background: var(--ED-surface-4);
+    --color-button-quiz-background: var(--ED-success);
+    --color-button-quiz-text: var(--ED-text);
+    --color-button-quiz-text-shadow: none;
+    --color-button-modal-primary-background: var(--ED-surface-inv);
+    --color-button-modal-primary-border: var(--color-white);
+    --color-button-modal-primary-text: var(--ED-text-inv);
+    --color-button-modal-primary-text-shadow: none;
+    --color-button-modal-secondary-background: transparent;
+    --color-button-modal-secondary-border: var(--color-white);
+    --color-button-modal-secondary-text: var(--ED-text);
+    --color-button-modal-secondary-text-shadow: none;
+    /* --color-text-shadow-dark: rgba(0, 0, 0, 0.2); */
+    --color-text-shadow-light: none;
+    --color-quiz-incorrect-background: var(--ED-incorrect);
+    --color-quiz-incorrect-text-color: var(--ED-text);
+    --color-quiz-incorrect-text-shadow: none;
+    --color-quiz-correct-background: var(--ED-success);
+    --color-quiz-correct-text-color: var(--ED-text);
+    --color-quiz-correct-text-shadow: none;
+    --color-quiz-srs-correct-background: var(--ED-success);
+    --color-quiz-srs-correct-text-color: var(--color-white);
+    --color-quiz-srs-correct-text-shadow: none;
+    --color-quiz-srs-incorrect-background: var(--ED-incorrect);
+    --color-quiz-srs-incorrect-text-color: var(--ED-text);
+    --color-quiz-srs-incorrect-text-shadow: none;
   }
 
   /*************************************************************************************************
@@ -679,6 +723,8 @@
 
   /*************************************************************************************************/
   /* Review & lesson summary pages
+  /* TODO: summary pages have been removed -- determine if we can remove any/all
+  /* of these rules
   /*************************************************************************************************/
 
   /* Sticky header */
@@ -965,15 +1011,20 @@
   #question #question-type.meaning,
   #question #question-type.reading,
   #quiz #question-type.meaning,
-  #quiz #question-type.reading {
+  #quiz #question-type.reading,
+  .quiz-input__question-type-container {
     background-color: var(--ED-reading);
     background-image: none;
+    text-shadow: none;
     border-color: var(--ED-reading);
   }
 
   #question #question-type.meaning,
-  #quiz #question-type.meaning {
+  #quiz #question-type.meaning,
+  .quiz-input__question-type-container[data-question-type="meaning"] {
     background-color: var(--ED-meaning);
+    background-image: none;
+    text-shadow: none;
     color: var(--EDI-text-color);
   }
 
@@ -990,7 +1041,8 @@
   .radical,
   header #main-info.radical,
   #lesson #supplement-info .radical,
-  #item-info #related-items ul.radical span {
+  #item-info #related-items ul.radical span,
+  .character-header--radical {
     background-color: var(--ED-radical);
     background-image: none;
     box-shadow: none;
@@ -1006,7 +1058,8 @@
   .kanji,
   header #main-info.kanji,
   #lesson #supplement-info .kanji,
-  #item-info #related-items ul.kanji span {
+  #item-info #related-items ul.kanji span,
+  .character-header--kanji {
     background-color: var(--ED-kanji);
     background-image: none;
     box-shadow: none;
@@ -1022,7 +1075,8 @@
   .vocabulary,
   header #main-info.vocabulary,
   #lesson #supplement-info .vocabulary,
-  #item-info #related-items ul.vocabulary span {
+  #item-info #related-items ul.vocabulary span,
+  .character-header--vocabulary {
     background-color: var(--ED-vocab);
     background-image: none;
     box-shadow: none;
@@ -1117,9 +1171,17 @@
     border-color: transparent transparent var(--ED-surface-4) transparent;
   }
 
+  .answer-exception {
+    background-color: var(--ED-surface-3);
+    color: var(--EDI-text-color);
+    text-shadow: none;
+    box-shadow: none;
+  }
+
   #additional-content ul li span,
   #additional-content ul li.active i,
-  #information {
+  #information,
+  .additional-content__item {
     background-color: var(--ED-surface-2);
     box-shadow: none;
     color: var(--EDI-text-color);

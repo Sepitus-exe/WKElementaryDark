@@ -1466,6 +1466,10 @@
     border-color: var(--EDI-gray-3);
   }
 
+  #additional-content .character-item--kanji span {
+    background-color: var(--ED-kanji);
+  }
+
   .character-item--kanji:not(.character-item--locked) {
     background-color: var(--ED-kanji);
     background-image: none;

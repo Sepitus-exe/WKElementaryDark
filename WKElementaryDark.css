@@ -1541,6 +1541,18 @@
     text-shadow: none;
   }
 
+  /* 
+   * Make the meaning MUCH more visible when exposed
+   */
+  .subject-section__subsection
+    .subject-section__meanings:first-child
+    .subject-section__meanings-items,
+  .reading-with-audio__reading {
+    color: var(--ED-text-hl);
+    font-size: x-large;
+    font-weight: bold;
+  }
+
   .user-note__button:hover,
   .user-note__button:active,
   .user-note__button:focus {

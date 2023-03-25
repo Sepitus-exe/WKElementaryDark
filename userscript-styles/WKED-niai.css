@@ -11,7 +11,7 @@
 
 /* See https://community.wanikani.com/t/userscript-niai-%E4%BC%BC%E5%90%88%E3%81%84-visually-similar-kanji/23325 */
 
-@-moz-document domain("www.wanikani.com") {
+@-moz-document domain("wanikani.com") {
   niai_section#niai_section#niai_section#niai_section
     ul.single-character-grid
     li[data-kanji],

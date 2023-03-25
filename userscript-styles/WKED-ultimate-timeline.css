@@ -11,8 +11,7 @@
 
 /* See https://community.wanikani.com/t/userscript-wanikani-ultimate-timeline/10516 */
 
-@-moz-document domain("www.wanikani.com") {
-
+@-moz-document domain("wanikani.com") {
   #timeline {
     background-color: var(--ED-surface-2, #282828);
     color: var(--ED-text, #eeeeee);

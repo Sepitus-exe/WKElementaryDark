@@ -1171,7 +1171,8 @@
     border-color: transparent transparent var(--ED-surface-4) transparent;
   }
 
-  .answer-exception {
+  .answer-exception,
+  .quiz-input__exception {
     background-color: var(--ED-surface-3);
     color: var(--EDI-text-color);
     text-shadow: none;

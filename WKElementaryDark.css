@@ -232,9 +232,9 @@
     --color-button-quiz-background: var(--ED-success);
     --color-button-quiz-text: var(--ED-text);
     --color-button-quiz-text-shadow: none;
-    --color-button-modal-primary-background: var(--ED-surface-inv);
+    --color-button-modal-primary-background: var(--ED-surface-4);
     --color-button-modal-primary-border: var(--color-white);
-    --color-button-modal-primary-text: var(--ED-text-inv);
+    --color-button-modal-primary-text: var(--ED-text);
     --color-button-modal-primary-text-shadow: none;
     --color-button-modal-secondary-background: transparent;
     --color-button-modal-secondary-border: var(--color-white);
@@ -1405,6 +1405,54 @@
     color: var(--ED-text-grayed);
   }
 
+  .subject-slide {
+    background-color: var(--color-subject-slide-navigation-background);
+    box-shadow: none;
+    border: none;
+  }
+
+  .subject-character--radical .subject-character__characters {
+    background-color: var(--ED-radical);
+    background-image: none;
+  }
+
+  .subject-character--kanji .subject-character__characters {
+    background-color: var(--ED-kanji);
+    background-image: none;
+  }
+
+  .subject-character--vocabulary .subject-character__characters {
+    background-color: var(--ED-vocab);
+    background-image: none;
+  }
+
+  .hotkeys-menu__header,
+  .chat-button {
+    background-color: var(--ED-surface-4);
+    color: var(--ED-text);
+    border-radius: 0;
+  }
+
+  .subject-character__meaning {
+    text-shadow: none;
+    color: var(--ED-text);
+  }
+
+  .subject-character--small .subject-character__characters {
+    box-shadow: none;
+  }
+
+  .subject-character--tiny .subject-character__characters {
+    box-shadow: none;
+  }
+
+  .subject-character__characters {
+    text-shadow: none;
+  }
+
+  .character-header--radical .character-header__meaning {
+    text-shadow: none;
+  }
   /*************************************************************************************************/
   /* Levels page
   /*************************************************************************************************/

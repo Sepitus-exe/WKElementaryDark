@@ -150,7 +150,7 @@
     --USER-text: hsl(var(--gray-3-hsl));
     --USER-text-inv: hsl(var(--gray-12-hsl));
     --USER-text-grayed: hsl(var(--sand-5-hsl));
-    --USER-text-hl: hsl(var(--red-6-hsl));
+    --USER-text-hl: hsl(var(--USER-enlightened));
 
     /*
      * Brand, etc.

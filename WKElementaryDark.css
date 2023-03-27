@@ -597,7 +597,7 @@
   }
 
   .small-caps {
-    border-radius: 0px 0px 5px 5px;
+    border-radius: 0 0 5px 5px;
   }
 
   /*
@@ -1191,9 +1191,12 @@
 
   #additional-content ul li:not(#option-audio) span:hover::before,
   #kana-chart.legacy ul li:not(.empty):hover,
-  [class^="note-"] form fieldset {
+  [class^="note-"] form fieldset,
+  .kana-chart__character,
+  .kana-chart__backspace {
     background-color: var(--ED-surface-3);
     box-shadow: none;
+    text-shadow: none;
     color: var(--EDI-text-color);
   }
 

@@ -68,12 +68,12 @@
     /*
      * Filters
      */
-    --USER-logo-filter: invert(1) saturate(0) brightness(1.6);
-    --USER-extra-study-filter: invert(0.81);
-    --USER-locked-item-filter: brightness(70%);
-    --USER-kotoba-odd-row-filter: brightness(1.1);
-    --USER-footer-filter: invert(1);
-    --USER-loading-filter: grayscale(90%) invert(1) hue-rotate(180deg);
-    --USER-overlay-box-highlights-filter: hue-rotate(160deg);
+    /* --USER-logo-filter: invert(1) saturate(0) brightness(1.6); */
+    /* --USER-extra-study-filter: invert(0.81); */
+    /* --USER-locked-item-filter: brightness(70%); */
+    /* --USER-kotoba-odd-row-filter: brightness(1.1); */
+    /* --USER-footer-filter: invert(1); */
+    /* --USER-loading-filter: grayscale(90%) invert(1) hue-rotate(180deg); */
+    /* --USER-overlay-box-highlights-filter: hue-rotate(160deg); */
   }
 }

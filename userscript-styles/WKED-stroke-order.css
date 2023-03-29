@@ -11,7 +11,7 @@
 
 /* See https://community.wanikani.com/t/userscript-stroke-order-diagram/46724 */
 
-@-moz-document domain("www.wanikani.com") {
+@-moz-document domain("wanikani.com") {
   .stroke_order_diagram--bounding_box {
     stroke: var(--ED-surface-4, #535353);
   }

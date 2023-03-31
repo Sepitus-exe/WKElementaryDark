@@ -636,9 +636,16 @@
     background-color: var(--ED-lesson);
   }
 
+  .navigation-shortcut__button {
+    text-shadow: none;
+  }
+
   .navigation-shortcut a:hover,
-  .navigation-shortcut a:focus {
+  .navigation-shortcut a:focus,
+  .navigation-shortcut__button:hover,
+  .navigation-shortcut__button:focus {
     border-color: var(--EDI-text-color);
+    color: var(--EDI-text-color);
   }
 
   @media screen and (min-width: 1024px) {

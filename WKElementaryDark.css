@@ -1456,6 +1456,12 @@
   .character-header--radical .character-header__meaning {
     text-shadow: none;
   }
+
+  .item-info-injector-accordion > button {
+    color: var(--ED-text);
+    text-shadow: none;
+  }
+
   /*************************************************************************************************/
   /* Levels page
   /*************************************************************************************************/

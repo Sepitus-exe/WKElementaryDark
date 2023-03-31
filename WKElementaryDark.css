@@ -1456,6 +1456,24 @@
   .character-header--radical .character-header__meaning {
     text-shadow: none;
   }
+
+  /* Only tested for kanji, assuming also needed for radicals & vocab */
+  .character-header--kanji .character-header__meaning,
+  .character-header--radical .character-header__meaning,
+  .character-header--vocabulary .character-header__meaning {
+    text-shadow: none;
+  }
+
+  .wk-hint {
+    background-color: var(--ED-surface-3);
+    color: var(--EDI-text-color);
+    text-shadow: none;
+  }
+
+  .wk-button--tiny {
+    box-shadow: none;
+  }
+
   /*************************************************************************************************/
   /* Levels page
   /*************************************************************************************************/

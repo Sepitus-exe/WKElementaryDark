@@ -636,9 +636,16 @@
     background-color: var(--ED-lesson);
   }
 
+  .navigation-shortcut__button {
+    text-shadow: none;
+  }
+
   .navigation-shortcut a:hover,
-  .navigation-shortcut a:focus {
+  .navigation-shortcut a:focus,
+  .navigation-shortcut__button:hover,
+  .navigation-shortcut__button:focus {
     border-color: var(--EDI-text-color);
+    color: var(--EDI-text-color);
   }
 
   @media screen and (min-width: 1024px) {
@@ -1012,7 +1019,8 @@
   #question #question-type.reading,
   #quiz #question-type.meaning,
   #quiz #question-type.reading,
-  .quiz-input__question-type-container {
+  .quiz-input__question-type-container,
+  .quiz-input__question-type-container[data-question-type="reading"] {
     background-color: var(--ED-reading);
     background-image: none;
     text-shadow: none;
@@ -1456,6 +1464,29 @@
   .character-header--radical .character-header__meaning {
     text-shadow: none;
   }
+
+  .item-info-injector-accordion > button {
+    color: var(--ED-text);
+    text-shadow: none;
+  }
+
+  /* Only tested for kanji, assuming also needed for radicals & vocab */
+  .character-header--kanji .character-header__meaning,
+  .character-header--radical .character-header__meaning,
+  .character-header--vocabulary .character-header__meaning {
+    text-shadow: none;
+  }
+
+  .wk-hint {
+    background-color: var(--ED-surface-3);
+    color: var(--EDI-text-color);
+    text-shadow: none;
+  }
+
+  .wk-button--tiny {
+    box-shadow: none;
+  }
+
   /*************************************************************************************************/
   /* Levels page
   /*************************************************************************************************/
@@ -1573,6 +1604,18 @@
   /*************************************************************************************************/
   /* Individual item page colors
   /*************************************************************************************************/
+
+  .component-character__characters {
+    width: auto;
+    height: auto;
+    line-height: normal;
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  #additional-content ul li span.component-character__characters:hover {
+    color: var(--EDI-text-color);
+  }
 
   .page-header__icon--level,
   .page-header__icon--radical,

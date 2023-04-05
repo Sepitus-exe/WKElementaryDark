@@ -1457,6 +1457,11 @@
     text-shadow: none;
   }
 
+  .item-info-injector-accordion > button {
+    color: var(--ED-text);
+    text-shadow: none;
+  }
+
   /* Only tested for kanji, assuming also needed for radicals & vocab */
   .character-header--kanji .character-header__meaning,
   .character-header--radical .character-header__meaning,

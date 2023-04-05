@@ -1597,6 +1597,18 @@
   /* Individual item page colors
   /*************************************************************************************************/
 
+  .component-character__characters {
+    width: auto;
+    height: auto;
+    line-height: normal;
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  #additional-content ul li span.component-character__characters:hover {
+    color: var(--EDI-text-color);
+  }
+
   .page-header__icon--level,
   .page-header__icon--radical,
   .page-header__icon--kanji,

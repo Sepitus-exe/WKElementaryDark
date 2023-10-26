@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WaniKani Elementary Dark
 @namespace    github.com/openstyles/stylus
-@version      2.1.0
+@version      2.1.2
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -9,8 +9,8 @@
 @supportURL   https://github.com/Sepitus-exe/WKElementaryDark/issues
 ==/UserStyle== */
 
-@-moz-document domain("wanikani.com") {
-  :root {
+@-moz-document domain("www.wanikani.com") {
+:root {
     /* CSS variables (technically, "custom properties") for theming */
 
     /*
@@ -204,11 +204,11 @@
      * Filters
      */
     --EDI-logo-filter: invert(1) saturate(0) brightness(1.6);
-    --EDI-extra-study-filter: invert(0.81);
+    --EDI-extra-study-filter: invert(0.843);
     --EDI-locked-item-filter: brightness(70%);
     --EDI-kotoba-odd-row-filter: brightness(1.1);
     --EDI-footer-filter: invert(1);
-    --EDI-loading-filter: grayscale(90%) invert(1) hue-rotate(180deg);
+    --EDI-loading-filter: grayscale(90%) invert(0.843) hue-rotate(180deg);
     --EDI-overlay-box-highlights-filter: hue-rotate(160deg);
 
     /* 
@@ -249,11 +249,20 @@
     --color-quiz-correct-text-color: var(--ED-text);
     --color-quiz-correct-text-shadow: none;
     --color-quiz-srs-correct-background: var(--ED-success);
-    --color-quiz-srs-correct-text-color: var(--color-white);
+    --color-quiz-srs-correct-text-color: var(--ED-text-color);
     --color-quiz-srs-correct-text-shadow: none;
     --color-quiz-srs-incorrect-background: var(--ED-incorrect);
-    --color-quiz-srs-incorrect-text-color: var(--ED-text);
+    --color-quiz-srs-incorrect-text-color: var(--ED-text-color);
     --color-quiz-srs-incorrect-text-shadow: none;
+  
+  
+    --color-wk-panel-background: var(--ED-surface-2);
+    --color-wk-panel-content-background: var(--ED-surface-3);
+    --color-level-progress-bar-progress: var(--ED-progress);
+    --color-review-forecast-bar: var(--ED-brand);
+    --color-locked: var(--ED-surface-4);
+    --color-level-progress-bar-background: var(--ED-surface-4);
+    --color-level-progress-bar-text: var(--ED-text-color);
   }
 
   /*************************************************************************************************
@@ -305,7 +314,12 @@
   .forum-topics-list a,
   .small-caps.invert,
   .kotoba-table-list table tr.none-available,
-  p {
+  p,
+  h1,
+  html#public-profile div.wall-of-shame div.title,
+  h2,
+  h3,
+  .character-header--vocabulary .character-header__meaning {
     color: var(--EDI-text-color);
     text-shadow: none;
   }
@@ -338,7 +352,6 @@
   }
 
   .sitemap__expandable-chunk,
-  .extra-study > div,
   .review-forecast__day,
   .bg-white {
     background-color: var(--ED-surface-3);
@@ -535,9 +548,11 @@
   }
 
   .radical-icon--locked,
-  .kanji-icon--locked {
+  .kanji-icon--locked,
+  .subject-character--small.subject-character--locked .subject-character__characters {
     background-color: var(--ED-surface-4) !important;
     filter: var(--ED-locked-item-filter);
+    background-image: none;
   }
 
   .kotoba-table-list table a span,
@@ -985,7 +1000,9 @@
   /* RRW Freaky! X-ray Wanikani! (loading image) */
   #loading,
   #additional-content-load,
-  #loading-screen {
+  #loading-screen,
+  #review-forecast:not([complete=""]),
+  #subject-info:not([data-loaded="true"]) {
     filter: var(--ED-loading-filter);
   }
 
@@ -1012,6 +1029,7 @@
   #question #question-type.reading,
   #quiz #question-type.meaning,
   #quiz #question-type.reading,
+  .quiz-input__question-type-container[data-question-type="reading"],
   .quiz-input__question-type-container {
     background-color: var(--ED-reading);
     background-image: none;
@@ -1028,11 +1046,19 @@
     color: var(--EDI-text-color);
   }
 
-  #question #question-type h1 {
+  .subject-collocations__pattern-name {
+	  background-color: var(--ED-surface-4);
+  }
+
+  #question #question-type h1,
+  .wk-nav__item-link,
+  .wk-nav__item-link:visited,
+  .character-header__content {
     color: var(--EDI-text-color);
   }
 
-  #item-info #related-items ul {
+  #item-info #related-items ul,
+  .wk-nav__item-link{
     background-color: var(--ED-surface-2);
   }
 
@@ -1605,9 +1631,9 @@
   /* 
    * Make the meaning MUCH more visible when exposed
    */
-  .subject-section__subsection
-    .subject-section__meanings:first-child
-    .subject-section__meanings-items,
+  .subject-section__subsection,
+  .subject-section__meanings:first-child,
+  .subject-section__meanings-items,
   .reading-with-audio__reading {
     color: var(--ED-text-hl);
     font-size: x-large;

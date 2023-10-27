@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WaniKani Elementary Dark
 @namespace    github.com/openstyles/stylus
-@version      2.1.2
+@version      2.1.3
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -72,10 +72,6 @@
 
     /* Theme/branding colors */
     --ED-brand: var(--USER-brand, var(--EDI-red));
-
-    /* Indicate reading vs. meaning */
-    --ED-meaning: var(--USER-meaning, var(--EDI-yellow));
-    --ED-reading: var(--USER-reading, var(--EDI-gray-3));
 
     /* Indicate item types */
     --ED-radical: var(--USER-radical, var(--EDI-blue));
@@ -291,7 +287,7 @@
 
   .navigation__toggle-lines,
   .navigation__toggle-lines::before,
-  .navigation__toggle-lines::after {
+  .navigation__toggle-lines::after,{
     border-color: var(--EDI-text-color);
   }
 
@@ -319,7 +315,13 @@
   html#public-profile div.wall-of-shame div.title,
   h2,
   h3,
-  .character-header--vocabulary .character-header__meaning {
+  .character-header--vocabulary .character-header__meaning,
+  .sitemap__pages--levels .sitemap__page a,
+  .sitemap__group-header,
+  .sitemap__page--subject .sitemap__page-subtitle,
+  .sitemap__page--subject a,
+  .sitemap__page .button--chat,
+  .page-header__title-subtext {
     color: var(--EDI-text-color);
     text-shadow: none;
   }
@@ -332,8 +334,18 @@
   * Dashboard page specifics
   /*************************************************************************************************/
 
+  /* rmoving scroll bar*/
+  .dashboard .progress-and-forecast .wk-panel--review-forecast .wk-panel__content {
+    overflow-y: hidden;
+  }
+
   .review-forecast__toggleicon {
     color: var(--ED-brand);
+  }
+
+  .extra-study-button {
+    border-color: var(--ED-brand);
+    border-radius: 0.5em;
   }
 
   .kotoba-table-list table tr.none-available {
@@ -646,9 +658,11 @@
   /* RRW highlight the counts if work to do */
   .navigation-shortcut a span {
     background-color: var(--ED-review);
+    color: var(--ED-text);
   }
   .navigation-shortcut--lessons a span {
     background-color: var(--ED-lesson);
+    color: var(--ED-text);
   }
 
   .navigation-shortcut a:hover,
@@ -1031,19 +1045,21 @@
   #quiz #question-type.reading,
   .quiz-input__question-type-container[data-question-type="reading"],
   .quiz-input__question-type-container {
-    background-color: var(--ED-reading);
+    background-color: var(--ED-surface-2);
     background-image: none;
     text-shadow: none;
-    border-color: var(--ED-reading);
+    border: none;
   }
 
   #question #question-type.meaning,
   #quiz #question-type.meaning,
-  .quiz-input__question-type-container[data-question-type="meaning"] {
-    background-color: var(--ED-meaning);
+  .quiz-input__question-type-container[data-question-type="meaning"],
+ .quiz-input__question-type-container[data-question-type="meaning"] > span {
+    background-color: var(--ED-surface-inv);
     background-image: none;
     text-shadow: none;
-    color: var(--EDI-text-color);
+    color: var(--ED-text-inv);
+    border:none;
   }
 
   .subject-collocations__pattern-name {
@@ -1443,16 +1459,19 @@
   .subject-character--radical .subject-character__characters {
     background-color: var(--ED-radical);
     background-image: none;
+    color: var(--ED-text);
   }
 
   .subject-character--kanji .subject-character__characters {
     background-color: var(--ED-kanji);
     background-image: none;
+    color: var(--ED-text);
   }
 
   .subject-character--vocabulary .subject-character__characters {
     background-color: var(--ED-vocab);
     background-image: none;
+    color: var(--ED-text);
   }
 
   .hotkeys-menu__header,
@@ -1495,8 +1514,9 @@
   .page-nav__item-link,
   .subject-legend__item-badge--radicals,
   .subject-legend__item-badge--kanji,
-  .subject-legend__item-badge--vocabulary {
-    color: var(--EDI-pure-white);
+  .subject-legend__item-badge--vocabulary,
+  .character-item {
+    color: var(--ED-text);
     text-shadow: none;
     box-shadow: none;
   }
@@ -1622,7 +1642,9 @@
   .component-character--radical .component-character__characters,
   .subject-readings-with-audio__item,
   .subject-collocations__pattern-collocation--selected,
-  .text-black {
+  .text-black,
+  .subject-section__subtitle,
+  .subject-collocations__title {
     box-shadow: none;
     color: var(--EDI-text-color);
     text-shadow: none;
@@ -1631,13 +1653,24 @@
   /* 
    * Make the meaning MUCH more visible when exposed
    */
-  .subject-section__subsection,
-  .subject-section__meanings:first-child,
+  .subject-section__meanings{
+    margin-bottom: 0.5em;
+  }
+
+  .wk-button--default {
+    padding: 0.3em;
+    border-radius: 0.3em;
+  }
+
   .subject-section__meanings-items,
   .reading-with-audio__reading {
     color: var(--ED-text-hl);
-    font-size: x-large;
+    font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  .subject-section__meanings-title {
+    font-size: 1.2rem;
   }
 
   .user-note__button:hover,
@@ -1798,7 +1831,7 @@
   input[type="text"]:active,
   textarea:focus,
   textarea:active {
-    outline: 3px solid var(--ED-text-hl);
+    outline: 3px solid var(--ED-text);
   }
 
   /*************************************************************************************************/
@@ -1839,9 +1872,15 @@
 
   .kanji-icon,
   .radical-icon,
-  .vocabulary-icon {
+  .vocabulary-icon,
+  .last-item,
+  .subject-readings__reading-title {
     text-shadow: none;
     box-shadow: none;
+  }
+
+  .last-item {
+    border: 1px solid var(--ED-surface-4);
   }
 
   html#public-profile div.wall-of-shame {
@@ -1862,7 +1901,8 @@
     background-image: none;
   }
 
-  .vocabulary-icon {
+  .vocabulary-icon,
+  #information .last-item > .last-item__characters--vocabulary {
     background-color: var(--ED-vocab);
     background-image: none;
   }

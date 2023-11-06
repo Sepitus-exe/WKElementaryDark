@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WaniKani Elementary Dark
 @namespace    github.com/openstyles/stylus
-@version      2.1.3
+@version      2.1.6
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -258,7 +258,12 @@
     --color-review-forecast-bar: var(--ED-brand);
     --color-locked: var(--ED-surface-4);
     --color-level-progress-bar-background: var(--ED-surface-4);
-    --color-level-progress-bar-text: var(--ED-text-color);
+    --color-level-progress-bar-text: var(--ED-text);
+    --color-subject-srs-progress-stage-background: var(--ED-surface-inv);
+    --color-review-forecast-divider: var(--ED-text);
+    --color-review-forecast-increase-sign: var(--ED-text);
+    --color-recent-mistakes-intro-divider: var(--ED-text);
+    --color-extra-study-tooltip-button-border: var(--ED-text);
   }
 
   /*************************************************************************************************
@@ -287,7 +292,11 @@
 
   .navigation__toggle-lines,
   .navigation__toggle-lines::before,
-  .navigation__toggle-lines::after,{
+  .navigation__toggle-lines::after,
+  .wk-title--underlined,
+  .wk-nav__item-link,
+  .wk-nav__item,
+  .sitemap__pages--levels .sitemap__page--current-level a {
     border-color: var(--EDI-text-color);
   }
 
@@ -321,13 +330,35 @@
   .sitemap__page--subject .sitemap__page-subtitle,
   .sitemap__page--subject a,
   .sitemap__page .button--chat,
-  .page-header__title-subtext {
+  .page-header__title-subtext,
+  .character-header__menu,
+  .fa-chevron-right::before,
+  .fa-sitemap::before,
+  .fa-house-chimney::before,
+  .navigation-shortcut[data-count="0"] span,
+  .sitemap__page a,
+  .sitemap__section-header--subsection,
+  .fa-arrow-circle-left::before,
+  .fa-arrow-circle-right::before,
+  .components-list__item::after,
+  .user-summary a,
+  div.chart,
+  .alert-info{
     color: var(--EDI-text-color);
     text-shadow: none;
   }
 
   .dashboard .forum-topics-list h3.small-caps.invert div.heading-symbol {
     border-color: var(--EDI-text-color);
+  }
+
+  .alert-info {
+    background-color: var(--ED-alert);
+  }
+
+  .alert-close {
+    color: var(--EDI-text-color);
+    opacity: 1;
   }
 
   /*************************************************************************************************
@@ -343,9 +374,18 @@
     color: var(--ED-brand);
   }
 
+  .sitemap__pages--levels .sitemap__page a:hover {
+    color: var(--ED-text-inv);
+    background-color: var(--ED-surface-inv);
+  }
+
   .extra-study-button {
     border-color: var(--ED-brand);
     border-radius: 0.5em;
+  }
+
+  .extra-study-button__link:hover {
+    color: var(--ED-text-hl);
   }
 
   .kotoba-table-list table tr.none-available {
@@ -415,6 +455,10 @@
 
   .bg-gray-500 {
     background-color: var(--ED-brand);
+  }
+
+  .sitemap__expandable-chunk--levels::before {
+    background-color: var(--ED-surface-inv);
   }
 
   .sitemap__pages--radical > .sitemap__page--subject,
@@ -569,7 +613,10 @@
 
   .kotoba-table-list table a span,
   .kotoba-table-list table a time,
-  .kotoba-table-list table td span.pull-right {
+  .kotoba-table-list table td span.pull-right,
+  .vocabulary-icon,
+  .kanji-icon,
+  .radical-icon {
     color: var(--EDI-text-color);
   }
 
@@ -648,6 +695,10 @@
     border: 2px solid var(--ED-surface-4);
   }
 
+  .navigation-shortcut a:hover {
+    color: var(--ED-text-hl);
+  }
+
   /* RRW De-emphasize counts if 0 in shortcut navigation to lessons/reviews in top nav  bar */
   .navigation-shortcut[data-count="0"] span,
   .navigation-shortcut[data-count="0"] .navigation-shortcut__count {
@@ -658,11 +709,11 @@
   /* RRW highlight the counts if work to do */
   .navigation-shortcut a span {
     background-color: var(--ED-review);
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
   .navigation-shortcut--lessons a span {
     background-color: var(--ED-lesson);
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   .navigation-shortcut a:hover,
@@ -684,10 +735,11 @@
 
   /* Popover when hovering over appr/guru/master/enl stage counts */
   .popover.srs .popover-content ul li {
-    background-color: var(--ED-brand);
     background-image: none !important;
+    border: none !important;
+    color: var(--EDI-text-color)
   }
-  .popover.srs .popover-inner .popover-content ul li:nth-child(1) {
+  .popover.srs .popover-content ul li:nth-child(1) {
     background-color: var(--ED-radical);
   }
   .popover.srs .popover-content ul li:nth-child(2) {
@@ -695,7 +747,18 @@
   }
   .popover.srs .popover-content ul li:nth-child(3) {
     background-color: var(--ED-vocab) !important;
-    --EDI-text-color: var(--ED-text) !important;
+  }
+
+  .popover.srs {
+    border-color: var(--ED-surface-3);
+  }
+
+  .popover.srs.right .arrow::after {
+    border-right-color: var(--ED-surface-3);
+  }
+
+  .popover.srs .popover-title {
+    background-color: var(--ED-surface-2);
   }
 
   .progress-entry .radical-icon {
@@ -1020,6 +1083,16 @@
     filter: var(--ED-loading-filter);
   }
 
+  .additional-content__item:not(.additional-content__item--disabled),
+  .additional-content__content{
+    border-color: var(--EDI-text-color);
+  }
+
+  .additional-content__item--open::after,
+  .subject-slides__navigation-link[aria-selected="true"]::after {
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) var(--EDI-text-color) rgba(0,0,0,0);
+  }
+
   #progress-bar,
   .user-synonyms ul li.user-synonyms-add-btn::before,
   #lesson #supplement-nav,
@@ -1034,7 +1107,7 @@
     height: 10px;
   }
 
-  #progress-bar #bar {
+  .quiz-progress__bar {
     background-color: var(--ED-progress);
   }
 
@@ -1213,6 +1286,10 @@
     border-color: transparent transparent var(--ED-surface-4) transparent;
   }
 
+  .subject-collocations__pattern-name[aria-selected="true"]::after{
+    background-color: var(--EDI-text-color);
+  }
+
   .answer-exception,
   .quiz-input__exception {
     background-color: var(--ED-surface-3);
@@ -1221,7 +1298,6 @@
     box-shadow: none;
   }
 
-  #additional-content ul li span,
   #additional-content ul li.active i,
   #information,
   .additional-content__item {
@@ -1303,22 +1379,22 @@
 
   .srs .srs-apprentice {
     background-color: var(--ED-apprentice);
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   .srs .srs-guru {
     background-color: var(--ED-guru);
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   .srs .srs-master {
     background-color: var(--ED-master);
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   .srs .srs-englightened {
     background-color: var(--ED-enlightened);
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   /* Kanachart in lessons */
@@ -1333,7 +1409,7 @@
   #kana-chart .kana-chart-m > button,
   #kana-chart .kana-chart-r > button,
   #kana-chart .kana-chart-x > button {
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
     background: var(--ED-surface-3);
   }
 
@@ -1352,7 +1428,7 @@
   }
 
   .kana-chart-tabs > button {
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   /* overlay message */
@@ -1403,11 +1479,11 @@
   }
 
   #information .last-item__value {
-    color: var(--EDI-pure-white);
+    color: var(--EDI-text-color);
   }
 
   #information .last-item__characters {
-    color: var(--EDI-pure-white);
+    color: var(--EDI-text-color);
   }
 
   #information .last-item .last-item__characters--radical {
@@ -1459,31 +1535,31 @@
   .subject-character--radical .subject-character__characters {
     background-color: var(--ED-radical);
     background-image: none;
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   .subject-character--kanji .subject-character__characters {
     background-color: var(--ED-kanji);
     background-image: none;
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   .subject-character--vocabulary .subject-character__characters {
     background-color: var(--ED-vocab);
     background-image: none;
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   .hotkeys-menu__header,
   .chat-button {
     background-color: var(--ED-surface-4);
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
     border-radius: 0;
   }
 
   .subject-character__meaning {
     text-shadow: none;
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
   }
 
   .subject-character--small .subject-character__characters {
@@ -1506,7 +1582,6 @@
   /*************************************************************************************************/
 
   .subject-legend,
-  .subject-legend__item-badge--recently-unlocked,
   .subject-legend__item-badge--locked,
   .subject-legend__item-badge--all,
   .subject-legend__item-badge--burned,
@@ -1516,7 +1591,7 @@
   .subject-legend__item-badge--kanji,
   .subject-legend__item-badge--vocabulary,
   .character-item {
-    color: var(--ED-text);
+    color: var(--EDI-text-color);
     text-shadow: none;
     box-shadow: none;
   }
@@ -1531,6 +1606,10 @@
 
   .subject-legend__item-badge--vocabulary {
     background-color: var(--ED-vocab);
+  }
+
+  .subject-legend__item-badge--burned {
+    background-color: var(--ED-burned);
   }
 
   .subject-legend,
@@ -1589,7 +1668,7 @@
 
   .character-item--vocabulary {
     background-color: var(--ED-vocab);
-    border-color: var(--EDI-gray-3);
+    border-color: var(--ED-surface-3);
   }
 
   .character-item--vocabulary:not(.character-item--locked) {
@@ -1614,6 +1693,17 @@
   .progress-bar__label::after,
   .progress-bar__label::before {
     border-top-color: var(--ED-surface-4);
+  }
+
+  .subject-legend__item-badge--recently-unlocked,
+  .character-grid__item--radical .character-item__badge,
+  .character-grid__item--kanji .character-item__badge,
+  .character-grid__item--vocabulary .character-item__badge {
+    color: var(--ED-text-inv);
+    font-weight: bold;
+    text-shadow: none;
+    box-shadow: none;
+    background-color: var(--ED-surface-inv)
   }
 
   /*************************************************************************************************/
@@ -1660,6 +1750,7 @@
   .wk-button--default {
     padding: 0.3em;
     border-radius: 0.3em;
+    border-color: var(--EDI-text-color);
   }
 
   .subject-section__meanings-items,
@@ -1747,16 +1838,32 @@
     background-color: var(--ED-surface-2);
   }
 
-  .fa-solid {
+  .fa-check::before {
     color: var(--EDI-text-color);
+  }
+  .none-available .fa-check::before {
+    color: var(--ED-surface-1);
   }
 
   /* Context menu divider present on some vocab pages */
   .subject-collocations__patterns::after {
     box-shadow: none;
     right: -9px;
-    background-color: var(--EDI-pure-white);
+    background-color: var(--EDI-text-color);
     filter: brightness(0.85);
+  }
+  
+  .subject-info .subject-collocations__pattern-name[aria-selected="true"]::after {
+    background-color: var(--EDI-text-color);
+  }
+
+  .subject-collocations__pattern-name[aria-selected="true"]{
+    background-color: var(--ED-surface-1);
+    color: var(--EDI-text-color);
+  }
+
+  .subject-section__title {
+    border-color: var(--EDI-text-color);
   }
 
   /* "Pattern of Use" separator - found in lessons/reviews of some words/kanji in dropdown boxes*/
@@ -1831,7 +1938,7 @@
   input[type="text"]:active,
   textarea:focus,
   textarea:active {
-    outline: 3px solid var(--ED-text);
+    outline: 3px solid var(--EDI-text-color);
   }
 
   /*************************************************************************************************/
@@ -1944,6 +2051,10 @@
   .worst-radical .progress .bar span:after,
   .worst-vocabulary .progress .bar span:after {
     border-top-color: var(--ED-surface-4);
+  }
+
+  html#public-profile .public-profile-header div.user-info div[class*="span"] ul strong {
+    color: var(--ED-text-hl);
   }
 
   /*************************************************************************************************/

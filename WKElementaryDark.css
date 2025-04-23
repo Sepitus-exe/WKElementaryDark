@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         WaniKani Elementary Dark
 @namespace    github.com/openstyles/stylus
-@version      2.1.6
+@version      2.1.19
 @license      MIT
 @description  Dark theme for the WaniKani domain
 @author       Sepitus
@@ -86,8 +86,8 @@
     --ED-burned: var(--USER-burned, var(--EDI-red));
 
     /* Indicate review vs. lesson */
-    --ED-lesson: var(--USER-lesson, var(--ED-radical));
-    --ED-review: var(--USER-review, var(--ED-kanji));
+    --ED-lesson: var(--USER-lesson, var(--ED-kanji));
+    --ED-review: var(--USER-review, var(--ED-radical));
 
     /* Alerts/warnings */
     --ED-alert: var(--USER-alert, var(--EDI-red));
@@ -202,7 +202,7 @@
     --EDI-logo-filter: invert(1) saturate(0) brightness(1.6);
     --EDI-extra-study-filter: invert(0.843);
     --EDI-locked-item-filter: brightness(70%);
-    --EDI-kotoba-odd-row-filter: brightness(1.1);
+    --EDI-kotoba-odd-row-filter: brightness(0.9);
     --EDI-footer-filter: invert(1);
     --EDI-loading-filter: grayscale(90%) invert(0.843) hue-rotate(180deg);
     --EDI-overlay-box-highlights-filter: hue-rotate(160deg);
@@ -221,19 +221,21 @@
     /* --color-kanji-gradient: $colorKanjiPinkGradient; */
     --color-vocabulary: var(--ED-vocab);
     /* --color-vocabulary-gradient: $colorvocabularyPurpleGradient; */
+    --color-burned: var(--ED-surface-1);
+    --color-link: var(--ED-text-hl);
     --color-subject-slide-navigation-background: var(--ED-surface-2);
     --color-subject-slide-navigation-text: var(--ED-text);
-    --color-subject-slide-navigation-button-hover: var(--ED-text-hl);
+    --color-subject-slide-navigation-button-hover: var(--ED-surface-3);
     --color-button-default-background: var(--ED-surface-4);
-    --color-button-quiz-background: var(--ED-success);
+    --color-button-quiz-background: var(--ED-surface-3);
     --color-button-quiz-text: var(--ED-text);
     --color-button-quiz-text-shadow: none;
     --color-button-modal-primary-background: var(--ED-surface-4);
-    --color-button-modal-primary-border: var(--color-white);
+    --color-button-modal-primary-border: var(--ED-surface-inv);
     --color-button-modal-primary-text: var(--ED-text);
     --color-button-modal-primary-text-shadow: none;
     --color-button-modal-secondary-background: transparent;
-    --color-button-modal-secondary-border: var(--color-white);
+    --color-button-modal-secondary-border: var(--ED-surface-inv);
     --color-button-modal-secondary-text: var(--ED-text);
     --color-button-modal-secondary-text-shadow: none;
     /* --color-text-shadow-dark: rgba(0, 0, 0, 0.2); */
@@ -250,6 +252,7 @@
     --color-quiz-srs-incorrect-background: var(--ED-incorrect);
     --color-quiz-srs-incorrect-text-color: var(--ED-text-color);
     --color-quiz-srs-incorrect-text-shadow: none;
+    --color-alert-system-background: var(--ED-alert);
   
   
     --color-wk-panel-background: var(--ED-surface-2);
@@ -264,6 +267,42 @@
     --color-review-forecast-increase-sign: var(--ED-text);
     --color-recent-mistakes-intro-divider: var(--ED-text);
     --color-extra-study-tooltip-button-border: var(--ED-text);
+    --color-hint-background: var(--ED-surface-3);
+    --color-hint-title: var(--ED-text);
+    --color-subject-srs-progress-stage-complete-background: var(--ED-progress);
+    --color-todays-lessons-completed-background: var(--ED-surface-2);
+    --color-todays-lessons-loading-background: var(--ED-surface-2);
+    --color-placeholder-background-stop-1: var(--ED-surface-3);
+    --color-count_bubble-background: var(--ED-text);
+    --color-todays-lessons-text: var(--ED-text);
+    --color-todays-lessons-background: var(--ED-lesson);
+    --color-reviews-dashboard-background: var(--ED-review);
+  
+    --color-lesson-picker-footer-background: var(--ED-surface-2);
+    --color-lesson-picker-footer-border: none;
+    --color-button-lesson-picker-disabled-background: var(--ED-surface-3);
+    --color-button-lesson-picker-background: var(--ED-surface-inv);
+    --color-button-lesson-picker-hover-background: var(--ED-surface-4);
+    --color-button-lesson-picker-disabled-hover-background: var(--ED-surface-4);
+    --color-button-lesson-picker-disabled-border: none;
+    --color-button-lesson-picker-disabled-text: var(--ED-surface-1);
+    --color-button-lesson-picker-hover-text: var(--ED-lesson);
+    --color-button-lesson-picker-text: var(--ED-surface-1);
+    --color-button-lesson-picker-box-shadow: 0 -3px 0 0 var(--ED-surface-4) inset;
+    --color-lesson-picker-section-title-underline: 1px solid var(--ED-surface-4);
+  
+    --color-lesson-and-review-count-text: var(--ED-text);
+    --color-lesson-and-review-count-background: var(--ED-lesson);
+    --color-lesson-and-review-count-zero-background: var(--ED-surface-1);
+  
+    --color-vocabulary-gradient: none;
+    --color-kanji-gradient: none;
+    --color-radical-gradient: none;
+    --color-burned-gradient: none;
+    
+    --color-progress-chart-bar-gradient: none;
+    --color-progress-chart-bar: var(--ED-progress);
+    --color-progress-chart-bar-background: var(--ED-surface-3)
   }
 
   /*************************************************************************************************
@@ -348,6 +387,10 @@
     text-shadow: none;
   }
 
+  .lesson-picker .page-header__title-subtext {
+    color: var(--ED-text-hl);
+  }
+
   .dashboard .forum-topics-list h3.small-caps.invert div.heading-symbol {
     border-color: var(--EDI-text-color);
   }
@@ -377,15 +420,6 @@
   .sitemap__pages--levels .sitemap__page a:hover {
     color: var(--ED-text-inv);
     background-color: var(--ED-surface-inv);
-  }
-
-  .extra-study-button {
-    border-color: var(--ED-brand);
-    border-radius: 0.5em;
-  }
-
-  .extra-study-button__link:hover {
-    color: var(--ED-text-hl);
   }
 
   .kotoba-table-list table tr.none-available {
@@ -429,6 +463,19 @@
     filter: var(--ED-extra-study-filter);
   }
 
+  .extra-study__buttons .wk-button--default {
+    padding: var(--spacing-tight) var(--spacing-loose);
+    height: 2.5em;
+    background-color: var(--ED-surface-2);
+    border-color: var(--ED-surface-4);
+  }
+  
+  .extra-study__buttons .wk-button--default:hover,
+  .extra-study__buttons .wk-button--default:focus {
+    text-decoration: none;
+    border-color: var(--ED-surface-inv);
+  }
+  
   .review-forecast__day-header::before {
     background-color: var(--ED-surface-2);
   }
@@ -510,6 +557,11 @@
   footer ul {
     filter: var(--ED-footer-filter);
   }
+
+  .footer.footer--illustrated {
+    filter: invert(1);
+  }
+
   footer ul li:last-child {
     filter: hue-rotate(50deg) grayscale(0.75) brightness(2.2);
   }
@@ -523,51 +575,85 @@
     border-color: var(--ED-brand);
   }
 
-  .lessons-and-reviews__lessons-button {
-    --ED-button-fg: var(--EDI-text-color);
-    --ED-button-bg: var(--ED-lesson);
-    background-color: var(--ED-button-bg);
-    color: var(--ED-button-fg);
+  .reviews-dashboard__button {
+    --color-button-modal-primary-background: var(--EDI-text-color);
+    --color-button-modal-primary-text: var(--ED-review);
   }
 
-  .lessons-and-reviews__lessons-button span {
-    /* count badge inverts fg/bg */
-    background-color: var(--ED-button-fg);
-    color: var(--ED-button-bg);
+  .reviews-dashboard__button:hover,
+  .reviews-dashboard__button:active {
+    --color-button-modal-primary-background: var(--ED-review);
+    --color-button-modal-primary-text: var(--EDI-text-color);
+    --color-button-modal-primary-hover-border: var(--EDI-text-color);
+    --color-button-modal-primary-active-background: var(--ED-review);
+    --color-button-modal-primary-active-text: var(--EDI-text-color);
+    --color-button-modal-primary-active-border: var(--EDI-text-color);
   }
 
-  .lessons-and-reviews .lessons-and-reviews__lessons-button--0 {
-    /* No lessons, no color */
-    --ED-button-fg: var(--EDI-text-color);
-    --ED-button-bg: var(--ED-surface-4);
+  .todays-lessons__button {
+    --color-button-modal-primary-background: var(--EDI-text-color);
+    --color-button-modal-primary-text: var(--ED-lesson);
   }
 
-  .lessons-and-reviews__reviews-button {
-    --ED-button-fg: var(--EDI-text-color);
-    --ED-button-bg: var(--ED-review);
-    background-color: var(--ED-button-bg);
-    color: var(--ED-button-fg);
+  .todays-lessons__button:hover,
+  .todays-lessons__button:active {
+    --color-button-modal-primary-background: var(--ED-lesson);
+    --color-button-modal-primary-text: var(--EDI-text-color);
+    --color-button-modal-primary-hover-border: var(--EDI-text-color);
+    --color-button-modal-primary-active-background: var(--ED-lesson);
+    --color-button-modal-primary-active-text: var(--EDI-text-color);
+    --color-button-modal-primary-active-border: var(--EDI-text-color);
   }
 
-  .lessons-and-reviews__reviews-button span {
-    /* count badge inverts fg/bg */
-    background-color: var(--ED-button-fg);
-    color: var(--ED-button-bg);
+  .wk-button:focus {
+    outline-color: var(--ED-text);
+  }
+    
+  .reviews-dashboard__buttons .wk-button--modal-primary span,
+  .reviews-dashboard__buttons .wk-button--modal-primary i:before,
+  .todays-lessons__button .wk-button--modal-primary span,
+  .todays-lessons__button .wk-button--modal-primary i:before {
+    color: var(--color-button-modal-primary-text);
   }
 
-  .lessons-and-reviews .lessons-and-reviews__reviews-button--0 {
-    /* No reviews, no color */
-    --ED-button-fg: var(--EDI-text-color);
-    --ED-button-bg: var(--ED-surface-4);
+  .reviews-dashboard .wk-button--modal-primary:hover {
+    background-color: var(--ED-review);
   }
 
-  .lessons-and-reviews__lessons-button:hover,
-  .lessons-and-reviews__lessons-button:active,
-  .lessons-and-reviews__lessons-button:focus,
-  .lessons-and-reviews__reviews-button:hover,
-  .lessons-and-reviews__reviews-button:active,
-  .lessons-and-reviews__reviews-button:focus {
-    color: var(--ED-text-hl);
+  .todays-lessons__button .wk-button--modal-primary:hover {
+    background-color: var(--ED-lesson);
+  }
+
+  .todays-lessons__button .wk-button--modal-secondary {
+    --color-button-modal-secondary-text: var(--EDI-text-color);
+  }
+
+  .todays-lessons__button .wk-button--modal-secondary:hover {
+    background: var(--EDI-text-color);
+    border-color: var(--EDI-text-color);
+    --color-button-modal-secondary-text: var(--ED-lesson);
+    text-decoration: none;
+  }
+
+  .todays-lessons__button .wk-button--modal-secondary span,
+  .todays-lessons__button .wk-button--modal-secondary i:before {
+    color: var(--color-button-modal-secondary-text);
+  }
+    
+  .dashboard-lists__buttons .wk-button--default,
+  .recent-mistakes-dashboard__button .wk-button--default {
+    padding: var(--spacing-tight) var(--spacing-loose);
+    height: 2.5em;
+    background-color: var(--ED-surface-2);
+    border-color: var(--ED-surface-4);
+  }
+    
+  .dashboard-lists__buttons .wk-button--default:hover,
+  .recent-mistakes-dashboard__button .wk-button--default:hover,
+  .dashboard-lists__buttons .wk-button--default:focus,
+  .recent-mistakes-dashboard__button .wk-button--default:focus {
+    text-decoration: none;
+    border-color: var(--ED-surface-inv);
   }
 
   .dashboard section.newbie,
@@ -620,16 +706,20 @@
     color: var(--EDI-text-color);
   }
 
-  .kotoba-table-list tr[class|="radical"],
-  .kotoba-table-list tr[class|="kanji"],
-  .kotoba-table-list tr[class|="vocabulary"] {
+  .dashboard-lists li > * {
     background-image: none;
   }
 
-  .kotoba-table-list tr[class|="radical"]:nth-child(odd),
-  .kotoba-table-list tr[class|="kanji"]:nth-child(odd),
-  .kotoba-table-list tr[class|="vocabulary"]:nth-child(odd) {
+  .dashboard-lists li:nth-child(odd) {
     filter: var(--ED-kotoba-odd-row-filter);
+  }
+  
+  .dashboard-lists li:first-child a {
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  .dashboard-lists li:last-child a {
+    border-radius: 0 0 0.3em 0.3em;
   }
 
   .kotoba-table-list tr[class|="radical"] {
@@ -782,23 +872,48 @@
   section.srs-progress ul li:nth-child(1) {
     background-color: var(--ED-apprentice);
   }
+   
+  section.srs-progress ul li:nth-child(1) .srs-progress__subject-type {
+    background-color: var(--ED-apprentice);
+  }
 
   section.srs-progress ul li:nth-child(2) {
+    background-color: var(--ED-guru);
+  }
+  
+  section.srs-progress ul li:nth-child(2) .srs-progress__subject-type {
     background-color: var(--ED-guru);
   }
 
   section.srs-progress ul li:nth-child(3) {
     background-color: var(--ED-master);
   }
+  
+  section.srs-progress ul li:nth-child(3) .srs-progress__subject-type {
+    background-color: var(--ED-master);
+  }
 
   section.srs-progress ul li:nth-child(4) {
+    background-color: var(--ED-enlightened);
+  }
+    
+  section.srs-progress ul li:nth-child(4) .srs-progress__subject-type {
     background-color: var(--ED-enlightened);
   }
 
   section.srs-progress ul li:last-child {
     background-color: var(--ED-burned);
   }
+        
+  section.srs-progress ul li:last-child .srs-progress__subject-type {
+    background-color: var(--ED-burned);
+  }
 
+  section.srs-progress ul li .srs-progress__subject-type {
+    color: var(--ED-text);
+    filter: brightness(0.9);
+  }   
+ 
   /* Guru progress indicators under indiviual items */
   .bg-green {
     background-color: var(--ED-progress);
@@ -811,6 +926,19 @@
 
   .community-banner__title {
     text-shadow: none;
+  }
+
+  .lesson-picker__button {
+    border: none;
+  }
+
+  .lesson-picker__button span:first-child {
+    color: var(--color-button-lesson-picker-disabled-text);
+  }
+
+  .lesson-picker__button span:nth-child(2) {
+    color: var(--EDI-text-color);
+    background-color: var(--color-button-lesson-picker-disabled-text);
   }
 
   /*************************************************************************************************/
@@ -981,6 +1109,19 @@
     box-shadow: none;
     color: var(--EDI-text-color);
     text-shadow: none;
+  }
+
+  .user-synonyms__form_container {
+    background-color: var(--ED-surface-2);
+  }
+
+  .user-synonyms__form-input input[type="text"],
+  .user-synonyms__synonym-button {
+    background-color: var(--ED-surface-1);
+  }
+
+  .user-synonyms__synonym-button .wk-icon {
+    color: var(--EDI-text-color);
   }
 
   /* prettier-ignore */
@@ -1164,6 +1305,17 @@
     text-shadow: none;
   }
 
+  .character-header--radical .character-header__meaning,
+  .character-header--kanji .character-header__meaning,
+  .character-header--vocabulary .character-header__meaning {
+    text-shadow: none;
+  }
+
+  .wk-button--quiz,
+  .subject-character--small-with-meaning .subject-character__characters {
+    box-shadow: none;
+  }
+
   #lessons #stats ul li span.radical {
     color: var(--ED-radical);
   }
@@ -1322,6 +1474,7 @@
   .highlight-reading,
   .highlight-reading > span,
   .reading-highlight,
+  .reading-highlight > span,
   .bg-\[\#f1d6ff\],
   .bg-\[\#f8d8ef\],
   .bg-\[\#d6f1ff\] {
@@ -1532,22 +1685,30 @@
     border: none;
   }
 
+  .subject-character--grid::after {
+    display: none;
+  }
+
   .subject-character--radical .subject-character__characters {
-    background-color: var(--ED-radical);
     background-image: none;
     color: var(--EDI-text-color);
   }
 
   .subject-character--kanji .subject-character__characters {
-    background-color: var(--ED-kanji);
     background-image: none;
     color: var(--EDI-text-color);
   }
 
   .subject-character--vocabulary .subject-character__characters {
-    background-color: var(--ED-vocab);
     background-image: none;
     color: var(--EDI-text-color);
+  }
+
+  .subject-character--grid.subject-character--burned {
+    background-color: var(--ED-surface-3);
+    background-image: none;
+    color: var(--EDI-text-color);
+    box-shadow: none;
   }
 
   .hotkeys-menu__header,
@@ -1674,6 +1835,12 @@
   .character-item--vocabulary:not(.character-item--locked) {
     background-color: var(--ED-vocab);
     background-image: none;
+  }
+
+  .subject-character__badge {
+    box-shadow: 0 0 5px var(--ED-text-inv);
+    color: var(--EDI-text-color);
+    background-color: var(--ED-brand);
   }
 
   .progress-bar__label {
@@ -1958,6 +2125,10 @@
     background-image: none;
     box-shadow: none;
   }
+    
+  .public-profile__avatar {
+    border-color: var(--ED-surface-3);
+  }
 
   /* sheesh. little itty-bitty triangle below profile pic */
   html#public-profile .public-profile-header div.user-info::after {
@@ -2021,23 +2192,12 @@
     background-image: none;
   }
 
-  html#public-profile div.wall-of-shame .progress .bar,
-  .kanji-progress .progress .bar,
-  .vocabulary-progress .progress .bar {
-    background-image: none;
-    background-color: var(--ED-progress);
-  }
-
   .progress .bar span {
     --EDI-text-color: var(--ED-text-inv);
     background-color: var(--ED-surface-inv);
     color: var(--EDI-text-color);
     box-shadow: none;
     text-shadow: none;
-  }
-
-  .progress .bar span:after {
-    border-top-color: var(--ED-surface-inv);
   }
 
   .worst-kanji .progress .bar span,
@@ -2055,6 +2215,15 @@
 
   html#public-profile .public-profile-header div.user-info div[class*="span"] ul strong {
     color: var(--ED-text-hl);
+  }
+    
+  .public-profile .progress-chart__progress-bar {
+    background-color: var(--ED-progress);
+    background-image: none;
+  }
+    
+  .public-profile .progress-chart__progress-bar-container {
+    background-color: var(--ED-surface-3)
   }
 
   /*************************************************************************************************/
@@ -2141,7 +2310,48 @@
   .settings-section form .control-group textarea {
     border: 1px solid var(--ED-text-grayed);
   }
+    
+  .app-settings .wk-form__select,
+  .app-settings .wk-form__input,
+  .account-settings .wk-form__select,
+  .account-settings .wk-form__input {
+    color: var(--ED-text-inv);
+    background-color: var(--ED-surface-inv);
+  }
+    
+  .app-settings .wk-button,
+  .account-settings .wk-button,
+  .api-tokens__new-token .wk-button,
+  .billing-page .wk-button {
+    padding: 0.7em;
+    background-color: var(--ED-surface-2);
+    border-color: var(--ED-surface-4);
+  }
+    
+  .app-settings .wk-button:hover,
+  .account-settings .wk-button:hover,
+  .api-tokens__new-token .wk-button:hover,
+  .billing-page .wk-button:hover {
+    border-color: var(--ED-text);
+  }
+  
+  .billing-plans__plan {
+    background-color: var(--ED-surface-3);
+  }
+    
+  .billing-receipts a {
+    color: var(--ED-text);
+    padding: 0.8em 1em;
+  }
 
+  .billing-receipts a:hover {
+    color: var(--ED-text-inv);
+  }
+
+  #vacation_frame .wk-alert--info p {
+    color: var(--ED-text-inv);
+  }
+    
   /*************************************************************************************************/
   /* Subscription page
   /*************************************************************************************************/
@@ -2165,6 +2375,37 @@
     color: var(--EDI-text-color);
   }
 
+  /*************************************************************************************************/
+  /* Login Page
+  /*************************************************************************************************/
+    
+  .wk-authentication__contents input[type=email],
+  .wk-authentication__contents input[type=password] {
+    background-color: var(--ED-surface-2);
+  }
+    
+  .wk-authentication__contents .wk-form__field > button {
+    padding: var(--spacing-tight) var(--spacing-loose);
+    height: 2.5em;
+    background-color: var(--ED-surface-2);
+    border-color: var(--ED-surface-4);
+  }
+    
+  .wk-authentication__contents .wk-form__field > button:hover,
+  .wk-authentication__contents .wk-form__field > button:focus {
+    text-decoration: none;
+    border-color: var(--ED-surface-inv);
+  }
+
+  .wk-authentication__footer ul,
+  .wk-authentication__footer ul li:last-child {
+    filter: none;
+  }
+
+  .wk-authentication__footer .wk-authentication__footer-item a {
+    color: var(--ED-text-hl);
+  }
+    
   /*************************************************************************************************/
   /* Non-Wanikani styling. Currently just the Wanikani Open Framework settings 
   /*************************************************************************************************/

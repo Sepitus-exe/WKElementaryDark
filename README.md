@@ -1,3 +1,8 @@
+# ⚠️ You found the legacy repo
+
+This is the original pure css based repo which is no longer being developed.
+You can find the successor [here](https://github.com/Everesh/WaniKani-ElementaryDark)
+
 # WaniKani Elementary Dark
 
 A dark-themed css stylesheet and styling platform for the wanikani.com domain.
